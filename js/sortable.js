@@ -76,9 +76,13 @@ async function removeYear() {
     currentAcademicYear--;
 }
 
-async function getClass() {
-    console.log("getClass()");
+async function addClass() {
+    console.log("addClass()");
     const module  = await import("/class.json", { with: { type: "json" } });
-    console.log(module)
-    console.log(module.default)
+    const classDiv = document.createElement("div");
+    classDiv.id = `c10`
+    classDiv.className = "class";
+    classDiv.textContent = "NEW CLASS";
+    const latest_semester = document.getElementById(`summer-${currentAcademicYear}`);
+    latest_semester.appendChild(classDiv);
 }
