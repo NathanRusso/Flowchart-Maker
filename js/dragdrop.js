@@ -9,5 +9,5 @@ function dragoverHandler(event) {
 function dropHandler(event) {
     event.preventDefault();
     const data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
+    event.currentTarget.appendChild(document.getElementById(data));
 }

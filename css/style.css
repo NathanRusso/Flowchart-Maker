@@ -1,7 +1,32 @@
-.credit-class {
+.year-divider {
+    background-color: violet;
+    width: 100%;
+    height: 10px;
+}
+
+.semester {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    width: 100%;
+    height: 100px;
+}
+
+.class {
     border: 3px;
     border-style: solid;
     border-color: blue;
     width: 50px;
     height: 50px;
+}
+
+.coop {
+    border: 3px;
+    border-style: solid;
+    border-color: aqua;
+    width: 80%;
+    height: 80px;
 }
