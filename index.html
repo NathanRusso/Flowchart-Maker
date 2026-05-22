@@ -7,22 +7,69 @@
     <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-    <h1> Computer Science BS/MS Flowchart</h1>
-    <div id="c1" class="class" draggable="true" ondragstart="dragstartHandler(event)">Class 1</div>
-    <div id="c2" class="class" draggable="true" ondragstart="dragstartHandler(event)">Class 2</div>
-    <div id="c3" class="class" draggable="true" ondragstart="dragstartHandler(event)">Class 3</div>
-    <div id="co1" class="coop" draggable="true" ondragstart="dragstartHandler(event)">Co-op</div>
+    <h1 class="center"> Computer Science BS/MS Flowchart</h1>
 
-    <div id="div1" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+    <div id="year-1">
+        <div id="fall-1" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+            <div id="c1" class="class" draggable="true" ondragstart="dragstartHandler(event)" style="border-color: orange;">
+                Class 1
+            </div>
+            <div id="c2" class="class" draggable="true" ondragstart="dragstartHandler(event)" style="border-color: blue;">
+                Class 2
+            </div>
+            <div id="c3" class="class" draggable="true" ondragstart="dragstartHandler(event)" style="border-color: green;">
+                Class 3
+            </div>
+            <div id="c4" class="class" draggable="true" ondragstart="dragstartHandler(event)" style="border-color: green;">
+                Class 4
+            </div>
+            <div id="c5" class="class" draggable="true" ondragstart="dragstartHandler(event)" style="border-color: green;">
+                Class 5
+            </div>
+            <div id="c6" class="class" draggable="true" ondragstart="dragstartHandler(event)" style="border-color: red;">
+                Class 6
+            </div>
+        </div>
+        <div id="spring-1" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+            <div id="co1" class="coop" draggable="true" ondragstart="dragstartHandler(event)">Co-op</div>
+        </div>
+        <div id="summer-1" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
     </div>
-
     <div class="year-divider"></div>
 
-    <div id="div2" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+    <div id="year-2">
+        <div id="fall-2" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="spring-2" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="summer-2" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
     </div>
+    <div class="year-divider"></div>
 
+    <div id="year-3">
+        <div id="fall-3" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="spring-3" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="summer-3" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+    </div>
+    <div class="year-divider"></div>
 
+    <div id="year-4">
+        <div id="fall-4" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="spring-4" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="summer-4" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+    </div>
+    <div class="year-divider"></div>
 
+    <div id="year-5">
+        <div id="fall-5" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="spring-5" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="summer-5" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+    </div>
+    <div class="year-divider"></div>
+
+    <div id="year-6">
+        <div id="fall-6" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="spring-6" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+        <div id="summer-6" class="semester" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+    </div>
 
     <script src="/js/dragdrop.js"></script>
 </body>
