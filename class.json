@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "discipline": "CSCI",
+    "number": 141,
+    "name": "Computer Science I",
+    "description": "This is the 1st CS class",
+    "credits": 3,
+    "prerequisites": []
+}

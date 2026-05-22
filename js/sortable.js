@@ -17,6 +17,7 @@ function makeSortable(element) {
     Sortable.create(element, {
         group: "semester",
         animation: 200,
+        // Makes sure a class and co-op can't be added to the same semester
         onMove: function (event, originalEvent) {
             const movingElement = event.dragged;
             const targetElement = event.to;
@@ -67,10 +68,17 @@ function addYear() {
 /**
  * This removes a year divider and year element from the body.
  */
-function removeYear() {
+async function removeYear() {
     if (currentAcademicYear == 1) return;
     console.log(`Remove Year ${currentAcademicYear}`);
     document.getElementById(`year-divider-${currentAcademicYear}`).remove();
     document.getElementById(`year-${currentAcademicYear}`).remove();
     currentAcademicYear--;
+}
+
+async function getClass() {
+    console.log("getClass()");
+    const module  = await import("/class.json", { with: { type: "json" } });
+    console.log(module)
+    console.log(module.default)
 }
