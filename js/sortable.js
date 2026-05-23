@@ -147,7 +147,7 @@ function createYear(yearInfo) {
     const yearTextDiv = document.createElement("div");
     yearTextDiv.id = `year-text-${academicYearCount}`
     yearTextDiv.className = "year-text";
-    yearTextDiv.textContent = `${years[academicYearCount - 1]} Year` || "";
+    yearTextDiv.textContent = academicYearCount <= 100 ? `${years[academicYearCount - 1]} Year` : `#${academicYearCount} Year`;
     yearDiv.appendChild(yearTextDiv);
 
     const yearBlockDiv = document.createElement("div");
@@ -267,7 +267,7 @@ function pushYear() {
     const yearTextDiv = document.createElement("div");
     yearTextDiv.id = `year-text-${academicYearCount}`
     yearTextDiv.className = "year-text";
-    yearTextDiv.textContent = `${years[academicYearCount - 1]} Year` || ". . .";
+    yearTextDiv.textContent = academicYearCount <= 100 ? `${years[academicYearCount - 1]} Year` : `#${academicYearCount} Year`;
     yearDiv.appendChild(yearTextDiv);
 
     const yearBlockDiv = document.createElement("div");
