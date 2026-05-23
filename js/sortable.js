@@ -207,7 +207,7 @@ function createCourse(courseInfo) {
         courseDiv.textContent = `${courseInfo.attribute}\n\n________`
         const attribute = courseInfo.attribute;
         if (attribute == null || attribute == "") {
-            courseDiv.textContent = `Open Elective`
+            courseDiv.textContent = `Open Elective\n\n________`
             courseDiv.style.borderColor = "Purple";
         } else if (attribute.startsWith("Activity Course")) {
             courseDiv.style.borderColor = "Yellow";
