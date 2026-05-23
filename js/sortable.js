@@ -23,12 +23,50 @@ let academicYearCount = 0;      // The numbers of years of school currently bein
 let transferSection = false;    // Whether or not the transfer section is visible.
 
 const body = document.body;
+
+const uploadTemplateButton = document.getElementById(`uploadTemplateButton`);
+const downloadTemplateButton = document.getElementById(`downloadTemplateButton`);
+const pushYearButton = document.getElementById(`pushYearButton`);
+const popYearButton = document.getElementById(`popYearButton`);
 const showTransferButton = document.getElementById(`showTransferButton`);
 const hideTransferButton = document.getElementById(`hideTransferButton`);
+const clearFlowchartButton = document.getElementById(`clearFlowchartButton`);
+
 const transferDividerDiv = document.getElementById(`year-divider-1`);
 const transferYearDiv = document.getElementById(`year-0`);
 const transferDiv = document.getElementById(`transfer`);
 makeSortable(transferDiv);
+
+/*const fileInput = document.getElementById("fileInput");
+const uploadTemplateButton = document.getElementById("uploadTemplateButton");
+    <button id="uploadTemplateButton" class="button" type="button" onclick="uploadTemplate()" style="background-color: Crimson;">Upload Template &uarr;</button>
+
+fileInput.addEventListener('onchange', function () {
+    console.log("HI");
+});
+
+fileInput.addEventListener('change', (e) => {
+  if (e.target.files.length > 0) {
+    const selectedFile = e.target.files[0];
+    console.log("File picked:", selectedFile.name);
+    // Add your file processing code here
+  }
+});
+
+
+uploadBtn.addEventListener('click', () => {
+  fileInput.click();
+});*/
+
+//------------------------------ EVENT LISTENERS BELOW ------------------------------//
+
+uploadTemplateButton.addEventListener("click", uploadTemplate);
+downloadTemplateButton.addEventListener("click", downloadTemplate);
+pushYearButton.addEventListener("click", pushYear);
+popYearButton.addEventListener("click", popYear);
+showTransferButton.addEventListener("click", showTransferSection);
+hideTransferButton.addEventListener("click", hideTransferSection);
+clearFlowchartButton.addEventListener("click", clearFlowchart);
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
@@ -65,6 +103,7 @@ async function uploadTemplate() {
     clearFlowchart();
     const template  = (await import("/json/cs_bsms_2526_template.json", { with: { type: "json" } })).default;
     // const template  = (await import("/json/cs_bs_2526_template.json", { with: { type: "json" } })).default;
+    // let x = await fileInput.click(); // This opens the file input dialog
 
     // This handles all transfer classes
     fillTransferYear(template[0]);
