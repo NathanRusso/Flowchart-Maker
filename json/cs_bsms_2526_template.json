@@ -30,7 +30,7 @@
     ],
     [
       { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 261, "name": "Analysis of Algorithms" },
-    { "set_course": true, "co-op": false, "discipline": "SWEN", "number": 261, "name": "Intro to Software Engineering" },
+      { "set_course": true, "co-op": false, "discipline": "SWEN", "number": 261, "name": "Intro to Software Engineering" },
       { "set_course": true, "co-op": false, "discipline": "MATH", "number": 241, "name": "Linear Algebra" },
       { "set_course": false, "co-op": false, "attribute": "Lab Science: Lecture 2" },
       { "set_course": false, "co-op": false, "attribute": "Lab Science: Lab 2" },
@@ -73,7 +73,7 @@
   ],
   [
     [
-        { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
+      { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
     ],
     [
       { "set_course": false, "co-op": false, "attribute": "CS Graduate Cluster Elective" },
