@@ -62,6 +62,7 @@ function makeSortable(element) {
  * It then adds years, each of which has 3 semesters that may or many not contain courses.
  */
 async function uploadTemplate() {
+    clearFlowchart();
     const template  = (await import("/json/cs_bsms_2526_template.json", { with: { type: "json" } })).default;
 
     // This handles all transfer classes
@@ -192,6 +193,19 @@ function createCourse(courseInfo) {
 
 function downloadTemplate() {
     console.log("TODO");
+    /*const json = {};
+
+
+    if (transferDiv.children.length > 0) {
+
+    }
+
+    for (let i = 0; i < academicYearCount; i++) {
+        if (array[i][0] == point[0] && array[i][1] == point[1]) {
+            return i;
+        }
+    }
+    return -1;*/
 }
 
 /**
@@ -263,4 +277,17 @@ function hideTransferSection() {
     transferSection = false;
     showTransferButton.style.display = 'inline-block';
     hideTransferButton.style.display = 'none';
+}
+
+/**
+ * This removed all courses and sections.
+ */
+function clearFlowchart() {
+    transferDiv.replaceChildren(); // Removes all transfer courses
+    hideTransferSection();
+    for (let i = 1; i <= academicYearCount; i++) {
+        if (i != 1) document.getElementById(`year-divider-${i}`).remove();
+        document.getElementById(`year-${i}`).remove();
+    }
+    academicYearCount = 0; // Resets the year count
 }

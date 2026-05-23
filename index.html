@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1 class="center"> Computer Science BS/MS 2025-2026 Flowchart</h1>
-    <button id="uploadTemplateButton" type="button" onclick="uploadTemplate()">Upload Template</button>
-    <button id="downloadTemplateButton" type="button" onclick="downloadTemplate()">Save Template</button>
-    <button id="pushYearButton" type="button" onclick="pushYear()">Add Year</button>
-    <button id="popYearButton" type="button" onclick="popYear()">Remove Year</button>
-    <button id="showTransferButton" type="button" onclick="showTransferSection()">Add Transfer</button>
-    <button id="hideTransferButton" type="button" onclick="hideTransferSection()"" style="display: none;">Remove Transfer</button>
+    <button id="uploadTemplateButton" class="button" type="button" onclick="uploadTemplate()" style="background-color: Crimson;">Upload Template &uarr;</button>
+    <button id="downloadTemplateButton" class="button" type="button" onclick="downloadTemplate()" style="background-color: DarkOrange;">Save Template &darr;</button>
+    <button id="pushYearButton" class="button" type="button" onclick="pushYear()" style="background-color: Gold;">Add Year +</button>
+    <button id="popYearButton" class="button" type="button" onclick="popYear()" style="background-color: Green;">Remove Year -</button>
+    <button id="showTransferButton" class="button" type="button" onclick="showTransferSection()" style="background-color: MediumBlue;">Add Transfer +</button>
+    <button id="hideTransferButton" class="button" type="button" onclick="hideTransferSection()" style="background-color: MediumBlue; display: none;">Remove Transfer -</button>
+    <button id="clearFlowchartButton" class="button" type="button" onclick="clearFlowchart()" style="background-color: DarkViolet;">Clear Flowchart x</button>
 
     <div id="year-0" class="year" style="display: none; margin-top: 5px;">
         <div id="year-text-0" class="year-text"> Transfer </div>
@@ -23,7 +24,6 @@
     </div>
     <div id="year-divider-1" class="year-divider" style="display: none;"></div>
 
-    <!--<div id="year-divider-1" class="year-divider"></div>-->
     <!--<div id="year-1" class="year">
         <div id="year-text-1" class="year-text"> First Year </div>
         <div id="year-block-1" class="year-block">
@@ -41,7 +41,8 @@
             <div id="summer-1" class="semester">
             </div>
         </div>
-    </div>-->
+    </div>
+    div id="year-divider-2" class="year-divider"></div>-->
 
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.7/Sortable.min.js"></script>
     <script src="/js/sortable.js"></script>

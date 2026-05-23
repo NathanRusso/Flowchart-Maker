@@ -4,6 +4,12 @@
     margin-right: auto;
 }
 
+.button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
 .year-divider {
     background-color: gray;
     width: 100%;
