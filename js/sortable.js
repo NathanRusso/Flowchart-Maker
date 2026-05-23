@@ -148,10 +148,14 @@ function createYear(yearInfo) {
     yearBlockDiv.className = "year-block";
     yearDiv.appendChild(yearBlockDiv);
 
-    yearInfo.forEach((semesterInfo, index) => {
-        const semesterDiv = createSemester(semesterInfo, semesters[index])
+    semesters.forEach((term, index) => {
+        const semesterDiv = createSemester(yearInfo[index], term)
         yearBlockDiv.appendChild(semesterDiv);
     });
+    /*yearInfo.forEach((semesterInfo, index) => {
+        const semesterDiv = createSemester(semesterInfo, semesters[index])
+        yearBlockDiv.appendChild(semesterDiv);
+    });*/
     body.appendChild(yearDiv);
 }
 
@@ -224,21 +228,88 @@ function createCourse(courseInfo) {
     return courseDiv;
 }
 
+/**
+ * This saves the current flowchart into the needed JSON format.
+ */
 function downloadTemplate() {
     console.log("TODO");
-    /*const json = {};
+    const transfer = [];
+    const college = [];
 
+    Array.from(transferDiv.children).forEach(courseDiv => {
+        const course = processCourse(courseDiv);
+        transfer.push(course);
+    })
 
-    if (transferDiv.children.length > 0) {
-
+    for (let i = 1; i <= academicYearCount; i++) {
+        const year = [];
+        const yearDiv = document.getElementById(`year-block-${i}`);
+        Array.from(yearDiv.children).forEach(semesterDiv => {
+            const semester = [];
+            Array.from(semesterDiv.children).forEach(courseDiv => {
+                const course = processCourse(courseDiv);
+                semester.push(course);
+            });
+            year.push(semester);
+        });
+        college.push(year);
     }
 
-    for (let i = 0; i < academicYearCount; i++) {
-        if (array[i][0] == point[0] && array[i][1] == point[1]) {
-            return i;
-        }
+    // Downloads the JSON file
+    const json = { "transfer": transfer, "college": college };
+    const jsonString = JSON.stringify(json);
+    const jsonBlob = new Blob([jsonString], { type: "application/json" });
+    const jsonObjectUrl = URL.createObjectURL(jsonBlob);
+    const jsonFilename = "template.json";
+    const anchor = document.createElement("a");
+    anchor.href = jsonObjectUrl;
+    anchor.download = jsonFilename;
+    anchor.click();
+    URL.revokeObjectURL(jsonObjectUrl);
+}
+
+/**
+ * This turns the given course div back into an object.
+ * 
+ * @param {*} courseDiv - the given course Div
+ */
+function processCourse(courseDiv) {
+    let course = {};
+
+    // Examples
+    // { "set_course": false, "co-op": false, "attribute": "CS Undergraduate Elective" },
+    // { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 344, "name": "Programming Language Concepts" },
+    // { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
+
+    const className = courseDiv.className; // "class" or "co-op"
+    const classContent = courseDiv.textContent;
+    if (className == "co-op") {
+        const classInformation = classContent.split(/[\(\)\-]+/);
+        course = {
+            "set_course": true,
+            "co-op": true,
+            "discipline": classInformation[1].trim(),
+            "number": parseInt(classInformation[2].trim()),
+            "name": classInformation[0].trim()
+        };
+    } else if (classContent.includes("-")) {
+        const classInformation = classContent.split(/[\-\n]+/);
+        course = {
+            "set_course": true,
+            "co-op": false,
+            "discipline": classInformation[0].trim(),
+            "number": parseInt(classInformation[1].trim()),
+            "name": classInformation[2].trim()
+        };
+    } else {
+        course = {
+            "set_course": false,
+            "co-op": false,
+            "attribute": classContent.trim()
+        };
     }
-    return -1;*/
+    console.log(course);
+    return course;
 }
 
 /**
