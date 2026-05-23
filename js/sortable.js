@@ -228,7 +228,6 @@ function createCourse(courseInfo) {
  * This converts the current flowchart into JSON and downloads it onto your computer.
  */
 function downloadTemplate() {
-    console.log("TODO");
     const transfer = [];
     const college = [];
 
@@ -307,7 +306,6 @@ function processCourse(courseDiv) {
             "attribute": attribute != "Open Elective" ? attribute : "" 
         };
     }
-    console.log(course);
     return course;
 }
 
