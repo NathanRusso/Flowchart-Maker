@@ -24,6 +24,7 @@ let transferSection = false;    // Whether or not the transfer section is visibl
 
 const body = document.body;
 
+const fileInput = document.getElementById("fileInput");
 const uploadTemplateButton = document.getElementById(`uploadTemplateButton`);
 const downloadTemplateButton = document.getElementById(`downloadTemplateButton`);
 const pushYearButton = document.getElementById(`pushYearButton`);
@@ -37,30 +38,18 @@ const transferYearDiv = document.getElementById(`year-0`);
 const transferDiv = document.getElementById(`transfer`);
 makeSortable(transferDiv);
 
-/*const fileInput = document.getElementById("fileInput");
-const uploadTemplateButton = document.getElementById("uploadTemplateButton");
-    <button id="uploadTemplateButton" class="button" type="button" onclick="uploadTemplate()" style="background-color: Crimson;">Upload Template &uarr;</button>
-
-fileInput.addEventListener('onchange', function () {
-    console.log("HI");
-});
-
-fileInput.addEventListener('change', (e) => {
-  if (e.target.files.length > 0) {
-    const selectedFile = e.target.files[0];
-    console.log("File picked:", selectedFile.name);
-    // Add your file processing code here
-  }
-});
-
-
-uploadBtn.addEventListener('click', () => {
-  fileInput.click();
-});*/
-
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
-uploadTemplateButton.addEventListener("click", uploadTemplate);
+fileInput.addEventListener("change", async (event) => {
+    // const template  = (await import("/json/cs_bsms_2526_template.json", { with: { type: "json" } })).default;
+    // const template  = (await import("/json/cs_bs_2526_template.json", { with: { type: "json" } })).default;
+    const file = event.target.files[0];
+    const fileText = await file.text();
+    const fileData = JSON.parse(fileText);
+    uploadTemplate(fileData);
+});
+// uploadTemplateButton.addEventListener("click", uploadTemplate);
+uploadTemplateButton.addEventListener("click", () => fileInput.click());
 downloadTemplateButton.addEventListener("click", downloadTemplate);
 pushYearButton.addEventListener("click", pushYear);
 popYearButton.addEventListener("click", popYear);
@@ -98,19 +87,23 @@ function makeSortable(element) {
  * This updates and populates the body given the json template flowchart.
  * This adds a Transfer section for transfer classes.
  * It then adds years, each of which has 3 semesters that may or many not contain courses.
+ * 
+ * @param {*} template - the flowchart with transfer, year, semester, and course information
  */
-async function uploadTemplate() {
-    clearFlowchart();
-    const template  = (await import("/json/cs_bsms_2526_template.json", { with: { type: "json" } })).default;
-    // const template  = (await import("/json/cs_bs_2526_template.json", { with: { type: "json" } })).default;
-    // let x = await fileInput.click(); // This opens the file input dialog
+function uploadTemplate(template) {
+    // Check JSON file formatting
+    if (template == null || typeof template != "object" || Array.isArray(template) 
+        || template.transfer == undefined || template.college == undefined) {
+        alert("The given JSON file does not meet the required formatting.");
+        return;
+    }
 
-    // This handles all transfer classes
-    fillTransferYear(template[0]);
+    const transferCourses = template.transfer;
+    const years = template.college;
 
-    // This handles all other semesters and their classes
-    const years = template.slice(1);
-    years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));
+    clearFlowchart(); // This removed the current flowchart
+    fillTransferYear(transferCourses); // This handles all transfer classes
+    years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount)); // This handles all other semesters and their classes
 }
 
 /**
