@@ -152,10 +152,6 @@ function createYear(yearInfo) {
         const semesterDiv = createSemester(yearInfo[index], term)
         yearBlockDiv.appendChild(semesterDiv);
     });
-    /*yearInfo.forEach((semesterInfo, index) => {
-        const semesterDiv = createSemester(semesterInfo, semesters[index])
-        yearBlockDiv.appendChild(semesterDiv);
-    });*/
     body.appendChild(yearDiv);
 }
 
@@ -229,7 +225,7 @@ function createCourse(courseInfo) {
 }
 
 /**
- * This saves the current flowchart into the needed JSON format.
+ * This converts the current flowchart into JSON and downloads it onto your computer.
  */
 function downloadTemplate() {
     console.log("TODO");
@@ -302,10 +298,12 @@ function processCourse(courseDiv) {
             "name": classInformation[2].trim()
         };
     } else {
+        const classInformation = classContent.split(/[\n]+/);
+        const attribute = classInformation[0].trim();
         course = {
             "set_course": false,
             "co-op": false,
-            "attribute": classContent.trim()
+            "attribute": attribute != "Open Elective" ? attribute : "" 
         };
     }
     console.log(course);
