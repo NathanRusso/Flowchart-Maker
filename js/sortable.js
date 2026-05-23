@@ -280,13 +280,14 @@ function processCourse(courseDiv) {
     const className = courseDiv.className; // "class" or "co-op"
     const classContent = courseDiv.textContent;
     if (className == "co-op") {
-        const classInformation = classContent.split(/[\(\)\-]+/);
+        const classInformation1 = classContent.split(/[\(\)]+/);
+        const classInformation2 = classInformation1[1].split(/[\-]+/);
         course = {
             "set_course": true,
             "co-op": true,
-            "discipline": classInformation[1].trim(),
-            "number": parseInt(classInformation[2].trim()),
-            "name": classInformation[0].trim()
+            "discipline": classInformation2[0].trim(),
+            "number": parseInt(classInformation2[1].trim()),
+            "name": classInformation1[0].trim()
         };
     } else if (classContent.includes("-")) {
         const classInformation = classContent.split(/[\-\n]+/);
