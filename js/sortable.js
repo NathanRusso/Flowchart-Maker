@@ -1,9 +1,8 @@
-// I added the "General Education: Immersion", "Lab Science: Lab", and "Lab Science: Lecture" attributes
-// No attributes is an open elective
-course_types = [
-    "set_course",   // A predefined course in the RIT system
-    "open_course"   // A selectable course to fulfil a requirement
-]
+//------------------------------ STATIC DATA BELOW ------------------------------//
+
+// I added the "General Education: Immersion", "Lab Science: Lab", "Lab Science: Lecture", etc. attributes
+// I also count No attributes as open electives
+
 const years = [
   "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth",
   "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth", "Eighteenth", "Nineteenth", "Twentieth",
@@ -18,10 +17,12 @@ const years = [
 ];
 const semesters = ["Fall", "Spring", "Summer"];
 
-const body = document.body;
-let academicYearCount = 0; // The numbers of years of school currently being listed.
-let transferSection = false;
+//------------------------------ DATA BELOW ------------------------------//
 
+let academicYearCount = 0;      // The numbers of years of school currently being listed.
+let transferSection = false;    // Whether or not the transfer section is visible.
+
+const body = document.body;
 const showTransferButton = document.getElementById(`showTransferButton`);
 const hideTransferButton = document.getElementById(`hideTransferButton`);
 const transferDividerDiv = document.getElementById(`year-divider-1`);
@@ -29,6 +30,7 @@ const transferYearDiv = document.getElementById(`year-0`);
 const transferDiv = document.getElementById(`transfer`);
 makeSortable(transferDiv);
 
+//------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
  * This makes the given div element sortable.
@@ -239,16 +241,4 @@ function hideTransferSection() {
     transferSection = false;
     showTransferButton.style.display = 'inline-block';
     hideTransferButton.style.display = 'none';
-}
-
-async function addClass() {
-    console.log("addClass()");
-    const module  = await import("/json/class.json", { with: { type: "json" } });
-    console.log(module);
-    const classDiv = document.createElement("div");
-    classDiv.id = `c10`
-    classDiv.className = "class";
-    classDiv.textContent = "NEW CLASS";
-    const latest_semester = document.getElementById(`summer-${currentAcademicYear}`);
-    latest_semester.appendChild(classDiv);
 }
