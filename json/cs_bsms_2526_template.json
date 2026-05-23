@@ -1,4 +1,5 @@
 [
+  [],
   [
     [
       { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 141, "name": "Computer Science I" },

@@ -58,10 +58,32 @@ function makeSortable(element) {
 
 /**
  * This updates and populates the body given the json template flowchart.
+ * This adds a Transfer section for transfer classes.
+ * It then adds years, each of which has 3 semesters that may or many not contain courses.
  */
 async function uploadTemplate() {
     const template  = (await import("/json/cs_bsms_2526_template.json", { with: { type: "json" } })).default;
-    template.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));
+
+    // This handles all transfer classes
+    fillTransferYear(template[0]);
+
+    // This handles all other semesters and their classes
+    const years = template.slice(1);
+    years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));
+}
+
+/**
+ * This adds courses divs to the transfer div.
+ * 
+ * @param {*} transferInfo - The object containing the transfer course objects
+ */
+function fillTransferYear(transferInfo) {
+    if (transferInfo.length == 0) return;
+    transferInfo.forEach(courseInfo => {
+        const courseDiv = createCourse(courseInfo);
+        transferDiv.appendChild(courseDiv);
+    });
+    showTransferSection();
 }
 
 /**
