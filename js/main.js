@@ -37,9 +37,9 @@ const hideTransferButton = document.getElementById("hideTransferButton");
 const clearFlowchartButton = document.getElementById("clearFlowchartButton");
 
 const flowchartBody = document.getElementById("flowchartBody");
-const transferDividerDiv = document.getElementById("year-divider-1");
 const transferYearDiv = document.getElementById("year-0");
 const transferDiv = document.getElementById("transfer");
+const transferDividerDiv = document.getElementById("year-divider-0");
 makeSortable(transferDiv);
 
 const finalNotesList = document.getElementById("finalNotesList");
@@ -160,13 +160,6 @@ function fillFinalNotes(notesInfo) {
  * @param {*} yearInfo - The object containing the semester objects
  */
 function createYear(yearInfo) {
-    if (academicYearCount != 1) {
-        const yearDividerDiv = document.createElement("div");
-        yearDividerDiv.id = `year-divider-${academicYearCount}`
-        yearDividerDiv.className = "year-divider";
-        flowchartBody.append(yearDividerDiv);
-    }
-
     const yearDiv = document.createElement("div");
     yearDiv.id = `year-${academicYearCount}`;
     yearDiv.className = "year";
@@ -187,6 +180,11 @@ function createYear(yearInfo) {
         yearBlockDiv.append(semesterDiv);
     });
     flowchartBody.append(yearDiv);
+
+    const yearDividerDiv = document.createElement("div");
+    yearDividerDiv.id = `year-divider-${academicYearCount}`
+    yearDividerDiv.className = "year-divider";
+    flowchartBody.append(yearDividerDiv);
 }
 
 /**
@@ -402,12 +400,6 @@ function processCourse(courseDiv) {
  */
 function pushYear() {
     ++academicYearCount;
-    if (academicYearCount > 1) {
-        const yearDividerDiv = document.createElement("div");
-        yearDividerDiv.id = `year-divider-${academicYearCount}`
-        yearDividerDiv.className = "year-divider";
-        flowchartBody.append(yearDividerDiv);
-    }
 
     const yearDiv = document.createElement("div");
     yearDiv.id = `year-${academicYearCount}`;
@@ -432,6 +424,11 @@ function pushYear() {
         yearBlockDiv.append(semesterDiv);
     });
     flowchartBody.append(yearDiv);
+
+    const yearDividerDiv = document.createElement("div");
+    yearDividerDiv.id = `year-divider-${academicYearCount}`
+    yearDividerDiv.className = "year-divider";
+    flowchartBody.append(yearDividerDiv);
 }
 
 /**
@@ -439,7 +436,7 @@ function pushYear() {
  */
 function popYear() {
     if (academicYearCount == 0) return;
-    if (academicYearCount > 1) document.getElementById(`year-divider-${academicYearCount}`).remove();
+    document.getElementById(`year-divider-${academicYearCount}`).remove();
     document.getElementById(`year-${academicYearCount}`).remove();
     academicYearCount--;
 }
@@ -480,8 +477,9 @@ function clearFlowchart(resetChoose, resetUpload) {
     transferDiv.replaceChildren(); // Removes all transfer courses
     hideTransferSection();
     for (let i = 1; i <= academicYearCount; i++) {
-        if (i != 1) document.getElementById(`year-divider-${i}`).remove();
         document.getElementById(`year-${i}`).remove();
+        document.getElementById(`year-divider-${i}`).remove();
     }
+    finalNotesList.textContent = "";                    // Gets rid of the final notes
     academicYearCount = 0; // Resets the year count
 }
