@@ -17,21 +17,29 @@
         {
             "set_course": false,
             "co-op": false,
+            "discipline": "",
+            "number": null,
             "attribute": "Writing Intensive: First Year"
         },
         {
             "set_course": false,
             "co-op": false,
+            "discipline": "",
+            "number": null,
             "attribute": "Gen Ed: Immersion"
         },
         {
             "set_course": false,
             "co-op": false,
+            "discipline": "",
+            "number": null,
             "attribute": "Gen Ed: Elective"
         },
         {
             "set_course": false,
             "co-op": false,
+            "discipline": "",
+            "number": null,
             "attribute": ""
         }
     ],
@@ -55,16 +63,22 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Science Principle Perspective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
@@ -93,26 +107,36 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Lab Science: Lecture 1"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Lab Science: Lab 1"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Activity Course"
                 }
             ],
@@ -152,16 +176,22 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Lab Science: Lecture 2"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Lab Science: Lab 2"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
@@ -190,21 +220,29 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": ""
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": ""
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Activity Course"
                 }
             ],
@@ -244,11 +282,15 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": ""
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Immersion"
                 }
             ],
@@ -263,6 +305,8 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Undergraduate Elective"
                 },
                 {
@@ -275,6 +319,8 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": ""
                 },
                 {
@@ -301,21 +347,29 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Elective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Cluster Elective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Cluster Elective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": ""
                 }
             ],
@@ -323,6 +377,8 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Cluster Elective"
                 },
                 {
@@ -335,11 +391,15 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Elective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Elective"
                 }
             ]
@@ -349,11 +409,15 @@
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Elective"
                 },
                 {
                     "set_course": false,
                     "co-op": false,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "CS Graduate Elective"
                 },
                 {
