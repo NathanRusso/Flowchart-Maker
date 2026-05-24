@@ -29,8 +29,11 @@
         <div id="year-text-1" class="year-text"> First Year </div>
         <div id="year-block-1" class="year-block">
             <div id="fall-1" class="semester">
-                <div id="c1" class="class" style="border-color: orange;"> Class 1 </div>
-                <div id="c2" class="class" style="border-color: blue;"> Class 2 </div>
+                <div id="c1" class="class" style="border-color: orange;"> 
+                    <label">First name</label>
+                    <input type="text" pattern="[A-Z]{4}-[0-9]{1, 3}" placeholder="ABCD-123" minlength="6" maxlength="8"/>
+                 </div>
+                <div id="c2" class="class" style="border-color: blue;"> <span> Class 2</span>  </div>
                 <div id="c3" class="class" style="border-color: green;"> Class 3 </div>
                 <div id="c4" class="class" style="border-color: green;"> Class 4 </div>
                 <div id="c5" class="class" style="border-color: green;"> Class 5 </div>
@@ -43,7 +46,7 @@
             </div>
         </div>
     </div>
-    div id="year-divider-2" class="year-divider"></div>-->
+    <div id="year-divider-2" class="year-divider"></div>-->
 
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.7/Sortable.min.js"></script>
     <script src="/js/sortable.js"></script>

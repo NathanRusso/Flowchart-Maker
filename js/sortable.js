@@ -23,6 +23,7 @@ let academicYearCount = 0;      // The numbers of years of school currently bein
 let transferSection = false;    // Whether or not the transfer section is visible.
 
 const body = document.body;
+const classRegex = /^[A-Z]{4}-[0-9]{1,3}$/;
 
 const fileInput = document.getElementById("fileInput");
 const uploadTemplateButton = document.getElementById(`uploadTemplateButton`);
@@ -204,10 +205,53 @@ function createCourse(courseInfo) {
         }
     } else {
         courseDiv.className = "class";
-        courseDiv.textContent = `${courseInfo.attribute}\n\n________`
+        const courseDiscipline = courseInfo?.discipline;
+        const courseNumber = courseInfo?.number;
         const attribute = courseInfo.attribute;
-        if (attribute == null || attribute == "") {
-            courseDiv.textContent = `Open Elective\n\n________`
+
+        const classLabel = document.createElement("label");
+        classLabel.textContent = attribute != "" && attribute != null ? attribute : "Open Elective";
+        courseDiv.append(classLabel);
+
+        const classInput = document.createElement("input");
+
+        // Applies restrictions to the input
+        Object.assign(classInput, {
+            type: "text",
+            placeholder: "ABCD-123",
+            pattern: "[A-Z]{4}-[0-9]{1,3}",
+            minlength: 6,
+            maxlength: 8
+        });
+
+        // Ensures valid characters are entered in the input.
+        classInput.addEventListener("keypress", (event) => {
+            const preInputLength = classInput.value.length;
+            const key = event.key;
+            const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);    // Characters 1-4
+            const condition2 = preInputLength == 4 && key != "-";           // Character 5
+            const condition3 = preInputLength > 4 && !/[0-9]/.test(key);    // Character 6-8
+            const condition4 = preInputLength == 8;                         // Extra
+            if (condition1 || condition2 || condition3 || condition4) event.preventDefault();
+        });
+        
+        // Ensures a valid string is saved
+        classInput.addEventListener("blur", (event) => {
+            const currentValue = event.target.value;
+            const currentLength = currentValue.length;
+            if (currentValue != null && currentValue != "" && !classRegex.test(currentValue)) {
+                alert("Format must be in ABCD-123 or blank");
+                setTimeout(() => classInput.focus(), 0); // Prevents alert loop
+            }
+        });
+
+        // Checks current class
+        const savedCourse = `${courseDiscipline}-${courseNumber}`;
+        if (classRegex.test(savedCourse)) classInput.value = savedCourse;
+        courseDiv.append(classInput);
+
+        // Set border color
+        if (attribute == "" || attribute == null) {
             courseDiv.style.borderColor = "Purple";
         } else if (attribute.startsWith("Activity Course")) {
             courseDiv.style.borderColor = "Yellow";
@@ -272,7 +316,7 @@ function processCourse(courseDiv) {
     let course = {};
 
     // Examples
-    // { "set_course": false, "co-op": false, "attribute": "CS Undergraduate Elective" },
+    // { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "CS Undergraduate Elective" },
     // { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 344, "name": "Programming Language Concepts" },
     // { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
 
@@ -298,11 +342,13 @@ function processCourse(courseDiv) {
             "name": classInformation[2].trim()
         };
     } else {
-        const classInformation = classContent.split(/[\n]+/);
-        const attribute = classInformation[0].trim();
+        const attribute = courseDiv.children[0].textContent;        // Label
+        const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
         course = {
             "set_course": false,
             "co-op": false,
+            "discipline": inputs[0],
+            "number": parseInt(inputs[1]),
             "attribute": attribute != "Open Elective" ? attribute : "" 
         };
     }

@@ -69,14 +69,31 @@
     border: 5px solid;
     border-radius: 5px;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     white-space: pre-wrap;
+    gap: 10px;
     font-size: 85%;
     font-weight: bold;
     width: 100px;
     height: 100px;
+}
+
+.class label {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.class input {
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+    width: 80%;
 }
 
 .co-op {
