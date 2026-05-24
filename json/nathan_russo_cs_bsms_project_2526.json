@@ -17,29 +17,29 @@
         {
             "set_course": false,
             "co-op": false,
-            "discipline": "",
-            "number": null,
+            "discipline": "UWRT",
+            "number": 150,
             "attribute": "Writing Intensive: First Year"
         },
         {
             "set_course": false,
             "co-op": false,
-            "discipline": "",
-            "number": null,
+            "discipline": "MATH",
+            "number": 211,
             "attribute": "Gen Ed: Immersion"
         },
         {
             "set_course": false,
             "co-op": false,
-            "discipline": "",
-            "number": null,
+            "discipline": "STAT",
+            "number": 145,
             "attribute": "Gen Ed: Elective"
         },
         {
             "set_course": false,
             "co-op": false,
-            "discipline": "",
-            "number": null,
+            "discipline": "FREE",
+            "number": 100,
             "attribute": ""
         }
     ],

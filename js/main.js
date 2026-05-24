@@ -42,8 +42,7 @@ const transferYearDiv = document.getElementById("year-0");
 const transferDiv = document.getElementById("transfer");
 makeSortable(transferDiv);
 
-const finalNotesTitle = document.getElementById("finalNotesTitle");
-const finalNotesDescription = document.getElementById("finalNotesDescription");
+const finalNotesList = document.getElementById("finalNotesList");
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
@@ -120,10 +119,12 @@ function uploadTemplate(template, resetChoose, resetUpload) {
 
     const transferCourses = template.transfer;
     const years = template.college;
+    const notes = template.notes;
 
     clearFlowchart(resetChoose, resetUpload);                               // This removed the current flowchart
     fillTransferYear(transferCourses);                                      // This handles all transfer classes
     years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));   // This handles all other semesters and their classes
+    fillFinalNotes(notes);                                                  // This handles the final notes
 }
 
 /**
@@ -135,9 +136,22 @@ function fillTransferYear(transferInfo) {
     if (transferInfo.length == 0) return;
     transferInfo.forEach(courseInfo => {
         const courseDiv = createCourse(courseInfo);
-        transferDiv.appendChild(courseDiv);
+        transferDiv.append(courseDiv);
     });
     showTransferSection();
+}
+
+/**
+ * This adds the notes to the final notes section.
+ * 
+ * @param {*} notesInfo - the final notes string
+ */
+function fillFinalNotes(notesInfo) {
+    notesInfo.forEach(note => {
+        const noteDiv = document.createElement("li");
+        noteDiv.innerHTML = note;
+        finalNotesList.append(noteDiv);
+    });
 }
 
 /**
@@ -150,7 +164,7 @@ function createYear(yearInfo) {
         const yearDividerDiv = document.createElement("div");
         yearDividerDiv.id = `year-divider-${academicYearCount}`
         yearDividerDiv.className = "year-divider";
-        flowchartBody.appendChild(yearDividerDiv);
+        flowchartBody.append(yearDividerDiv);
     }
 
     const yearDiv = document.createElement("div");
@@ -161,18 +175,18 @@ function createYear(yearInfo) {
     yearTextDiv.id = `year-text-${academicYearCount}`
     yearTextDiv.className = "year-text";
     yearTextDiv.textContent = academicYearCount <= 100 ? `${years[academicYearCount - 1]} Year` : `#${academicYearCount} Year`;
-    yearDiv.appendChild(yearTextDiv);
+    yearDiv.append(yearTextDiv);
 
     const yearBlockDiv = document.createElement("div");
     yearBlockDiv.id = `year-block-${academicYearCount}`
     yearBlockDiv.className = "year-block";
-    yearDiv.appendChild(yearBlockDiv);
+    yearDiv.append(yearBlockDiv);
 
     semesters.forEach((term, index) => {
         const semesterDiv = createSemester(yearInfo[index], term)
-        yearBlockDiv.appendChild(semesterDiv);
+        yearBlockDiv.append(semesterDiv);
     });
-    flowchartBody.appendChild(yearDiv);
+    flowchartBody.append(yearDiv);
 }
 
 /**
@@ -190,7 +204,7 @@ function createSemester(semesterInfo, term) {
 
     semesterInfo.forEach(courseInfo => {
         const courseDiv = createCourse(courseInfo);
-        semesterDiv.appendChild(courseDiv);
+        semesterDiv.append(courseDiv);
     });
     return semesterDiv;
 }
@@ -392,7 +406,7 @@ function pushYear() {
         const yearDividerDiv = document.createElement("div");
         yearDividerDiv.id = `year-divider-${academicYearCount}`
         yearDividerDiv.className = "year-divider";
-        flowchartBody.appendChild(yearDividerDiv);
+        flowchartBody.append(yearDividerDiv);
     }
 
     const yearDiv = document.createElement("div");
@@ -403,21 +417,21 @@ function pushYear() {
     yearTextDiv.id = `year-text-${academicYearCount}`
     yearTextDiv.className = "year-text";
     yearTextDiv.textContent = academicYearCount <= 100 ? `${years[academicYearCount - 1]} Year` : `#${academicYearCount} Year`;
-    yearDiv.appendChild(yearTextDiv);
+    yearDiv.append(yearTextDiv);
 
     const yearBlockDiv = document.createElement("div");
     yearBlockDiv.id = `year-block-${academicYearCount}`
     yearBlockDiv.className = "year-block";
-    yearDiv.appendChild(yearBlockDiv);
+    yearDiv.append(yearBlockDiv);
 
     semesters.forEach(term => {
         const semesterDiv = document.createElement("div");
         semesterDiv.id = `${term}-${academicYearCount}`;
         semesterDiv.className = "semester";
         makeSortable(semesterDiv);
-        yearBlockDiv.appendChild(semesterDiv);
+        yearBlockDiv.append(semesterDiv);
     });
-    flowchartBody.appendChild(yearDiv);
+    flowchartBody.append(yearDiv);
 }
 
 /**

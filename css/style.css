@@ -108,3 +108,8 @@ button, select {
     width: 100%;
     height: 25px;
 }
+
+#finalNotesTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
