@@ -44,12 +44,12 @@ makeSortable(transferDiv);
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
 fileInput.addEventListener("change", async (event) => {
-    uploadedFilename = event.target.value.slice(12); // "C:\\fakepath\\flowchart.json"
-    console.log(uploadedFilename);
     const file = event.target.files[0];
+    uploadedFilename = file.name;
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
     uploadTemplate(fileData, true, false);
+    fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 });
 templateSelect.addEventListener("change", (event) => chooseFlowchart(event.target.value))
 uploadTemplateButton.addEventListener("click", () => fileInput.click());
@@ -457,7 +457,6 @@ function hideTransferSection() {
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
 function clearFlowchart(resetChoose, resetUpload) {
-    console.log("clear");
     if (resetChoose) templateSelect.selectedIndex = 0;  // Resets the "Choose Template" selector to the 1st option.
     if (resetUpload) uploadedFilename = null;           // Resets the name of the uploaded file
     transferDiv.replaceChildren(); // Removes all transfer courses
