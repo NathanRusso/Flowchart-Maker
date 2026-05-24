@@ -9,13 +9,19 @@
 <body>
     <h1 class="center"> Computer Science BS/MS 2025-2026 Flowchart</h1>
     <input id="fileInput" type="file" accept=".json, application/json" style="display: none;" />
-    <button id="uploadTemplateButton" class="button" type="button" style="background-color: Crimson;">Upload Template &uarr;</button>
-    <button id="downloadTemplateButton" class="button" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
-    <button id="pushYearButton" class="button" type="button" style="background-color: Gold;">Add Year +</button>
-    <button id="popYearButton" class="button" type="button" style="background-color: Green;">Remove Year -</button>
-    <button id="showTransferButton" class="button" type="button" style="background-color: MediumBlue;">Add Transfer +</button>
-    <button id="hideTransferButton" class="button" type="button" style="background-color: MediumBlue; display: none;">Remove Transfer -</button>
-    <button id="clearFlowchartButton" class="button" type="button" style="background-color: DarkViolet; margin-bottom: 10px;">Clear Flowchart x</button>
+    <select id="templateSelect" style="background-color: DarkRed;">
+        <option class="template-option" value="">Choose Template</option>
+        <option class="template-option" value="cs_bs_2526_template.json">CS BS</option>
+        <option class="template-option" value="cs_bsms_project_2526_template.json">CS BS/MS Project</option>
+        <option class="template-option" value="cs_bsms_thesis_2526_template.json">CS BS/MS Thesis</option>
+    </select>
+    <button id="uploadTemplateButton" type="button" style="background-color: Crimson;">Upload Flowchart &uarr;</button>
+    <button id="downloadTemplateButton" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
+    <button id="pushYearButton" type="button" style="background-color: Gold;">Add Year +</button>
+    <button id="popYearButton" type="button" style="background-color: Green;">Remove Year -</button>
+    <button id="showTransferButton" type="button" style="background-color: MediumBlue;">Add Transfer +</button>
+    <button id="hideTransferButton" type="button" style="background-color: MediumBlue; display: none;">Remove Transfer -</button>
+    <button id="clearFlowchartButton" type="button" style="background-color: DarkViolet; margin-bottom: 10px;">Clear Flowchart x</button>
 
     <div id="year-0" class="year" style="display: none">
         <div id="year-text-0" class="year-text"> Transfer </div>

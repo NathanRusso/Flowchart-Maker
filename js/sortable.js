@@ -21,11 +21,13 @@ const semesters = ["Fall", "Spring", "Summer"];
 
 let academicYearCount = 0;      // The numbers of years of school currently being listed.
 let transferSection = false;    // Whether or not the transfer section is visible.
+let uploadedFilename = null;    // The filename of the uploaded file.
 
 const body = document.body;
 const classRegex = /^[A-Z]{4}-[0-9]{1,3}$/;
 
 const fileInput = document.getElementById("fileInput");
+const templateSelect = document.getElementById("templateSelect");
 const uploadTemplateButton = document.getElementById(`uploadTemplateButton`);
 const downloadTemplateButton = document.getElementById(`downloadTemplateButton`);
 const pushYearButton = document.getElementById(`pushYearButton`);
@@ -42,21 +44,21 @@ makeSortable(transferDiv);
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
 fileInput.addEventListener("change", async (event) => {
-    // const template  = (await import("/json/cs_bsms_2526_template.json", { with: { type: "json" } })).default;
-    // const template  = (await import("/json/cs_bs_2526_template.json", { with: { type: "json" } })).default;
+    uploadedFilename = event.target.value.slice(12); // "C:\\fakepath\\flowchart.json"
+    console.log(uploadedFilename);
     const file = event.target.files[0];
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
-    uploadTemplate(fileData);
+    uploadTemplate(fileData, true, false);
 });
-// uploadTemplateButton.addEventListener("click", uploadTemplate);
+templateSelect.addEventListener("change", (event) => chooseFlowchart(event.target.value))
 uploadTemplateButton.addEventListener("click", () => fileInput.click());
 downloadTemplateButton.addEventListener("click", downloadTemplate);
 pushYearButton.addEventListener("click", pushYear);
 popYearButton.addEventListener("click", popYear);
 showTransferButton.addEventListener("click", showTransferSection);
 hideTransferButton.addEventListener("click", hideTransferSection);
-clearFlowchartButton.addEventListener("click", clearFlowchart);
+clearFlowchartButton.addEventListener("click", () => clearFlowchart(true, true));
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
@@ -85,13 +87,26 @@ function makeSortable(element) {
 }
 
 /**
+ * This uploads a flowchart using a preset template.
+ * 
+ * @param {*} template_file - the template filename
+ */
+async function chooseFlowchart(template_file) {
+    if (template_file == null || template_file == "") return;
+    const template  = (await import(`/json/templates/${template_file}`, { with: { type: "json" } })).default;
+    uploadTemplate(template, false, true);
+}
+
+/**
  * This updates and populates the body given the json template flowchart.
  * This adds a Transfer section for transfer classes.
  * It then adds years, each of which has 3 semesters that may or many not contain courses.
  * 
  * @param {*} template - the flowchart with transfer, year, semester, and course information
+ * @param {boolean} resetChoose - whether to reset the "Choose Template"
+ * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function uploadTemplate(template) {
+function uploadTemplate(template, resetChoose, resetUpload) {
     // Check JSON file formatting
     if (template == null || typeof template != "object" || Array.isArray(template) 
         || template.transfer == undefined || template.college == undefined) {
@@ -102,9 +117,9 @@ function uploadTemplate(template) {
     const transferCourses = template.transfer;
     const years = template.college;
 
-    clearFlowchart(); // This removed the current flowchart
-    fillTransferYear(transferCourses); // This handles all transfer classes
-    years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount)); // This handles all other semesters and their classes
+    clearFlowchart(resetChoose, resetUpload);                               // This removed the current flowchart
+    fillTransferYear(transferCourses);                                      // This handles all transfer classes
+    years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));   // This handles all other semesters and their classes
 }
 
 /**
@@ -299,7 +314,15 @@ function downloadTemplate() {
     const jsonString = JSON.stringify(json);
     const jsonBlob = new Blob([jsonString], { type: "application/json" });
     const jsonObjectUrl = URL.createObjectURL(jsonBlob);
-    const jsonFilename = "template.json";
+    const selectValue = templateSelect.value;
+    let jsonFilename;
+    if (selectValue != null && selectValue != "") {
+        jsonFilename = templateSelect.value;
+    } else if (uploadedFilename != null && uploadedFilename != "") {
+        jsonFilename = uploadedFilename;
+    } else {
+        jsonFilename = "template.json";
+    }
     const anchor = document.createElement("a");
     anchor.href = jsonObjectUrl;
     anchor.download = jsonFilename;
@@ -429,8 +452,14 @@ function hideTransferSection() {
 
 /**
  * This removed all courses and sections.
+ * 
+ * @param {boolean} resetChoose - whether to reset the "Choose Template"
+ * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function clearFlowchart() {
+function clearFlowchart(resetChoose, resetUpload) {
+    console.log("clear");
+    if (resetChoose) templateSelect.selectedIndex = 0;  // Resets the "Choose Template" selector to the 1st option.
+    if (resetUpload) uploadedFilename = null;           // Resets the name of the uploaded file
     transferDiv.replaceChildren(); // Removes all transfer courses
     hideTransferSection();
     for (let i = 1; i <= academicYearCount; i++) {

@@ -4,10 +4,12 @@
     margin-right: auto;
 }
 
-.button {
+button, select {
     border: none;
     border-radius: 5px;
     color: white;
+    height: 20px;
+    margin-bottom: 5px;
 }
 
 .year-divider {
