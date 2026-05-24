@@ -3,89 +3,390 @@
   "college": [
     [
       [
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 141, "name": "Computer Science I" },
-        { "set_course": true, "co-op": false, "discipline": "MATH", "number": 181, "name": "Calculus I" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Writing Intensive: First Year" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Artistic Perspective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Global Perspective" },
-        { "set_course": true, "co-op": false, "discipline": "YOPS", "number": 10, "name": "RIT 365" }
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 141,
+          "name": "Computer Science I"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "MATH",
+          "number": 181,
+          "name": "Calculus I"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Writing Intensive: First Year"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Artistic Perspective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Global Perspective"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "YOPS",
+          "number": 10,
+          "name": "RIT 365"
+        }
       ],
       [
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 142, "name": "Computer Science II" },
-        { "set_course": true, "co-op": false, "discipline": "MATH", "number": 182, "name": "Calculus II" },
-        { "set_course": true, "co-op": false, "discipline": "MATH", "number": 190, "name": "Discrete Mathematics for Computing" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Ethical Perspective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Social Perspective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Activity Course" }
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 142,
+          "name": "Computer Science II"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "MATH",
+          "number": 182,
+          "name": "Calculus II"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "MATH",
+          "number": 190,
+          "name": "Discrete Mathematics for Computing"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Ethical Perspective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Social Perspective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Activity Course"
+        }
       ],
       []
     ],
     [
       [
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 243, "name": "Mechanics of Programming" },
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 262, "name": "Intro to Computer Science Theory" },
-        { "set_course": true, "co-op": false, "discipline": "MATH", "number": 251, "name": "Probability and Statistics" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Lab Science: Lecture 1" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Lab Science: Lab 1" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Elective" },
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 99, "name": "Co-op Seminar" }
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 243,
+          "name": "Mechanics of Programming"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 262,
+          "name": "Intro to Computer Science Theory"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "MATH",
+          "number": 251,
+          "name": "Probability and Statistics"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Lab Science: Lecture 1"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Lab Science: Lab 1"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Elective"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 99,
+          "name": "Co-op Seminar"
+        }
       ],
       [
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 261, "name": "Analysis of Algorithms" },
-        { "set_course": true, "co-op": false, "discipline": "SWEN", "number": 261, "name": "Intro to Software Engineering" },
-        { "set_course": true, "co-op": false, "discipline": "MATH", "number": 241, "name": "Linear Algebra" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Lab Science: Lecture 2" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Lab Science: Lab 2" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Science Principle Perspective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Activity Course" }
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 261,
+          "name": "Analysis of Algorithms"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "SWEN",
+          "number": 261,
+          "name": "Intro to Software Engineering"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "MATH",
+          "number": 241,
+          "name": "Linear Algebra"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Lab Science: Lecture 2"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Lab Science: Lab 2"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Science Principle Perspective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Activity Course"
+        }
       ],
       [
-        { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 488, "name": "Summer Co-op" }
+        {
+          "set_course": true,
+          "co-op": true,
+          "discipline": "CSCI",
+          "number": 488,
+          "name": "Summer Co-op"
+        }
       ]
     ],
     [
       [
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 331, "name": "Intro to Artificial Intelligence" },
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 320, "name": "Principles of Data Management" },
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 250, "name": "Concept of Computer Systems" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Immersion" }
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 331,
+          "name": "Intro to Artificial Intelligence"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 320,
+          "name": "Principles of Data Management"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 250,
+          "name": "Concept of Computer Systems"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": ""
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Immersion"
+        }
       ],
       [
-        { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
+        {
+          "set_course": true,
+          "co-op": true,
+          "discipline": "CSCI",
+          "number": 499,
+          "name": "Semester Co-op"
+        }
       ],
       []
     ],
     [
       [
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 251, "name": "Concepts of Parallel and Distributed Systems" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "CS Elective" },
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 344, "name": "Programming Language Concepts" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Immersion" }
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 251,
+          "name": "Concepts of Parallel and Distributed Systems"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "CS Elective"
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 344,
+          "name": "Programming Language Concepts"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": ""
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Immersion"
+        }
       ],
       [
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 664, "name": "Computational Complexity" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "CS Cluster Elective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "CS Cluster Elective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "" },
-        { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 472, "name": "Historical & Current Perspectives in CS" }
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 664,
+          "name": "Computational Complexity"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "CS Cluster Elective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "CS Cluster Elective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": ""
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": ""
+        },
+        {
+          "set_course": true,
+          "co-op": false,
+          "discipline": "CSCI",
+          "number": 472,
+          "name": "Historical & Current Perspectives in CS"
+        }
       ],
       []
     ],
     [
       [
-        { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
+        {
+          "set_course": true,
+          "co-op": true,
+          "discipline": "CSCI",
+          "number": 499,
+          "name": "Semester Co-op"
+        }
       ],
       [
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "CS Cluster Elective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Immersion" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "Gen Ed: Elective" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "" },
-        { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "" }
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "CS Cluster Elective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Immersion"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": "Gen Ed: Elective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": ""
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "",
+          "number": null,
+          "attribute": ""
+        }
       ],
       []
     ]
-  ]
+  ],
+  "notes": []
 }
