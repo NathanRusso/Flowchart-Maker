@@ -233,7 +233,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
@@ -282,7 +282,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
@@ -319,14 +319,14 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": true,
@@ -375,14 +375,14 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         }
       ],
       []

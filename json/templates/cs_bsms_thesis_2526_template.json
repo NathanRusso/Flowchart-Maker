@@ -233,7 +233,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
@@ -282,7 +282,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
@@ -298,28 +298,28 @@
           "co-op": false,
           "discipline": "CSCI",
           "number": 664,
-          "name": "Computational Complexity *"
+          "name": "* ++ Computational Complexity"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Graduate Cluster Elective * ++"
+          "attribute": "* CS Graduate Cluster Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": true,
@@ -347,7 +347,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Graduate Cluster Elective *"
+          "attribute": "* CS Graduate Cluster Elective"
         },
         {
           "set_course": false,
@@ -368,14 +368,14 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         }
       ],
       []

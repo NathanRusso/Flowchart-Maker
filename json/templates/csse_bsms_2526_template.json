@@ -233,7 +233,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
@@ -268,7 +268,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Undergraduate Elective"
+          "attribute": "CS Elective"
         },
         {
           "set_course": true,
@@ -282,7 +282,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": false,
@@ -294,32 +294,32 @@
       ],
       [
         {
-          "set_course": true,
+          "set_course": false,
           "co-op": false,
-          "discipline": "CSCI",
-          "number": 664,
-          "name": "Computational Complexity * ++"
+          "discipline": "",
+          "number": null,
+          "attribute": "CS Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Graduate Cluster Elective *"
+          "attribute": "CS Cluster Elective"
+        },
+        {
+          "set_course": false,
+          "co-op": false,
+          "discipline": "SWEN",
+          "number": 732,
+          "attribute": "* Open Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
-        },
-        {
-          "set_course": false,
-          "co-op": false,
-          "discipline": "",
-          "number": null,
-          "attribute": ""
+          "attribute": "Open Elective"
         },
         {
           "set_course": true,
@@ -347,7 +347,7 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Graduate Cluster Elective *"
+          "attribute": "CS Cluster Elective"
         },
         {
           "set_course": false,
@@ -366,16 +366,16 @@
         {
           "set_course": false,
           "co-op": false,
-          "discipline": "",
-          "number": null,
-          "attribute": ""
+          "discipline": "SWEN",
+          "number": 640,
+          "attribute": "* Open Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": ""
+          "attribute": "* Open Elective / SE Graduate Elective"
         }
       ],
       []
@@ -387,28 +387,28 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Graduate Cluster Elective"
+          "attribute": "SE Graduate Elective"
         },
         {
-          "set_course": false,
+          "set_course": true,
           "co-op": false,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
+          "discipline": "SWEN",
+          "number": 755,
+          "name": "Software Architecture"
         },
         {
-          "set_course": false,
+          "set_course": true,
           "co-op": false,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
+          "discipline": "SWEN",
+          "number": 777,
+          "name": "Software Quality Assurance"
         },
         {
-          "set_course": false,
+          "set_course": true,
           "co-op": false,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
+          "discipline": "SWEN",
+          "number": 783,
+          "name": "SE Masters Project I"
         }
       ],
       [
@@ -417,21 +417,21 @@
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Graduate Elective"
+          "attribute": "SE Graduate Elective"
         },
         {
           "set_course": false,
           "co-op": false,
           "discipline": "",
           "number": null,
-          "attribute": "CS Graduate Elective"
+          "attribute": "SE Graduate Elective"
         },
         {
           "set_course": true,
           "co-op": false,
-          "discipline": "CSCI",
-          "number": 788,
-          "name": "CS Graduate Capstone"
+          "discipline": "SWEN",
+          "number": 783,
+          "name": "SE Masters Project II"
         }
       ],
       []
@@ -441,9 +441,9 @@
     "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
     "<b>Writing Intensive Courses:</b> 3 are required: 1st year = URWT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI-472 Historical & Current Perspectives in Computer Science)",
     "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
-    "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
-    "<b>BS/MS Double-Counted Courses:</b> are noted with an *",
-    "++ <b>Approved alternative courses to the required CSCI-664 are</b>: CSCI-667, CSCI-712, CSCI-716 and CSCI-761.  Check SIS for offerings. ",
-    "<b><u>This flowchart illustrates the MS degree culminating with the Capstone project; contact an academic advisor for details on the thesis option.</u></b>"
+
+    "<b>CS/SE BS/MS Double-Counted Courses:</b> are noted with an *.",
+    "<b><u>Note that if 1, 2 or 3 CSCI graduate (cluster) electives are taken to satisfy SE Graduate Elective requirements, correspondingly 1, 2 or 3 of the double-count courses can be moved from Open Elective and subbed in to satisfy CSCI (cluster) electives</u></b>",
+    "<b>Starting in Fall 2025, the MS in Software Engineering requires a 2-course Project (SWEN-783 and SWEN-784), expected to be taken as a Fall/Spring sequence</b>"
   ]
 }

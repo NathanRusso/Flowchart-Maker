@@ -1,7 +1,7 @@
 //------------------------------ STATIC DATA BELOW ------------------------------//
 
 // I added the "General Education: Immersion", "Lab Science: Lab", "Lab Science: Lecture", etc. attributes
-// I also count No attributes as open electives
+// I also count Open Electives
 
 const years = [
   "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth",
@@ -236,12 +236,12 @@ function createCourse(courseInfo) {
         }
     } else {
         courseDiv.className = "class";
-        const courseDiscipline = courseInfo?.discipline;
-        const courseNumber = courseInfo?.number;
+        const courseDiscipline = courseInfo.discipline;
+        const courseNumber = courseInfo.number;
         const attribute = courseInfo.attribute;
 
         const classLabel = document.createElement("label");
-        classLabel.textContent = attribute != "" && attribute != null ? attribute : "Open Elective";
+        classLabel.textContent = attribute;
         courseDiv.append(classLabel);
 
         const classInput = document.createElement("input");
@@ -282,18 +282,16 @@ function createCourse(courseInfo) {
         courseDiv.append(classInput);
 
         // Set border color
-        if (attribute == "" || attribute == null) {
+        if (attribute.includes("Open Elective")) {
             courseDiv.style.borderColor = "Purple";
-        } else if (attribute.startsWith("Activity Course")) {
+        } else if (attribute.includes("Activity Course")) {
             courseDiv.style.borderColor = "Yellow";
-        } else if (attribute.startsWith("CS")) {
+        } else if (attribute.includes("CS") || attribute.includes("SE")) {
             courseDiv.style.borderColor = "Orange";
-        } else if (attribute.startsWith("Gen")) {
+        } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
             courseDiv.style.borderColor = "Green";
-        } else if (attribute.startsWith("Lab Science")) {
+        } else if (attribute.includes("Lab Science")) {
             courseDiv.style.borderColor = "Red";
-        } else if (attribute.startsWith("Writing Intensive")) {
-            courseDiv.style.borderColor = "Green";
         }
     }
     return courseDiv;
@@ -389,7 +387,7 @@ function processCourse(courseDiv) {
             "co-op": false,
             "discipline": inputs[0],
             "number": parseInt(inputs[1]),
-            "attribute": attribute != "Open Elective" ? attribute : "" 
+            "attribute": attribute
         };
     }
     return course;

@@ -32,5 +32,6 @@
     { "id": 31, "name": "SMTL: Technological Literacy" },
     { "id": 32, "name": "Writing Intensive: First Year" },
     { "id": 33, "name": "Writing Intensive: Gen Ed" },
-    { "id": 34, "name": "Writing Intensive: Program" }
+    { "id": 34, "name": "Writing Intensive: Program" },
+    { "id": 35, "name": "Open Elective" }
 ]
