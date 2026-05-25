@@ -341,8 +341,9 @@ function downloadTemplate() {
 
     // Process notes
     Array.from(finalNotesList.children).forEach(listItem => {
-        notes.push(listItem.innerHTML);
-    })
+        let note = listItem.innerHTML.replace("&amp;", "&");;
+        notes.push(note);
+    });
 
     // Creates and downloads the JSON file
     const json = { "transfer": transfer, "college": college, "notes": notes };
