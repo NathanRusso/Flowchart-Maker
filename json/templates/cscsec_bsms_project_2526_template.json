@@ -353,7 +353,7 @@
           "set_course": false,
           "co-op": false,
           "offeredFall": true,
-          "offeredSpring": true,
+          "offeredSpring": false,
           "discipline": "CSEC",
           "number": 600,
           "attribute": "Open Elective"
@@ -493,7 +493,7 @@
           "set_course": true,
           "co-op": false,
           "offeredFall": true,
-          "offeredSpring": true,
+          "offeredSpring": false,
           "discipline": "CSEC",
           "number": 604,
           "name": "Cryptography and Authentication"
@@ -530,7 +530,7 @@
         {
           "set_course": true,
           "co-op": false,
-          "offeredFall": true,
+          "offeredFall": false,
           "offeredSpring": true,
           "discipline": "CSEC",
           "number": 742,

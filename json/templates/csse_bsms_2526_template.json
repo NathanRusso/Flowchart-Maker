@@ -390,7 +390,7 @@
         {
           "set_course": false,
           "co-op": false,
-          "offeredFall": true,
+          "offeredFall": false,
           "offeredSpring": true,
           "discipline": "SWEN",
           "number": 732,
@@ -460,7 +460,7 @@
         {
           "set_course": false,
           "co-op": false,
-          "offeredFall": true,
+          "offeredFall": false,
           "offeredSpring": true,
           "discipline": "SWEN",
           "number": 640,
@@ -493,7 +493,7 @@
           "set_course": true,
           "co-op": false,
           "offeredFall": true,
-          "offeredSpring": true,
+          "offeredSpring": false,
           "discipline": "SWEN",
           "number": 755,
           "name": "Software Architecture"
@@ -502,7 +502,7 @@
           "set_course": true,
           "co-op": false,
           "offeredFall": true,
-          "offeredSpring": true,
+          "offeredSpring": false,
           "discipline": "SWEN",
           "number": 777,
           "name": "Software Quality Assurance"

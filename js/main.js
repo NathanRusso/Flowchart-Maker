@@ -235,6 +235,12 @@ function createCourse(courseInfo) {
                 courseDiv.style.borderColor = "OrangeRed";
                 break;
         }
+
+        if (courseInfo.offeredSpring == false) {        // Offered in Fall
+            courseDiv.style.borderStyle = "dotted";
+        } else if (courseInfo.offeredFall == false) {   // Offered in Spring
+            courseDiv.style.borderStyle = "dashed";
+        }
     } else {
         courseDiv.className = "class";
         const courseDiscipline = courseInfo.discipline;
@@ -294,6 +300,12 @@ function createCourse(courseInfo) {
         } else if (attribute.includes("Lab Science")) {
             courseDiv.style.borderColor = "Red";
         }
+
+        if (courseInfo.offeredSpring == false) {        // Offered in Fall
+            courseDiv.style.borderStyle = "dotted";
+        } else if (courseInfo.offeredFall == false) {   // Offered in Spring
+            courseDiv.style.borderStyle = "dashed";
+        }
     }
     return courseDiv;
 }
@@ -304,12 +316,15 @@ function createCourse(courseInfo) {
 function downloadTemplate() {
     const transfer = [];
     const college = [];
+    const notes = [];
 
+    // Process transfer classes
     Array.from(transferDiv.children).forEach(courseDiv => {
         const course = processCourse(courseDiv);
         transfer.push(course);
     })
 
+    // Process remaining classes
     for (let i = 1; i <= academicYearCount; i++) {
         const year = [];
         const yearDiv = document.getElementById(`year-block-${i}`);
@@ -324,8 +339,13 @@ function downloadTemplate() {
         college.push(year);
     }
 
-    // Downloads the JSON file
-    const json = { "transfer": transfer, "college": college };
+    // Process notes
+    Array.from(finalNotesList.children).forEach(listItem => {
+        notes.push(listItem.innerHTML);
+    })
+
+    // Creates and downloads the JSON file
+    const json = { "transfer": transfer, "college": college, "notes": notes };
     const jsonString = JSON.stringify(json);
     const jsonBlob = new Blob([jsonString], { type: "application/json" });
     const jsonObjectUrl = URL.createObjectURL(jsonBlob);
@@ -360,12 +380,16 @@ function processCourse(courseDiv) {
 
     const className = courseDiv.className; // "class" or "co-op"
     const classContent = courseDiv.textContent;
+    const classOfferedOnlyFall = courseDiv.style.borderStyle == "dotted";
+    const classOfferedOnlySpring = courseDiv.style.borderStyle == "dashed";
     if (className == "co-op") {
         const classInformation1 = classContent.split(/[\(\)]+/);
         const classInformation2 = classInformation1[1].split(/[\-]+/);
         course = {
             "set_course": true,
             "co-op": true,
+            "offeredFall": null,
+            "offeredSpring": null,
             "discipline": classInformation2[0].trim(),
             "number": parseInt(classInformation2[1].trim()),
             "name": classInformation1[0].trim()
@@ -376,6 +400,8 @@ function processCourse(courseDiv) {
         course = {
             "set_course": true,
             "co-op": false,
+            "offeredFall": !(classOfferedOnlySpring),
+            "offeredSpring": !(classOfferedOnlyFall),
             "discipline": classInformation2[0].trim(),
             "number": parseInt(classInformation2[1].trim()),
             "name": classInformation1[1].trim()
@@ -386,6 +412,8 @@ function processCourse(courseDiv) {
         course = {
             "set_course": false,
             "co-op": false,
+            "offeredFall": !(classOfferedOnlySpring),
+            "offeredSpring": !(classOfferedOnlyFall),
             "discipline": inputs[0],
             "number": parseInt(inputs[1]),
             "attribute": attribute
