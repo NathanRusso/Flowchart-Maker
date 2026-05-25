@@ -548,5 +548,15 @@
       ],
       []
     ]
+  ],
+  "notes": [
+    "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
+    "<b>Writing Intensive Courses:</b> 3 are required: 1st year = URWT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI 472 Historical & Current Perspectives in Computer Science)",
+    "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
+    "<b><u>Please see the Cybersecurity MS Handbook or talk to an academic advisor for a complete list of approved Cybersecurity Graduate Electives</u></b>",
+    "<b>* CS/CSEC BS/MS Double-Counted Courses</b> (however see ** also)",
+    "<b>** If approved CSEC Grad. Adv. Elec. that are Comp. Sci. (CSCI) courses are selected as double-counts, the BS double-count can satisfy CS Elective requirements instead of Open Electives<b>",
+    "<b>CSEC 604 is a required MS course; however, students who have completed the related course CSCI 662 Foundations of Cryptography or undergraduate CSCI 462 Introduction to Cryptography replace CSEC 604 with an additional CSEC Graduate Advanced Elective<b>",
+    "<b><u>This flowchart illustrates the 3-credit MS capstone experience; see the Cybersecurity MS Handbook or talk to an academic advisor for details on the 6-credit thesis option</u></b>"
   ]
 }

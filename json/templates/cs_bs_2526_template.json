@@ -372,7 +372,7 @@
                 {
                     "set_course": true,
                     "co-op": false,
-                    "offeredFall": true,
+                    "offeredFall": false,
                     "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 664,
@@ -487,5 +487,11 @@
             ],
             []
         ]
-    ]
+  ],
+  "notes": [
+    "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
+    "<b>Writing Intensive Courses:</b> 3 are required: 1st year = URWT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI 472 Historical & Current Perspectives in Computer Science)",
+    "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
+    "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical"
+  ]
 }
