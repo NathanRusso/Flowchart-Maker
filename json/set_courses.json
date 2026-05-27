@@ -2,7 +2,7 @@
     {
         "id": 1,
         "credits": 3,
-        "co-op": false,
+        "courseType": "required",
         "discipline": "CSCI",
         "number": 141,
         "name": "Computer Science I",
@@ -16,7 +16,7 @@
     {
         "id": 2,
         "credits": null,
-        "co-op": true,
+        "courseType": "co-op",
         "discipline": "CSCI",
         "number": 488,
         "name": "Summer Co-op",
@@ -30,7 +30,7 @@
     {
         "id": 3,
         "credits": null,
-        "co-op": true,
+        "courseType": "co-op",
         "discipline": "CSCI",
         "number": 499,
         "name": "Semester Co-op",

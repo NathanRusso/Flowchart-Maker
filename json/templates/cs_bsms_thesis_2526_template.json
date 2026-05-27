@@ -4,8 +4,7 @@
     [
       [
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -13,8 +12,7 @@
           "name": "Computer Science I"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "MATH",
@@ -22,8 +20,7 @@
           "name": "Calculus I"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -31,8 +28,7 @@
           "attribute": "Writing Intensive: First Year"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -40,8 +36,7 @@
           "attribute": "Gen Ed: Artistic Perspective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -49,8 +44,7 @@
           "attribute": "Gen Ed: Global Perspective"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "YOPS",
@@ -60,8 +54,7 @@
       ],
       [
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -69,8 +62,7 @@
           "name": "Computer Science II"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "MATH",
@@ -78,8 +70,7 @@
           "name": "Calculus II"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "MATH",
@@ -87,8 +78,7 @@
           "name": "Discrete Mathematics for Computing"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -96,8 +86,7 @@
           "attribute": "Gen Ed: Ethical Perspective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -105,8 +94,7 @@
           "attribute": "Gen Ed: Social Perspective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -119,8 +107,7 @@
     [
       [
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -128,8 +115,7 @@
           "name": "Mechanics of Programming"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -137,8 +123,7 @@
           "name": "Intro to Computer Science Theory"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "MATH",
@@ -146,8 +131,7 @@
           "name": "Probability and Statistics"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -155,8 +139,7 @@
           "attribute": "Lab Science: Lecture 1"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -164,8 +147,7 @@
           "attribute": "Lab Science: Lab 1"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -173,8 +155,7 @@
           "attribute": "Gen Ed: Elective"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -184,8 +165,7 @@
       ],
       [
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -193,8 +173,7 @@
           "name": "Analysis of Algorithms"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "SWEN",
@@ -202,8 +181,7 @@
           "name": "Intro to Software Engineering"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "MATH",
@@ -211,8 +189,7 @@
           "name": "Linear Algebra"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -220,8 +197,7 @@
           "attribute": "Lab Science: Lecture 2"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -229,8 +205,7 @@
           "attribute": "Lab Science: Lab 2"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -238,8 +213,7 @@
           "attribute": "Gen Ed: Science Principle Perspective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -249,8 +223,7 @@
       ],
       [
         {
-          "set_course": true,
-          "co-op": true,
+          "courseType": "co-op",
           "offeredFall": null,
           "offeredSpring": null,
           "discipline": "CSCI",
@@ -262,8 +235,7 @@
     [
       [
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -271,8 +243,7 @@
           "name": "Intro to Artificial Intelligence"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -280,8 +251,7 @@
           "name": "Principles of Data Management"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -289,8 +259,7 @@
           "name": "Concept of Computer Systems"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -298,8 +267,7 @@
           "attribute": "Open Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -309,8 +277,7 @@
       ],
       [
         {
-          "set_course": true,
-          "co-op": true,
+          "courseType": "co-op",
           "offeredFall": null,
           "offeredSpring": null,
           "discipline": "CSCI",
@@ -323,8 +290,7 @@
     [
       [
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -332,8 +298,7 @@
           "name": "Concepts of Parallel and Distributed Systems"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -341,8 +306,7 @@
           "attribute": "CS Undergraduate Elective"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -350,8 +314,7 @@
           "name": "Programming Language Concepts"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -359,8 +322,7 @@
           "attribute": "Open Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -370,8 +332,7 @@
       ],
       [
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": false,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -379,8 +340,7 @@
           "attribute": "* ++ CS Graduate Elective / Required Course"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -388,8 +348,7 @@
           "attribute": "* CS Graduate Cluster Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -397,8 +356,7 @@
           "attribute": "Open Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -406,8 +364,7 @@
           "attribute": "Open Elective"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
@@ -420,8 +377,7 @@
     [
       [
         {
-          "set_course": true,
-          "co-op": true,
+          "courseType": "co-op",
           "offeredFall": null,
           "offeredSpring": null,
           "discipline": "CSCI",
@@ -431,8 +387,7 @@
       ],
       [
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -440,8 +395,7 @@
           "attribute": "* CS Graduate Cluster Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -449,8 +403,7 @@
           "attribute": "Gen Ed: Immersion"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -458,8 +411,7 @@
           "attribute": "Gen Ed: Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -467,8 +419,7 @@
           "attribute": "Open Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -481,8 +432,7 @@
     [
       [
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -490,8 +440,7 @@
           "attribute": "CS Graduate Cluster Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -499,8 +448,7 @@
           "attribute": "CS Graduate Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -508,8 +456,7 @@
           "attribute": "CS Graduate Elective"
         },
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -519,8 +466,7 @@
       ],
       [
         {
-          "set_course": false,
-          "co-op": false,
+          "courseType": "input",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "",
@@ -528,8 +474,7 @@
           "attribute": "CS Graduate Elective"
         },
         {
-          "set_course": true,
-          "co-op": false,
+          "courseType": "required",
           "offeredFall": true,
           "offeredSpring": true,
           "discipline": "CSCI",
