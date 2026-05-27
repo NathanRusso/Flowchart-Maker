@@ -1,505 +1,505 @@
 {
-  "transfer": [],
-  "college": [
-    [
-      [
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 141,
-          "name": "Computer Science I"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "MATH",
-          "number": 181,
-          "name": "Calculus I"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Writing Intensive: First Year"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Artistic Perspective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Global Perspective"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "YOPS",
-          "number": 10,
-          "name": "RIT 365"
-        }
-      ],
-      [
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 142,
-          "name": "Computer Science II"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "MATH",
-          "number": 182,
-          "name": "Calculus II"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "MATH",
-          "number": 190,
-          "name": "Discrete Mathematics for Computing"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Ethical Perspective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Social Perspective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Activity Course"
-        }
-      ],
-      []
+    "transfer": [],
+    "college": [
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 141,
+                    "name": "Computer Science I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 181,
+                    "name": "Calculus I"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Writing Intensive: First Year"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Artistic Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Global Perspective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "YOPS",
+                    "number": 10,
+                    "name": "RIT 365"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 142,
+                    "name": "Computer Science II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 182,
+                    "name": "Calculus II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 190,
+                    "name": "Discrete Mathematics for Computing"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Ethical Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Social Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 243,
+                    "name": "Mechanics of Programming"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 262,
+                    "name": "Intro to Computer Science Theory"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 251,
+                    "name": "Probability and Statistics"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lecture 1"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lab 1"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Elective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 99,
+                    "name": "Co-op Seminar"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 261,
+                    "name": "Analysis of Algorithms"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 261,
+                    "name": "Intro to Software Engineering"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 241,
+                    "name": "Linear Algebra"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lecture 2"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lab 2"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Science Principle Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "CSCI",
+                    "number": 488,
+                    "name": "Summer Co-op"
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 331,
+                    "name": "Intro to Artificial Intelligence"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 320,
+                    "name": "Principles of Data Management"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 250,
+                    "name": "Concept of Computer Systems"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "CSCI",
+                    "number": 499,
+                    "name": "Semester Co-op"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 251,
+                    "name": "Concepts of Parallel and Distributed Systems"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Undergraduate Elective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 344,
+                    "name": "Programming Language Concepts"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                }
+            ],
+            [
+                {
+                    "courseType": "input",
+                    "offeredFall": false,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 664,
+                    "attribute": "* ++ CS Graduate Elective / Required Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "* CS Graduate Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 472,
+                    "name": "Historical & Current Perspectives in CS"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "CSCI",
+                    "number": 499,
+                    "name": "Semester Co-op"
+                }
+            ],
+            [
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "* CS Graduate Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 788,
+                    "name": "CS Graduate Capstone"
+                }
+            ],
+            []
+        ]
     ],
-    [
-      [
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 243,
-          "name": "Mechanics of Programming"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 262,
-          "name": "Intro to Computer Science Theory"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "MATH",
-          "number": 251,
-          "name": "Probability and Statistics"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Lab Science: Lecture 1"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Lab Science: Lab 1"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Elective"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 99,
-          "name": "Co-op Seminar"
-        }
-      ],
-      [
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 261,
-          "name": "Analysis of Algorithms"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "SWEN",
-          "number": 261,
-          "name": "Intro to Software Engineering"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "MATH",
-          "number": 241,
-          "name": "Linear Algebra"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Lab Science: Lecture 2"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Lab Science: Lab 2"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Science Principle Perspective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Activity Course"
-        }
-      ],
-      [
-        {
-          "courseType": "co-op",
-          "offeredFall": null,
-          "offeredSpring": null,
-          "discipline": "CSCI",
-          "number": 488,
-          "name": "Summer Co-op"
-        }
-      ]
-    ],
-    [
-      [
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 331,
-          "name": "Intro to Artificial Intelligence"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 320,
-          "name": "Principles of Data Management"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 250,
-          "name": "Concept of Computer Systems"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Open Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Immersion"
-        }
-      ],
-      [
-        {
-          "courseType": "co-op",
-          "offeredFall": null,
-          "offeredSpring": null,
-          "discipline": "CSCI",
-          "number": 499,
-          "name": "Semester Co-op"
-        }
-      ],
-      []
-    ],
-    [
-      [
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 251,
-          "name": "Concepts of Parallel and Distributed Systems"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Undergraduate Elective"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 344,
-          "name": "Programming Language Concepts"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Open Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Immersion"
-        }
-      ],
-      [
-        {
-          "courseType": "input",
-          "offeredFall": false,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 664,
-          "attribute": "* ++ CS Graduate Elective / Required Course"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "* CS Graduate Cluster Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Open Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Open Elective"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 472,
-          "name": "Historical & Current Perspectives in CS"
-        }
-      ],
-      []
-    ],
-    [
-      [
-        {
-          "courseType": "co-op",
-          "offeredFall": null,
-          "offeredSpring": null,
-          "discipline": "CSCI",
-          "number": 499,
-          "name": "Semester Co-op"
-        }
-      ],
-      [
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "* CS Graduate Cluster Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Immersion"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Gen Ed: Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Open Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "Open Elective"
-        }
-      ],
-      []
-    ],
-    [
-      [
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Cluster Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
-        }
-      ],
-      [
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
-        },
-        {
-          "courseType": "input",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "",
-          "number": null,
-          "attribute": "CS Graduate Elective"
-        },
-        {
-          "courseType": "required",
-          "offeredFall": true,
-          "offeredSpring": true,
-          "discipline": "CSCI",
-          "number": 788,
-          "name": "CS Graduate Capstone"
-        }
-      ],
-      []
+    "notes": [
+        "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
+        "<b>Writing Intensive Courses:</b> 3 are required: 1st year = URWT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI-472 Historical & Current Perspectives in Computer Science)",
+        "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
+        "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
+        "<b>BS/MS Double-Counted Courses:</b> are noted with an *",
+        "++ <b>Approved alternative courses to the required CSCI-664 are</b>: CSCI-667, CSCI-712, CSCI-716 and CSCI-761. Check SIS for offerings",
+        "<b><u>This flowchart illustrates the MS degree culminating with the Capstone project; contact an academic advisor for details on the thesis option</u></b>"
     ]
-  ],
-  "notes": [
-    "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
-    "<b>Writing Intensive Courses:</b> 3 are required: 1st year = URWT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI-472 Historical & Current Perspectives in Computer Science)",
-    "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
-    "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
-    "<b>BS/MS Double-Counted Courses:</b> are noted with an *",
-    "++ <b>Approved alternative courses to the required CSCI-664 are</b>: CSCI-667, CSCI-712, CSCI-716 and CSCI-761. Check SIS for offerings",
-    "<b><u>This flowchart illustrates the MS degree culminating with the Capstone project; contact an academic advisor for details on the thesis option</u></b>"
-  ]
 }

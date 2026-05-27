@@ -173,12 +173,23 @@
                     "name": "Network Services"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 241,
-                    "attribute": "Math Elective"
+                    "options": [
+                        {
+                            "discipline": "MATH",
+                            "number": 241,
+                            "name": "Linear Algebra"
+                        },
+                        {
+                            "discipline": "STAT",
+                            "number": 257,
+                            "name": "Statistical Inference"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",
@@ -339,12 +350,28 @@
                     "attribute": "CSEC Advanced Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "PHIL",
                     "number": 102,
-                    "attribute": "Gen Ed: Elective"
+                    "options": [
+                        {
+                            "discipline": "PHIL",
+                            "number": 102,
+                            "name": "Introduction to Moral Issues"
+                        },
+                        {
+                            "discipline": "PHIL",
+                            "number": 102,
+                            "name": "Foundations of Moral Philosophy"
+                        },
+                        {
+                            "discipline": "PHIL",
+                            "number": 102,
+                            "name": "Professional Ethics"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",

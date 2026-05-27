@@ -1,5 +1,6 @@
 //------------------------------ STATIC DATA BELOW ------------------------------//
 
+// The 4 course types are "co-op", "required", "option", and "input"
 // I added the "General Education: Immersion", "Lab Science: Lab", "Lab Science: Lecture", etc. attributes
 // I also count Open Electives
 
@@ -215,13 +216,17 @@ function createSemester(semesterInfo, term) {
  */
 function createCourse(courseInfo) {
     const courseDiv = document.createElement("div");
-    // courseDiv.id = `c10`
-    if (courseInfo["co-op"]) {
+    const courseType = courseInfo.courseType;
+    courseDiv.dataset.courseType = courseType;
+
+    if (courseType == "co-op") {
         courseDiv.className = "co-op";
-        courseDiv.textContent = `${courseInfo.name} (${courseInfo.discipline}-${courseInfo.number})`
-    } else if (courseInfo.set_course) {
+        courseDiv.textContent = `${courseInfo.name} (${courseInfo.discipline}-${courseInfo.number})`;
+    } else if (courseType == "required") {
         courseDiv.className = "class";
         courseDiv.textContent = `${courseInfo.discipline}-${courseInfo.number}\n\n${courseInfo.name}`
+
+        // Set border color
         switch (courseInfo.discipline) {
             case "CSCI":
             case "CSEC":
@@ -234,26 +239,112 @@ function createCourse(courseInfo) {
             case "MATH":
                 courseDiv.style.borderColor = "Blue";
                 break;
+            case "STAT":
+                courseDiv.style.borderColor = "DodgerBlue";
+                break;
+            case "PHIL":
+                courseDiv.style.borderColor = "HotPink";
+                break;
+            case "PUBL":
+                courseDiv.style.borderColor = "Brown";
+                break;
+            case "YOPS":
+                courseDiv.style.borderColor = "OrangeRed";
+                break;
+        }
+    } else if (courseType == "option") {
+        courseDiv.className = "class";
+        const selectedOption = `${courseInfo.discipline}-${courseInfo.number}`;
+
+        // Creates a label to change based on the selector
+        const classLabel = document.createElement("label");
+
+        // Creates the class selector and adds options
+        const classSelect = document.createElement("select");
+        const classOptions = courseInfo.options;
+
+        classLabel.textContent = classOptions[0].name;
+        classOptions.forEach(optionInfo => {
+            const classOption = document.createElement("option");
+            const classTextContent = `${optionInfo.discipline}-${optionInfo.number}`;
+            classOption.textContent = classTextContent;
+            if (selectedOption == classTextContent) {
+                classLabel.textContent = classOptions[0].name;
+            }
+            classOption.value = optionInfo.name;
+            classSelect.append(classOption);
+        });
+        classSelect.addEventListener("change", (event) => {
+            classLabel.textContent = event.target.value;
+            const courseDiscipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
+            console.log(courseDiscipline);
+            switch (courseDiscipline) {
+                case "CSCI":
+                case "CSEC":
+                case "GCIS":
+                case "ISTE":
+                case "NSSA":
+                case "SWEN":
+                    courseDiv.style.borderColor = "Orange";
+                    break;
+                case "MATH":
+                    courseDiv.style.borderColor = "Blue";
+                    break;
+                case "STAT":
+                    courseDiv.style.borderColor = "DodgerBlue";
+                    break;
+                case "PHIL":
+                    courseDiv.style.borderColor = "HotPink";
+                    break;
+                case "PUBL":
+                    courseDiv.style.borderColor = "Brown";
+                    break;
+                case "YOPS":
+                    courseDiv.style.borderColor = "OrangeRed";
+                    break;
+            }
+        });
+
+        switch (courseInfo.discipline) {
+            case "CSCI":
+            case "CSEC":
+            case "GCIS":
+            case "ISTE":
+            case "NSSA":
+            case "SWEN":
+                courseDiv.style.borderColor = "Orange";
+                break;
+            case "MATH":
+                courseDiv.style.borderColor = "Blue";
+                break;         
+            case "STAT":
+                courseDiv.style.borderColor = "DodgerBlue";
+                break;
+            case "PHIL":
+                courseDiv.style.borderColor = "HotPink";
+                break;
+            case "PUBL":
+                courseDiv.style.borderColor = "Brown";
+                break;
             case "YOPS":
                 courseDiv.style.borderColor = "OrangeRed";
                 break;
         }
 
-        if (courseInfo.offeredSpring == false) {        // Offered in Fall
-            courseDiv.style.borderStyle = "dotted";
-        } else if (courseInfo.offeredFall == false) {   // Offered in Spring
-            courseDiv.style.borderStyle = "dashed";
-        }
-    } else {
+        // Adds the select and label to the course div
+        courseDiv.append(classSelect);
+        courseDiv.append(classLabel);
+    } else if (courseType == "input") {
         courseDiv.className = "class";
         const courseDiscipline = courseInfo.discipline;
         const courseNumber = courseInfo.number;
         const attribute = courseInfo.attribute;
 
+        // Creates the label for the input
         const classLabel = document.createElement("label");
         classLabel.textContent = attribute;
-        courseDiv.append(classLabel);
 
+        // Creates the class input
         const classInput = document.createElement("input");
 
         // Applies restrictions to the input
@@ -289,7 +380,6 @@ function createCourse(courseInfo) {
         // Checks current class
         const savedCourse = `${courseDiscipline}-${courseNumber}`;
         if (classRegex.test(savedCourse)) classInput.value = savedCourse;
-        courseDiv.append(classInput);
 
         // Set border color
         if (attribute.includes("Open Elective")) {
@@ -304,16 +394,22 @@ function createCourse(courseInfo) {
             courseDiv.style.borderColor = "Green";
         } else if (attribute.includes("Lab Science")) {
             courseDiv.style.borderColor = "Red";
-        } else if (attribute.includes("Math")) {
-            courseDiv.style.borderColor = "Blue";
         }
 
-        if (courseInfo.offeredSpring == false) {        // Offered in Fall
-            courseDiv.style.borderStyle = "dotted";
-        } else if (courseInfo.offeredFall == false) {   // Offered in Spring
-            courseDiv.style.borderStyle = "dashed";
-        }
+        // Adds the label and input to the course div
+        courseDiv.append(classLabel);
+        courseDiv.append(classInput);
+    } else {
+        console.log("A course was found with an unknown type.");
     }
+
+    // Checks availability
+    if (courseInfo.offeredSpring == false) {        // Offered in Fall
+        courseDiv.style.borderStyle = "dotted";
+    } else if (courseInfo.offeredFall == false) {   // Offered in Spring
+        courseDiv.style.borderStyle = "dashed";
+    }
+    
     return courseDiv;
 }
 
@@ -386,47 +482,74 @@ function processCourse(courseDiv) {
     // { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 344, "name": "Programming Language Concepts" },
     // { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
 
-    const className = courseDiv.className; // "class" or "co-op"
+    const courseType = courseDiv.dataset.courseType; // "co-op", "required", "option", "input"
     const classContent = courseDiv.textContent;
     const classOfferedOnlyFall = courseDiv.style.borderStyle == "dotted";
     const classOfferedOnlySpring = courseDiv.style.borderStyle == "dashed";
-    if (className == "co-op") {
+
+    if (courseType == "co-op") {
         const classInformation1 = classContent.split(/[\(\)]+/);
         const classInformation2 = classInformation1[1].split(/[\-]+/);
         course = {
-            "set_course": true,
-            "co-op": true,
+            "courseType": "co-op",
             "offeredFall": null,
             "offeredSpring": null,
             "discipline": classInformation2[0].trim(),
             "number": parseInt(classInformation2[1].trim()),
             "name": classInformation1[0].trim()
         };
-    } else if (classContent.includes("-")) {
+    } else if (courseType == "required") {
         const classInformation1 = classContent.split(/[\n]+/);
         const classInformation2 = classInformation1[0].split(/[\-]+/);
         course = {
-            "set_course": true,
-            "co-op": false,
+            "courseType": "required",
             "offeredFall": !(classOfferedOnlySpring),
             "offeredSpring": !(classOfferedOnlyFall),
             "discipline": classInformation2[0].trim(),
             "number": parseInt(classInformation2[1].trim()),
             "name": classInformation1[1].trim()
         };
-    } else {
+    } else if (courseType == "option") {
+        const select = courseDiv.children[0];                       // Select
+        const options = select.options;                             // Options
+        const label = courseDiv.children[1];                        // Label
+
+        const selectedOption = options[select.selectedIndex];
+        const info = selectedOption.textContent.split(/[\-]+/);
+
+        const createdOptions = [];
+        Array.from(options).forEach(option => {
+            const optionInfo = option.textContent.split(/[\-]+/);
+            createdOptions.push({
+                "discipline": optionInfo[0],
+                "number": parseInt(optionInfo[1]),
+                "name": option.value
+            });
+        });
+
+        course = {
+            "courseType": "option",
+            "offeredFall": !(classOfferedOnlySpring),
+            "offeredSpring": !(classOfferedOnlyFall),
+            "discipline": info[0],
+            "number": parseInt(info[1]),
+            "options": createdOptions
+        };
+    } else if (courseType == "input") {
         const attribute = courseDiv.children[0].textContent;        // Label
         const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
         course = {
-            "set_course": false,
-            "co-op": false,
+            "courseType": "input",
             "offeredFall": !(classOfferedOnlySpring),
             "offeredSpring": !(classOfferedOnlyFall),
             "discipline": inputs[0],
             "number": parseInt(inputs[1]),
             "attribute": attribute
         };
+    } else {
+        console.log("A course was found with an unknown type.");
     }
+
     return course;
 }
 

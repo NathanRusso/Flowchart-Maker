@@ -87,15 +87,28 @@ button, select {
 .class label {
     font-family: inherit;
     font-size: inherit;
+    font-weight: inherit;
 }
 
 .class input {
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid Black;
     text-align: center;
     font-family: inherit;
     font-size: inherit;
+    font-weight: inherit;
     width: 80%;
+}
+
+.class select {
+    border: 1px solid Black;
+    border: none;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    width: 90%;
+    color: Black;
 }
 
 .co-op {

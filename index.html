@@ -10,14 +10,14 @@
     <h1 class="center"> Computer Science 2025-2026 Flowchart</h1>
     <input id="fileInput" type="file" accept=".json, application/json" style="display: none;" />
     <select id="templateSelect" style="background-color: DarkRed;">
-        <option class="template-option" value="">Choose Template</option>
-        <option class="template-option" value="cs_bs_2526_template.json">CS BS</option>
-        <option class="template-option" value="csec_bs_2526_template.json">CSEC BS</option>
-        <option class="template-option" value="cs_bsms_project_2526_template.json">CS BS/MS Project</option>
-        <option class="template-option" value="cs_bsms_thesis_2526_template.json">CS BS/MS Thesis</option>
-        <option class="template-option" value="cscsec_bsms_project_2526_template.json">CS/CSEC BS/MS Project</option>
-        <option class="template-option" value="cscsec_bsms_thesis_2526_template.json">CS/CSEC BS/MS Thesis</option>
-        <option class="template-option" value="csse_bsms_2526_template.json">CS/SE BS/MS</option>
+        <option value="">Choose Template</option>
+        <option value="cs_bs_2526_template.json">CS BS</option>
+        <option value="csec_bs_2526_template.json">CSEC BS</option>
+        <option value="cs_bsms_project_2526_template.json">CS BS/MS Project</option>
+        <option value="cs_bsms_thesis_2526_template.json">CS BS/MS Thesis</option>
+        <option value="cscsec_bsms_project_2526_template.json">CS/CSEC BS/MS Project</option>
+        <option value="cscsec_bsms_thesis_2526_template.json">CS/CSEC BS/MS Thesis</option>
+        <option value="csse_bsms_2526_template.json">CS/SE BS/MS</option>
     </select>
     <button id="uploadTemplateButton" type="button" style="background-color: Crimson;">Upload Flowchart &uarr;</button>
     <button id="downloadTemplateButton" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
@@ -37,7 +37,7 @@
         <div id="year-divider-0" class="year-divider" style="display: none;"></div>
     </div>
 
-    <!--<div id="year-1" class="year">
+    <!-- <div id="year-1" class="year">
         <div id="year-text-1" class="year-text"> First Year </div>
         <div id="year-block-1" class="year-block">
             <div id="fall-1" class="semester">
@@ -46,7 +46,14 @@
                     <input type="text" pattern="[A-Z]{4}-[0-9]{1, 3}" placeholder="ABCD-123" minlength="6" maxlength="8"/>
                  </div>
                 <div id="c2" class="class" style="border-color: blue;"> <span> Class 2</span>  </div>
-                <div id="c3" class="class" style="border-color: green;"> Class 3 </div>
+                <div id="c3" class="class" style="border-color: green;">
+                    <input id="fileInput" type="file" accept=".json, application/json" style="display: none;" />
+                    <select>
+                        <option value="cs_bs_2526_template.json">CSCI-101</option>
+                        <option value="csec_bs_2526_template.json">CSEC-101</option>
+                    </select>
+                    <label">First name</label>
+                </div>
                 <div id="c4" class="class" style="border-color: green;"> Class 4 </div>
                 <div id="c5" class="class" style="border-color: green;"> Class 5 </div>
                 <div id="c6" class="class" style="border-color: red;"> Class 6 </div>
