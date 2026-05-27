@@ -227,31 +227,7 @@ function createCourse(courseInfo) {
         courseDiv.textContent = `${courseInfo.discipline}-${courseInfo.number}\n\n${courseInfo.name}`
 
         // Set border color
-        switch (courseInfo.discipline) {
-            case "CSCI":
-            case "CSEC":
-            case "GCIS":
-            case "ISTE":
-            case "NSSA":
-            case "SWEN":
-                courseDiv.style.borderColor = "Orange";
-                break;
-            case "MATH":
-                courseDiv.style.borderColor = "Blue";
-                break;
-            case "STAT":
-                courseDiv.style.borderColor = "DodgerBlue";
-                break;
-            case "PHIL":
-                courseDiv.style.borderColor = "HotPink";
-                break;
-            case "PUBL":
-                courseDiv.style.borderColor = "Brown";
-                break;
-            case "YOPS":
-                courseDiv.style.borderColor = "OrangeRed";
-                break;
-        }
+        courseDiv.style.borderColor = getDisciplineColor(courseInfo.discipline);
     } else if (courseType == "option") {
         courseDiv.className = "class";
         const selectedOption = `${courseInfo.discipline}-${courseInfo.number}`;
@@ -277,59 +253,11 @@ function createCourse(courseInfo) {
         classSelect.addEventListener("change", (event) => {
             classLabel.textContent = event.target.value;
             const courseDiscipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
-            console.log(courseDiscipline);
-            switch (courseDiscipline) {
-                case "CSCI":
-                case "CSEC":
-                case "GCIS":
-                case "ISTE":
-                case "NSSA":
-                case "SWEN":
-                    courseDiv.style.borderColor = "Orange";
-                    break;
-                case "MATH":
-                    courseDiv.style.borderColor = "Blue";
-                    break;
-                case "STAT":
-                    courseDiv.style.borderColor = "DodgerBlue";
-                    break;
-                case "PHIL":
-                    courseDiv.style.borderColor = "HotPink";
-                    break;
-                case "PUBL":
-                    courseDiv.style.borderColor = "Brown";
-                    break;
-                case "YOPS":
-                    courseDiv.style.borderColor = "OrangeRed";
-                    break;
-            }
+            courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
         });
 
-        switch (courseInfo.discipline) {
-            case "CSCI":
-            case "CSEC":
-            case "GCIS":
-            case "ISTE":
-            case "NSSA":
-            case "SWEN":
-                courseDiv.style.borderColor = "Orange";
-                break;
-            case "MATH":
-                courseDiv.style.borderColor = "Blue";
-                break;         
-            case "STAT":
-                courseDiv.style.borderColor = "DodgerBlue";
-                break;
-            case "PHIL":
-                courseDiv.style.borderColor = "HotPink";
-                break;
-            case "PUBL":
-                courseDiv.style.borderColor = "Brown";
-                break;
-            case "YOPS":
-                courseDiv.style.borderColor = "OrangeRed";
-                break;
-        }
+        // Set border color
+        courseDiv.style.borderColor = getDisciplineColor(courseInfo.discipline);
 
         // Adds the select and label to the course div
         courseDiv.append(classSelect);
@@ -640,4 +568,36 @@ function clearFlowchart(resetChoose, resetUpload) {
     }
     finalNotesList.textContent = "";                    // Gets rid of the final notes
     academicYearCount = 0; // Resets the year count
+}
+
+/**
+ * Gets the class border color based on its discipline.
+ * 
+ * @param {*} discipline - the string discipline
+ * @returns the string HTML color
+ */
+function getDisciplineColor(discipline) {
+    switch (discipline) {
+        case "CSCI":
+        case "CSEC":
+        case "GCIS":
+        case "ISTE":
+        case "NSSA":
+        case "SWEN":
+            return "Orange";
+        case "COMM":
+            return "Violet"
+        case "MATH":
+            return "Blue";
+        case "STAT":
+            return "DodgerBlue";
+        case "PHIL":
+            return "HotPink";
+        case "PUBL":
+            return "Brown";
+        case "YOPS":
+            return "OrangeRed";
+        default:
+            return "Black";
+    }
 }
