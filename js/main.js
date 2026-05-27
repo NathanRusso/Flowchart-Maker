@@ -223,8 +223,11 @@ function createCourse(courseInfo) {
         courseDiv.className = "class";
         courseDiv.textContent = `${courseInfo.discipline}-${courseInfo.number}\n\n${courseInfo.name}`
         switch (courseInfo.discipline) {
-            case "CSEC":
             case "CSCI":
+            case "CSEC":
+            case "GCIS":
+            case "ISTE":
+            case "NSSA":
             case "SWEN":
                 courseDiv.style.borderColor = "Orange";
                 break;
@@ -293,12 +296,16 @@ function createCourse(courseInfo) {
             courseDiv.style.borderColor = "Purple";
         } else if (attribute.includes("Activity Course")) {
             courseDiv.style.borderColor = "Yellow";
-        } else if (attribute.includes("CS") || attribute.includes("SE") || attribute.includes("CSEC")) {
+        } else if (attribute.includes("CS") || attribute.includes("CSCI") || attribute.includes("CSEC") 
+                || attribute.includes("GCIS") || attribute.includes("ISTE") || attribute.includes("NSSA") 
+                || attribute.includes("SE") || attribute.includes("SWEN")) {
             courseDiv.style.borderColor = "Orange";
         } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
             courseDiv.style.borderColor = "Green";
         } else if (attribute.includes("Lab Science")) {
             courseDiv.style.borderColor = "Red";
+        } else if (attribute.includes("Math")) {
+            courseDiv.style.borderColor = "Blue";
         }
 
         if (courseInfo.offeredSpring == false) {        // Offered in Fall

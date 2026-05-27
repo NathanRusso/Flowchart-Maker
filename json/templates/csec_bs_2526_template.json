@@ -1,0 +1,475 @@
+{
+    "transfer": [],
+    "college": [
+        [
+            [
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 140,
+                    "name": "Introduction to Cybersecurity"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 123,
+                    "name": "Software Development and Problem Solving I"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 181,
+                    "name": "Calculus I"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Global Perspective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Ethical Perspective"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "YOPS",
+                    "number": 10,
+                    "name": "RIT 365"
+                }
+            ],
+            [
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 124,
+                    "name": "Software Development and Problem Solving II"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "NSSA",
+                    "number": 241,
+                    "name": "Introduction to Routing and Switching"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 182,
+                    "name": "Calculus II"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 190,
+                    "name": "Discrete Mathematics for Computing"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Writing Intensive: First Year"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 201,
+                    "name": "Programming for Information Security"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "NSSA",
+                    "number": 241,
+                    "name": "Systems Administration I"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 251,
+                    "name": "Probability and Statistics"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lecture 1"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lab 1"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Social Perspective"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 99,
+                    "name": "Co-op Seminar"
+                }
+            ],
+            [
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 202,
+                    "name": "Reverse Engineering Fundamentals"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "NSSA",
+                    "number": 245,
+                    "name": "Network Services"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 241,
+                    "attribute": "Math Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lecture 2"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Lab Science: Lab 2"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Artistic Perspective"
+                }
+            ],
+            [
+                {
+                    "set_course": true,
+                    "co-op": true,
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "CSEC",
+                    "number": 499,
+                    "name": "Summer Co-op"
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 310,
+                    "name": "Endpoint Security Engineering"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 462,
+                    "name": "Introduction to Cryptography"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 230,
+                    "name": "Introduction to Database and Data Modeling"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PUBL",
+                    "number": 363,
+                    "name": "Cyber Security Policy and Law"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            [
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 472,
+                    "name": "Authentication and Security Models"
+                },
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 380,
+                    "name": "Principles of Web Application Security"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Advanced Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            [
+                {
+                    "set_course": true,
+                    "co-op": true,
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "CSEC",
+                    "number": 499,
+                    "name": "Summer Co-op"
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Advanced Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Advanced Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PHIL",
+                    "number": 102,
+                    "attribute": "Gen Ed: Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            [
+                {
+                    "set_course": true,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 490,
+                    "name": "Capstone in Cybersecurity"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Advanced Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Advanced Elective"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "set_course": false,
+                    "co-op": false,
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            []
+        ]
+    ],
+    "notes": [
+        "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
+        "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CSEC handbook",
+        "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
+        "<b>Please Note:</b> 3/6 CSEC Advanced Electives must be within a cluster",
+        "<b>Please Note:</b> MATH-241 Linear Algebra can be replaced with MATH-257 Statistical Inference",
+        "<b>Please Note:</b> PHIL-102 Introduction to Moral Issues can be replaced with PHIL-202 Foundations of Moral Philosophy or PHIL-306 Professional Ethics if desired"
+    ]
+}
