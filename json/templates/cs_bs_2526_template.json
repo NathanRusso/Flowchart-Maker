@@ -131,20 +131,64 @@
                     "name": "Probability and Statistics"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Lab Science: Lecture 1"
+                    "discipline": "BIOG",
+                    "number": 101,
+                    "attribute": "Lab Science: Lecture 1",
+                    "options": [
+                        {
+                            "discipline": "BIOG",
+                            "number": 101,
+                            "name": "Explorations in Cellular Biology and Evolution"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 101,
+                            "name": "General Biology I"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 141,
+                            "name": "General & Analytical Chemistry I"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 211,
+                            "name": "University Physics I"
+                        }
+                    ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Lab Science: Lab 1"
+                    "discipline": "BIOG",
+                    "number": 103,
+                    "attribute": "Lab Science: Lab 1",
+                    "options": [
+                        {
+                            "discipline": "BIOG",
+                            "number": 103,
+                            "name": "Explorations in Cell Biology & Evolution Lab"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 103,
+                            "name": "General Biology I Lab"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 145,
+                            "name": "General & Analytical Chemistry I Lab"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 211,
+                            "name": "University Physics I"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",
@@ -181,28 +225,64 @@
                     "name": "Intro to Software Engineering"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 241,
-                    "name": "Linear Algebra"
+                    "discipline": "BIOG",
+                    "number": 102,
+                    "attribute": "Lab Science: Lecture 2",
+                    "options": [
+                        {
+                            "discipline": "BIOG",
+                            "number": 102,
+                            "name": "Explorations in Animal and Plant Anatomy and Physiology"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 102,
+                            "name": "General Biology II"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 142,
+                            "name": "General & Analytical Chemistry II"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 212,
+                            "name": "University Physics II"
+                        }
+                    ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Lab Science: Lecture 2"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Lab Science: Lab 2"
+                    "discipline": "BIOG",
+                    "number": 104,
+                    "attribute": "Lab Science: Lab 2",
+                    "options": [
+                        {
+                            "discipline": "BIOG",
+                            "number": 104,
+                            "name": "Explorations in Animal and Plant Anatomy and Physiology Lab"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 104,
+                            "name": "General Biology II Lab"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 146,
+                            "name": "General & Analytical Chemistry II Lab"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 212,
+                            "name": "University Physics II"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",
