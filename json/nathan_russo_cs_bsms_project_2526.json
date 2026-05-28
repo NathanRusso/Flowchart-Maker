@@ -119,20 +119,54 @@
                     "name": "Probability and Statistics"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CHMG",
                     "number": 141,
-                    "attribute": "Lab Science: Lecture 1"
+                    "attribute": "Lab Science: Lecture 1",
+                    "options": [
+                        {
+                            "discipline": "BIOL",
+                            "number": 101,
+                            "name": "General Biology I"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 141,
+                            "name": "General & Analytical Chemistry I"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 211,
+                            "name": "University Physics I"
+                        }
+                    ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CHMG",
                     "number": 145,
-                    "attribute": "Lab Science: Lab 1"
+                    "attribute": "Lab Science: Lab 1",
+                    "options": [
+                        {
+                            "discipline": "BIOL",
+                            "number": 103,
+                            "name": "General Biology I Lab"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 145,
+                            "name": "General & Analytical Chemistry I Lab"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 211,
+                            "name": "University Physics I"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",
@@ -197,20 +231,54 @@
                     "name": "Linear Algebra"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CHMG",
                     "number": 142,
-                    "attribute": "Lab Science: Lecture 2"
+                    "attribute": "Lab Science: Lecture 2",
+                    "options": [
+                        {
+                            "discipline": "BIOL",
+                            "number": 102,
+                            "name": "General Biology II"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 142,
+                            "name": "General & Analytical Chemistry II"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 212,
+                            "name": "University Physics II"
+                        }
+                    ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CHMG",
                     "number": 146,
-                    "attribute": "Lab Science: Lab 2"
+                    "attribute": "Lab Science: Lab 2",
+                    "options": [
+                        {
+                            "discipline": "BIOL",
+                            "number": 104,
+                            "name": "General Biology II Lab"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 146,
+                            "name": "General & Analytical Chemistry II Lab"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 212,
+                            "name": "University Physics II"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",
