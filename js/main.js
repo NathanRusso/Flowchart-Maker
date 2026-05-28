@@ -27,6 +27,7 @@ let uploadedFilename = null;    // The filename of the uploaded file.
 const body = document.body;
 const classRegex = /^[A-Z]{4}-[0-9]{1,3}$/;
 
+const pageTitle = document.getElementById("pageTitle");
 const fileInput = document.getElementById("fileInput");
 const templateSelect = document.getElementById("templateSelect");
 const uploadTemplateButton = document.getElementById("uploadTemplateButton");
@@ -47,15 +48,8 @@ const finalNotesList = document.getElementById("finalNotesList");
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
-fileInput.addEventListener("change", async (event) => {
-    const file = event.target.files[0];
-    uploadedFilename = file.name;
-    const fileText = await file.text();
-    const fileData = JSON.parse(fileText);
-    uploadTemplate(fileData, true, false);
-    fileInput.value = ""; // Makes sure the same file can be uploaded in a row
-});
-templateSelect.addEventListener("change", (event) => chooseFlowchart(event.target.value))
+templateSelect.addEventListener("change", (event) => getTemplateFlowchart(event.target.value));
+fileInput.addEventListener("change", (event) => processUploadedFile(event.target.files[0]));
 uploadTemplateButton.addEventListener("click", () => fileInput.click());
 downloadTemplateButton.addEventListener("click", downloadTemplate);
 pushYearButton.addEventListener("click", pushYear);
@@ -93,12 +87,25 @@ function makeSortable(element) {
 /**
  * This uploads a flowchart using a preset template.
  * 
- * @param {*} template_file - the template filename
+ * @param {*} filename - the template flowchart filename
  */
-async function chooseFlowchart(template_file) {
-    if (template_file == null || template_file == "") return;
-    const template  = (await import(`/json/templates/${template_file}`, { with: { type: "json" } })).default;
-    uploadTemplate(template, false, true);
+async function getTemplateFlowchart(filename) {
+    if (filename == null || filename == "") { setPageTitle(null); return; };
+    const template  = (await import(`/json/templates/${filename}`, { with: { type: "json" } })).default;
+    processFlowchart(filename, template, false, true);
+}
+
+/**
+ * This processes the uploaded flowchart file.
+ * 
+ * @param {*} file - the given flowchart file object
+ */
+async function processUploadedFile(file) {
+    const filename = file.name;
+    const fileText = await file.text();
+    const fileData = JSON.parse(fileText);
+    processFlowchart(filename, fileData, true, false);
+    fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
 
 /**
@@ -106,17 +113,22 @@ async function chooseFlowchart(template_file) {
  * This adds a Transfer section for transfer classes.
  * It then adds years, each of which has 3 semesters that may or many not contain courses.
  * 
+ * @param {*} filename - the flowchart filename
  * @param {*} template - the flowchart with transfer, year, semester, and course information
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function uploadTemplate(template, resetChoose, resetUpload) {
+function processFlowchart(filename, template, resetChoose, resetUpload) {
     // Check JSON file formatting
     if (template == null || typeof template != "object" || Array.isArray(template) 
         || template.transfer == undefined || template.college == undefined) {
         alert("The given JSON file does not meet the required formatting.");
+        setPageTitle(null);
         return;
     }
+
+    // Updates the page title
+    setPageTitle(filename);
 
     const transferCourses = template.transfer;
     const years = template.college;
@@ -405,11 +417,6 @@ function downloadTemplate() {
 function processCourse(courseDiv) {
     let course = {};
 
-    // Examples
-    // { "set_course": false, "co-op": false, "discipline": "", "number": null, "attribute": "CS Undergraduate Elective" },
-    // { "set_course": true, "co-op": false, "discipline": "CSCI", "number": 344, "name": "Programming Language Concepts" },
-    // { "set_course": true, "co-op": true, "discipline": "CSCI", "number": 499, "name": "Semester Co-op" }
-
     const courseType = courseDiv.dataset.courseType; // "co-op", "required", "option", "input"
     const classContent = courseDiv.textContent;
     const classOfferedOnlyFall = courseDiv.style.borderStyle == "dotted";
@@ -599,5 +606,35 @@ function getDisciplineColor(discipline) {
             return "OrangeRed";
         default:
             return "Black";
+    }
+}
+
+/**
+ * This updates the title at the top of the page based on the template.
+ * 
+ * @param {*} filename - the flowchart filename
+ */
+function setPageTitle(filename) {
+    switch (filename) {
+        case "cs_bs_2526_template.json":
+            pageTitle.textContent = "Computer Science BS 2025-2026 Flowchart"
+            break;
+        case "csec_bs_2526_template.json":
+            pageTitle.textContent = "Cyber Security BS 2025-2026 Flowchart"
+            break;
+        case "cs_bsms_project_2526_template.json":
+        case "cs_bsms_thesis_2526_template.json":
+            pageTitle.textContent = "Computer Science BS/MS 2025-2026 Flowchart"
+            break
+        case "cscsec_bsms_project_2526_template.json":
+        case "cscsec_bsms_thesis_2526_template.json":
+            pageTitle.textContent = "Computer Science/Cyber Security BS/MS 2025-2026 Flowchart"
+            break;
+        case "csse_bsms_2526_template.json":
+            pageTitle.textContent = "Computer Science/Software Engineering BS/MS 2025-2026 Flowchart"
+            break;
+        default:
+            pageTitle.textContent = "Computer Science 2025-2026 Flowchart";
+            break;
     }
 }
