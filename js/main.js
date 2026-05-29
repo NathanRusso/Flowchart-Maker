@@ -1,8 +1,7 @@
 //------------------------------ STATIC DATA BELOW ------------------------------//
 
 // The 4 course types are "co-op", "required", "option", and "input"
-// I added the "General Education: Immersion", "Lab Science: Lab", "Lab Science: Lecture", etc. attributes
-// I also count Open Electives
+// I added the "General Education: Immersion", "Lab Science: Lab", "Lab Science: Lecture", "Open Elective", etc. attributes
 
 const years = [
   "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth",
