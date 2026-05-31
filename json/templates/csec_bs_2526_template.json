@@ -196,7 +196,7 @@
                     "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 99,
-                    "name": "Undergraduate Cooperative Education Seminar"
+                    "name": "Cooperative Education Seminar"
                 }
             ],
             [
@@ -311,7 +311,7 @@
                     "offeredSpring": null,
                     "discipline": "CSEC",
                     "number": 499,
-                    "name": "Summer Co-op"
+                    "name": "Cooperative Education in CSEC"
                 }
             ]
         ],
@@ -415,7 +415,7 @@
                     "offeredSpring": null,
                     "discipline": "CSEC",
                     "number": 499,
-                    "name": "Summer Co-op"
+                    "name": "Cooperative Education in CSEC"
                 }
             ]
         ],
