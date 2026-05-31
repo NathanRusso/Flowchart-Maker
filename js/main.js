@@ -640,9 +640,15 @@ function clearFlowchart(resetChoose, resetUpload) {
  */
 function getDisciplineColor(discipline) {
     switch (discipline) {
+        case "BIOG":
+        case "BIOL":
+        case "CHMG":
+        case "PHYS":
+            return "Red";
         case "CSCI":
         case "CSEC":
         case "GCIS":
+        case "IGME":
         case "ISTE":
         case "NSSA":
         case "SWEN":
@@ -676,7 +682,8 @@ function getAttributeColor(attribute) {
     } else if (attribute.includes("Activity Course")) {
         return "Yellow";
     } else if (attribute.includes("CS") || attribute.includes("CSCI") || attribute.includes("CSEC") 
-            || attribute.includes("GCIS") || attribute.includes("ISTE") || attribute.includes("NSSA") 
+            || attribute.includes("GCIS") || attribute.includes("GDD") || attribute.includes("IGM") 
+            || attribute.includes("IGME") || attribute.includes("ISTE") || attribute.includes("NSSA") 
             || attribute.includes("SE") || attribute.includes("SWEN")) {
         return "Orange";
     } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
