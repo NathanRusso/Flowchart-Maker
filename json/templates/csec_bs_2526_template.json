@@ -337,17 +337,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 310,
-                    "name": "Endpoint Security Engineering"
+                    "discipline": "CSCI",
+                    "number": 462,
+                    "name": "Introduction to Cryptography"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 462,
-                    "name": "Introduction to Cryptography"
+                    "discipline": "CSEC",
+                    "number": 310,
+                    "name": "Endpoint Security Engineering"
                 },
                 {
                     "courseType": "required",

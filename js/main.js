@@ -654,11 +654,12 @@ function getDisciplineColor(discipline) {
         case "NSSA":
         case "SWEN":
             return "Orange";
-            return "Violet"
         case "MATH":
             return "Blue";
         case "STAT":
             return "DodgerBlue";
+        case "STSO":
+            return "Violet";
         case "COMM":
         case "LING":
         case "PHIL":
@@ -682,7 +683,7 @@ function getDisciplineColor(discipline) {
  * @returns the string HTML color
  */
 function getAttributeColor(attribute) {
-    if (attribute.includes("Open Elective")) {
+    if (attribute.includes("Open Elective") || attribute == "Graduate Elective") {
         return "Purple";
     } else if (attribute.includes("Activity Course")) {
         return "Yellow";

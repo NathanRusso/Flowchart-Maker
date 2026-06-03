@@ -397,7 +397,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Elective"
+                    "attribute": "CSEC Elective Course"
                 },
                 {
                     "courseType": "input",
@@ -430,12 +430,12 @@
         [
             [
                 {
-                    "courseType": "input",
+                    "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Elective"
+                    "discipline": "PUBL",
+                    "number": 701,
+                    "name": "Graduate Policy Analysis"
                 },
                 {
                     "courseType": "input",
@@ -443,7 +443,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Undergraduate Elective"
+                    "attribute": "CSEC Elective Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Elective Course"
                 },
                 {
                     "courseType": "option",
@@ -476,17 +484,17 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
                 }
             ],
             [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PUBL",
+                    "number": 702,
+                    "name": "Graduate Decision Analysis"
+                },
                 {
                     "courseType": "required",
                     "offeredFall": true,
@@ -501,7 +509,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
+                    "attribute": "CSEC Elective Course"
                 },
                 {
                     "courseType": "input",
@@ -509,7 +517,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Undergraduate Elective"
+                    "attribute": "CSEC Elective Course"
                 },
                 {
                     "courseType": "input",
@@ -518,14 +526,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
                 }
             ],
             []
@@ -536,17 +536,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 604,
-                    "name": "Cryptography and Authentication"
+                    "discipline": "PUBL",
+                    "number": 703,
+                    "name": "Evaluation and Research Design"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 603,
-                    "name": "Enterprise Security"
+                    "discipline": "PUBL",
+                    "number": 700,
+                    "name": "Readings in Public Policy"
                 },
                 {
                     "courseType": "input",
@@ -554,7 +554,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Elective"
+                    "attribute": "Graduate Elective"
                 },
                 {
                     "courseType": "input",
@@ -562,17 +562,52 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Research Elective"
+                    "attribute": "Graduate Elective"
                 }
             ],
             [
-                {
-                    "courseType": "required",
+               {
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 742,
-                    "name": "Computer System Security"
+                    "discipline": "PUBL",
+                    "number": 610,
+                    "options": [
+                        {
+                            "discipline": "PUBL",
+                            "number": 610,
+                            "name": "Technological Innovation and Public Policy"
+                        },
+                        {
+                            "discipline": "STSO",
+                            "number": 710,
+                            "name": "Graduate Science and Technology Policy Seminar"
+                        }
+                    ]
+                },
+               {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PUBL",
+                    "number": 785,
+                    "options": [
+                        {
+                            "discipline": "PUBL",
+                            "number": 785,
+                            "name": "Capstone Experience"
+                        },
+                        {
+                            "discipline": "PUBL",
+                            "number": 790,
+                            "name": "Public Policy Thesis"
+                        },
+                        {
+                            "discipline": "PUBL",
+                            "number": 798,
+                            "name": "Comprehensive Exam"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",
@@ -580,7 +615,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Elective"
+                    "attribute": "Graduate Elective"
                 },
                 {
                     "courseType": "input",
@@ -588,7 +623,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Research Elective"
+                    "attribute": "Graduate Elective (If PUBL-798)"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Graduate Elective (If PUBL-798)"
                 }
             ],
             []
@@ -599,7 +642,6 @@
         "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CSEC handbook",
         "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
         "<b>Please Note:</b> MATH-241 Linear Algebra can be replaced with MATH-257 Statistical Inference",
-        "<b>Please Note:</b> PHIL-102 Introduction to Moral Issues can be replaced with PHIL-202 Foundations of Moral Philosophy or PHIL-306 Professional Ethics if desired",
-        "<b><u>This flowchart illustrates the MS degree culminating with MS research; contact an academic advisor for details on the thesis option</u></b>"
+        "<b>Please Note:</b> PHIL-102 Introduction to Moral Issues can be replaced with PHIL-202 Foundations of Moral Philosophy or PHIL-306 Professional Ethics if desired"
     ]
 }
