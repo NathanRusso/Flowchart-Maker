@@ -711,7 +711,7 @@ function getDisciplineColor(discipline) {
 function getAttributeColor(attribute) {
     if (attribute.includes("Open Elective") || attribute == "Graduate Elective") {
         return "Purple";
-    } else if (attribute.includes("Activity Course")) {
+    } else if (attribute.includes("Wellness Course")) {
         return "Gold";
     } else if (attribute.includes("AI") || attribute.includes("IDAI") || attribute.includes("CIT")  
             || attribute.includes("CS") || attribute.includes("CSCI") || attribute.includes("CSEC") 
