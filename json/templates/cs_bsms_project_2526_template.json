@@ -362,6 +362,14 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
+                    "number": 344,
+                    "name": "Programming Language Concepts"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
                     "number": 251,
                     "name": "Concepts of Parallel and Distributed Systems"
                 },
@@ -372,14 +380,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Undergraduate Elective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 344,
-                    "name": "Programming Language Concepts"
                 },
                 {
                     "courseType": "input",
@@ -408,6 +408,14 @@
                     "attribute": "* ++ CS Graduate Elective / Required Course"
                 },
                 {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 472,
+                    "name": "Historical & Current Perspectives in CS"
+                },
+                {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
@@ -430,14 +438,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 472,
-                    "name": "Historical & Current Perspectives in CS"
                 }
             ],
             []
@@ -534,28 +534,28 @@
             ],
             [
                 {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Elective"
-                },
-                {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 788,
                     "name": "CS Graduate Capstone"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
                 }
             ],
             []

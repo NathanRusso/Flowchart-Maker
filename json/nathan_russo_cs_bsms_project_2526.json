@@ -407,16 +407,8 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
-                    "number": 251,
-                    "name": "Concepts of Parallel and Distributed Systems"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 462,
-                    "attribute": "CS Undergraduate Elective"
+                    "number": 472,
+                    "name": "Historical & Current Perspectives in CS"
                 },
                 {
                     "courseType": "required",
@@ -431,8 +423,16 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
-                    "number": 472,
-                    "name": "Historical & Current Perspectives in CS"
+                    "number": 251,
+                    "name": "Concepts of Parallel and Distributed Systems"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 462,
+                    "attribute": "CS Undergraduate Elective"
                 },
                 {
                     "courseType": "input",
@@ -462,14 +462,6 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
-                    "number": 651,
-                    "attribute": "CS Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
                     "number": 631,
                     "attribute": "* CS Graduate Cluster Elective"
                 },
@@ -485,6 +477,14 @@
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 651,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 301,
                     "attribute": "Open Elective"
@@ -493,19 +493,19 @@
             [
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Cluster Elective"
-                },
-                {
-                    "courseType": "input",
                     "offeredFall": false,
                     "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 664,
                     "attribute": "* ++ CS Graduate Elective / Required Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Cluster Elective"
                 },
                 {
                     "courseType": "input",
@@ -528,28 +528,28 @@
         [
             [
                 {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Elective"
-                },
-                {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 788,
                     "name": "CS Graduate Capstone"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
                 }
             ],
             [],

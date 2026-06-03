@@ -435,16 +435,16 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "IDAI",
-                    "number": 485,
-                    "name": "Concurrent and Distributed Artificial Intelligence"
+                    "number": 490,
+                    "name": "AI Team Capstone"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "IDAI",
-                    "number": 490,
-                    "name": "AI Team Capstone"
+                    "number": 485,
+                    "name": "Concurrent and Distributed Artificial Intelligence"
                 },
                 {
                     "courseType": "input",

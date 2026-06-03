@@ -237,7 +237,6 @@
                     "number": 320,
                     "name": "Game Design & Development II"
                 },
-
                 {
                     "courseType": "input",
                     "offeredFall": true,
@@ -434,16 +433,16 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "IGME",
-                    "number": 603,
-                    "name": "Gameplay and Prototyping"
+                    "number": 695,
+                    "name": "Colloquium in Game Design and Development"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "IGME",
-                    "number": 695,
-                    "name": "Colloquium in Game Design and Development"
+                    "number": 603,
+                    "name": "Gameplay and Prototyping"
                 },
                 {
                     "courseType": "input",
@@ -485,23 +484,23 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "IGM Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "IGM Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
                     "attribute": "GDD Graduate Research Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "IGM Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "IGM Graduate Elective"
                 }
             ],
             []

@@ -362,6 +362,14 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
+                    "number": 344,
+                    "name": "Programming Language Concepts"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
                     "number": 251,
                     "name": "Concepts of Parallel and Distributed Systems"
                 },
@@ -372,14 +380,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Elective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 344,
-                    "name": "Programming Language Concepts"
                 },
                 {
                     "courseType": "input",
@@ -400,12 +400,12 @@
             ],
             [
                 {
-                    "courseType": "input",
+                    "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Elective"
+                    "discipline": "CSCI",
+                    "number": 472,
+                    "name": "Historical & Current Perspectives in CS"
                 },
                 {
                     "courseType": "input",
@@ -414,6 +414,14 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Elective"
                 },
                 {
                     "courseType": "input",
@@ -430,14 +438,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 472,
-                    "name": "Historical & Current Perspectives in CS"
                 }
             ],
             []
@@ -500,20 +500,12 @@
         [
             [
                 {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "SE Graduate Elective"
-                },
-                {
                     "courseType": "required",
                     "offeredFall": true,
-                    "offeredSpring": false,
+                    "offeredSpring": true,
                     "discipline": "SWEN",
-                    "number": 755,
-                    "name": "Software Architecture"
+                    "number": 783,
+                    "name": "SE Masters Project I"
                 },
                 {
                     "courseType": "required",
@@ -526,29 +518,21 @@
                 {
                     "courseType": "required",
                     "offeredFall": true,
-                    "offeredSpring": true,
+                    "offeredSpring": false,
                     "discipline": "SWEN",
-                    "number": 783,
-                    "name": "SE Masters Project I"
+                    "number": 755,
+                    "name": "Software Architecture"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "SE Graduate Elective"
                 }
             ],
             [
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "SE Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "SE Graduate Elective"
-                },
                 {
                     "courseType": "required",
                     "offeredFall": true,
@@ -556,6 +540,22 @@
                     "discipline": "SWEN",
                     "number": 783,
                     "name": "SE Masters Project II"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "SE Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "SE Graduate Elective"
                 }
             ],
             []

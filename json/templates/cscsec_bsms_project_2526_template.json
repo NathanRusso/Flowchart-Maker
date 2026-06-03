@@ -362,6 +362,14 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
+                    "number": 344,
+                    "name": "Programming Language Concepts"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
                     "number": 251,
                     "name": "Concepts of Parallel and Distributed Systems"
                 },
@@ -372,14 +380,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Elective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 344,
-                    "name": "Programming Language Concepts"
                 },
                 {
                     "courseType": "input",
@@ -400,12 +400,12 @@
             ],
             [
                 {
-                    "courseType": "input",
+                    "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "** CS Elective"
+                    "discipline": "CSCI",
+                    "number": 472,
+                    "name": "Historical & Current Perspectives in CS"
                 },
                 {
                     "courseType": "input",
@@ -414,6 +414,14 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "** CS Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "** CS Elective"
                 },
                 {
                     "courseType": "input",
@@ -430,14 +438,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 472,
-                    "name": "Historical & Current Perspectives in CS"
                 }
             ],
             []
@@ -500,14 +500,6 @@
         [
             [
                 {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
-                },
-                {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": false,
@@ -529,17 +521,25 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Advanced Elective"
-                }
-            ],
-            [
+                    "attribute": "CSEC Graduate Research Elective"
+                },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
+                    "attribute": "CSEC Graduate Advanced Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 792,
+                    "name": "CSEC Graduate Project"
                 },
                 {
                     "courseType": "required",
@@ -550,12 +550,12 @@
                     "name": "Computer System Security"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 792,
-                    "name": "CSEC Graduate Project"
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Research Elective"
                 }
             ],
             []
