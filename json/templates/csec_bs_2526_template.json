@@ -92,6 +92,14 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Writing Intensive: First Year"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
                 }
             ],
             []
@@ -302,6 +310,14 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
                 }
             ],
             [
@@ -356,14 +372,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Activity Course"
                 }
             ],
             [
@@ -476,14 +484,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Activity Course"
                 }
             ],
             [

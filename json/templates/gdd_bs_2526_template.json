@@ -84,6 +84,14 @@
                     "discipline": "PHYS",
                     "number": 111,
                     "name": "College Physics I"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
                 }
             ],
             []
@@ -190,6 +198,14 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Science Principle Principles"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
                 }
             ],
             [
