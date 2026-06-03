@@ -715,10 +715,10 @@ function getAttributeColor(attribute) {
         return "Gold";
     } else if (attribute.includes("AI") || attribute.includes("IDAI") || attribute.includes("CS") 
             || attribute.includes("CSCI") || attribute.includes("CSEC") || attribute.includes("GCIS") 
-            || attribute.includes("GDD") || attribute.includes("IGM") || attribute.includes("IGME") 
-            || attribute.includes("ISTE") || attribute.includes("NSSA") || attribute.includes("SE") 
-            || attribute.includes("SWEN")) {
-        return "Orange";
+            || attribute.includes("GDD") || attribute.includes("HCC") || attribute.includes("IGM") 
+            || attribute.includes("IGME") || attribute.includes("ISTE") || attribute.includes("NSSA") 
+            || attribute.includes("SE") || attribute.includes("SWEN")) {
+        return "DarkOrange";
     } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
         return "Green";
     } else if (attribute.includes("Lab Science")) {

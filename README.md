@@ -39,15 +39,11 @@ You can choose from templates and upload your own version.
 - GDD BS
 - GDD BS/MS
 
-<!--
 ### Humanities, Computing, and Design
 - HCD BS
--->
 
-<!--
 ### Human-Centered Computing
 - HCC BS
--->
 
 <!--
 ### Information Technology

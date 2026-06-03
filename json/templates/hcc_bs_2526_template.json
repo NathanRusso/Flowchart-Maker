@@ -7,36 +7,33 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 101,
-                    "name": "Computation and Culture"
+                    "discipline": "ISTE",
+                    "number": 110,
+                    "name": "Ethics in Computing"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 200,
-                    "name": "DHSS Seminar"
+                    "discipline": "ISTE",
+                    "number": 140,
+                    "name": "Web & Mobile I"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "IGME",
+                    "discipline": "STAT",
+                    "number": 145,
+                    "name": "Introduction to Statistics I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PSYC",
                     "number": 101,
-                    "options": [
-                        {
-                            "discipline": "IGME",
-                            "number": 101,
-                            "name": "Interactive Design and Problem Solving I"
-                        },
-                        {
-                            "discipline": "GCIS",
-                            "number": 123,
-                            "name": "Software Development and Problem Solving I"
-                        }
-                    ]
+                    "name": "Introduction to Psychology"
                 },
                 {
                     "courseType": "input",
@@ -44,15 +41,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Ethical Perspective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Writing Intensive: First Year"
+                    "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "required",
@@ -68,17 +57,174 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 102,
-                    "name": "Industrial Origins of the Digital Age"
+                    "discipline": "ISTE",
+                    "number": 262,
+                    "name": "Foundations of Human-Centered Computing"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "NMDE",
+                    "number": 111,
+                    "name": "New Media Design Survey I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "STAT",
+                    "number": 146,
+                    "name": "Introduction to Statistics II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PSYC",
+                    "number": 223,
+                    "name": "Cognitive Psychology"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 123,
+                    "name": "Software Development and Problem Solving I"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "ISTE",
-                    "number": 140,
-                    "name": "Web & Mobile I"
+                    "number": 264,
+                    "name": "Prototyping and Usability Testing"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "NMDE",
+                    "number": 112,
+                    "name": "New Media Design Survey II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PSYC",
+                    "number": 250,
+                    "name": "Research Methods I"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Natural Science Inquiry"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 124,
+                    "name": "Software Development and Problem Solving II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 240,
+                    "name": "Web & Mobile II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 266,
+                    "name": "Design for Accessibility"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PSYC",
+                    "number": 251,
+                    "name": "Research Methods II"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Social Perspective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 99,
+                    "name": "School of Information Second Year Seminar"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "ISTE",
+                    "number": 499,
+                    "name": "Undergraduate Co-op"
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 252,
+                    "name": "Foundations of Mobile Design"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "HCC Concentration Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -94,60 +240,25 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Social Perspective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Activity Course"
+                    "attribute": "Open Elective"
                 }
             ],
-            []
-        ],
-        [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ITDL",
-                    "number": 102,
-                    "name": "Career Prep for Liberal Arts Majors"
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "HCC Concentration Course"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 111,
-                    "name": "New Media Design Digital Survey I"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 240,
-                    "name": "Web & Mobile II"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "STAT",
-                    "number": 145,
-                    "name": "Introduction to Statistics I"
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -163,48 +274,6 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Natural Science Inquiry Perspective"
-                }
-            ],
-            [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 103,
-                    "name": "Ethics in the Digital Era"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 112,
-                    "name": "New Media Design Digital Survey II"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 230,
-                    "name": "Introduction to Database and Data Modeling"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Mathematical Perspective B"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
@@ -213,113 +282,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Activity Course"
-                }
-            ],
-            []
-        ],
-        [
-            [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 200,
-                    "name": "DHSS Seminar (HCD Prosem Leadership)"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "DHSS Project Course"
-                },
-                {
-                    "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "IGME",
-                    "number": 382,
-                    "options": [
-                        {
-                            "discipline": "IGME",
-                            "number": 382,
-                            "name": "Maps, Mapping and Geospatial Technologies"
-                        },
-                        {
-                            "discipline": "IGME",
-                            "number": 384,
-                            "name": "Introduction to Geographic Information Systems"
-                        }
-                    ]
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Scientific Principles Perspective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Immersion"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Immersion"
-                }
-            ],
-            [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 377,
-                    "name": "Media Narrative"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "DHSS Project Course"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "DHSS Project Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "DHSS Project Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Open Elective"
                 }
             ],
             [
@@ -327,9 +290,9 @@
                     "courseType": "co-op",
                     "offeredFall": null,
                     "offeredSpring": null,
-                    "discipline": "DHSS",
+                    "discipline": "ISTE",
                     "number": 499,
-                    "name": "DHSS Co-op"
+                    "name": "Undergraduate Co-op"
                 }
             ]
         ],
@@ -339,9 +302,9 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 489,
-                    "name": "DHSS Capstone I"
+                    "discipline": "ISTE",
+                    "number": 500,
+                    "name": "Senior Development Project I"
                 },
                 {
                     "courseType": "input",
@@ -349,7 +312,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -357,7 +320,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "input",
@@ -365,7 +328,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Electives"
+                    "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
@@ -373,7 +336,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Electives"
+                    "attribute": "Open Elective"
                 }
             ],
             [
@@ -381,9 +344,25 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "DHSS",
-                    "number": 489,
-                    "name": "DHSS Capstone II"
+                    "discipline": "ISTE",
+                    "number": 501,
+                    "name": "Senior Development Project II"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "HCC Concentration Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
@@ -392,37 +371,10 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Electives"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Electives"
                 }
             ],
             []
         ]
     ],
-    "notes": [
-        "<b>DHSS Project Course:</b> Only specific sequences are allowed. Check the course listing on the RIT website.",
-        "<b>DHSS Professional Elective:</b> Only specific sequences are allowed. Check the course listing on the RIT website."
-    ]
+    "notes": []
 }
