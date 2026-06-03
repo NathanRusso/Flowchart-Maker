@@ -642,7 +642,7 @@ function getDisciplineColor(discipline) {
     switch (discipline) {
         // College of Art and Design
         case "NMDE":
-            return "Violet"
+            return "LightCoral";
 
         // College of Engineering Technology
 
@@ -650,27 +650,26 @@ function getDisciplineColor(discipline) {
 
         // College of Liberal Arts
         case "COMM":
-        case "DHSS":
         case "ITDL":
-        case "LING":
-        case "NMDE":
-        case "PHIL":
-        case "PSYC":
         case "PUBL":
         case "STSO":
+        case "PHIL":
+        case "PSYC":
+        case "DHSS":
             return "HotPink";
+        case "LING":
         case "UWRT":
-            return "Green"
+            return "Green";
 
         //  College of Science
         case "BIOG":
         case "BIOL":
         case "CHMG":
         case "PHYS":
-            return "Red";
+            return "Crimson";
         case "MATH":
         case "STAT":
-            return "Blue";
+            return "MediumBlue";
 
         //  Golisano College of Computing and Information Sciences
         case "CSCI":
@@ -681,7 +680,7 @@ function getDisciplineColor(discipline) {
         case "ISTE":
         case "NSSA":
         case "SWEN":
-            return "Orange";
+            return "DarkOrange";
 
         // Golisano Institute for Sustainability
 
@@ -692,8 +691,6 @@ function getDisciplineColor(discipline) {
         // Saunders College of Business
 
         // School of Individualized Study
-        case "ITDL":
-            return "SlateGrey";
 
         // RIT 365
         case "YOPS":
@@ -715,7 +712,7 @@ function getAttributeColor(attribute) {
     if (attribute.includes("Open Elective") || attribute == "Graduate Elective") {
         return "Purple";
     } else if (attribute.includes("Activity Course")) {
-        return "Yellow";
+        return "Gold";
     } else if (attribute.includes("AI") || attribute.includes("IDAI") || attribute.includes("CS") 
             || attribute.includes("CSCI") || attribute.includes("CSEC") || attribute.includes("GCIS") 
             || attribute.includes("GDD") || attribute.includes("IGM") || attribute.includes("IGME") 
@@ -725,7 +722,7 @@ function getAttributeColor(attribute) {
     } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
         return "Green";
     } else if (attribute.includes("Lab Science")) {
-        return "Red";
+        return "Crimson";
     } else if ( attribute.includes("DHSS") ) {
         return "HotPink";
     } else {
