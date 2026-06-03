@@ -110,14 +110,6 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "GCIS",
-                    "number": 123,
-                    "name": "Software Development and Problem Solving I"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 264,
                     "name": "Prototyping and Usability Testing"
@@ -129,6 +121,14 @@
                     "discipline": "NMDE",
                     "number": 112,
                     "name": "New Media Design Survey II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 123,
+                    "name": "Software Development and Problem Solving I"
                 },
                 {
                     "courseType": "required",
@@ -152,14 +152,6 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "GCIS",
-                    "number": 124,
-                    "name": "Software Development and Problem Solving II"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 240,
                     "name": "Web & Mobile II"
@@ -171,6 +163,14 @@
                     "discipline": "ISTE",
                     "number": 266,
                     "name": "Design for Accessibility"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 124,
+                    "name": "Software Development and Problem Solving II"
                 },
                 {
                     "courseType": "required",

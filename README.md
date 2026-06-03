@@ -16,9 +16,8 @@ You can choose from templates and upload your own version.
 ### Artificial Intelligence
 - AI BS
 
-<!--
 ### Computing Exploration
-- CE BS
+- CE
 -->
 
 ### Computing and Information Technology

@@ -641,8 +641,6 @@ function clearFlowchart(resetChoose, resetUpload) {
 function getDisciplineColor(discipline) {
     switch (discipline) {
         // College of Art and Design
-        case "NMDE":
-            return "LightCoral";
 
         // College of Engineering Technology
 
@@ -672,12 +670,14 @@ function getDisciplineColor(discipline) {
             return "MediumBlue";
 
         //  Golisano College of Computing and Information Sciences
+        case "CINT":
         case "CSCI":
         case "CSEC":
         case "GCIS":
         case "IDAI":
         case "IGME":
         case "ISTE":
+        case "NMDE":
         case "NSSA":
         case "SWEN":
             return "DarkOrange";
@@ -741,8 +741,8 @@ function setPageTitle(filename) {
         case "ai_bs_2526_template.json":
             pageTitle.textContent = "Artificial Intelligence BS 2025-2026 Flowchart";
             break;
-        case "ce_bs_2526_template.json":
-            pageTitle.textContent = "Computing Exploration BS 2025-2026 Flowchart";
+        case "ce_2526_template.json":
+            pageTitle.textContent = "Computing Exploration 2025-2026 Flowchart";
             break;
         case "cit_bs_2526_template.json":
             pageTitle.textContent = "Computing and Information Technology BS 2025-2026 Flowchart";

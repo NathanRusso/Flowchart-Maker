@@ -1,0 +1,122 @@
+{
+    "transfer": [],
+    "college": [
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CINT",
+                    "number": 101,
+                    "name": "Computing Exploration Seminar"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 123,
+                    "name": "Software Development and Problem Solving I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 140,
+                    "name": "Web & Mobile I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 181,
+                    "name": "Calculus I"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Writing Intensive: First Year"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "YOPS",
+                    "number": 10,
+                    "name": "RIT 365: RIT Connections"
+                }
+            ],
+            [
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 140,
+                    "options": [
+                        {
+                            "discipline": "CSEC",
+                            "number": 140,
+                            "name": "Introduction to Cybersecurity"
+                        },
+                        {
+                            "discipline": "NMDE",
+                            "number": 111,
+                            "name": "New Media Design Digital Survey I"
+                        },
+                        {
+                            "discipline": "NSSA",
+                            "number": 241,
+                            "name": "Introduction to Routing and Switching"
+                        },
+                        {
+                            "discipline": "SWEN",
+                            "number": 261,
+                            "name": "Introduction to Software Engineering"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 124,
+                    "name": "Software Development and Problem Solving II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 190,
+                    "name": "Discrete Mathematics for Computing"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 182,
+                    "name": "Calculus II"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Elective"
+                }
+            ],
+            []
+        ]
+    ],
+    "notes": []
+}

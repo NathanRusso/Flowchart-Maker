@@ -129,17 +129,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 111,
-                    "name": "New Media Design Digital Survey I"
+                    "discipline": "ISTE",
+                    "number": 240,
+                    "name": "Web & Mobile II"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 240,
-                    "name": "Web & Mobile II"
+                    "discipline": "NMDE",
+                    "number": 111,
+                    "name": "New Media Design Digital Survey I"
                 },
                 {
                     "courseType": "required",
@@ -179,17 +179,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 112,
-                    "name": "New Media Design Digital Survey II"
+                    "discipline": "ISTE",
+                    "number": 230,
+                    "name": "Introduction to Database and Data Modeling"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 230,
-                    "name": "Introduction to Database and Data Modeling"
+                    "discipline": "NMDE",
+                    "number": 112,
+                    "name": "New Media Design Digital Survey II"
                 },
                 {
                     "courseType": "input",
@@ -421,8 +421,5 @@
             []
         ]
     ],
-    "notes": [
-        "<b>DHSS Project Course:</b> Only specific sequences are allowed. Check the course listing on the RIT website.",
-        "<b>DHSS Professional Elective:</b> Only specific sequences are allowed. Check the course listing on the RIT website."
-    ]
+    "notes": []
 }

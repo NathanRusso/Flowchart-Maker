@@ -23,17 +23,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 131,
-                    "name": "Discrete Mathematics"
+                    "discipline": "NMDE",
+                    "number": 111,
+                    "name": "New Media Design Survey I"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 111,
-                    "name": "New Media Design Survey I"
+                    "discipline": "MATH",
+                    "number": 131,
+                    "name": "Discrete Mathematics"
                 },
                 {
                     "courseType": "input",
@@ -65,17 +65,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 185,
-                    "name": "Mathematics of Graphical Simulation I"
+                    "discipline": "NMDE",
+                    "number": 112,
+                    "name": "New Media Design Survey II"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 112,
-                    "name": "New Media Design Survey II"
+                    "discipline": "MATH",
+                    "number": 185,
+                    "name": "Mathematics of Graphical Simulation I"
                 },
                 {
                     "courseType": "input",
