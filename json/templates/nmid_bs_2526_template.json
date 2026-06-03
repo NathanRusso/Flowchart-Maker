@@ -1,0 +1,430 @@
+{
+    "transfer": [],
+    "college": [
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 101,
+                    "name": "NMID and Algorithmic Problem Solving I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 110,
+                    "name": "Introduction to Interactive Media"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 131,
+                    "name": "Discrete Mathematics"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "NMDE",
+                    "number": 111,
+                    "name": "New Media Design Survey I"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: First Year Writing"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "YOPS",
+                    "number": 10,
+                    "name": "RIT 365: RIT Connections"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 102,
+                    "name": "NMID and Algorithmic Problem Solving II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 185,
+                    "name": "Mathematics of Graphical Simulation I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "NMDE",
+                    "number": 112,
+                    "name": "New Media Design Survey II"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Artistic Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 230,
+                    "options": [
+                        {
+                            "discipline": "IGME",
+                            "number": 230,
+                            "name": "web Design and Implementation"
+                        },
+                        {
+                            "discipline": "IGME",
+                            "number": 235,
+                            "name": "Introduction to Web Technology for Game Developers"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 201,
+                    "name": "NMID and Algorithmic Problem Solving III"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 171,
+                    "options": [
+                        {
+                            "discipline": "MATH",
+                            "number": 171,
+                            "name": "Calculus A"
+                        },
+                        {
+                            "discipline": "MATH",
+                            "number": 257,
+                            "name": "Calculus I"
+                        },
+                        {
+                            "discipline": "STAT",
+                            "number": 145,
+                            "name": "Introduction to Statistics I"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Ethical Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Global Perspective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 99,
+                    "name": "Co-op Preparation Workshop"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 330,
+                    "name": "Rich Media Web Applications Development I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 236,
+                    "name": "Experience Design for Game and Media"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 202,
+                    "name": "Interactive Media Development"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Social Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Scientific Principles Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 470,
+                    "name": "Physical Computing & Alternative Interfaces"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 430,
+                    "name": "Rich Media Web Applications Development II"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 230,
+                    "name": "Introduction to Database and Data Modeling"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 480,
+                    "name": "Current Topics in Interactive Development"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 340,
+                    "options": [
+                        {
+                            "discipline": "IGME",
+                            "number": 340,
+                            "name": "Multi-platform Media App Development"
+                        },
+                        {
+                            "discipline": "ISTE",
+                            "number": 454,
+                            "name": "Mobile Application Development I"
+                        },
+                        {
+                            "discipline": "ISTE",
+                            "number": 456,
+                            "name": "Mobile Application Development II"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Natural Science Inquiry Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "IGME",
+                    "number": 499,
+                    "name": "Undergraduate Co-op"
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 587,
+                    "name": "New Media Interactive Development Capstone I"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "NMID Advanced Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IGME",
+                    "number": 588,
+                    "name": "New Media Interactive Development Capstone II"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "NMID Advanced Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            []
+        ]
+    ],
+    "notes": []
+}

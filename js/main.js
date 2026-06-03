@@ -717,7 +717,8 @@ function getAttributeColor(attribute) {
             || attribute.includes("CS") || attribute.includes("CSCI") || attribute.includes("CSEC") 
             || attribute.includes("GCIS") || attribute.includes("GDD") || attribute.includes("HCC") 
             || attribute.includes("IGM") || attribute.includes("IGME") || attribute.includes("ISTE") 
-            || attribute.includes("NSSA") || attribute.includes("SE") || attribute.includes("SWEN")) {
+            || attribute.includes("NMID") || attribute.includes("NSSA") || attribute.includes("SE") 
+            || attribute.includes("SWEN")) {
         return "DarkOrange";
     } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
         return "Green";

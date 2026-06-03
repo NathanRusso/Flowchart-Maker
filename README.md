@@ -48,10 +48,8 @@ You can choose from templates and upload your own version.
 ### Human-Centered Computing
 - HCC BS
 
-<!--
 ### New Media Interactive Development
 - NMID BS
--->
 
 <!--
 ### Software Engineering
