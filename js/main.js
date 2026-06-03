@@ -713,11 +713,11 @@ function getAttributeColor(attribute) {
         return "Purple";
     } else if (attribute.includes("Activity Course")) {
         return "Gold";
-    } else if (attribute.includes("AI") || attribute.includes("IDAI") || attribute.includes("CS") 
-            || attribute.includes("CSCI") || attribute.includes("CSEC") || attribute.includes("GCIS") 
-            || attribute.includes("GDD") || attribute.includes("HCC") || attribute.includes("IGM") 
-            || attribute.includes("IGME") || attribute.includes("ISTE") || attribute.includes("NSSA") 
-            || attribute.includes("SE") || attribute.includes("SWEN")) {
+    } else if (attribute.includes("AI") || attribute.includes("IDAI") || attribute.includes("CIT")  
+            || attribute.includes("CS") || attribute.includes("CSCI") || attribute.includes("CSEC") 
+            || attribute.includes("GCIS") || attribute.includes("GDD") || attribute.includes("HCC") 
+            || attribute.includes("IGM") || attribute.includes("IGME") || attribute.includes("ISTE") 
+            || attribute.includes("NSSA") || attribute.includes("SE") || attribute.includes("SWEN")) {
         return "DarkOrange";
     } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
         return "Green";
@@ -742,6 +742,9 @@ function setPageTitle(filename) {
             break;
         case "ce_bs_2526_template.json":
             pageTitle.textContent = "Computing Exploration BS 2025-2026 Flowchart";
+            break;
+        case "cit_bs_2526_template.json":
+            pageTitle.textContent = "Computing and Information Technology BS 2025-2026 Flowchart";
             break;
         case "cs_bs_2526_template.json":
             pageTitle.textContent = "Computer Science BS 2025-2026 Flowchart";
@@ -778,9 +781,6 @@ function setPageTitle(filename) {
             break;
         case "hcc_bs_2526_template.json":
             pageTitle.textContent = "Human-Centered Computing BS 2025-2026 Flowchart";
-            break;
-        case "it_bs_2526_template.json":
-            pageTitle.textContent = "Information Technology BS 2025-2026 Flowchart";
             break;
         case "nmid_bs_2526_template.json":
             pageTitle.textContent = "New Media Interactive Development BS 2025-2026 Flowchart";

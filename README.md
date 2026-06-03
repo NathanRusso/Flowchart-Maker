@@ -21,6 +21,9 @@ You can choose from templates and upload your own version.
 - CE BS
 -->
 
+### Computing and Information Technology
+- CIT BS
+
 ### Computer Science
 - CS BS
 - CS BS/MS Project
@@ -44,11 +47,6 @@ You can choose from templates and upload your own version.
 
 ### Human-Centered Computing
 - HCC BS
-
-<!--
-### Information Technology
-- IT BS
--->
 
 <!--
 ### New Media Interactive Development

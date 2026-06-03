@@ -7,33 +7,25 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 110,
-                    "name": "Ethics in Computing"
+                    "discipline": "GCIS",
+                    "number": 123,
+                    "name": "Software Development and Problem Solving I"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 140,
-                    "name": "Web & Mobile I"
+                    "discipline": "NSSA",
+                    "number": 102,
+                    "name": "Computer Systems Concepts"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "STAT",
-                    "number": 145,
-                    "name": "Introduction to Statistics I"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "PSYC",
-                    "number": 101,
-                    "name": "Introduction to Psychology"
+                    "discipline": "MATH",
+                    "number": 131,
+                    "name": "Discrete Mathematics"
                 },
                 {
                     "courseType": "input",
@@ -41,7 +33,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: First Year Writing"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "required",
@@ -57,33 +57,33 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 262,
-                    "name": "Foundations of Human-Centered Computing"
+                    "discipline": "GCIS",
+                    "number": 124,
+                    "name": "Software Development and Problem Solving II"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 111,
-                    "name": "New Media Design Survey I"
+                    "discipline": "CSEC",
+                    "number": 140,
+                    "name": "Introduction to Cybersecurity"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "STAT",
-                    "number": 146,
-                    "name": "Introduction to Statistics II"
+                    "discipline": "MATH",
+                    "number": 161,
+                    "name": "Applied Calculus"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "PSYC",
-                    "number": 223,
-                    "name": "Cognitive Psychology"
+                    "discipline": "COMM",
+                    "number": 142,
+                    "name": "Introduction to Technical Communication"
                 },
                 {
                     "courseType": "input",
@@ -91,7 +91,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Gen Ed: Global Perspective"
                 },
                 {
                     "courseType": "input",
@@ -110,33 +110,33 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "GCIS",
-                    "number": 123,
-                    "name": "Software Development and Problem Solving I"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
-                    "number": 264,
-                    "name": "Prototyping and Usability Testing"
+                    "number": 140,
+                    "name": "Web & Mobile I"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NMDE",
-                    "number": 112,
-                    "name": "New Media Design Survey II"
+                    "discipline": "NSSA",
+                    "number": 220,
+                    "name": "Task Automation Using Interpretive Languages"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "PSYC",
-                    "number": 250,
-                    "name": "Research Methods I"
+                    "discipline": "NSSA",
+                    "number": 241,
+                    "name": "Introduction to Routing and Switching"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "STAT",
+                    "number": 145,
+                    "name": "Introduction to Statistics I"
                 },
                 {
                     "courseType": "input",
@@ -144,7 +144,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Natural Science Inquiry"
+                    "attribute": "Gen Ed: Artistic Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
                 }
             ],
             [
@@ -152,9 +160,9 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "GCIS",
-                    "number": 124,
-                    "name": "Software Development and Problem Solving II"
+                    "discipline": "ISTE",
+                    "number": 230,
+                    "name": "Introduction to Database and Data Modeling"
                 },
                 {
                     "courseType": "required",
@@ -168,17 +176,9 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 266,
-                    "name": "Design for Accessibility"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "PSYC",
-                    "number": 251,
-                    "name": "Research Methods II"
+                    "discipline": "NSSA",
+                    "number": 221,
+                    "name": "Systems Administration I"
                 },
                 {
                     "courseType": "input",
@@ -186,7 +186,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Social Perspective"
+                    "attribute": "Gen Ed: Natural Science Inquiry Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "required",
@@ -194,15 +202,7 @@
                     "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 99,
-                    "name": "School of Information Second Year Seminar"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Activity Course"
+                    "name": "Second Year Seminar"
                 }
             ],
             [
@@ -223,8 +223,8 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "ISTE",
-                    "number": 252,
-                    "name": "Foundations of Mobile Design"
+                    "number": 260,
+                    "name": "Designing the User Experience"
                 },
                 {
                     "courseType": "input",
@@ -232,7 +232,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -240,7 +240,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
                     "courseType": "input",
@@ -248,7 +248,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Artistic Perspective"
+                    "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "courseType": "input",
@@ -261,12 +261,12 @@
             ],
             [
                 {
-                    "courseType": "input",
+                    "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "discipline": "ISTE",
+                    "number": 430,
+                    "name": "Information Requirements Modeling"
                 },
                 {
                     "courseType": "input",
@@ -274,7 +274,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -282,7 +282,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Global Perspective"
+                    "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -328,7 +328,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -336,7 +336,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Ethical Perspective"
+                    "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -370,7 +370,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
@@ -379,6 +379,14 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "input",
