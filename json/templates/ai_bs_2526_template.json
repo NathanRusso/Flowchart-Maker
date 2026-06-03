@@ -1,0 +1,480 @@
+{
+    "transfer": [],
+    "college": [
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 101,
+                    "name": "AI Explorations"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 123,
+                    "options": [
+                        {
+                            "discipline": "GCIS",
+                            "number": 123,
+                            "name": "Software Development and Problem Solving I"
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 141,
+                            "name": "Computer Science I"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 181,
+                    "name": "Calculus I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "UWRT",
+                    "number": 150,
+                    "name": "FYW: Writing Seminar"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Global Perspective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "YOPS",
+                    "number": 10,
+                    "name": "RIT 365: RIT Connections"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 110,
+                    "name": "AI Tools and Techniques"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 124,
+                    "options": [
+                        {
+                            "discipline": "GCIS",
+                            "number": 124,
+                            "name": "Software Development and Problem Solving II"
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 142,
+                            "name": "Computer Science II"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 182,
+                    "name": "Calculus II"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 190,
+                    "options": [
+                        {
+                            "discipline": "MATH",
+                            "number": 190,
+                            "name": "Discrete Mathematics for Computing"
+                        },
+                        {
+                            "discipline": "MATH",
+                            "number": 200,
+                            "name": "Discrete Mathematics and Introduction to Proofs"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PSYC",
+                    "number": 101,
+                    "name": "Introduction to Psychology"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 202,
+                    "name": "Problem Solving in Artificial Intelligence"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 261,
+                    "name": "Introduction to Software Engineering"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 251,
+                    "name": "Probability and Statistics"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PSYC",
+                    "number": 223,
+                    "name": "Cognitive Psychology"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Natural Science Inquiry Perspective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 99,
+                    "name": "Co-Op Preparation Seminar"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 262,
+                    "name": "Foundations of Human Centered Computing"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "GCIS",
+                    "number": 350,
+                    "name": "Artificial Intelligence and Law"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 331,
+                    "name": "Introduction to Artificial Intelligence"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 241,
+                    "name": "Linear Algebra"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "COMM",
+                    "number": 142,
+                    "options": [
+                        {
+                            "discipline": "COMM",
+                            "number": 142,
+                            "name": "Introduction to Technical Communication"
+                        },
+                        {
+                            "discipline": "COMM",
+                            "number": 201,
+                            "name": "Public Speaking"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Scientific Principles Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Activity Course"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "IDAI",
+                    "number": 499,
+                    "name": "Cooperative Education in Artificial Intelligence"
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 360,
+                    "name": "Optimization Algorithms"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 476,
+                    "name": "Visual Analytics"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 335,
+                    "name": "Machine Learning"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 444,
+                    "name": "Interactive Machine and Reinforcement Learning"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "ISTE",
+                    "number": 230,
+                    "options": [
+                        {
+                            "discipline": "ISTE",
+                            "number": 230,
+                            "name": "Introduction to Database and Data Modeling"
+                        },
+                        {
+                            "discipline": "SWEN",
+                            "number": 344,
+                            "name": "Engineering of Web Based Software Systems"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "LING",
+                    "number": 351,
+                    "options": [
+                        {
+                            "discipline": "LING",
+                            "number": 351,
+                            "name": "Language Technology and Large Language Models"
+                        },
+                        {
+                            "discipline": "LING",
+                            "number": 581,
+                            "name": "Natural Language Processing I"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "IDAI",
+                    "number": 499,
+                    "name": "Cooperative Education in Artificial Intelligence"
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 521,
+                    "name": "Security of AI"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "AI Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "AI Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Ethical Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 485,
+                    "name": "Concurrent and Distributed Artificial Intelligence"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "IDAI",
+                    "number": 490,
+                    "name": "AI Team Capstone"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Artistic Perspective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
+                }
+            ],
+            []
+        ]
+    ],
+    "notes": [
+        "<b>AI Electives:</b> Only specific sequences are allowed. Please see the AI BS course page."
+    ]
+}

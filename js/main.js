@@ -648,21 +648,26 @@ function getDisciplineColor(discipline) {
         case "CSCI":
         case "CSEC":
         case "GCIS":
+        case "IDAI":
         case "IGME":
         case "ISTE":
         case "NSSA":
         case "SWEN":
             return "Orange";
-        case "COMM":
             return "Violet"
         case "MATH":
             return "Blue";
         case "STAT":
             return "DodgerBlue";
+        case "COMM":
+        case "LING":
         case "PHIL":
+        case "PSYC":
             return "HotPink";
         case "PUBL":
             return "Brown";
+        case "UWRT":
+            return "Green"
         case "YOPS":
             return "OrangeRed";
         default:
@@ -681,10 +686,11 @@ function getAttributeColor(attribute) {
         return "Purple";
     } else if (attribute.includes("Activity Course")) {
         return "Yellow";
-    } else if (attribute.includes("CS") || attribute.includes("CSCI") || attribute.includes("CSEC") 
-            || attribute.includes("GCIS") || attribute.includes("GDD") || attribute.includes("IGM") 
-            || attribute.includes("IGME") || attribute.includes("ISTE") || attribute.includes("NSSA") 
-            || attribute.includes("SE") || attribute.includes("SWEN")) {
+    } else if (attribute.includes("AI") || attribute.includes("IDAI") || attribute.includes("CS") 
+            || attribute.includes("CSCI") || attribute.includes("CSEC") || attribute.includes("GCIS") 
+            || attribute.includes("GDD") || attribute.includes("IGM") || attribute.includes("IGME") 
+            || attribute.includes("ISTE") || attribute.includes("NSSA") || attribute.includes("SE") 
+            || attribute.includes("SWEN")) {
         return "Orange";
     } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
         return "Green";
