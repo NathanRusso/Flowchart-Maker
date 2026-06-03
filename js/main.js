@@ -777,11 +777,11 @@ function setPageTitle(filename) {
         case "gdd_bsms_2526_template.json":
             pageTitle.textContent = "Game Design and Development BS/MS 2025-2026 Flowchart";
             break;
-        case "hcd_bs_2526_template.json":
-            pageTitle.textContent = "Humanities, Computing, and Design BS 2025-2026 Flowchart";
-            break;
         case "hcc_bs_2526_template.json":
             pageTitle.textContent = "Human-Centered Computing BS 2025-2026 Flowchart";
+            break;
+        case "hcd_bs_2526_template.json":
+            pageTitle.textContent = "Humanities, Computing, and Design BS 2025-2026 Flowchart";
             break;
         case "nmid_bs_2526_template.json":
             pageTitle.textContent = "New Media Interactive Development BS 2025-2026 Flowchart";
