@@ -640,11 +640,39 @@ function clearFlowchart(resetChoose, resetUpload) {
  */
 function getDisciplineColor(discipline) {
     switch (discipline) {
+        // College of Art and Design
+        case "NMDE":
+            return "Violet"
+
+        // College of Engineering Technology
+
+        // College of Health Sciences and Technology
+
+        // College of Liberal Arts
+        case "COMM":
+        case "DHSS":
+        case "ITDL":
+        case "LING":
+        case "NMDE":
+        case "PHIL":
+        case "PSYC":
+        case "PUBL":
+        case "STSO":
+            return "HotPink";
+        case "UWRT":
+            return "Green"
+
+        //  College of Science
         case "BIOG":
         case "BIOL":
         case "CHMG":
         case "PHYS":
             return "Red";
+        case "MATH":
+        case "STAT":
+            return "Blue";
+
+        //  Golisano College of Computing and Information Sciences
         case "CSCI":
         case "CSEC":
         case "GCIS":
@@ -654,23 +682,24 @@ function getDisciplineColor(discipline) {
         case "NSSA":
         case "SWEN":
             return "Orange";
-        case "MATH":
-            return "Blue";
-        case "STAT":
-            return "DodgerBlue";
-        case "STSO":
-            return "Violet";
-        case "COMM":
-        case "LING":
-        case "PHIL":
-        case "PSYC":
-            return "HotPink";
-        case "PUBL":
-            return "Brown";
-        case "UWRT":
-            return "Green"
+
+        // Golisano Institute for Sustainability
+
+        // Kate Gleason College of Engineering
+
+        // National Technical Institute for the Deaf
+
+        // Saunders College of Business
+
+        // School of Individualized Study
+        case "ITDL":
+            return "SlateGrey";
+
+        // RIT 365
         case "YOPS":
             return "OrangeRed";
+
+        // Other
         default:
             return "Black";
     }
@@ -697,6 +726,8 @@ function getAttributeColor(attribute) {
         return "Green";
     } else if (attribute.includes("Lab Science")) {
         return "Red";
+    } else if ( attribute.includes("DHSS") ) {
+        return "HotPink";
     } else {
         return "Black"
     }
