@@ -18,7 +18,6 @@ You can choose from templates and upload your own version.
 
 ### Computing Exploration
 - CE
--->
 
 ### Computing and Information Technology
 - CIT BS
