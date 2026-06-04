@@ -224,7 +224,16 @@
                     "attribute": "Wellness Course"
                 }
             ],
-            []
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "IGME",
+                    "number": 499,
+                    "name": "Undergraduate Co-op"
+                }
+            ]
         ],
         [
             [
