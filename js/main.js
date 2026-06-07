@@ -655,6 +655,7 @@ function getDisciplineColor(discipline) {
         case "PSYC":
         case "DHSS":
             return "HotPink";
+        case "ENGL":
         case "LING":
         case "UWRT":
             return "Green";
@@ -715,15 +716,18 @@ function getAttributeColor(attribute) {
         return "Gold";
     } else if (attribute.includes("AI") || attribute.includes("IDAI") || attribute.includes("CIT")  
             || attribute.includes("CS") || attribute.includes("CSCI") || attribute.includes("CSEC") 
+            || attribute.includes("Engineering Elective")
             || attribute.includes("GCIS") || attribute.includes("GDD") || attribute.includes("HCC") 
             || attribute.includes("IGM") || attribute.includes("IGME") || attribute.includes("ISTE") 
             || attribute.includes("NMID") || attribute.includes("NSSA") || attribute.includes("SE") 
             || attribute.includes("SWEN")) {
         return "DarkOrange";
-    } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive")) {
+    } else if (attribute.includes("Gen Ed") || attribute.includes("Writing Intensive") || attribute.includes("Professional Elective")) {
         return "Green";
     } else if (attribute.includes("Lab Science")) {
         return "Crimson";
+    } else if (attribute.includes("Math/Science")) {
+        return "DarkViolet"
     } else if ( attribute.includes("DHSS") ) {
         return "HotPink";
     } else {
