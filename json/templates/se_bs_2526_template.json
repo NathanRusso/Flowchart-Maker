@@ -425,7 +425,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Professional Elective"
+                    "attribute": "Math/Science Elective"
                 },
                 {
                     "courseType": "input",
@@ -433,7 +433,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Math/Science Elective"
+                    "attribute": "Professional Elective"
                 },
                 {
                     "courseType": "input",

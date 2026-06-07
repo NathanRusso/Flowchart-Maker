@@ -180,14 +180,14 @@
                     "number": 251,
                     "options": [
                         {
-                            "discipline": "MATH",
-                            "number": 251,
-                            "name": "Probability and Statistics"
-                        },
-                        {
                             "discipline": "STAT",
                             "number": 205,
                             "name": "Applied Statistics"
+                        },
+                        {
+                            "discipline": "MATH",
+                            "number": 251,
+                            "name": "Probability and Statistics"
                         }
                     ]
                 },
@@ -257,12 +257,12 @@
                     "name": "Software Design for Computing Systems"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "SWEN Process Elective"
+                    "discipline": "CSCI",
+                    "number": 262,
+                    "name": "Introduction to Computer Science Theory"
                 },
                 {
                     "courseType": "required",
@@ -378,12 +378,12 @@
                     "attribute": "SWEN Design Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Engineering Elective"
+                    "discipline": "CSCI",
+                    "number": 664,
+                    "name": "Computational Complexity"
                 },
                 {
                     "courseType": "input",
@@ -392,14 +392,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
@@ -425,7 +417,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Professional Elective"
+                    "attribute": "SWEN Process Elective"
                 },
                 {
                     "courseType": "input",
@@ -441,6 +433,14 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
+                    "attribute": "Professional Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Open Elective"
                 },
                 {
@@ -450,6 +450,77 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Grad CSCI MS Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Grad CSCI MS Course"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 788,
+                    "name": "Computer Science MS Project"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Grad CSCI MS Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Grad CSCI MS Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Grad CSCI MS Course"
                 }
             ],
             []

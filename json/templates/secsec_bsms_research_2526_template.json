@@ -28,6 +28,14 @@
                     "name": "Calculus I"
                 },
                 {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "YOPS",
+                    "number": 10,
+                    "name": "RIT 365: RIT Connections"
+                },
+                {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
@@ -42,14 +50,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "YOPS",
-                    "number": 10,
-                    "name": "RIT 365: RIT Connections"
                 }
             ],
             [
@@ -86,12 +86,12 @@
                     "name": "Discrete Mathematics for Computing"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ENGL",
-                    "number": 150,
-                    "name": "FYW: Future of Writing"
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: First Year Writing"
                 },
                 {
                     "courseType": "input",
@@ -161,16 +161,16 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "SWEN",
-                    "number": 262,
-                    "name": "Engineering of Software Subsystems"
+                    "number": 256,
+                    "name": "Software Process and Project Management"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "SWEN",
-                    "number": 256,
-                    "name": "Software Process and Project Management"
+                    "number": 262,
+                    "name": "Engineering of Software Subsystems"
                 },
                 {
                     "courseType": "option",
@@ -249,67 +249,12 @@
                     ]
                 },
                 {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 340,
-                    "name": "Software Design for Computing Systems"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 241,
-                    "name": "Linear Algebra"
-                },
-                {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Professional Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Immersion"
-                }
-            ],
-            [
-                {
-                    "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
-                    "discipline": "SWEN",
-                    "number": 499,
-                    "name": "Software Engineering Co-op"
-                }
-            ],
-            []
-        ],
-        [
-            [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 440,
-                    "name": "Software System Requirements and Architecture"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 331,
-                    "name": "Engineering Secure Software"
+                    "attribute": "BS: SWEN Process Elective"
                 },
                 {
                     "courseType": "option",
@@ -366,6 +311,61 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "SWEN",
+                    "number": 440,
+                    "name": "Software System Requirements and Architecture"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 340,
+                    "name": "Software Design for Computing Systems"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 331,
+                    "name": "Engineering Secure Software"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 241,
+                    "name": "Linear Algebra"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "SWEN",
+                    "number": 499,
+                    "name": "Software Engineering Co-op"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
                     "number": 561,
                     "name": "Software Engineering Project I"
                 },
@@ -375,7 +375,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Engineering Elective"
+                    "attribute": "SWEN Design Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Math/Science Elective"
                 },
                 {
                     "courseType": "input",
@@ -384,14 +392,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
@@ -412,20 +412,12 @@
                     "name": "Software Engineering Project II"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 640,
-                    "name": "Research Methods"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 732,
-                    "name": "Collaborative Software Development"
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Engineering Elective"
                 },
                 {
                     "courseType": "input",
@@ -433,7 +425,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Math/Science Elective"
+                    "attribute": "Professional Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
@@ -460,17 +460,9 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 755,
-                    "name": "Software Architecture"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 783,
-                    "name": "Software Engineering Masters Project I"
+                    "discipline": "CSEC",
+                    "number": 604,
+                    "name": "Cryptography and Authentication"
                 },
                 {
                     "courseType": "input",
@@ -478,7 +470,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "SWEN Graduate Elective"
+                    "attribute": "CSEC Research Elective"
                 },
                 {
                     "courseType": "input",
@@ -486,7 +478,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "SWEN Graduate Elective"
+                    "attribute": "CSEC Research Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective"
                 }
             ],
             [
@@ -494,17 +494,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 777,
-                    "name": "Software Quality Assurance"
+                    "discipline": "CSEC",
+                    "number": 742,
+                    "name": "Computer System Security"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 784,
-                    "name": "Software Engineering Masters Project II"
+                    "discipline": "CSEC",
+                    "number": 603,
+                    "name": "Enterprise Security"
                 },
                 {
                     "courseType": "input",
@@ -512,7 +512,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "SWEN Graduate Elective"
+                    "attribute": "CSEC Research Elective"
                 },
                 {
                     "courseType": "input",
@@ -520,7 +520,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "SWEN Graduate Elective"
+                    "attribute": "CSEC Graduate Elective"
                 }
             ],
             []

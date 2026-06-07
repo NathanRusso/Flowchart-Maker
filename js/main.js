@@ -799,7 +799,8 @@ function setPageTitle(filename) {
         case "secs_bsms_2526_template.json":
             pageTitle.textContent = "Software Engineering/Computer Science BS/MS 2025-2026 Flowchart";
             break;
-        case "secsec_bsms__2526_template.json":
+        case "secsec_bsms_research_2526_template.json":
+        case "secsec_bsms_thesis_2526_template.json":
             pageTitle.textContent = "Software Engineering/Cyber Security BS/MS 2025-2026 Flowchart";
             break;
         default:
