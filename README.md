@@ -27,8 +27,7 @@ You can choose from templates and upload your own version.
 ### Computer Science
 - CS BS
 - CS BS/MS
-- CS/CSEC BS/MS Project
-- CS/CSEC BS/MS Thesis
+- CS/CSEC BS/MS
 - CS/SE BS/MS
 
 ### Cyber Security

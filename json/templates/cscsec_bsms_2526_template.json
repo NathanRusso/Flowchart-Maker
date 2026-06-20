@@ -360,6 +360,14 @@
                 {
                     "courseType": "required",
                     "offeredFall": true,
+                    "offeredSpring": false,
+                    "discipline": "CSEC",
+                    "number": 600,
+                    "name": "Introduction to Computing Security"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 344,
@@ -380,14 +388,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": false,
-                    "discipline": "CSEC",
-                    "number": 600,
-                    "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
@@ -429,7 +429,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "* Open Elective / CSEC Graduate Advanced Elective"
+                    "attribute": "CSEC Graduate Elective"
                 },
                 {
                     "courseType": "input",
@@ -484,7 +484,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "* Open Elective / CSEC Graduate Advanced Elective"
+                    "attribute": "CSEC Graduate Elective"
                 },
                 {
                     "courseType": "input",
@@ -492,13 +492,21 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "* Open Elective / CSEC Graduate Advanced Elective"
+                    "attribute": "CSEC Graduate Elective"
                 }
             ],
             []
         ],
         [
             [
+                {
+                    "courseType": "required",
+                    "offeredFall": false,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 742,
+                    "name": "Computer System Security"
+                },
                 {
                     "courseType": "required",
                     "offeredFall": true,
@@ -521,33 +529,31 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Advanced Elective"
+                    "attribute": "CSEC Research Elective"
                 }
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 792,
-                    "name": "CSEC Graduate Project"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": false,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
-                    "number": 742,
-                    "name": "Computer System Security"
+                    "number": 790,
+                    "options": [
+                        {
+                            "discipline": "CSEC",
+                            "number": 790,
+                            "name": "MS Thesis",
+                            "hyperChildId": 1
+                        },
+                        {
+                            "discipline": "ZZZZ",
+                            "number": 999,
+                            "name": "Not MS Thesis",
+                            "hyperChildId": 2
+                        }
+                    ],
+                    "hyperParentId": 1
                 },
                 {
                     "courseType": "input",
@@ -555,7 +561,27 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
+                    "attribute": "CSEC Research Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Research Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
                 }
             ],
             []
@@ -566,9 +592,6 @@
         "<b>Writing Intensive Courses:</b> 3 are required: 1st year = UWRT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI 472 Historical & Current Perspectives in Computer Science)",
         "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
         "<b><u>Please see the Cybersecurity MS Handbook or talk to an academic advisor for a complete list of approved Cybersecurity Graduate Electives</u></b>",
-        "<b>* CS/CSEC BS/MS Double-Counted Courses</b> (however see ** also)",
-        "<b>** If approved CSEC Grad. Adv. Elec. that are Comp. Sci. (CSCI) courses are selected as double-counts, the BS double-count can satisfy CS Elective requirements instead of Open Electives</b>",
-        "<b>CSEC 604 is a required MS course; however, students who have completed the related course CSCI 662 Foundations of Cryptography or undergraduate CSCI 462 Introduction to Cryptography replace CSEC 604 with an additional CSEC Graduate Advanced Elective</b>",
-        "<b><u>This flowchart illustrates the 3-credit MS capstone experience; see the Cybersecurity MS Handbook or talk to an academic advisor for details on the 6-credit thesis option</u></b>"
+        "<b>* CS/CSEC BS/MS Double-Counted Courses</b> (however see ** also)"
     ]
 }
