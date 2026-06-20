@@ -415,9 +415,9 @@ function createCourse(courseInfo) {
         const hyperChildCourseDivs = hyperChildDictionary[hyperChildId];
 
         hyperChildCourseDivs.push(courseDiv);
-        courseDiv.dataset.hyperParentId = hyperParentId;
-        courseDiv.dataset.hyperChildId = hyperChildId;
     }
+    if (Number.isInteger(hyperParentId)) courseDiv.dataset.hyperParentId = hyperParentId;
+    if (Number.isInteger(hyperChildId)) courseDiv.dataset.hyperChildId = hyperChildId;
 
     // Checks availability
     if (courseInfo.offeredSpring == false) {        // Offered in Fall
@@ -516,6 +516,8 @@ function processCourse(courseDiv) {
     const classContent = courseDiv.textContent;
     const classOfferedOnlyFall = courseDiv.style.borderStyle == "dotted";
     const classOfferedOnlySpring = courseDiv.style.borderStyle == "dashed";
+    let classHyperParentId = courseDiv?.dataset?.hyperParentId;
+    let classHyperChildId = courseDiv?.dataset?.hyperChildId;
 
     if (courseType == "co-op") {
         const classInformation1 = classContent.split(/[\(\)]+/);
@@ -577,11 +579,16 @@ function processCourse(courseDiv) {
             const createdOptions = [];
             Array.from(options).forEach(option => {
                 const optionInfo = option.textContent.split(/[\-]+/);
-                createdOptions.push({
+                const optionHyperChildId = option.dataset.hyperChildId;
+                optionObject = {
                     "discipline": optionInfo[0],
                     "number": parseInt(optionInfo[1]),
-                    "name": option.value
-                });
+                    "name": option.value,
+                }
+                if (optionHyperChildId !== undefined && optionHyperChildId !== null) {
+                    optionObject["hyperChildId"] = Number(optionHyperChildId);
+                }
+                createdOptions.push(optionObject);
             });
 
             course = {
@@ -593,7 +600,6 @@ function processCourse(courseDiv) {
                 "options": createdOptions
             };
         }
-
     } else if (courseType == "input") {
         const attribute = courseDiv.children[0].textContent;        // Label
         const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
@@ -607,6 +613,13 @@ function processCourse(courseDiv) {
         };
     } else {
         console.log("A course was found with an unknown type.");
+    }
+
+    if (classHyperParentId !== undefined && classHyperParentId !== null) {
+        course["hyperParentId"] = Number(classHyperParentId);
+    }
+    if (classHyperChildId !== undefined && classHyperChildId !== null) {
+        course["hyperChildId"] = Number(classHyperChildId);
     }
 
     return course;
