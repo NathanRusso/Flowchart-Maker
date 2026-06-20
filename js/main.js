@@ -858,8 +858,7 @@ function setPageTitle(filename) {
         case "csec_bs_2526_template.json":
             pageTitle.textContent = "Cyber Security BS 2025-2026 Flowchart";
             break;
-        case "csec_bsms_research_2526_template.json":
-        case "csec_bsms_thesis_2526_template.json":
+        case "csec_bsms_2526_template.json":
             pageTitle.textContent = "Cyber Security BS/MS 2025-2026 Flowchart";
             break;
         case "csecstpp_bsms_2526_template.json":
@@ -889,8 +888,7 @@ function setPageTitle(filename) {
         case "secs_bsms_2526_template.json":
             pageTitle.textContent = "Software Engineering/Computer Science BS/MS 2025-2026 Flowchart";
             break;
-        case "secsec_bsms_research_2526_template.json":
-        case "secsec_bsms_thesis_2526_template.json":
+        case "secsec_bsms_2526_template.json":
             pageTitle.textContent = "Software Engineering/Cyber Security BS/MS 2025-2026 Flowchart";
             break;
         default:

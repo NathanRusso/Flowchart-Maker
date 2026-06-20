@@ -7,9 +7,9 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 140,
-                    "name": "Introduction to Cybersecurity"
+                    "discipline": "SWEN",
+                    "number": 101,
+                    "name": "Software Engineering Freshman Seminar"
                 },
                 {
                     "courseType": "required",
@@ -28,12 +28,20 @@
                     "name": "Calculus I"
                 },
                 {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "YOPS",
+                    "number": 10,
+                    "name": "RIT 365: RIT Connections"
+                },
+                {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Global Perspective"
+                    "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
@@ -42,14 +50,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "YOPS",
-                    "number": 10,
-                    "name": "RIT 365: RIT Connections"
                 }
             ],
             [
@@ -57,17 +57,17 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "GCIS",
-                    "number": 124,
-                    "name": "Software Development and Problem Solving II"
+                    "discipline": "SWEN",
+                    "number": 250,
+                    "name": "Personal Software Engineering"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NSSA",
-                    "number": 241,
-                    "name": "Introduction to Routing and Switching"
+                    "discipline": "GCIS",
+                    "number": 124,
+                    "name": "Software Development and Problem Solving II"
                 },
                 {
                     "courseType": "required",
@@ -91,7 +91,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Writing Intensive: First Year"
+                    "attribute": "Gen Ed: First Year Writing"
                 },
                 {
                     "courseType": "input",
@@ -110,85 +110,96 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 201,
-                    "name": "Programming for Information Security"
+                    "discipline": "SWEN",
+                    "number": 344,
+                    "name": "Engineering of Web Based Software Systems"
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "NSSA",
-                    "number": 221,
-                    "name": "Systems Administration I"
+                    "discipline": "SWEN",
+                    "number": 261,
+                    "name": "Introduction to Software Engineering"
                 },
                 {
                     "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "PHYS",
+                    "number": 211,
+                    "name": "University Physics I"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "COMM",
+                    "number": 253,
+                    "name": "Communication"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Global Perspective"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 99,
+                    "name": "Undergraduate Cooperative Education Seminar"
+                }
+            ],
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 256,
+                    "name": "Software Process and Project Management"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 262,
+                    "name": "Engineering of Software Subsystems"
+                },
+                {
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 251,
-                    "name": "Probability and Statistics"
-                },
-                {
-                    "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 101,
-                    "attribute": "Lab Science: Lecture 1",
                     "options": [
                         {
-                            "discipline": "BIOG",
-                            "number": 101,
-                            "name": "Explorations in Cellular Biology and Evolution"
+                            "discipline": "STAT",
+                            "number": 205,
+                            "name": "Applied Statistics",
+                            "hyperChildId": null
                         },
                         {
-                            "discipline": "BIOL",
-                            "number": 101,
-                            "name": "General Biology I"
-                        },
-                        {
-                            "discipline": "CHMG",
-                            "number": 141,
-                            "name": "General & Analytical Chemistry I"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 211,
-                            "name": "University Physics I"
+                            "discipline": "MATH",
+                            "number": 251,
+                            "name": "Probability and Statistics",
+                            "hyperChildId": null
                         }
                     ]
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 103,
-                    "attribute": "Lab Science: Lab 1",
-                    "options": [
-                        {
-                            "discipline": "BIOG",
-                            "number": 103,
-                            "name": "Explorations in Cell Biology & Evolution Lab"
-                        },
-                        {
-                            "discipline": "BIOL",
-                            "number": 103,
-                            "name": "General Biology I Lab"
-                        },
-                        {
-                            "discipline": "CHMG",
-                            "number": 145,
-                            "name": "General & Analytical Chemistry I Lab"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 211,
-                            "name": "University Physics I"
-                        }
-                    ]
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
                     "courseType": "input",
@@ -197,119 +208,6 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 99,
-                    "name": "Cooperative Education Seminar"
-                }
-            ],
-            [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 202,
-                    "name": "Reverse Engineering Fundamentals"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "NSSA",
-                    "number": 245,
-                    "name": "Network Services"
-                },
-                {
-                    "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 241,
-                    "options": [
-                        {
-                            "discipline": "MATH",
-                            "number": 241,
-                            "name": "Linear Algebra"
-                        },
-                        {
-                            "discipline": "STAT",
-                            "number": 257,
-                            "name": "Statistical Inference"
-                        }
-                    ]
-                },
-                {
-                    "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 102,
-                    "attribute": "Lab Science: Lecture 2",
-                    "options": [
-                        {
-                            "discipline": "BIOG",
-                            "number": 102,
-                            "name": "Explorations in Animal and Plant Anatomy and Physiology"
-                        },
-                        {
-                            "discipline": "BIOL",
-                            "number": 102,
-                            "name": "General Biology II"
-                        },
-                        {
-                            "discipline": "CHMG",
-                            "number": 142,
-                            "name": "General & Analytical Chemistry II"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 212,
-                            "name": "University Physics II"
-                        }
-                    ]
-                },
-                {
-                    "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 104,
-                    "attribute": "Lab Science: Lab 2",
-                    "options": [
-                        {
-                            "discipline": "BIOG",
-                            "number": 104,
-                            "name": "Explorations in Animal and Plant Anatomy and Physiology Lab"
-                        },
-                        {
-                            "discipline": "BIOL",
-                            "number": 104,
-                            "name": "General Biology II Lab"
-                        },
-                        {
-                            "discipline": "CHMG",
-                            "number": 146,
-                            "name": "General & Analytical Chemistry II Lab"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 212,
-                            "name": "University Physics II"
-                        }
-                    ]
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
@@ -325,147 +223,32 @@
                     "courseType": "co-op",
                     "offeredFall": null,
                     "offeredSpring": null,
-                    "discipline": "CSEC",
-                    "number": 499,
-                    "name": "Cooperative Education in CSEC"
+                    "discipline": "SWEN",
+                    "number": 488,
+                    "name": "Software Engineering Summer Co-op"
                 }
             ]
         ],
         [
             [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 462,
-                    "name": "Introduction to Cryptography"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 310,
-                    "name": "Endpoint Security Engineering"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 230,
-                    "name": "Introduction to Database and Data Modeling"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "PUBL",
-                    "number": 363,
-                    "name": "Cyber Security Policy and Law"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
-                }
-            ],
-            [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 472,
-                    "name": "Authentication and Security Models"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 380,
-                    "name": "Principles of Web Application Security"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Immersion"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
-                }
-            ],
-            [
-                {
-                    "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
-                    "discipline": "CSEC",
-                    "number": 499,
-                    "name": "Cooperative Education in CSEC"
-                }
-            ]
-        ],
-        [
-            [
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Undergraduate Elective"
-                },
                 {
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "PHIL",
-                    "number": 102,
+                    "discipline": "SWEN",
+                    "number": 444,
                     "options": [
                         {
-                            "discipline": "PHIL",
-                            "number": 102,
-                            "name": "Introduction to Moral Issues"
+                            "discipline": "SWEN",
+                            "number": 444,
+                            "name": "Human-Centered Requirements and Design",
+                            "hyperChildId": null
                         },
                         {
-                            "discipline": "PHIL",
-                            "number": 202,
-                            "name": "Foundations of Moral Philosophy"
-                        },
-                        {
-                            "discipline": "PHIL",
-                            "number": 306,
-                            "name": "Professional Ethics"
+                            "discipline": "SWEN",
+                            "number": 445,
+                            "name": "Honors Human-Centered Requirements and Design",
+                            "hyperChildId": null
                         }
                     ]
                 },
@@ -475,6 +258,145 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
+                    "attribute": "BS: SWEN Process Elective"
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 261,
+                    "options": [
+                        {
+                            "discipline": "CSCI",
+                            "number": 261,
+                            "name": "Analysis of Algorithms",
+                            "hyperChildId": null
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 264,
+                            "name": "Honors Analysis of Algorithms",
+                            "hyperChildId": null
+                        }
+                    ]
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Math/Science Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "SWEN",
+                    "number": 499,
+                    "name": "Software Engineering Co-op"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 440,
+                    "name": "Software System Requirements and Architecture"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 340,
+                    "name": "Software Design for Computing Systems"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 331,
+                    "name": "Engineering Secure Software"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "MATH",
+                    "number": 241,
+                    "name": "Linear Algebra"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Gen Ed: Immersion"
+                }
+            ],
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "SWEN",
+                    "number": 499,
+                    "name": "Software Engineering Co-op"
+                }
+            ],
+            []
+        ],
+        [
+            [
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "SWEN",
+                    "number": 561,
+                    "name": "Software Engineering Project I"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "SWEN Design Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Math/Science Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
@@ -491,9 +413,9 @@
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 490,
-                    "name": "Capstone in Cybersecurity"
+                    "discipline": "SWEN",
+                    "number": 562,
+                    "name": "Software Engineering Project II"
                 },
                 {
                     "courseType": "input",
@@ -501,7 +423,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
+                    "attribute": "Engineering Elective"
                 },
                 {
                     "courseType": "input",
@@ -509,7 +431,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Undergraduate Elective"
+                    "attribute": "Professional Elective"
                 },
                 {
                     "courseType": "input",
@@ -517,7 +439,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
@@ -541,20 +471,12 @@
                     "name": "Cryptography and Authentication"
                 },
                 {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 603,
-                    "name": "Enterprise Security"
-                },
-                {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Elective"
+                    "attribute": "CSEC Research Elective"
                 },
                 {
                     "courseType": "input",
@@ -563,9 +485,39 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Research Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective"
                 }
             ],
             [
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 790,
+                    "options": [
+                        {
+                            "discipline": "CSEC",
+                            "number": 790,
+                            "name": "MS Thesis",
+                            "hyperChildId": 1
+                        },
+                        {
+                            "discipline": "ZZZZ",
+                            "number": 999,
+                            "name": "Not MS Thesis",
+                            "hyperChildId": 2
+                        }
+                    ],
+                    "hyperParentId": 1
+                },
                 {
                     "courseType": "required",
                     "offeredFall": true,
@@ -579,19 +531,32 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSEC",
-                    "number": 790,
-                    "name": "MS Thesis"
+                    "number": 603,
+                    "name": "Enterprise Security"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Research Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
                 }
             ],
             []
         ]
     ],
-    "notes": [
-        "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
-        "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CSEC handbook",
-        "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
-        "<b>Please Note:</b> MATH-241 Linear Algebra can be replaced with MATH-257 Statistical Inference",
-        "<b>Please Note:</b> PHIL-102 Introduction to Moral Issues can be replaced with PHIL-202 Foundations of Moral Philosophy or PHIL-306 Professional Ethics if desired",
-        "<b><u>This flowchart illustrates the MS degree culminating with the MS thesis; contact an academic advisor for details on the research option</u></b>"
-    ]
+    "notes": []
 }
