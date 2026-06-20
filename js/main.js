@@ -306,12 +306,12 @@ function createCourse(courseInfo) {
                 let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
                 if (validOptionHyperChildId) classOption.dataset.optionHyperChildId = optionHyperChildId;
 
+                classSelect.append(classOption); // Must come before
+
                 if (selectedOption == classTextContent) {
                     classSelect.selectedIndex = index;
                     if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
                 }
-
-                classSelect.append(classOption);
             });
 
             // Sets the border color
@@ -335,6 +335,8 @@ function createCourse(courseInfo) {
                 const optionHyperChildId = optionInfo?.hyperChildId;
                 let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
                 if (validOptionHyperChildId) classOption.dataset.optionHyperChildId = optionHyperChildId;
+
+                classSelect.append(classOption); // Must come before
 
                 if (selectedOption == classTextContent) {
                     classLabel.textContent = optionInfo.name;
