@@ -22,6 +22,8 @@ const semesters = ["Fall", "Spring", "Summer"];
 let academicYearCount = 0;      // The numbers of years of school currently being listed.
 let transferSection = false;    // Whether or not the transfer section is visible.
 let uploadedFilename = null;    // The filename of the uploaded file.
+let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
+let initialHyperChildIds = {}    // A mapping of hyperParentIds to the initial hyperChildIds
 
 const body = document.body;
 const classRegex = /^[A-Z]{4}-[0-9]{1,3}$/;
@@ -137,6 +139,11 @@ function processFlowchart(filename, template, resetChoose, resetUpload) {
     fillTransferYear(transferCourses);                                      // This handles all transfer classes
     years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));   // This handles all other semesters and their classes
     fillFinalNotes(notes);                                                  // This handles the final notes
+
+    // Makes sure only the hyper classes linked to a selected option are shown
+    for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
+        updateHyperCourseDivs(hyperParentId, hyperChildId);
+    }
 }
 
 /**
@@ -230,6 +237,9 @@ function createCourse(courseInfo) {
     const courseType = courseInfo.courseType;
     courseDiv.dataset.courseType = courseType;
 
+    const hyperParentId = courseInfo?.hyperParentId;
+    const hyperChildId = courseInfo?.hyperChildId;
+
     if (courseType == "co-op") {
         courseDiv.className = "co-op";
         courseDiv.textContent = `${courseInfo.name} (${courseInfo.discipline}-${courseInfo.number})`;
@@ -267,9 +277,19 @@ function createCourse(courseInfo) {
                 const classTextContent = `${optionInfo.discipline}-${optionInfo.number}`;
                 classOption.textContent = classTextContent;
                 classOption.value = optionInfo.name;
+
+                const optionHyperChildId = optionInfo?.hyperChildId;
+                if (optionHyperChildId !== undefined && optionHyperChildId !== null) {
+                    classOption.dataset.hyperChildId = optionInfo.hyperChildId;
+                }
+
                 classSelect.append(classOption);
                 if (selectedOption == classTextContent) {
                     classSelect.selectedIndex = index;
+
+                    if (optionHyperChildId !== undefined && optionHyperChildId !== null) {
+                        initialHyperChildIds[hyperParentId] = optionHyperChildId;
+                    }
                 }
             });
 
@@ -290,10 +310,20 @@ function createCourse(courseInfo) {
                 const classTextContent = `${optionInfo.discipline}-${optionInfo.number}`;
                 classOption.textContent = classTextContent;
                 classOption.value = optionInfo.name;
+                
+                const optionHyperChildId = optionInfo?.hyperChildId;
+                if (optionHyperChildId !== undefined && optionHyperChildId !== null) {
+                    classOption.dataset.hyperChildId = optionInfo.hyperChildId;
+                }
+
                 classSelect.append(classOption);
                 if (selectedOption == classTextContent) {
                     classLabel.textContent = optionInfo.name;
                     classSelect.selectedIndex = index;
+
+                    if (optionHyperChildId !== undefined && optionHyperChildId !== null) {
+                        initialHyperChildIds[hyperParentId] = optionHyperChildId;
+                    }
                 }
             });
 
@@ -310,6 +340,13 @@ function createCourse(courseInfo) {
             // Adds the select and label to the course div
             courseDiv.append(classSelect);
             courseDiv.append(classLabel)
+        }
+
+        // Updates visible hyper classes based on selected options
+        if (Number.isInteger(hyperParentId) && hyperChildId === undefined) {
+            classSelect.addEventListener("change", (event) => 
+                updateHyperCourseDivs(hyperParentId, event.target.dataset.hyperChildId)
+            );
         }
     } else if (courseType == "input") {
         courseDiv.className = "class";
@@ -369,6 +406,19 @@ function createCourse(courseInfo) {
         console.log("A course was found with an unknown type.");
     }
 
+    // This handles adding all course divs that are linked to a hyper-option to a global dictionary.
+    if (Number.isInteger(hyperParentId) && Number.isInteger(hyperChildId)) {
+        hyperDictionary[hyperParentId] ??= {};
+        const hyperChildDictionary = hyperDictionary[hyperParentId];
+
+        hyperChildDictionary[hyperChildId] ??= [];
+        const hyperChildCourseDivs = hyperChildDictionary[hyperChildId];
+
+        hyperChildCourseDivs.push(courseDiv);
+        courseDiv.dataset.hyperParentId = hyperParentId;
+        courseDiv.dataset.hyperChildId = hyperChildId;
+    }
+
     // Checks availability
     if (courseInfo.offeredSpring == false) {        // Offered in Fall
         courseDiv.style.borderStyle = "dotted";
@@ -377,6 +427,25 @@ function createCourse(courseInfo) {
     }
     
     return courseDiv;
+}
+
+/**
+ * This reveals and hides specific course divs if they are linked the hyper ids.
+ * 
+ * @param {int} hyperParentId - the id of the parent option div
+ * @param {int} hyperChildId - the id that matches an option of the parent option div
+ */
+function updateHyperCourseDivs(hyperParentId, hyperChildId) {
+    if (Number.isInteger(hyperParentId) && Number.isInteger(hyperChildId)) {
+        const hyperChildDictionary = hyperDictionary[hyperParentId];
+        for (const [hyperChildIdKey, courseDivs] of Object.entries(hyperChildDictionary)) {
+            if (hyperChildIdKey == hyperChildId) {
+                courseDivs.forEach(div => div.style.display = 'revert');
+            } else {
+                courseDivs.forEach(div => div.style.display = 'none');
+            }
+        }
+    }
 }
 
 /**
@@ -754,6 +823,7 @@ function setPageTitle(filename) {
         case "cs_bs_2526_template.json":
             pageTitle.textContent = "Computer Science BS 2025-2026 Flowchart";
             break;
+        case "cs_bsms_2526_template.json":
         case "cs_bsms_project_2526_template.json":
         case "cs_bsms_thesis_2526_template.json":
             pageTitle.textContent = "Computer Science BS/MS 2025-2026 Flowchart";
