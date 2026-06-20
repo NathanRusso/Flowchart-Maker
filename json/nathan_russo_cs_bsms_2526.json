@@ -1,5 +1,54 @@
 {
-    "transfer": [],
+    "transfer": [
+        {
+            "courseType": "required",
+            "offeredFall": true,
+            "offeredSpring": true,
+            "discipline": "MATH",
+            "number": 181,
+            "name": "Calculus I"
+        },
+        {
+            "courseType": "required",
+            "offeredFall": true,
+            "offeredSpring": true,
+            "discipline": "MATH",
+            "number": 182,
+            "name": "Calculus II"
+        },
+        {
+            "courseType": "input",
+            "offeredFall": true,
+            "offeredSpring": true,
+            "discipline": "UWRT",
+            "number": 150,
+            "attribute": "Writing Intensive: First Year"
+        },
+        {
+            "courseType": "input",
+            "offeredFall": true,
+            "offeredSpring": true,
+            "discipline": "MATH",
+            "number": 211,
+            "attribute": "Gen Ed: Immersion"
+        },
+        {
+            "courseType": "input",
+            "offeredFall": true,
+            "offeredSpring": true,
+            "discipline": "STAT",
+            "number": 145,
+            "attribute": "Gen Ed: Elective"
+        },
+        {
+            "courseType": "input",
+            "offeredFall": true,
+            "offeredSpring": true,
+            "discipline": "FREE",
+            "number": 100,
+            "attribute": "Open Elective"
+        }
+    ],
     "college": [
         [
             [
@@ -16,31 +65,31 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "MATH",
-                    "number": 181,
-                    "name": "Calculus I"
+                    "number": 190,
+                    "name": "Discrete Mathematics for Computing"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Writing Intensive: First Year"
+                    "discipline": "PSCY",
+                    "number": 101,
+                    "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "VISL",
+                    "number": 140,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "ECON",
+                    "number": 101,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
@@ -66,43 +115,94 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "MATH",
-                    "number": 182,
-                    "name": "Calculus II"
+                    "number": 251,
+                    "name": "Probability and Statistics"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 190,
-                    "name": "Discrete Mathematics for Computing"
+                    "discipline": "CHMG",
+                    "number": 141,
+                    "attribute": "Lab Science: Lecture 1",
+                    "options": [
+                        {
+                            "discipline": "BIOL",
+                            "number": 101,
+                            "name": "General Biology I"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 141,
+                            "name": "General & Analytical Chemistry I"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 211,
+                            "name": "University Physics I"
+                        }
+                    ]
+                },
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CHMG",
+                    "number": 145,
+                    "attribute": "Lab Science: Lab 1",
+                    "options": [
+                        {
+                            "discipline": "BIOL",
+                            "number": 103,
+                            "name": "General Biology I Lab"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 145,
+                            "name": "General & Analytical Chemistry I Lab"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 211,
+                            "name": "University Physics I"
+                        }
+                    ]
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "STSO",
+                    "number": 120,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "SOIS",
+                    "number": 244,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "WREC",
+                    "number": 37,
                     "attribute": "Wellness Course"
                 }
             ],
-            []
+            [
+                {
+                    "courseType": "co-op",
+                    "offeredFall": null,
+                    "offeredSpring": null,
+                    "discipline": "CSCI",
+                    "number": 488,
+                    "name": "CS Undergraduate Summer Co-op"
+                }
+            ]
         ],
         [
             [
@@ -127,31 +227,31 @@
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "MATH",
-                    "number": 251,
-                    "name": "Probability and Statistics"
+                    "number": 241,
+                    "name": "Linear Algebra"
                 },
                 {
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "BIOL",
-                    "number": 101,
-                    "attribute": "Lab Science: Lecture 1",
+                    "discipline": "CHMG",
+                    "number": 142,
+                    "attribute": "Lab Science: Lecture 2",
                     "options": [
                         {
                             "discipline": "BIOL",
-                            "number": 101,
-                            "name": "General Biology I"
+                            "number": 102,
+                            "name": "General Biology II"
                         },
                         {
                             "discipline": "CHMG",
-                            "number": 141,
-                            "name": "General & Analytical Chemistry I"
+                            "number": 142,
+                            "name": "General & Analytical Chemistry II"
                         },
                         {
                             "discipline": "PHYS",
-                            "number": 211,
-                            "name": "University Physics I"
+                            "number": 212,
+                            "name": "University Physics II"
                         }
                     ]
                 },
@@ -159,24 +259,24 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "BIOL",
-                    "number": 103,
-                    "attribute": "Lab Science: Lab 1",
+                    "discipline": "CHMG",
+                    "number": 146,
+                    "attribute": "Lab Science: Lab 2",
                     "options": [
                         {
                             "discipline": "BIOL",
-                            "number": 103,
-                            "name": "General Biology I Lab"
+                            "number": 104,
+                            "name": "General Biology II Lab"
                         },
                         {
                             "discipline": "CHMG",
-                            "number": 145,
-                            "name": "General & Analytical Chemistry I Lab"
+                            "number": 146,
+                            "name": "General & Analytical Chemistry II Lab"
                         },
                         {
                             "discipline": "PHYS",
-                            "number": 211,
-                            "name": "University Physics I"
+                            "number": 212,
+                            "name": "University Physics II"
                         }
                     ]
                 },
@@ -184,8 +284,8 @@
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "STSO",
+                    "number": 140,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
@@ -215,77 +315,35 @@
                     "name": "Intro to Software Engineering"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "MATH",
-                    "number": 241,
-                    "name": "Linear Algebra"
-                },
-                {
-                    "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "BIOL",
-                    "number": 102,
-                    "attribute": "Lab Science: Lecture 2",
-                    "options": [
-                        {
-                            "discipline": "BIOL",
-                            "number": 102,
-                            "name": "General Biology II"
-                        },
-                        {
-                            "discipline": "CHMG",
-                            "number": 142,
-                            "name": "General & Analytical Chemistry II"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 212,
-                            "name": "University Physics II"
-                        }
-                    ]
-                },
-                {
-                    "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "BIOL",
-                    "number": 104,
-                    "attribute": "Lab Science: Lab 2",
-                    "options": [
-                        {
-                            "discipline": "BIOL",
-                            "number": 104,
-                            "name": "General Biology II Lab"
-                        },
-                        {
-                            "discipline": "CHMG",
-                            "number": 146,
-                            "name": "General & Analytical Chemistry II Lab"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 212,
-                            "name": "University Physics II"
-                        }
-                    ]
+                    "number": 367,
+                    "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Scientific Principles Perspective"
+                    "discipline": "ACCT",
+                    "number": 110,
+                    "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "FINC",
+                    "number": 120,
+                    "attribute": "Open Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "WREC",
+                    "number": 73,
                     "attribute": "Wellness Course"
                 }
             ],
@@ -295,8 +353,8 @@
                     "offeredFall": null,
                     "offeredSpring": null,
                     "discipline": "CSCI",
-                    "number": 488,
-                    "name": "CS Undergraduate Summer Co-op"
+                    "number": 499,
+                    "name": "CS Undergraduate Semester Co-op"
                 }
             ]
         ],
@@ -330,33 +388,28 @@
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
+                    "discipline": "MATH",
+                    "number": 351,
+                    "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "discipline": "FINC",
+                    "number": 220,
+                    "attribute": "Open Elective"
                 }
             ],
             [
                 {
-                    "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
+                    "courseType": "required",
+                    "offeredFall": true,
+                    "offeredSpring": true,
                     "discipline": "CSCI",
-                    "number": 499,
-                    "name": "CS Undergraduate Semester Co-op"
-                }
-            ],
-            []
-        ],
-        [
-            [
+                    "number": 472,
+                    "name": "Historical & Current Perspectives in CS"
+                },
                 {
                     "courseType": "required",
                     "offeredFall": true,
@@ -377,72 +430,19 @@
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": false,
-                    "discipline": "CSEC",
-                    "number": 600,
-                    "attribute": "Open Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Immersion"
-                }
-            ],
-            [
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
-                    "number": 472,
-                    "name": "Historical & Current Perspectives in CS"
+                    "number": 462,
+                    "attribute": "CS Undergraduate Elective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "** CS Cluster Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "** CS Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "* Open Elective / CSEC Graduate Advanced Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "MGIS",
+                    "number": 130,
                     "attribute": "Open Elective"
                 }
             ],
-            []
-        ],
-        [
             [
                 {
                     "courseType": "co-op",
@@ -452,102 +452,102 @@
                     "number": 499,
                     "name": "CS Undergraduate Semester Co-op"
                 }
-            ],
+            ]
+        ],
+        [
+            [],
             [
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "** CS Cluster Elective"
+                    "discipline": "CSCI",
+                    "number": 631,
+                    "attribute": "* CS Graduate Cluster Elective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "discipline": "CSCI",
+                    "number": 635,
+                    "attribute": "* CS Graduate Cluster Elective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "discipline": "CSCI",
+                    "number": 651,
+                    "attribute": "CS Graduate Elective"
                 },
                 {
                     "courseType": "input",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "* Open Elective / CSEC Graduate Advanced Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "* Open Elective / CSEC Graduate Advanced Elective"
+                    "discipline": "MATH",
+                    "number": 301,
+                    "attribute": "Open Elective"
                 }
             ],
-            []
+            [
+                {
+                    "courseType": "input",
+                    "offeredFall": false,
+                    "offeredSpring": true,
+                    "discipline": "CSCI",
+                    "number": 664,
+                    "attribute": "* ++ CS Graduate Elective / Required Course"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Cluster Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
+                }
+            ]
         ],
         [
             [
                 {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": false,
-                    "discipline": "CSEC",
-                    "number": 604,
-                    "name": "Cryptography and Authentication"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 603,
-                    "name": "Enterprise Security"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Advanced Elective"
-                }
-            ],
-            [
-                {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
-                    "number": 792,
-                    "name": "CSEC Graduate Project"
-                },
-                {
-                    "courseType": "required",
-                    "offeredFall": false,
-                    "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 742,
-                    "name": "Computer System Security"
+                    "number": 788,
+                    "options": [
+                        {
+                            "discipline": "CSCI",
+                            "number": 788,
+                            "name": "CS MS Project",
+                            "hyperChildId": 1
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 790,
+                            "name": "CS MS Thesis",
+                            "hyperChildId": 2
+                        }
+                    ],
+                    "hyperParentId": 1
                 },
                 {
                     "courseType": "input",
@@ -555,20 +555,29 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Graduate Research Elective"
+                    "attribute": "CS Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 1
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CS Graduate Elective"
                 }
             ],
+            [],
             []
         ]
     ],
     "notes": [
         "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
-        "<b>Writing Intensive Courses:</b> 3 are required: 1st year = UWRT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI 472 Historical & Current Perspectives in Computer Science)",
+        "<b>Writing Intensive Courses:</b> 3 are required: 1st year = UWRT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI-472 Historical & Current Perspectives in Computer Science)",
         "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
-        "<b><u>Please see the Cybersecurity MS Handbook or talk to an academic advisor for a complete list of approved Cybersecurity Graduate Electives</u></b>",
-        "<b>* CS/CSEC BS/MS Double-Counted Courses</b> (however see ** also)",
-        "<b>** If approved CSEC Grad. Adv. Elec. that are Comp. Sci. (CSCI) courses are selected as double-counts, the BS double-count can satisfy CS Elective requirements instead of Open Electives</b>",
-        "<b>CSEC 604 is a required MS course; however, students who have completed the related course CSCI 662 Foundations of Cryptography or undergraduate CSCI 462 Introduction to Cryptography replace CSEC 604 with an additional CSEC Graduate Advanced Elective</b>",
-        "<b><u>This flowchart illustrates the 3-credit MS capstone experience; see the Cybersecurity MS Handbook or talk to an academic advisor for details on the 6-credit thesis option</u></b>"
+        "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
+        "<b>BS/MS Double-Counted Courses:</b> are noted with an *",
+        "++ <b>Approved alternative courses to the required CSCI-664 are</b>: CSCI-667, CSCI-712, CSCI-716 and CSCI-761. Check SIS for offerings"
     ]
 }

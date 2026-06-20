@@ -182,12 +182,14 @@
                         {
                             "discipline": "STAT",
                             "number": 205,
-                            "name": "Applied Statistics"
+                            "name": "Applied Statistics",
+                            "hyperChildId": null
                         },
                         {
                             "discipline": "MATH",
                             "number": 251,
-                            "name": "Probability and Statistics"
+                            "name": "Probability and Statistics",
+                            "hyperChildId": null
                         }
                     ]
                 },
@@ -239,12 +241,14 @@
                         {
                             "discipline": "SWEN",
                             "number": 444,
-                            "name": "Human-Centered Requirements and Design"
+                            "name": "Human-Centered Requirements and Design",
+                            "hyperChildId": null
                         },
                         {
                             "discipline": "SWEN",
                             "number": 445,
-                            "name": "Honors Human-Centered Requirements and Design"
+                            "name": "Honors Human-Centered Requirements and Design",
+                            "hyperChildId": null
                         }
                     ]
                 },
@@ -266,12 +270,14 @@
                         {
                             "discipline": "CSCI",
                             "number": 261,
-                            "name": "Analysis of Algorithms"
+                            "name": "Analysis of Algorithms",
+                            "hyperChildId": null
                         },
                         {
                             "discipline": "CSCI",
                             "number": 264,
-                            "name": "Honors Analysis of Algorithms"
+                            "name": "Honors Analysis of Algorithms",
+                            "hyperChildId": null
                         }
                     ]
                 },
@@ -491,12 +497,26 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 790,
-                    "name": "MS Thesis"
+                    "options": [
+                        {
+                            "discipline": "CSEC",
+                            "number": 790,
+                            "name": "MS Thesis",
+                            "hyperChildId": 1
+                        },
+                        {
+                            "discipline": "ZZZZ",
+                            "number": 999,
+                            "name": "Not MS Thesis",
+                            "hyperChildId": 2
+                        }
+                    ],
+                    "hyperParentId": 1
                 },
                 {
                     "courseType": "required",
@@ -513,6 +533,26 @@
                     "discipline": "CSEC",
                     "number": 603,
                     "name": "Enterprise Security"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Research Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
                 }
             ],
             []

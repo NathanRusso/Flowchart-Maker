@@ -22,6 +22,8 @@ const semesters = ["Fall", "Spring", "Summer"];
 let academicYearCount = 0;      // The numbers of years of school currently being listed.
 let transferSection = false;    // Whether or not the transfer section is visible.
 let uploadedFilename = null;    // The filename of the uploaded file.
+let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
+let initialHyperChildIds = {}    // A mapping of hyperParentIds to the initial hyperChildIds
 
 const body = document.body;
 const classRegex = /^[A-Z]{4}-[0-9]{1,3}$/;
@@ -137,6 +139,11 @@ function processFlowchart(filename, template, resetChoose, resetUpload) {
     fillTransferYear(transferCourses);                                      // This handles all transfer classes
     years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));   // This handles all other semesters and their classes
     fillFinalNotes(notes);                                                  // This handles the final notes
+
+    // Makes sure only the hyper classes linked to a selected option are shown
+    for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
+        updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
+    }
 }
 
 /**
@@ -226,32 +233,59 @@ function createSemester(semesterInfo, term) {
  * @returns the course div
  */
 function createCourse(courseInfo) {
+    // Create course div
     const courseDiv = document.createElement("div");
-    const courseType = courseInfo.courseType;
-    courseDiv.dataset.courseType = courseType;
 
+    // Get all possible data
+    let courseType = courseInfo.courseType;
+    let courseOfferedFall = courseInfo.offeredFall;
+    let courseOfferedSpring = courseInfo.offeredSpring;
+    let courseDiscipline = courseInfo.discipline;
+    let courseNumber = courseInfo.number;
+    let courseName = courseInfo?.name;
+    let courseAttribute = courseInfo?.attribute;
+    let courseOptions = courseInfo?.options; // Excluded from below
+    let courseHyperParentId = courseInfo?.hyperParentId;
+    let courseHyperChildId = courseInfo?.hyperChildId;
+
+    // Save all possible data
+    if (typeof courseType === "string" && courseType.trim()) {
+        courseType = courseType.trim();
+        courseDiv.dataset.courseType = courseType;
+    }
+    courseDiv.dataset.courseDiscipline = courseDiscipline;  // Can be empty
+    courseDiv.dataset.courseNumber = courseNumber;          // Can be null
+    if (typeof courseName === "string" && courseName.trim()) {
+        courseName = courseName.trim();
+        courseDiv.dataset.courseName = courseName;
+    }
+    if (typeof courseAttribute === "string" && courseAttribute.trim()) {
+        courseAttribute = courseAttribute.trim();
+        courseDiv.dataset.courseAttribute = courseAttribute;
+    }
+    const validHyperParentId = Number.isInteger(courseHyperParentId) && courseHyperParentId >= 0;
+    const validHyperChildId = Number.isInteger(courseHyperChildId) && courseHyperChildId >= 0;
+    if (validHyperParentId) courseDiv.dataset.courseHyperParentId = courseHyperParentId;
+    if (validHyperChildId) courseDiv.dataset.courseHyperChildId = courseHyperChildId;
+
+    // Add everything to the course divs
     if (courseType == "co-op") {
         courseDiv.className = "co-op";
-        courseDiv.textContent = `${courseInfo.name} (${courseInfo.discipline}-${courseInfo.number})`;
+        courseDiv.textContent = `${courseName} (${courseDiscipline}-${courseNumber})`;
     } else if (courseType == "required") {
         courseDiv.className = "class";
-        courseDiv.textContent = `${courseInfo.discipline}-${courseInfo.number}\n\n${courseInfo.name}`
+        courseDiv.textContent = `${courseDiscipline}-${courseNumber}\n\n${courseName}`
 
         // Set border color
-        courseDiv.style.borderColor = getDisciplineColor(courseInfo.discipline);
+        courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
     } else if (courseType == "option") {
         courseDiv.className = "class";
-        const selectedOption = `${courseInfo.discipline}-${courseInfo.number}`;
-        const attribute = courseInfo?.attribute;
+        const selectedOption = `${courseDiscipline}-${courseNumber}`;
 
         // Creates the class selector and adds options
         const classSelect = document.createElement("select");
-        const classOptions = courseInfo.options;
 
-        if (attribute) {
-            // Saves the attribute in the div
-            courseDiv.dataset.attribute = attribute;
-
+        if (courseAttribute) {
             // Updates styles
             classSelect.style.marginTop= "10px";
             classSelect.style.borderBottom = "1px Solid Black";
@@ -259,22 +293,29 @@ function createCourse(courseInfo) {
 
             // Sets the upper attribute label
             const classAttributeLabel = document.createElement("label");
-            classAttributeLabel.textContent = attribute;
+            classAttributeLabel.textContent = courseAttribute;
 
             // Sets the dropdown options
-            classOptions.forEach((optionInfo, index) => {
+            courseOptions.forEach((optionInfo, index) => {
                 const classOption = document.createElement("option");
                 const classTextContent = `${optionInfo.discipline}-${optionInfo.number}`;
                 classOption.textContent = classTextContent;
                 classOption.value = optionInfo.name;
-                classSelect.append(classOption);
+
+                const optionHyperChildId = optionInfo?.hyperChildId;
+                let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
+                if (validOptionHyperChildId) classOption.dataset.optionHyperChildId = optionHyperChildId;
+
+                classSelect.append(classOption); // Must come before
+
                 if (selectedOption == classTextContent) {
                     classSelect.selectedIndex = index;
+                    if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
                 }
             });
 
             // Sets the border color
-            courseDiv.style.borderColor = getAttributeColor(attribute);
+            courseDiv.style.borderColor = getAttributeColor(courseAttribute);
 
             // Adds the select and label to the course div
             courseDiv.append(classAttributeLabel);
@@ -282,44 +323,57 @@ function createCourse(courseInfo) {
         } else {
             // Creates a label to change based on the selector
             const classLabel = document.createElement("label");
-            classLabel.textContent = classOptions[0].name;
+            classLabel.textContent = courseOptions[0].name;
 
             // Sets the dropdown options
-            classOptions.forEach((optionInfo, index) => {
+            courseOptions.forEach((optionInfo, index) => {
                 const classOption = document.createElement("option");
                 const classTextContent = `${optionInfo.discipline}-${optionInfo.number}`;
                 classOption.textContent = classTextContent;
                 classOption.value = optionInfo.name;
-                classSelect.append(classOption);
+                
+                const optionHyperChildId = optionInfo?.hyperChildId;
+                let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
+                if (validOptionHyperChildId) classOption.dataset.optionHyperChildId = optionHyperChildId;
+
+                classSelect.append(classOption); // Must come before
+
                 if (selectedOption == classTextContent) {
                     classLabel.textContent = optionInfo.name;
                     classSelect.selectedIndex = index;
+                    if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
                 }
+
+                classSelect.append(classOption);
             });
 
             // Sets the border color
-            courseDiv.style.borderColor = getDisciplineColor(courseInfo.discipline);
+            courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
 
             // Updates color and text
             classSelect.addEventListener("change", (event) => {
                 classLabel.textContent = event.target.value;
-                const courseDiscipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
-                courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
+                const discipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
+                courseDiv.style.borderColor = getDisciplineColor(discipline);
             });
 
             // Adds the select and label to the course div
             courseDiv.append(classSelect);
-            courseDiv.append(classLabel)
+            courseDiv.append(classLabel);
+        }
+
+        // Updates visible hyper classes based on selected options
+        if (validHyperParentId && !validHyperChildId) {
+            classSelect.addEventListener("change", (event) =>{
+                updateHyperCourseDivs(courseHyperParentId, Number(classSelect.options[classSelect.selectedIndex].dataset.optionHyperChildId))
+            });
         }
     } else if (courseType == "input") {
         courseDiv.className = "class";
-        const courseDiscipline = courseInfo.discipline;
-        const courseNumber = courseInfo.number;
-        const attribute = courseInfo.attribute;
 
         // Creates the label for the input
         const classLabel = document.createElement("label");
-        classLabel.textContent = attribute;
+        classLabel.textContent = courseAttribute;
 
         // Creates the class input
         const classInput = document.createElement("input");
@@ -348,8 +402,7 @@ function createCourse(courseInfo) {
         // Ensures a valid string is saved
         classInput.addEventListener("blur", (event) => {
             const currentValue = event.target.value;
-            const currentLength = currentValue.length;
-            if (currentValue != null && currentValue != "" && !classRegex.test(currentValue)) {
+            if (currentValue && !classRegex.test(currentValue)) {
                 alert("Format must be in ABCD-123 or blank");
                 setTimeout(() => classInput.focus(), 0); // Prevents alert loop
             }
@@ -360,7 +413,7 @@ function createCourse(courseInfo) {
         if (classRegex.test(savedCourse)) classInput.value = savedCourse;
 
         // Sets the border color
-        courseDiv.style.borderColor = getAttributeColor(attribute);
+        courseDiv.style.borderColor = getAttributeColor(courseAttribute);
 
         // Adds the label and input to the course div
         courseDiv.append(classLabel);
@@ -369,14 +422,44 @@ function createCourse(courseInfo) {
         console.log("A course was found with an unknown type.");
     }
 
+    // This handles adding all course divs that are linked to a hyper-option to a global dictionary.
+    if (validHyperParentId && validHyperChildId) {
+        hyperDictionary[courseHyperParentId] ??= {};
+        const hyperChildDictionary = hyperDictionary[courseHyperParentId];
+
+        hyperChildDictionary[courseHyperChildId] ??= [];
+        const hyperChildCourseDivs = hyperChildDictionary[courseHyperChildId];
+
+        hyperChildCourseDivs.push(courseDiv);
+    }
+
     // Checks availability
-    if (courseInfo.offeredSpring == false) {        // Offered in Fall
+    if (courseOfferedSpring === false) {        // Offered in Fall
         courseDiv.style.borderStyle = "dotted";
-    } else if (courseInfo.offeredFall == false) {   // Offered in Spring
+    } else if (courseOfferedFall === false) {   // Offered in Spring
         courseDiv.style.borderStyle = "dashed";
     }
     
     return courseDiv;
+}
+
+/**
+ * This reveals and hides specific course divs if they are linked the hyper ids.
+ * 
+ * @param {int} hyperParentId - the id of the parent option div
+ * @param {int} hyperChildId - the id that matches an option of the parent option div
+ */
+function updateHyperCourseDivs(hyperParentId, hyperChildId) {
+    if (Number.isInteger(hyperParentId) && Number.isInteger(hyperChildId)) {
+        const hyperChildDictionary = hyperDictionary[hyperParentId];
+        for (const [hyperChildIdKey, courseDivs] of Object.entries(hyperChildDictionary)) {
+            if (hyperChildIdKey == hyperChildId) {
+                courseDivs.forEach(div => div.style.display = 'flex');
+            } else {
+                courseDivs.forEach(div => div.style.display = 'none');
+            }
+        }
+    }
 }
 
 /**
@@ -443,35 +526,37 @@ function downloadTemplate() {
 function processCourse(courseDiv) {
     let course = {};
 
+    // Get all possible data
     const courseType = courseDiv.dataset.courseType; // "co-op", "required", "option", "input"
-    const classContent = courseDiv.textContent;
-    const classOfferedOnlyFall = courseDiv.style.borderStyle == "dotted";
-    const classOfferedOnlySpring = courseDiv.style.borderStyle == "dashed";
+    const courseContent = courseDiv.textContent;
+    const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
+    const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
+    const courseDiscipline = courseDiv.dataset?.courseDiscipline;
+    const courseNumber = Number(courseDiv.dataset?.courseNumber);
+    const courseName = courseDiv.dataset?.courseName;
+    const courseAttribute = courseDiv.dataset?.courseAttribute;
+    const courseHyperParentId = Number(courseDiv.dataset?.courseHyperParentId);
+    const courseHyperChildId = Number(courseDiv.dataset?.courseHyperChildId);
 
     if (courseType == "co-op") {
-        const classInformation1 = classContent.split(/[\(\)]+/);
-        const classInformation2 = classInformation1[1].split(/[\-]+/);
         course = {
             "courseType": "co-op",
             "offeredFall": null,
             "offeredSpring": null,
-            "discipline": classInformation2[0].trim(),
-            "number": parseInt(classInformation2[1].trim()),
-            "name": classInformation1[0].trim()
+            "discipline": courseDiscipline,
+            "number": courseNumber,
+            "name": courseName
         };
     } else if (courseType == "required") {
-        const classInformation1 = classContent.split(/[\n]+/);
-        const classInformation2 = classInformation1[0].split(/[\-]+/);
         course = {
             "courseType": "required",
-            "offeredFall": !(classOfferedOnlySpring),
-            "offeredSpring": !(classOfferedOnlyFall),
-            "discipline": classInformation2[0].trim(),
-            "number": parseInt(classInformation2[1].trim()),
-            "name": classInformation1[1].trim()
+            "offeredFall": !(courseOfferedOnlySpring),
+            "offeredSpring": !(courseOfferedOnlyFall),
+            "discipline": courseDiscipline,
+            "number": courseNumber,
+            "name": courseName
         };
     } else if (courseType == "option") {
-        const courseAttribute = courseDiv.dataset?.attribute;
         if (courseAttribute) {
             const select = courseDiv.children[1];                       // Select
             const options = select.options;                             // Options
@@ -482,63 +567,69 @@ function processCourse(courseDiv) {
             const createdOptions = [];
             Array.from(options).forEach(option => {
                 const optionInfo = option.textContent.split(/[\-]+/);
-                createdOptions.push({
+                const optionHyperChildId = Number(option.dataset.optionHyperChildId);
+                optionObject = {
                     "discipline": optionInfo[0],
-                    "number": parseInt(optionInfo[1]),
-                    "name": option.value
-                });
+                    "number": Number(optionInfo[1]),
+                    "name": option.value,
+                }
+                if (optionHyperChildId) optionObject["hyperChildId"] = optionHyperChildId;
+                createdOptions.push(optionObject);
             });
 
             course = {
                 "courseType": "option",
-                "offeredFall": !(classOfferedOnlySpring),
-                "offeredSpring": !(classOfferedOnlyFall),
+                "offeredFall": !(courseOfferedOnlySpring),
+                "offeredSpring": !(courseOfferedOnlyFall),
                 "discipline": info[0],
-                "number": parseInt(info[1]),
+                "number": Number(info[1]),
                 "attribute": courseAttribute,
                 "options": createdOptions
             };
         } else {
             const select = courseDiv.children[0];                       // Select
             const options = select.options;                             // Options
-
             const selectedOption = options[select.selectedIndex];
             const info = selectedOption.textContent.split(/[\-]+/);
 
             const createdOptions = [];
             Array.from(options).forEach(option => {
                 const optionInfo = option.textContent.split(/[\-]+/);
-                createdOptions.push({
+                const optionHyperChildId = Number(option.dataset.optionHyperChildId);
+                optionObject = {
                     "discipline": optionInfo[0],
-                    "number": parseInt(optionInfo[1]),
-                    "name": option.value
-                });
+                    "number": Number(optionInfo[1]),
+                    "name": option.value,
+                }
+                if (optionHyperChildId != null) optionObject["hyperChildId"] = optionHyperChildId;
+                createdOptions.push(optionObject);
             });
 
             course = {
                 "courseType": "option",
-                "offeredFall": !(classOfferedOnlySpring),
-                "offeredSpring": !(classOfferedOnlyFall),
+                "offeredFall": !(courseOfferedOnlySpring),
+                "offeredSpring": !(courseOfferedOnlyFall),
                 "discipline": info[0],
-                "number": parseInt(info[1]),
+                "number": Number(info[1]),
                 "options": createdOptions
             };
         }
-
     } else if (courseType == "input") {
-        const attribute = courseDiv.children[0].textContent;        // Label
         const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
         course = {
             "courseType": "input",
-            "offeredFall": !(classOfferedOnlySpring),
-            "offeredSpring": !(classOfferedOnlyFall),
+            "offeredFall": !(courseOfferedOnlySpring),
+            "offeredSpring": !(courseOfferedOnlyFall),
             "discipline": inputs[0],
-            "number": parseInt(inputs[1]),
-            "attribute": attribute
+            "number": Number(inputs[1]),
+            "attribute": courseAttribute
         };
     } else {
         console.log("A course was found with an unknown type.");
     }
+
+    if (courseHyperParentId || courseHyperParentId === 0) course["hyperParentId"] = courseHyperParentId;
+    if (courseHyperChildId || courseHyperChildId === 0) course["hyperChildId"] = courseHyperChildId;
 
     return course;
 }
@@ -754,8 +845,7 @@ function setPageTitle(filename) {
         case "cs_bs_2526_template.json":
             pageTitle.textContent = "Computer Science BS 2025-2026 Flowchart";
             break;
-        case "cs_bsms_project_2526_template.json":
-        case "cs_bsms_thesis_2526_template.json":
+        case "cs_bsms_2526_template.json":
             pageTitle.textContent = "Computer Science BS/MS 2025-2026 Flowchart";
             break;
         case "cscsec_bsms_project_2526_template.json":
@@ -768,8 +858,7 @@ function setPageTitle(filename) {
         case "csec_bs_2526_template.json":
             pageTitle.textContent = "Cyber Security BS 2025-2026 Flowchart";
             break;
-        case "csec_bsms_research_2526_template.json":
-        case "csec_bsms_thesis_2526_template.json":
+        case "csec_bsms_2526_template.json":
             pageTitle.textContent = "Cyber Security BS/MS 2025-2026 Flowchart";
             break;
         case "csecstpp_bsms_2526_template.json":
@@ -799,8 +888,7 @@ function setPageTitle(filename) {
         case "secs_bsms_2526_template.json":
             pageTitle.textContent = "Software Engineering/Computer Science BS/MS 2025-2026 Flowchart";
             break;
-        case "secsec_bsms_research_2526_template.json":
-        case "secsec_bsms_thesis_2526_template.json":
+        case "secsec_bsms_2526_template.json":
             pageTitle.textContent = "Software Engineering/Cyber Security BS/MS 2025-2026 Flowchart";
             break;
         default:

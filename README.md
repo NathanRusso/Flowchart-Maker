@@ -8,7 +8,9 @@ You can choose from templates and upload your own version.
 ### Course Types
 1. **Co-op** - A cooperative education block that encompasses an entire semester
 2. **Required** - A defined course that must be taken
-3. **Option** - A group of defined courses for which you must pick one from that may have an attribute
+3. **Option** - A group of defined courses for which you must pick one from
+    - **Attribute Option** - All courses fall under the same label attribute where by their individual names are not shown
+    - **Hyper Option** - Each option has associated courses that only appear when said option is selected
 4. **Input** - An undefined course slot for which you must pick one course to fill that typically falls into some category
 
 ## Current Templates Available
@@ -24,16 +26,13 @@ You can choose from templates and upload your own version.
 
 ### Computer Science
 - CS BS
-- CS BS/MS Project
-- CS BS/MS Thesis
-- CS/CSEC BS/MS Project
-- CS/CSEC BS/MS Thesis
+- CS BS/MS
+- CS/CSEC BS/MS
 - CS/SE BS/MS
 
 ### Cyber Security
 - CSEC BS
-- CSEC BS/MS Research
-- CSEC BS/MS Thesis
+- CSEC BS/MS
 - CSEC/STPP BS/MS
 
 ### Game Design and Development
@@ -49,10 +48,8 @@ You can choose from templates and upload your own version.
 ### New Media Interactive Development
 - NMID BS
 
-<!--
 ### Software Engineering
 - SE BS
 - SE BS/MS
 - SE/CS BS/MS
 - SE/CSEC BS/MS
--->

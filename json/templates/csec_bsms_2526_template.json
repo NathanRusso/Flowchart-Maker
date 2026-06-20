@@ -575,12 +575,46 @@
                     "name": "Computer System Security"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 790,
-                    "name": "MS Thesis"
+                    "options": [
+                        {
+                            "discipline": "CSEC",
+                            "number": 790,
+                            "name": "MS Thesis",
+                            "hyperChildId": 1
+                        },
+                        {
+                            "discipline": "ZZZZ",
+                            "number": 999,
+                            "name": "Not MS Thesis",
+                            "hyperChildId": 2
+                        }
+                    ],
+                    "hyperParentId": 1
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Research Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
                 }
             ],
             []
@@ -591,7 +625,6 @@
         "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CSEC handbook",
         "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
         "<b>Please Note:</b> MATH-241 Linear Algebra can be replaced with MATH-257 Statistical Inference",
-        "<b>Please Note:</b> PHIL-102 Introduction to Moral Issues can be replaced with PHIL-202 Foundations of Moral Philosophy or PHIL-306 Professional Ethics if desired",
-        "<b><u>This flowchart illustrates the MS degree culminating with the MS thesis; contact an academic advisor for details on the research option</u></b>"
+        "<b>Please Note:</b> PHIL-102 Introduction to Moral Issues can be replaced with PHIL-202 Foundations of Moral Philosophy or PHIL-306 Professional Ethics if desired"
     ]
 }

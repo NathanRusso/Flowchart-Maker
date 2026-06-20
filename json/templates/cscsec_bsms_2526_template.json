@@ -360,6 +360,14 @@
                 {
                     "courseType": "required",
                     "offeredFall": true,
+                    "offeredSpring": false,
+                    "discipline": "CSEC",
+                    "number": 600,
+                    "name": "Introduction to Computing Security"
+                },
+                {
+                    "courseType": "required",
+                    "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 344,
@@ -379,15 +387,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Undergraduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "CS Elective"
                 },
                 {
                     "courseType": "input",
@@ -399,14 +399,6 @@
                 }
             ],
             [
-                {
-                    "courseType": "input",
-                    "offeredFall": false,
-                    "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 664,
-                    "attribute": "* ++ CS Graduate Elective / Required Course"
-                },
                 {
                     "courseType": "required",
                     "offeredFall": true,
@@ -421,7 +413,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "* CS Graduate Cluster Elective"
+                    "attribute": "** CS Cluster Elective"
                 },
                 {
                     "courseType": "input",
@@ -429,7 +421,15 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "** CS Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective"
                 },
                 {
                     "courseType": "input",
@@ -460,7 +460,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "* CS Graduate Cluster Elective"
+                    "attribute": "** CS Cluster Elective"
                 },
                 {
                     "courseType": "input",
@@ -484,7 +484,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "CSEC Graduate Elective"
                 },
                 {
                     "courseType": "input",
@@ -492,7 +492,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "CSEC Graduate Elective"
                 }
             ],
             []
@@ -500,46 +500,28 @@
         [
             [
                 {
-                    "courseType": "input",
-                    "offeredFall": true,
+                    "courseType": "required",
+                    "offeredFall": false,
                     "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Cluster Elective"
+                    "discipline": "CSEC",
+                    "number": 742,
+                    "name": "Computer System Security"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "required",
                     "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Elective"
+                    "offeredSpring": false,
+                    "discipline": "CSEC",
+                    "number": 604,
+                    "name": "Cryptography and Authentication"
                 },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Elective"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CS Graduate Elective"
-                }
-            ],
-            [
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 788,
-                    "name": "CS MS Project"
+                    "discipline": "CSEC",
+                    "number": 603,
+                    "name": "Enterprise Security"
                 },
                 {
                     "courseType": "input",
@@ -547,7 +529,31 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Graduate Elective"
+                    "attribute": "CSEC Research Elective"
+                }
+            ],
+            [
+                {
+                    "courseType": "option",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "CSEC",
+                    "number": 790,
+                    "options": [
+                        {
+                            "discipline": "CSEC",
+                            "number": 790,
+                            "name": "MS Thesis",
+                            "hyperChildId": 1
+                        },
+                        {
+                            "discipline": "ZZZZ",
+                            "number": 999,
+                            "name": "Not MS Thesis",
+                            "hyperChildId": 2
+                        }
+                    ],
+                    "hyperParentId": 1
                 },
                 {
                     "courseType": "input",
@@ -555,7 +561,27 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Graduate Elective"
+                    "attribute": "CSEC Research Elective"
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Research Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
+                },
+                {
+                    "courseType": "input",
+                    "offeredFall": true,
+                    "offeredSpring": true,
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "CSEC Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 2
                 }
             ],
             []
@@ -563,11 +589,9 @@
     ],
     "notes": [
         "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
-        "<b>Writing Intensive Courses:</b> 3 are required: 1st year = UWRT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI-472 Historical & Current Perspectives in Computer Science)",
+        "<b>Writing Intensive Courses:</b> 3 are required: 1st year = UWRT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI 472 Historical & Current Perspectives in Computer Science)",
         "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
-        "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical",
-        "<b>BS/MS Double-Counted Courses:</b> are noted with an *",
-        "++ <b>Approved alternative courses to the required CSCI-664 are</b>: CSCI-667, CSCI-712, CSCI-716 and CSCI-761. Check SIS for offerings",
-        "<b><u>This flowchart illustrates the MS degree culminating with the Capstone project; contact an academic advisor for details on the thesis option</u></b>"
+        "<b><u>Please see the Cybersecurity MS Handbook or talk to an academic advisor for a complete list of approved Cybersecurity Graduate Electives</u></b>",
+        "<b>* CS/CSEC BS/MS Double-Counted Courses</b> (however see ** also)"
     ]
 }
