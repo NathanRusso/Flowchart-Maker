@@ -837,8 +837,6 @@ function setPageTitle(filename) {
             pageTitle.textContent = "Computer Science BS 2025-2026 Flowchart";
             break;
         case "cs_bsms_2526_template.json":
-        case "cs_bsms_project_2526_template.json":
-        case "cs_bsms_thesis_2526_template.json":
             pageTitle.textContent = "Computer Science BS/MS 2025-2026 Flowchart";
             break;
         case "cscsec_bsms_project_2526_template.json":
