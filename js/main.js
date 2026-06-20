@@ -142,7 +142,7 @@ function processFlowchart(filename, template, resetChoose, resetUpload) {
 
     // Makes sure only the hyper classes linked to a selected option are shown
     for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
-        updateHyperCourseDivs(hyperParentId, hyperChildId);
+        updateHyperCourseDivs(Number(hyperParentId), hyperChildId);
     }
 }
 
@@ -344,8 +344,8 @@ function createCourse(courseInfo) {
 
         // Updates visible hyper classes based on selected options
         if (Number.isInteger(hyperParentId) && hyperChildId === undefined) {
-            classSelect.addEventListener("change", (event) => 
-                updateHyperCourseDivs(hyperParentId, event.target.dataset.hyperChildId)
+            classSelect.addEventListener("change", (event) =>
+                updateHyperCourseDivs(hyperParentId, Number(classSelect.options[classSelect.selectedIndex].dataset.hyperChildId))
             );
         }
     } else if (courseType == "input") {
@@ -440,7 +440,7 @@ function updateHyperCourseDivs(hyperParentId, hyperChildId) {
         const hyperChildDictionary = hyperDictionary[hyperParentId];
         for (const [hyperChildIdKey, courseDivs] of Object.entries(hyperChildDictionary)) {
             if (hyperChildIdKey == hyperChildId) {
-                courseDivs.forEach(div => div.style.display = 'revert');
+                courseDivs.forEach(div => div.style.display = 'flex');
             } else {
                 courseDivs.forEach(div => div.style.display = 'none');
             }
