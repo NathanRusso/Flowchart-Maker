@@ -16,6 +16,7 @@ const years = [
   "Ninety-First", "Ninety-Second", "Ninety-Third", "Ninety-Fourth", "Ninety-Fifth", "Ninety-Sixth", "Ninety-Seventh", "Ninety-Eighth", "Ninety-Ninth", "One Hundredth"
 ];
 const semesters = ["Fall", "Spring", "Summer"];
+const defaultTitle = "GCCIS 2025-2026 Flowchart";
 
 //------------------------------ DATA BELOW ------------------------------//
 
@@ -23,7 +24,7 @@ let academicYearCount = 0;      // The numbers of years of school currently bein
 let transferSection = false;    // Whether or not the transfer section is visible.
 let uploadedFilename = null;    // The filename of the uploaded file.
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
-let initialHyperChildIds = {}    // A mapping of hyperParentIds to the initial hyperChildIds
+let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
 
 const body = document.body;
 const classRegex = /^[A-Z]{4}-[0-9]{1,3}$/;
@@ -57,7 +58,7 @@ pushYearButton.addEventListener("click", pushYear);
 popYearButton.addEventListener("click", popYear);
 showTransferButton.addEventListener("click", showTransferSection);
 hideTransferButton.addEventListener("click", hideTransferSection);
-clearFlowchartButton.addEventListener("click", () => clearFlowchart(true, true));
+clearFlowchartButton.addEventListener("click", () => clearFlowchart(defaultTitle, true, true));
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
@@ -91,9 +92,9 @@ function makeSortable(element) {
  * @param {*} filename - the template flowchart filename
  */
 async function getTemplateFlowchart(filename) {
-    if (!filename) { setPageTitle(null); return; };
+    if (!filename) { pageTitle.textContent = defaultTitle; return; };
     const template  = (await import(`/json/templates/${filename}`, { with: { type: "json" } })).default;
-    processFlowchart(filename, template, false, true);
+    processFlowchart(template, false, true);
 }
 
 /**
@@ -105,7 +106,7 @@ async function processUploadedFile(file) {
     uploadedFilename = file.name;
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
-    processFlowchart(uploadedFilename, fileData, true, false);
+    processFlowchart(fileData, true, false);
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
 
@@ -114,33 +115,31 @@ async function processUploadedFile(file) {
  * This adds a Transfer section for transfer classes.
  * It then adds years, each of which has 3 semesters that may or many not contain courses.
  * 
- * @param {*} filename - the flowchart filename
  * @param {*} template - the flowchart with transfer, year, semester, and course information
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function processFlowchart(filename, template, resetChoose, resetUpload) {
+function processFlowchart(template, resetChoose, resetUpload) {
     // Check JSON file formatting
-    if (!template || typeof template != "object" || Array.isArray(template) ||
-        !Array.isArray(template.transfer) || !Array.isArray(template.college)) {
+    if (!template || typeof template != "object" || Array.isArray(template)
+        || typeof template.title !== "string" ||  !Array.isArray(template.transfer) 
+        || !Array.isArray(template.college) || !Array.isArray(template.notes)) {
         alert("The given JSON file does not meet the required formatting.");
-        setPageTitle(null);
+        pageTitle.textContent = defaultTitle;
         return;
     }
 
-    // Updates the page title
-    setPageTitle(filename);
-
+    const title = template.title;
     const transferCourses = template.transfer;
     const years = template.college;
     const notes = template.notes;
 
-    clearFlowchart(resetChoose, resetUpload);                               // This removed the current flowchart
+    clearFlowchart(title, resetChoose, resetUpload);                        // This removes the previous flowchart
     fillTransferYear(transferCourses);                                      // This handles all transfer classes
     years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));   // This handles all other semesters and their classes
     fillFinalNotes(notes);                                                  // This handles the final notes
 
-    // Makes sure only the hyper classes linked to a selected option are shown
+    // This makes sure only the hyper classes linked to a selected option are shown
     for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
         updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
     }
@@ -152,12 +151,11 @@ function processFlowchart(filename, template, resetChoose, resetUpload) {
  * @param {*} transferInfo - The object containing the transfer course objects
  */
 function fillTransferYear(transferInfo) {
-    if (transferInfo.length == 0) return;
     transferInfo.forEach(courseInfo => {
         const courseDiv = createCourse(courseInfo);
         transferDiv.append(courseDiv);
     });
-    showTransferSection();
+    if (transferInfo.length > 0) showTransferSection();
 }
 
 /**
@@ -498,7 +496,12 @@ function downloadTemplate() {
     });
 
     // Creates and downloads the JSON file
-    const json = { "transfer": transfer, "college": college, "notes": notes };
+    const json = {
+        "title": pageTitle.textContent,
+        "transfer": transfer,
+        "college": college,
+        "notes": notes
+    };
     const jsonString = JSON.stringify(json);
     const jsonBlob = new Blob([jsonString], { type: "application/json" });
     const jsonObjectUrl = URL.createObjectURL(jsonBlob);
@@ -568,12 +571,13 @@ function processCourse(courseDiv) {
             Array.from(options).forEach(option => {
                 const optionInfo = option.textContent.split(/[\-]+/);
                 const optionHyperChildId = Number(option.dataset.optionHyperChildId);
+                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
                 optionObject = {
                     "discipline": optionInfo[0],
                     "number": Number(optionInfo[1]),
                     "name": option.value,
                 }
-                if (optionHyperChildId) optionObject["hyperChildId"] = optionHyperChildId;
+                if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
                 createdOptions.push(optionObject);
             });
 
@@ -596,12 +600,13 @@ function processCourse(courseDiv) {
             Array.from(options).forEach(option => {
                 const optionInfo = option.textContent.split(/[\-]+/);
                 const optionHyperChildId = Number(option.dataset.optionHyperChildId);
+                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
                 optionObject = {
                     "discipline": optionInfo[0],
                     "number": Number(optionInfo[1]),
                     "name": option.value,
                 }
-                if (optionHyperChildId != null) optionObject["hyperChildId"] = optionHyperChildId;
+                if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
                 createdOptions.push(optionObject);
             });
 
@@ -707,20 +712,22 @@ function hideTransferSection() {
 /**
  * This removed all courses and sections.
  * 
+ * @param {string} title - the title to display at the top of the flowchart
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function clearFlowchart(resetChoose, resetUpload) {
+function clearFlowchart(title, resetChoose, resetUpload) {
+    pageTitle.textContent = title;                      // Sets the title
     if (resetChoose) templateSelect.selectedIndex = 0;  // Resets the "Choose Template" selector to the 1st option.
     if (resetUpload) uploadedFilename = null;           // Resets the name of the uploaded file
-    transferDiv.replaceChildren(); // Removes all transfer courses
+    transferDiv.replaceChildren();                      // Removes all transfer courses
     hideTransferSection();
     for (let i = 1; i <= academicYearCount; i++) {
         document.getElementById(`year-${i}`).remove();
         document.getElementById(`year-divider-${i}`).remove();
     }
     finalNotesList.textContent = "";                    // Gets rid of the final notes
-    academicYearCount = 0; // Resets the year count
+    academicYearCount = 0;                              // Resets the year count
 }
 
 /**
@@ -823,76 +830,5 @@ function getAttributeColor(attribute) {
         return "HotPink";
     } else {
         return "Black"
-    }
-}
-
-/**
- * This updates the title at the top of the page based on the template.
- * 
- * @param {*} filename - the flowchart filename
- */
-function setPageTitle(filename) {
-    switch (filename) {
-        case "ai_bs_2526_template.json":
-            pageTitle.textContent = "Artificial Intelligence BS 2025-2026 Flowchart";
-            break;
-        case "ce_2526_template.json":
-            pageTitle.textContent = "Computing Exploration 2025-2026 Flowchart";
-            break;
-        case "cit_bs_2526_template.json":
-            pageTitle.textContent = "Computing and Information Technology BS 2025-2026 Flowchart";
-            break;
-        case "cs_bs_2526_template.json":
-            pageTitle.textContent = "Computer Science BS 2025-2026 Flowchart";
-            break;
-        case "cs_bsms_2526_template.json":
-            pageTitle.textContent = "Computer Science BS/MS 2025-2026 Flowchart";
-            break;
-        case "cscsec_bsms_project_2526_template.json":
-        case "cscsec_bsms_thesis_2526_template.json":
-            pageTitle.textContent = "Computer Science/Cyber Security BS/MS 2025-2026 Flowchart";
-            break;
-        case "csse_bsms_2526_template.json":
-            pageTitle.textContent = "Computer Science/Software Engineering BS/MS 2025-2026 Flowchart";
-            break;
-        case "csec_bs_2526_template.json":
-            pageTitle.textContent = "Cyber Security BS 2025-2026 Flowchart";
-            break;
-        case "csec_bsms_2526_template.json":
-            pageTitle.textContent = "Cyber Security BS/MS 2025-2026 Flowchart";
-            break;
-        case "csecstpp_bsms_2526_template.json":
-            pageTitle.textContent = "Cyber Security/Science, Technology, and Public Policy BS/MS 2025-2026 Flowchart";
-            break;
-        case "gdd_bs_2526_template.json":
-            pageTitle.textContent = "Game Design and Development BS 2025-2026 Flowchart";
-            break;
-        case "gdd_bsms_2526_template.json":
-            pageTitle.textContent = "Game Design and Development BS/MS 2025-2026 Flowchart";
-            break;
-        case "hcc_bs_2526_template.json":
-            pageTitle.textContent = "Human-Centered Computing BS 2025-2026 Flowchart";
-            break;
-        case "hcd_bs_2526_template.json":
-            pageTitle.textContent = "Humanities, Computing, and Design BS 2025-2026 Flowchart";
-            break;
-        case "nmid_bs_2526_template.json":
-            pageTitle.textContent = "New Media Interactive Development BS 2025-2026 Flowchart";
-            break;
-        case "se_bs_2526_template.json":
-            pageTitle.textContent = "Software Engineering BS 2025-2026 Flowchart";
-            break;
-        case "se_bsms_2526_template.json":
-            pageTitle.textContent = "Software Engineering BS/MS 2025-2026 Flowchart";
-            break;
-        case "secs_bsms_2526_template.json":
-            pageTitle.textContent = "Software Engineering/Computer Science BS/MS 2025-2026 Flowchart";
-            break;
-        case "secsec_bsms_2526_template.json":
-            pageTitle.textContent = "Software Engineering/Cyber Security BS/MS 2025-2026 Flowchart";
-            break;
-        default:
-            pageTitle.textContent = "Computer Science 2025-2026 Flowchart";
-            break;
     }
 }

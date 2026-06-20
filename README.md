@@ -30,7 +30,7 @@ You can choose from templates and upload your own version.
 - CS/CSEC BS/MS
 - CS/SE BS/MS
 
-### Cyber Security
+### Cybersecurity
 - CSEC BS
 - CSEC BS/MS
 - CSEC/STPP BS/MS
