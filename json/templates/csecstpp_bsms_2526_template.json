@@ -561,7 +561,7 @@
                 }
             ],
             [
-               {
+                {
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
@@ -579,7 +579,7 @@
                         }
                     ]
                 },
-               {
+                {
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
@@ -588,19 +588,23 @@
                         {
                             "discipline": "PUBL",
                             "number": 785,
-                            "name": "Capstone Experience"
+                            "name": "Capstone Experience",
+                            "hyperChildId": 1
                         },
                         {
                             "discipline": "PUBL",
                             "number": 790,
-                            "name": "Public Policy Thesis"
+                            "name": "Public Policy Thesis",
+                            "hyperChildId": 2
                         },
                         {
                             "discipline": "PUBL",
                             "number": 798,
-                            "name": "Comprehensive Exam"
+                            "name": "Comprehensive Exam",
+                            "hyperChildId": 3
                         }
-                    ]
+                    ],
+                    "hyperParentId": 1
                 },
                 {
                     "courseType": "input",
@@ -616,7 +620,9 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Graduate Elective (If PUBL-798)"
+                    "attribute": "Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 3
                 },
                 {
                     "courseType": "input",
@@ -624,7 +630,9 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "Graduate Elective (If PUBL-798)"
+                    "attribute": "Graduate Elective",
+                    "hyperParentId": 1,
+                    "hyperChildId": 3
                 }
             ],
             []
