@@ -103,8 +103,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "IGME",
-                    "number": 230,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "IGME",
@@ -130,8 +129,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 171,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "MATH",
@@ -292,8 +290,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "IGME",
-                    "number": 340,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "IGME",

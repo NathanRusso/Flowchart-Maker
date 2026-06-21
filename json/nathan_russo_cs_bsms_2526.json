@@ -123,9 +123,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CHMG",
-                    "number": 141,
                     "attribute": "Lab Science: Lecture 1",
+                    "selectedIndex": 1,
                     "options": [
                         {
                             "discipline": "BIOL",
@@ -148,9 +147,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CHMG",
-                    "number": 145,
                     "attribute": "Lab Science: Lab 1",
+                    "selectedIndex": 1,
                     "options": [
                         {
                             "discipline": "BIOL",
@@ -235,9 +233,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CHMG",
-                    "number": 142,
                     "attribute": "Lab Science: Lecture 2",
+                    "selectedIndex": 1,
                     "options": [
                         {
                             "discipline": "BIOL",
@@ -260,9 +257,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CHMG",
-                    "number": 146,
                     "attribute": "Lab Science: Lab 2",
+                    "selectedIndex": 1,
                     "options": [
                         {
                             "discipline": "BIOL",
@@ -532,8 +528,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 788,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "CSCI",

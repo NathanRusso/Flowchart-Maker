@@ -24,8 +24,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "IGME",
-                    "number": 101,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "IGME",
@@ -241,8 +240,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "IGME",
-                    "number": 382,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "IGME",

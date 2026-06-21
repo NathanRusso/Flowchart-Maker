@@ -238,11 +238,12 @@ function createCourse(courseInfo) {
     let courseType = courseInfo.courseType;
     let courseOfferedFall = courseInfo.offeredFall;
     let courseOfferedSpring = courseInfo.offeredSpring;
-    let courseDiscipline = courseInfo.discipline;
-    let courseNumber = courseInfo.number;
+    let courseDiscipline = courseInfo?.discipline;
+    let courseNumber = courseInfo?.number;
     let courseName = courseInfo?.name;
     let courseAttribute = courseInfo?.attribute;
-    let courseOptions = courseInfo?.options; // Excluded from below
+    let courseSelectedIndex = courseInfo?.selectedIndex ?? 0;   // Excluded from below
+    let courseOptions = courseInfo?.options;                    // Excluded from below
     let courseHyperParentId = courseInfo?.hyperParentId;
     let courseHyperChildId = courseInfo?.hyperChildId;
 
@@ -306,7 +307,7 @@ function createCourse(courseInfo) {
 
                 classSelect.append(classOption); // Must come before
 
-                if (selectedOption == classTextContent) {
+                if (courseSelectedIndex == index) {
                     classSelect.selectedIndex = index;
                     if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
                 }
@@ -325,10 +326,15 @@ function createCourse(courseInfo) {
 
             // Sets the dropdown options
             courseOptions.forEach((optionInfo, index) => {
+                const optionDiscipline = optionInfo.discipline;
+                const optionNumber = optionInfo.number;
+                const optionName = optionInfo?.name;
+                const optionAttribute = optionInfo?.attribute;
+
                 const classOption = document.createElement("option");
-                const classTextContent = `${optionInfo.discipline}-${optionInfo.number}`;
+                const classTextContent = `${optionDiscipline}-${optionNumber}`;
                 classOption.textContent = classTextContent;
-                classOption.value = optionInfo.name;
+                classOption.value = optionName;
                 
                 const optionHyperChildId = optionInfo?.hyperChildId;
                 let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
@@ -336,7 +342,7 @@ function createCourse(courseInfo) {
 
                 classSelect.append(classOption); // Must come before
 
-                if (selectedOption == classTextContent) {
+                if (courseSelectedIndex == index) {
                     classLabel.textContent = optionInfo.name;
                     classSelect.selectedIndex = index;
                     if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
@@ -346,7 +352,8 @@ function createCourse(courseInfo) {
             });
 
             // Sets the border color
-            courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
+            const discipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
+            courseDiv.style.borderColor = getDisciplineColor(discipline);
 
             // Updates color and text
             classSelect.addEventListener("change", (event) => {
@@ -585,9 +592,8 @@ function processCourse(courseDiv) {
                 "courseType": "option",
                 "offeredFall": !(courseOfferedOnlySpring),
                 "offeredSpring": !(courseOfferedOnlyFall),
-                "discipline": info[0],
-                "number": Number(info[1]),
                 "attribute": courseAttribute,
+                "selectedIndex": select.selectedIndex,
                 "options": createdOptions
             };
         } else {
@@ -614,8 +620,7 @@ function processCourse(courseDiv) {
                 "courseType": "option",
                 "offeredFall": !(courseOfferedOnlySpring),
                 "offeredSpring": !(courseOfferedOnlyFall),
-                "discipline": info[0],
-                "number": Number(info[1]),
+                "selectedIndex": select.selectedIndex,
                 "options": createdOptions
             };
         }

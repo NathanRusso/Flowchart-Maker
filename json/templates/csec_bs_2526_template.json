@@ -135,9 +135,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 101,
                     "attribute": "Lab Science: Lecture 1",
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "BIOG",
@@ -165,9 +164,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 103,
                     "attribute": "Lab Science: Lab 1",
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "BIOG",
@@ -229,8 +227,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 241,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "MATH",
@@ -248,9 +245,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 102,
                     "attribute": "Lab Science: Lecture 2",
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "BIOG",
@@ -278,9 +274,8 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "BIOG",
-                    "number": 104,
                     "attribute": "Lab Science: Lab 2",
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "BIOG",
@@ -450,8 +445,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "PHIL",
-                    "number": 102,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "PHIL",

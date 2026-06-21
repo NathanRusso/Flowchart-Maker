@@ -177,18 +177,17 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 251,
+                    "selectedIndex": 0,
                     "options": [
-                        {
-                            "discipline": "STAT",
-                            "number": 205,
-                            "name": "Applied Statistics"
-                        },
                         {
                             "discipline": "MATH",
                             "number": 251,
                             "name": "Probability and Statistics"
+                        },
+                        {
+                            "discipline": "STAT",
+                            "number": 205,
+                            "name": "Applied Statistics"
                         }
                     ]
                 },
@@ -234,8 +233,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "SWEN",
-                    "number": 444,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "SWEN",
@@ -316,8 +314,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 261,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "CSCI",

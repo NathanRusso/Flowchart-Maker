@@ -16,8 +16,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "GCIS",
-                    "number": 123,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "GCIS",
@@ -77,8 +76,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "GCIS",
-                    "number": 124,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "GCIS",
@@ -104,8 +102,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 190,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "MATH",
@@ -226,8 +223,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "COMM",
-                    "number": 142,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "COMM",
@@ -325,8 +321,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "ISTE",
-                    "number": 230,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "ISTE",
@@ -344,8 +339,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "LING",
-                    "number": 351,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "LING",

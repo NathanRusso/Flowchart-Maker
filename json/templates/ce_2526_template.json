@@ -58,8 +58,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSEC",
-                    "number": 140,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "CSEC",

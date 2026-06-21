@@ -127,8 +127,7 @@
                     "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "MATH",
-                    "number": 171,
+                    "selectedIndex": 0,
                     "options": [
                         {
                             "discipline": "MATH",
