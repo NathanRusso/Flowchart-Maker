@@ -108,20 +108,30 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 243,
-                    "name": "Mechanics of Programming"
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "CSCI",
+                            "number": 262,
+                            "name": "Introduction to Computer Science Theory"
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 263,
+                            "name": "Honors Introduction to Computer Science Theory"
+                        }
+                    ]
                 },
                 {
                     "courseType": "required",
                     "offeredFall": true,
                     "offeredSpring": true,
                     "discipline": "CSCI",
-                    "number": 262,
-                    "name": "Intro to Computer Science Theory"
+                    "number": 243,
+                    "name": "Mechanics of Programming"
                 },
                 {
                     "courseType": "required",
@@ -198,12 +208,22 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "CSCI",
-                    "number": 261,
-                    "name": "Analysis of Algorithms"
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "CSCI",
+                            "number": 261,
+                            "name": "Analysis of Algorithms"
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 264,
+                            "name": "Honors Analysis of Algorithms"
+                        }
+                    ]
                 },
                 {
                     "courseType": "required",
