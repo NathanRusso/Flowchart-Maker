@@ -183,14 +183,12 @@
                         {
                             "discipline": "STAT",
                             "number": 205,
-                            "name": "Applied Statistics",
-                            "hyperChildId": null
+                            "name": "Applied Statistics"
                         },
                         {
                             "discipline": "MATH",
                             "number": 251,
-                            "name": "Probability and Statistics",
-                            "hyperChildId": null
+                            "name": "Probability and Statistics"
                         }
                     ]
                 },
@@ -242,14 +240,12 @@
                         {
                             "discipline": "SWEN",
                             "number": 444,
-                            "name": "Human-Centered Requirements and Design",
-                            "hyperChildId": null
+                            "name": "Human-Centered Requirements and Design"
                         },
                         {
                             "discipline": "SWEN",
                             "number": 445,
-                            "name": "Honors Human-Centered Requirements and Design",
-                            "hyperChildId": null
+                            "name": "Honors Human-Centered Requirements and Design"
                         }
                     ]
                 },
@@ -271,14 +267,12 @@
                         {
                             "discipline": "CSCI",
                             "number": 261,
-                            "name": "Analysis of Algorithms",
-                            "hyperChildId": null
+                            "name": "Analysis of Algorithms"
                         },
                         {
                             "discipline": "CSCI",
                             "number": 264,
-                            "name": "Honors Analysis of Algorithms",
-                            "hyperChildId": null
+                            "name": "Honors Analysis of Algorithms"
                         }
                     ]
                 },
