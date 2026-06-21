@@ -175,12 +175,22 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "option",
                     "offeredFall": true,
                     "offeredSpring": true,
-                    "discipline": "IGME",
-                    "number": 330,
-                    "name": "Rich Media Web Applications Development I"
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "IGME",
+                            "number": 330,
+                            "name": "Rich Media Web Application Development I"
+                        },
+                        {
+                            "discipline": "IGME",
+                            "number": "330H",
+                            "name": "Honors Rich Media Web Application Development I"
+                        }
+                    ]
                 },
                 {
                     "courseType": "required",

@@ -239,7 +239,7 @@ function createCourse(courseInfo) {
     let courseOfferedFall = courseInfo.offeredFall;
     let courseOfferedSpring = courseInfo.offeredSpring;
     let courseDiscipline = courseInfo?.discipline;
-    let courseNumber = courseInfo?.number;
+    let courseNumber = courseInfo?.number;                      // May be a string if Honors class. Ex: 999H
     let courseName = courseInfo?.name;
     let courseAttribute = courseInfo?.attribute;
     let courseSelectedIndex = courseInfo?.selectedIndex ?? 0;   // Excluded from below
@@ -618,11 +618,13 @@ function processCourse(courseDiv) {
     const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
     const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
     const courseDiscipline = courseDiv.dataset?.courseDiscipline;
-    const courseNumber = Number(courseDiv.dataset?.courseNumber);
+    const courseNumber = courseDiv.dataset?.courseNumber;
     const courseName = courseDiv.dataset?.courseName;
     const courseAttribute = courseDiv.dataset?.courseAttribute;
     const courseHyperParentId = Number(courseDiv.dataset?.courseHyperParentId);
     const courseHyperChildId = Number(courseDiv.dataset?.courseHyperChildId);
+
+    if (courseNumber.at(-1) !== "H") courseNumber = Number(courseNumber); // Accounts for Honors courses
 
     if (courseType == "co-op") {
         course = {
@@ -654,7 +656,7 @@ function processCourse(courseDiv) {
                 const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
                 let optionObject = {
                     "discipline": optionInfo[0],
-                    "number": Number(optionInfo[1]),
+                    "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
                     "name": option.value,
                 }
                 if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
@@ -684,14 +686,14 @@ function processCourse(courseDiv) {
                 if (!optionAttribute) {
                     optionObject = {
                         "discipline": optionInfo[0],
-                        "number": Number(optionInfo[1]),
+                        "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
                         "name": option.value,
                     }
                 } else {
                     const inputs = courseDiv.children[inputIndex++].value.split(/[\-]+/);  // Input
                     optionObject = {
                         "discipline": inputs[0],
-                        "number": Number(inputs[1]),
+                        "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
                         "attribute": optionAttribute,
                     }
                 }
@@ -714,7 +716,7 @@ function processCourse(courseDiv) {
             "offeredFall": !(courseOfferedOnlySpring),
             "offeredSpring": !(courseOfferedOnlyFall),
             "discipline": inputs[0],
-            "number": Number(inputs[1]),
+            "number": inputs[1].at(-1) === "H" ? inputs[1] : Number(optionInfo[1]),
             "attribute": courseAttribute
         };
     } else {
