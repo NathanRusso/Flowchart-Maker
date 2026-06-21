@@ -501,9 +501,9 @@
                             "hyperChildId": 1
                         },
                         {
-                            "discipline": "ZZZZ",
-                            "number": 999,
-                            "name": "Not MS Thesis",
+                            "discipline": "",
+                            "number": null,
+                            "attribute": "CSEC Research Elective",
                             "hyperChildId": 2
                         }
                     ],
@@ -524,16 +524,6 @@
                     "discipline": "CSEC",
                     "number": 603,
                     "name": "Enterprise Security"
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Research Elective",
-                    "hyperParentId": 1,
-                    "hyperChildId": 2
                 },
                 {
                     "courseType": "input",

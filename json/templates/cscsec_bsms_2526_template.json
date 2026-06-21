@@ -565,16 +565,6 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "CSEC Research Elective",
-                    "hyperParentId": 1,
-                    "hyperChildId": 2
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
                     "attribute": "CSEC Graduate Elective",
                     "hyperParentId": 1,
                     "hyperChildId": 2

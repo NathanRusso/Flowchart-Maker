@@ -279,7 +279,6 @@ function createCourse(courseInfo) {
         courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
     } else if (courseType == "option") {
         courseDiv.className = "class";
-        const selectedOption = `${courseDiscipline}-${courseNumber}`;
 
         // Creates the class selector and adds options
         const classSelect = document.createElement("select");
@@ -324,19 +323,67 @@ function createCourse(courseInfo) {
             const classLabel = document.createElement("label");
             classLabel.textContent = courseOptions[0].name;
 
+            // Creates a dictionary of indexes to input objects if needed
+            const inputObjects = {};
+
             // Sets the dropdown options
             courseOptions.forEach((optionInfo, index) => {
                 const optionDiscipline = optionInfo.discipline;
                 const optionNumber = optionInfo.number;
                 const optionName = optionInfo?.name;
                 const optionAttribute = optionInfo?.attribute;
-
-                const classOption = document.createElement("option");
-                const classTextContent = `${optionDiscipline}-${optionNumber}`;
-                classOption.textContent = classTextContent;
-                classOption.value = optionName;
-                
                 const optionHyperChildId = optionInfo?.hyperChildId;
+
+                // Creates the option object to go inside the select object
+                const classOption = document.createElement("option");
+
+                // Creates the option input object which is only used is the option is an input (not often)
+                const optionInput = document.createElement("input");
+                optionInput.style.marginTop = "10px";
+
+                if (optionName) {                   // Required option
+                    classOption.textContent = `${optionDiscipline}-${optionNumber}`;
+                    classOption.value = optionName;
+                } else if (optionAttribute) {       // Input option
+                    classOption.textContent = optionAttribute;
+                    classOption.value = "";
+                    classOption.dataset.optionAttribute = optionAttribute;
+
+                    // Applies restrictions to the option input
+                    Object.assign(optionInput, {
+                        type: "text",
+                        placeholder: "ABCD-123",
+                        pattern: "[A-Z]{4}-[0-9]{1,3}",
+                        minlength: 6,
+                        maxlength: 8
+                    });
+
+                    // Ensures valid characters are entered in the option input.
+                    optionInput.addEventListener("keypress", (event) => {
+                        const preInputLength = optionInput.value.length;
+                        const key = event.key;
+                        const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);    // Characters 1-4
+                        const condition2 = preInputLength == 4 && key != "-";           // Character 5
+                        const condition3 = preInputLength > 4 && !/[0-9]/.test(key);    // Character 6-8
+                        const condition4 = preInputLength == 8;                         // Extra
+                        if (condition1 || condition2 || condition3 || condition4) event.preventDefault();
+                    });
+                    
+                    // Ensures a valid string is saved in the option input
+                    optionInput.addEventListener("blur", (event) => {
+                        const currentValue = event.target.value;
+                        if (currentValue && !classRegex.test(currentValue)) {
+                            alert("Format must be in ABCD-123 or blank");
+                            setTimeout(() => optionInput.focus(), 0); // Prevents alert loop
+                        }
+                    });
+
+                    // Checks current class
+                    const savedCourse = `${optionDiscipline}-${optionNumber}`;
+                    if (classRegex.test(savedCourse)) optionInput.value = savedCourse;
+                    inputObjects[index] = optionInput;
+                }
+
                 let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
                 if (validOptionHyperChildId) classOption.dataset.optionHyperChildId = optionHyperChildId;
 
@@ -346,25 +393,54 @@ function createCourse(courseInfo) {
                     classLabel.textContent = optionInfo.name;
                     classSelect.selectedIndex = index;
                     if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
+                    optionInput.style.display = "inline-block";
+                } else {
+                    optionInput.style.display = "none";
                 }
-
-                classSelect.append(classOption);
             });
 
             // Sets the border color
             const discipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
-            courseDiv.style.borderColor = getDisciplineColor(discipline);
+            const attribute = classSelect.options[classSelect.selectedIndex].dataset.optionAttribute;
+            if (attribute) {
+                courseDiv.style.borderColor = getAttributeColor(attribute);
+                classSelect.style.height = "50px"; // Extends the hight of the select
+            } else if (discipline) {
+                courseDiv.style.borderColor = getDisciplineColor(discipline);
+            }
 
             // Updates color and text
             classSelect.addEventListener("change", (event) => {
-                classLabel.textContent = event.target.value;
-                const discipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
-                courseDiv.style.borderColor = getDisciplineColor(discipline);
+                const text = event.target.value;
+                const index = classSelect.selectedIndex;
+                if (text) {
+                    classLabel.style.display = "inline";
+                    classLabel.textContent = text;
+                    classSelect.style.height = "auto";
+                    const discipline = classSelect.options[index].textContent.split(/[\-]+/)[0];
+                    courseDiv.style.borderColor = getDisciplineColor(discipline);
+                } else {
+                    classLabel.style.display = "none";
+                    classLabel.textContent = "";
+                    classSelect.style.height = "50px";
+                    const attribute = classSelect.options[index].dataset.optionAttribute;
+                    courseDiv.style.borderColor = getAttributeColor(attribute);
+                }
+                
+                for (const [inputIndex, inputObject] of Object.entries(inputObjects)) {
+                    let strInputIndex = String(inputIndex);
+                    if (strInputIndex == String(index)) {
+                        inputObject.style.display = "inline-block";
+                    } else {
+                        inputObject.style.display = "none";
+                    }
+                }
             });
 
-            // Adds the select and label to the course div
+            // Adds the select, label, and any existing input to the course div
             courseDiv.append(classSelect);
             courseDiv.append(classLabel);
+            Object.values(inputObjects).forEach(input => courseDiv.append(input));
         }
 
         // Updates visible hyper classes based on selected options
@@ -571,15 +647,12 @@ function processCourse(courseDiv) {
             const select = courseDiv.children[1];                       // Select
             const options = select.options;                             // Options
 
-            const selectedOption = options[select.selectedIndex];
-            const info = selectedOption.textContent.split(/[\-]+/);
-
             const createdOptions = [];
             Array.from(options).forEach(option => {
                 const optionInfo = option.textContent.split(/[\-]+/);
                 const optionHyperChildId = Number(option.dataset.optionHyperChildId);
                 const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
-                optionObject = {
+                let optionObject = {
                     "discipline": optionInfo[0],
                     "number": Number(optionInfo[1]),
                     "name": option.value,
@@ -599,18 +672,28 @@ function processCourse(courseDiv) {
         } else {
             const select = courseDiv.children[0];                       // Select
             const options = select.options;                             // Options
-            const selectedOption = options[select.selectedIndex];
-            const info = selectedOption.textContent.split(/[\-]+/);
 
             const createdOptions = [];
-            Array.from(options).forEach(option => {
+            let inputIndex = 2
+            Array.from(options).forEach((option, index) => {
                 const optionInfo = option.textContent.split(/[\-]+/);
+                const optionAttribute = option.dataset.optionAttribute;
                 const optionHyperChildId = Number(option.dataset.optionHyperChildId);
                 const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
-                optionObject = {
-                    "discipline": optionInfo[0],
-                    "number": Number(optionInfo[1]),
-                    "name": option.value,
+                let optionObject = {}
+                if (!optionAttribute) {
+                    optionObject = {
+                        "discipline": optionInfo[0],
+                        "number": Number(optionInfo[1]),
+                        "name": option.value,
+                    }
+                } else {
+                    const inputs = courseDiv.children[inputIndex++].value.split(/[\-]+/);  // Input
+                    optionObject = {
+                        "discipline": inputs[0],
+                        "number": Number(inputs[1]),
+                        "attribute": optionAttribute,
+                    }
                 }
                 if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
                 createdOptions.push(optionObject);

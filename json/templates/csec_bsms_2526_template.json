@@ -582,23 +582,13 @@
                             "hyperChildId": 1
                         },
                         {
-                            "discipline": "ZZZZ",
-                            "number": 999,
-                            "name": "Not MS Thesis",
+                            "discipline": "",
+                            "number": null,
+                            "attribute": "CSEC Research Elective",
                             "hyperChildId": 2
                         }
                     ],
                     "hyperParentId": 1
-                },
-                {
-                    "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "CSEC Graduate Elective",
-                    "hyperParentId": 1,
-                    "hyperChildId": 2
                 },
                 {
                     "courseType": "input",

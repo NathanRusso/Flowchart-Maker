@@ -108,6 +108,8 @@ button, select {
     font-weight: inherit;
     width: 90%;
     color: Black;
+    white-space: normal;
+    height: auto;
 }
 
 .co-op {
