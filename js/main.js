@@ -27,7 +27,7 @@ let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds 
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
 
 const body = document.body;
-const classRegex = /^[A-Z]{4}-[0-9]{1,3}$/;
+const classRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
 
 const pageTitle = document.getElementById("pageTitle");
 const fileInput = document.getElementById("fileInput");
@@ -353,20 +353,21 @@ function createCourse(courseInfo) {
                     Object.assign(optionInput, {
                         type: "text",
                         placeholder: "ABCD-123",
-                        pattern: "[A-Z]{4}-[0-9]{1,3}",
+                        pattern: "[A-Z]{4}-[0-9]{1,3}H?",
                         minlength: 6,
-                        maxlength: 8
+                        maxlength: 9
                     });
 
                     // Ensures valid characters are entered in the option input.
                     optionInput.addEventListener("keypress", (event) => {
                         const preInputLength = optionInput.value.length;
                         const key = event.key;
-                        const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);    // Characters 1-4
-                        const condition2 = preInputLength == 4 && key != "-";           // Character 5
-                        const condition3 = preInputLength > 4 && !/[0-9]/.test(key);    // Character 6-8
-                        const condition4 = preInputLength == 8;                         // Extra
-                        if (condition1 || condition2 || condition3 || condition4) event.preventDefault();
+                        const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);                        // Characters 1-4
+                        const condition2 = preInputLength == 4 && key != "-";                               // Character 5
+                        const condition3 = preInputLength > 4 && preInputLength < 8 && !/[0-9]/.test(key);  // Characters 6-8
+                        const condition4 = preInputLength == 8 && key != "H";                               // Character 9 (Optional)
+                        const condition5 = preInputLength == 9;                                             // Extra
+                        if (condition1 || condition2 || condition3 || condition4 || condition5) event.preventDefault();
                     });
                     
                     // Ensures a valid string is saved in the option input
@@ -464,20 +465,21 @@ function createCourse(courseInfo) {
         Object.assign(classInput, {
             type: "text",
             placeholder: "ABCD-123",
-            pattern: "[A-Z]{4}-[0-9]{1,3}",
+            pattern: "[A-Z]{4}-[0-9]{1,3}H?",
             minlength: 6,
-            maxlength: 8
+            maxlength: 9
         });
 
         // Ensures valid characters are entered in the input.
         classInput.addEventListener("keypress", (event) => {
             const preInputLength = classInput.value.length;
             const key = event.key;
-            const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);    // Characters 1-4
-            const condition2 = preInputLength == 4 && key != "-";           // Character 5
-            const condition3 = preInputLength > 4 && !/[0-9]/.test(key);    // Character 6-8
-            const condition4 = preInputLength == 8;                         // Extra
-            if (condition1 || condition2 || condition3 || condition4) event.preventDefault();
+            const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);                        // Characters 1-4
+            const condition2 = preInputLength == 4 && key != "-";                               // Character 5
+            const condition3 = preInputLength > 4 && preInputLength < 8 && !/[0-9]/.test(key);  // Characters 6-8
+            const condition4 = preInputLength == 8 && key != "H";                               // Character 9 (Optional)
+            const condition5 = preInputLength == 9;                                             // Extra
+            if (condition1 || condition2 || condition3 || condition4 || condition5) event.preventDefault();
         });
         
         // Ensures a valid string is saved
@@ -618,13 +620,12 @@ function processCourse(courseDiv) {
     const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
     const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
     const courseDiscipline = courseDiv.dataset?.courseDiscipline;
-    const courseNumber = courseDiv.dataset?.courseNumber;
+    let courseNumber = courseDiv.dataset?.courseNumber;
+    if (courseNumber.at(-1) !== "H") courseNumber = Number(courseNumber); // Accounts for Honors courses
     const courseName = courseDiv.dataset?.courseName;
     const courseAttribute = courseDiv.dataset?.courseAttribute;
     const courseHyperParentId = Number(courseDiv.dataset?.courseHyperParentId);
     const courseHyperChildId = Number(courseDiv.dataset?.courseHyperChildId);
-
-    if (courseNumber.at(-1) !== "H") courseNumber = Number(courseNumber); // Accounts for Honors courses
 
     if (courseType == "co-op") {
         course = {
@@ -716,7 +717,7 @@ function processCourse(courseDiv) {
             "offeredFall": !(courseOfferedOnlySpring),
             "offeredSpring": !(courseOfferedOnlyFall),
             "discipline": inputs[0],
-            "number": inputs[1].at(-1) === "H" ? inputs[1] : Number(optionInfo[1]),
+            "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
             "attribute": courseAttribute
         };
     } else {
