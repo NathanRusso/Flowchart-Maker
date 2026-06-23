@@ -71,7 +71,7 @@ function makeSortable(element) {
     Sortable.create(element, {
         group: "semester",
         animation: 200,
-        // Makes sure a class and co-op can't be added to the same semester
+        // Makes sure a class and co-op cannot be added to the same semester
         onMove: function (event, originalEvent) {
             const movingElement = event.dragged;
             const targetElement = event.to;
@@ -558,9 +558,9 @@ function updateHyperCourseDivs(hyperParentId, hyperChildId) {
         const hyperChildDictionary = hyperDictionary[hyperParentId];
         for (const [hyperChildIdKey, courseDivs] of Object.entries(hyperChildDictionary)) {
             if (hyperChildIdKey == hyperChildId) {
-                courseDivs.forEach(div => div.style.display = 'flex');
+                courseDivs.forEach(div => div.style.display = "flex");
             } else {
-                courseDivs.forEach(div => div.style.display = 'none');
+                courseDivs.forEach(div => div.style.display = "none");
             }
         }
     }
@@ -578,7 +578,7 @@ function downloadTemplate() {
     Array.from(transferDiv.children).forEach(courseDiv => {
         const course = processCourse(courseDiv);
         transfer.push(course);
-    })
+    });
 
     // Process remaining classes
     for (let i = 1; i <= academicYearCount; i++) {
@@ -597,7 +597,7 @@ function downloadTemplate() {
 
     // Process notes
     Array.from(finalNotesList.children).forEach(listItem => {
-        let note = listItem.innerHTML.replace("&amp;", "&");;
+        const note = listItem.innerHTML.replace("&amp;", "&");
         notes.push(note);
     });
 
@@ -823,11 +823,11 @@ function popYear() {
  */
 function showTransferSection() {
     if (transferSection) return;
-    transferDividerDiv.style.display = 'revert';
-    transferYearDiv.style.display = 'flex';
+    transferDividerDiv.style.display = "revert";
+    transferYearDiv.style.display = "flex";
     transferSection = true;
-    showTransferButton.style.display = 'none';
-    hideTransferButton.style.display = 'inline-block';
+    showTransferButton.style.display = "none";
+    hideTransferButton.style.display = "inline-block";
 }
 
 /**
@@ -835,11 +835,11 @@ function showTransferSection() {
  */
 function hideTransferSection() {
     if (!transferSection) return;
-    transferDividerDiv.style.display = 'none';
-    transferYearDiv.style.display = 'none';
+    transferDividerDiv.style.display = "none";
+    transferYearDiv.style.display = "none";
     transferSection = false;
-    showTransferButton.style.display = 'inline-block';
-    hideTransferButton.style.display = 'none';
+    showTransferButton.style.display = "inline-block";
+    hideTransferButton.style.display = "none";
 }
 
 /**
