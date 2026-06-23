@@ -21,11 +21,12 @@ Table of Contents:
 
 ### Course Types
 1. **Co-op** - A cooperative education block that encompasses an entire semester
-2. **Required** - A defined course that must be taken
-3. **Option** - A group of defined courses for which you must pick one from
+2. **Co-op Option** - A group of courses that quality as possible co-ops, including co-ops themselves and other pathway specified options.
+3. **Required** - A defined course that must be taken
+4. **Option** - A group of defined courses for which you must pick one from
     - **Attribute Option** - All courses fall under the same label attribute where by their individual names are not shown
     - **Hyper Option** - Each option has associated courses that only appear when said option is selected
-4. **Input** - An undefined course slot for which you must pick one course to fill that typically falls into some category
+5. **Input** - An undefined course slot for which you must pick one course to fill that typically falls into some category
 
 ## Current Templates Available
 

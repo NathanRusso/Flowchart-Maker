@@ -208,12 +208,22 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op option",
                     "offeredFall": null,
                     "offeredSpring": null,
-                    "discipline": "ISTE",
-                    "number": 499,
-                    "name": "Undergraduate Co-op"
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "ISTE",
+                            "number": 499,
+                            "name": "Undergraduate Co-op"
+                        },
+                        {
+                            "discipline": "ISTE",
+                            "number": 498,
+                            "name": "Undergraduate Creative, Innovative or Research Experience"
+                        }
+                    ]
                 }
             ]
         ],
@@ -304,12 +314,22 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op option",
                     "offeredFall": null,
                     "offeredSpring": null,
-                    "discipline": "ISTE",
-                    "number": 499,
-                    "name": "Undergraduate Co-op"
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "ISTE",
+                            "number": 499,
+                            "name": "Undergraduate Co-op"
+                        },
+                        {
+                            "discipline": "ISTE",
+                            "number": 498,
+                            "name": "Undergraduate Creative, Innovative or Research Experience"
+                        }
+                    ]
                 }
             ]
         ],

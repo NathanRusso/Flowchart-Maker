@@ -271,6 +271,27 @@ function createCourse(courseInfo) {
     if (courseType == "co-op") {
         courseDiv.className = "co-op";
         courseDiv.textContent = `${courseName} (${courseDiscipline}-${courseNumber})`;
+    } else if (courseType == "co-op option") {    
+        courseDiv.className = "co-op";
+  
+        // Creates the class selector
+        const classSelect = document.createElement("select");
+
+        // Sets the dropdown options
+        courseOptions.forEach((optionInfo, index) => {
+            const classOption = document.createElement("option");
+            classOption.textContent = `${optionInfo.name} (${optionInfo.discipline}-${optionInfo.number})`;
+            classOption.value = optionInfo.name;
+            classOption.dataset.optionDiscipline = optionInfo.discipline;
+            classOption.dataset.optionNumber = optionInfo.number;
+
+            classSelect.append(classOption); // Must come before
+
+            if (courseSelectedIndex == index) classSelect.selectedIndex = index;
+        });
+        
+        // Adds the select to the course div
+        courseDiv.append(classSelect);
     } else if (courseType == "required") {
         courseDiv.className = "class";
         courseDiv.textContent = `${courseDiscipline}-${courseNumber}\n\n${courseName}`
@@ -635,6 +656,27 @@ function processCourse(courseDiv) {
             "discipline": courseDiscipline,
             "number": courseNumber,
             "name": courseName
+        };
+    } else if (courseType == "co-op option") {
+        const select = courseDiv.children[0];                       // Select
+        const options = select.options;                             // Options
+        const createdOptions = [];
+        Array.from(options).forEach(option => {
+            const optionNumber = option.dataset.optionNumber;
+            const optionObject = {
+                "discipline": option.dataset.optionDiscipline,
+                "number": optionNumber.at(-1) === "H" ? optionNumber : Number(optionNumber),
+                "name": option.value,
+            }
+            createdOptions.push(optionObject);
+        });
+
+        course = {
+            "courseType": "co-op option",
+            "offeredFall": null,
+            "offeredSpring": null,
+            "selectedIndex": select.selectedIndex,
+            "options": createdOptions
         };
     } else if (courseType == "required") {
         course = {
