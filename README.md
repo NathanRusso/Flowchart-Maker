@@ -6,6 +6,7 @@ Table of Contents:
 * [How Does the Website Work?](#how-does-the-website-work)
 * [Current Templates Available](#current-templates-available)
 * [Abbreviations](#abbreviations)
+* [Dependency](#dependency)
 
 ## How Does the Website Work?
 
@@ -91,3 +92,10 @@ Table of Contents:
 - **GCCIS** - Golisano College of Computing and Information Sciences
 - **MS** - Master's of Science
 - **RIT** - Rochester Institute of Technology
+
+## Dependency
+
+### Sortable JS
+
+- Allows the course divs to be rearranged and flow smoothly over the screen.
+- https://github.com/SortableJS/Sortable
