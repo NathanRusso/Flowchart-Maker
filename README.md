@@ -1,4 +1,4 @@
-# Flowchart
+# Flowchart Maker
 
 This website is a digitized catalog of all RIT GCCIS pathways, presented as editable flowcharts. Flowcharts can be downloaded and uploaded to the website in order to save specific formatting.
 
