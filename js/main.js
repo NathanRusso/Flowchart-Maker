@@ -46,7 +46,7 @@ const transferDiv = document.getElementById("transfer");
 const transferDividerDiv = document.getElementById("year-divider-0");
 makeSortable(transferDiv);
 
-const finalNotesList = document.getElementById("finalNotesList");
+const flowchartNotesList = document.getElementById("flowchartNotesList");
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
@@ -137,7 +137,7 @@ function processFlowchart(template, resetChoose, resetUpload) {
     clearFlowchart(title, resetChoose, resetUpload);                        // This removes the previous flowchart
     fillTransferYear(transferCourses);                                      // This handles all transfer classes
     years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));   // This handles all other semesters and their classes
-    fillFinalNotes(notes);                                                  // This handles the final notes
+    fillFlowchartNotes(notes);                                              // This handles the flowchart notes
 
     // This makes sure only the hyper classes linked to a selected option are shown
     for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
@@ -159,15 +159,15 @@ function fillTransferYear(transferInfo) {
 }
 
 /**
- * This adds the notes to the final notes section.
+ * This adds the notes to the flowchart notes section.
  * 
- * @param {*} notesInfo - the final notes string
+ * @param {*} notesInfo - the flowchart notes array
  */
-function fillFinalNotes(notesInfo) {
+function fillFlowchartNotes(notesInfo) {
     notesInfo.forEach(note => {
         const noteDiv = document.createElement("li");
         noteDiv.innerHTML = note;
-        finalNotesList.append(noteDiv);
+        flowchartNotesList.append(noteDiv);
     });
 }
 
@@ -596,7 +596,7 @@ function downloadTemplate() {
     }
 
     // Process notes
-    Array.from(finalNotesList.children).forEach(listItem => {
+    Array.from(flowchartNotesList.children).forEach(listItem => {
         const note = listItem.innerHTML.replace("&amp;", "&");
         notes.push(note);
     });
@@ -859,7 +859,7 @@ function clearFlowchart(title, resetChoose, resetUpload) {
         document.getElementById(`year-${i}`).remove();
         document.getElementById(`year-divider-${i}`).remove();
     }
-    finalNotesList.textContent = "";                    // Gets rid of the final notes
+    flowchartNotesList.textContent = "";                // Gets rid of the flowchart notes
     academicYearCount = 0;                              // Resets the year count
 }
 
