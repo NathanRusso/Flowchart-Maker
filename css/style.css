@@ -1,3 +1,14 @@
+:root {
+    --text-color: black;
+    --background-color: white;
+    color-scheme: light dark;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
 h1 {
     max-width: fit-content;
     margin-left: auto;
@@ -85,6 +96,8 @@ h2, h3, h4 {
     height: 100px;
     border: 5px solid;
     border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--background-color);
     font-size: 82%;
     font-weight: bold;
     text-align: center;
@@ -92,6 +105,8 @@ h2, h3, h4 {
 }
 
 .class label {
+    color: inherit;
+    background-color: inherit;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -101,7 +116,9 @@ h2, h3, h4 {
     width: 80%;
     margin-top: 10px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--text-color);
+    color: inherit;
+    background-color: inherit;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -114,8 +131,8 @@ h2, h3, h4 {
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
-    color: black;
-    background-color: white;
+    color: inherit;
+    background-color: inherit;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -135,6 +152,8 @@ h2, h3, h4 {
     padding-bottom: 3px;
     border: 5px solid SkyBlue;
     border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--background-color);
     font-weight: bold;
     text-align: center;
 }
@@ -145,8 +164,8 @@ h2, h3, h4 {
     padding-right: 5px;
     border: none;
     border-radius: 5px;
-    color: black;
-    background-color: white;
+    color: inherit;
+    background-color: inherit;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -157,4 +176,11 @@ h2, h3, h4 {
 #flowchartNotesTitle {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #DBDEE1;
+        --background-color: #1E1F22;
+    }
 }

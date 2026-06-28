@@ -308,7 +308,7 @@ function createCourse(courseInfo) {
             // Updates styles
             classSelect.style.marginTop= "10px";
             classSelect.style.marginBottom = "0px";
-            classSelect.style.borderBottom = "1px Solid Black";
+            classSelect.style.borderBottom = "1px Solid var(--text-color)";
             classSelect.style.borderRadius = "0px";
 
             // Sets the upper attribute label
