@@ -307,6 +307,7 @@ function createCourse(courseInfo) {
         if (courseAttribute) {
             // Updates styles
             classSelect.style.marginTop= "10px";
+            classSelect.style.marginBottom = "0px";
             classSelect.style.borderBottom = "1px Solid Black";
             classSelect.style.borderRadius = "0px";
 
@@ -360,7 +361,7 @@ function createCourse(courseInfo) {
 
                 // Creates the option input object which is only used is the option is an input (not often)
                 const optionInput = document.createElement("input");
-                optionInput.style.marginTop = "10px";
+                optionInput.style.marginTop = "0px";
 
                 if (optionName) {                   // Required option
                     classOption.textContent = `${optionDiscipline}-${optionNumber}`;
@@ -480,7 +481,6 @@ function createCourse(courseInfo) {
 
         // Creates the class input
         const classInput = document.createElement("input");
-        classInput.style.marginTop = "10px";
 
         // Applies restrictions to the input
         Object.assign(classInput, {

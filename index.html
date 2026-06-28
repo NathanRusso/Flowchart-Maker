@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1 id="pageTitle">GCCIS 2025-2026 Flowchart</h1>
-    <select id="templateSelect" style="background-color: DarkRed;">
+    <select id="templateSelect" class="top" style="background-color: DarkRed;">
         <option value="">Choose Template</option>
         <optgroup label="Artificial Intelligence">
             <option value="ai_bs_2526_template.json">AI BS</option>
@@ -53,13 +53,13 @@
         </optgroup>
     </select>
     <input id="fileInput" type="file" accept=".json, application/json" style="display: none;" />
-    <button id="uploadTemplateButton" type="button" style="background-color: Crimson;">Upload Flowchart &uarr;</button>
-    <button id="downloadTemplateButton" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
-    <button id="pushYearButton" type="button" style="background-color: Gold;">Add Year +</button>
-    <button id="popYearButton" type="button" style="background-color: Green;">Remove Year -</button>
-    <button id="showTransferButton" type="button" style="background-color: MediumBlue;">Show Transfer +</button>
-    <button id="hideTransferButton" type="button" style="background-color: MediumBlue; display: none;">Hide Transfer -</button>
-    <button id="clearFlowchartButton" type="button" style="background-color: DarkViolet; margin-bottom: 10px;">Clear Flowchart x</button>
+    <button id="uploadTemplateButton" class="top" type="button" style="background-color: Crimson;">Upload Flowchart &uarr;</button>
+    <button id="downloadTemplateButton" class="top" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
+    <button id="pushYearButton" class="top" type="button" style="background-color: Gold;">Add Year +</button>
+    <button id="popYearButton" class="top" type="button" style="background-color: Green;">Remove Year -</button>
+    <button id="showTransferButton" class="top" type="button" style="background-color: MediumBlue;">Show Transfer +</button>
+    <button id="hideTransferButton" class="top" type="button" style="background-color: MediumBlue; display: none;">Hide Transfer -</button>
+    <button id="clearFlowchartButton" class="top" type="button" style="background-color: DarkViolet;">Clear Flowchart x</button>
 
     <div id="flowchartBody">
         <div id="year-0" class="year" style="display: none">
