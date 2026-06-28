@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowchart Maker</title>
+    <link rel="icon" href="/favicon.ico">  
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <h1 class="center">Flowchart Maker</h1>
+    <p>
+        This website provides interactive flowcharts for every GCCIS degree pathway at RIT.
+        Students can organize courses by semester, customize their schedules, and save or reload their progress.
+    </p>
+    <p>
+        To customize your own flowchart visit the <a href="/">Home</a> page.
+    </p>
+
+    <h2>Table of Contents:</h2>
+    <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-does-the-website-work">How Does the Website Work</a></li>
+        <li><a href="#current-templates-available">Current Templates Available</a></li>
+        <li><a href="#abbreviations">Abbreviations</a></li>
+        <li><a href="#technologies-used">Technologies Used</a></li>
+    </ul>
+    <hr>
+
+    <h2 id="features">Features</h2>
+    <ul>
+        <li>Interactive drag-and-drop course planning</li>
+        <li>Degree templates for all GCCIS pathways</li>
+        <li>Save and load flowcharts</li>
+        <li>Customizable electives and course options</li>
+        <li>Transfer credit support</li>
+        <li>Dynamic year management</li>
+    </ul>
+    <hr>
+
+    <h2 id="how-does-the-website-work">How Does the Website Work?</h2>
+    <p>
+        Each flowchart represents a specific GCCIS pathway that one can pursue while at RIT.
+        Each of the provided <a href="#current-templates-available">templates</a> is set up with all of the required <a href="#course-types">courses (classes and co-ops)</a> needed to complete the degree.
+    </p>
+    <p>
+        Users can choose a template from the <a href="#current-templates-available">available templates</a>.
+        Once selected, they can move the course squares around to match the semesters in which the classes were taken.
+        Then, they can fill in any of the empty course slots or set any of the dropdown courses with classes they have taken.
+        Once satisfied, the flowchart can be saved into the user's file system.
+        Finally, when wanting to view or edit the flowchart again, the user can upload the template back to the website.
+    </p>
+
+    <h3>Flowchart Format</h3>
+    <p>
+        Each flowchart is divided into sections by year.
+        Each year has 3 blocks inside of it that represent the Fall, Spring, and Summer semesters.
+        Each semester block can hold any number of <a href="#classes">classes</a> or a single <a href="#co-ops">co-op</a>.
+        Additionally, a hidden transfer section can be revealed, which exists as its own standalone section with a single block inside.
+        This can be used to allocate the classes that were completed upon transferring credits, such as AP classes or classes from other colleges.
+    </p>
+
+    <h3>Buttons and Dropdowns</h3>
+    <ol>
+        <li><strong>Choose Template</strong> - A dropdown with all available templates that will load prebuilt flowcharts</li>
+        <li><strong>Upload Flowchart</strong> - A button that allows you to upload a saved template flowchart</li>
+        <li><strong>Save Template</strong> - A button that downloads the current flowchart with all its changes</li>
+        <li><strong>Add Year</strong> - A button that adds a year section below the lowest year section</li>
+        <li><strong>Remove Year</strong> - A button that removes the lowest year section, deleting all data inside of it</li>
+        <li><strong>Show Transfer</strong> - A button that shows the transfer section</li>
+        <li><strong>Hide Transfer</strong> - A button that hides the transfer section, saving all data inside of it</li>
+        <li><strong>Clear Flowchart</strong> - A button that deletes the current flowchart and reverts the website to its default state</li>
+    </ol>
+
+    <h3 id="course-types">Course Types</h3>
+    <h4 id="classes">Classes</h4>
+    <ul>
+        <li><strong>Required</strong> - A defined course that must be taken</li>
+        <li><strong>Option</strong> - A group of defined courses for which you must pick one from</li>
+        <li><strong>Attribute Option</strong> - All courses fall under the same label attribute whereby their individual names are not shown, only their codes</li>
+        <li><strong>Hyper Option</strong> - Each option has associated courses that are only required when said option is selected</li>
+        <li><strong>Input</strong> - An undefined course slot for which you must pick one course to fill that typically falls into some category</li>
+    </ul>
+    <h4 id="co-ops">Co-ops</h4>
+    <ul>
+        <li><strong>Co-op</strong> - A cooperative education/internship block that encompasses an entire semester</li>
+        <li><strong>Co-op Option</strong> - A group of courses that qualify as possible co-ops, including co-ops themselves and other pathway specified options</li>
+    </ul>
+    <hr>
+
+    <h2 id="current-templates-available">Current Templates Available</h2>
+    <h3>Artificial Intelligence (AI)</h3>
+    <ul>
+        <li>Artificial Intelligence BS (2025-2026)</li>
+    </ul>
+
+    <h3>Computing Exploration (CE)</h3>
+    <ul>
+        <li>Computing Exploration (2025-2026)</li>
+    </ul>
+
+    <h3>Computing and Information Technology (CIT)</h3>
+    <ul>
+        <li>Computing and Information Technology BS (2025-2026)</li>
+    </ul>
+
+    <h3>Computer Science (CS)</h3>
+    <ul>
+        <li>Computer Science BS (2025-2026)</li>
+        <li>Computer Science BS/MS (2025-2026)</li>
+        <li>Computer Science/Cybersecurity BS/MS (2025-2026)</li>
+        <li>Computer Science/Software Engineering BS/MS (2025-2026)</li>
+    </ul>
+
+    <h3>Cybersecurity (CSEC)</h3>
+    <ul>
+        <li>Cybersecurity BS (2025-2026)</li>
+        <li>Cybersecurity BS/MS (2025-2026)</li>
+        <li>Cybersecurity/STPP BS/MS (2025-2026)</li>
+    </ul>
+
+    <h3>Game Design and Development (GDD)</h3>
+    <ul>
+        <li>Game Design and Development BS (2025-2026)</li>
+        <li>Game Design and Development BS/MS (2025-2026)</li>
+    </ul>
+
+    <h3>Human-Centered Computing (HCC)</h3>
+    <ul>
+        <li>Human-Centered Computing BS (2025-2026)</li>
+    </ul>
+
+    <h3>Humanities, Computing, and Design (HCD)</h3>
+    <ul>
+        <li>Humanities, Computing, and Design BS (2025-2026)</li>
+    </ul>
+
+    <h3>New Media Interactive Development (NMID)</h3>
+    <ul>
+        <li>New Media Interactive Development BS (2025-2026)</li>
+    </ul>
+
+    <h3>Software Engineering (SE)</h3>
+    <ul>
+        <li>Software Engineering BS (2025-2026)</li>
+        <li>Software Engineering BS/MS (2025-2026)</li>
+        <li>Software Engineering/Computer Science BS/MS (2025-2026)</li>
+        <li>Software Engineering/Cybersecurity BS/MS (2025-2026)</li>
+    </ul>
+    <hr>
+
+    <h2 id="abbreviations">Abbreviations</h2>
+    <h3>Pathway Abbreviations</h3>
+    <ul>
+        <li><strong>AI</strong> – Artificial Intelligence</li>
+        <li><strong>CE</strong> – Computing Exploration</li>
+        <li><strong>CIT</strong> – Computing and Information Technology</li>
+        <li><strong>CS</strong> – Computer Science</li>
+        <li><strong>CSEC</strong> – Cybersecurity</li>
+        <li><strong>GDD</strong> – Game Design and Development</li>
+        <li><strong>HCC</strong> – Human-Centered Computing</li>
+        <li><strong>HCD</strong> – Humanities, Computing, and Design</li>
+        <li><strong>NMID</strong> – New Media Interactive Development</li>
+        <li><strong>SE</strong> – Software Engineering</li>
+    </ul>
+
+    <h3>Degree Abbreviations</h3>
+    <ul>
+        <li><strong>BS</strong> - Bachelor of Science</li>
+        <li><strong>MS</strong> - Master of Science</li>
+    </ul>
+
+    <h3>Other Abbreviations</h3>
+    <ul>
+        <li><a href="https://csh.rit.edu/">CSH</a> - Computer Science House</li>
+        <li><strong>Co-op</strong> - Cooperative Education</li>
+        <li><a href="https://www.rit.edu/computing/">GCCIS</a> - Golisano College of Computing and Information Sciences</li>
+        <li><a href="https://www.rit.edu/">RIT</a> - Rochester Institute of Technology</li>
+    </ul>
+    <hr>
+
+    <h2 id="technologies-used">Technologies Used</h2>
+    <h3>Languages</h3>
+    <ul>
+        <li>HyperText Markup Language (HTML)</li>
+        <li>Cascading Style Sheets (CSS)</li>
+        <li>JavaScript (JS)</li>
+    </ul>
+
+    <h3>Libraries</h3>
+    <ul>
+        <li><a href="https://github.com/SortableJS/Sortable">SortableJS</a> - Allows course blocks to be rearranged with smooth drag-and-drop interactions</li>
+    </ul>
+
+    <h3>Hosting</h3>
+    <p>
+        The website is hosted on OpenShift (OKD) by CSH.
+    </p>
+</body>
+</html>

@@ -4,7 +4,7 @@ This website provides interactive flowcharts for every GCCIS degree pathway at R
 
 Table of Contents:
 * [Features](#features)
-* [How Does the Website Work?](#how-does-the-website-work)
+* [How Does the Website Work](#how-does-the-website-work)
 * [Current Templates Available](#current-templates-available)
 * [Abbreviations](#abbreviations)
 * [Technologies Used](#technologies-used)

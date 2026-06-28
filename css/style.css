@@ -1,3 +1,7 @@
+h2, h3, h4 {
+    scroll-margin-top: 20px;
+}
+
 .center {
     max-width: fit-content;
     margin-left: auto;
