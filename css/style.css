@@ -1,11 +1,12 @@
-h2, h3, h4 {
-    scroll-margin-top: 20px;
-}
-
-.center {
+h1 {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+
+h2, h3, h4 {
+    scroll-margin-top: 20px;
 }
 
 button, select {
@@ -106,7 +107,9 @@ button, select {
     width: 95%;
     height: auto;
     border: none;
+    border-radius: 5px;
     color: black;
+    background-color: white;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -127,6 +130,7 @@ button, select {
     border: 5px solid SkyBlue;
     border-radius: 5px;
     font-weight: bold;
+    text-align: center;
 }
 
 .co-op select {
@@ -135,6 +139,7 @@ button, select {
     padding-right: 5px;
     border: none;
     color: black;
+    background-color: white;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
