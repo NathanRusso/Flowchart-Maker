@@ -472,7 +472,6 @@
             ]
         ],
         [
-            [],
             [
                 {
                     "courseType": "input",
@@ -540,7 +539,8 @@
                     "number": null,
                     "attribute": "CS Graduate Elective"
                 }
-            ]
+            ],
+            []
         ],
         [
             [

@@ -813,9 +813,26 @@ function pushYear() {
  */
 function popYear() {
     if (academicYearCount == 0) return;
-    document.getElementById(`year-divider-${academicYearCount}`).remove();
-    document.getElementById(`year-${academicYearCount}`).remove();
-    academicYearCount--;
+    const yearDiv = document.getElementById(`year-${academicYearCount}`);
+    const yearDividerDiv = document.getElementById(`year-divider-${academicYearCount}`);
+    if (yearIsEmpty(yearDiv)) {
+        yearDiv.remove();
+        yearDividerDiv.remove();
+        academicYearCount--;
+    } else {
+        alert("The lowest year is not empty. Remove all courses before deleting it.");
+    }
+}
+
+/**
+ * This checks if the given year div has any courses inside of it.
+ * 
+ * @param {*} yearDiv - the given year div
+ * @returns True if there are no courses in any of the year semesters, False otherwise.
+ */
+function yearIsEmpty(yearDiv) {
+    const semesterDivs = yearDiv.children[1].children; // yearDiv => yearBlockDiv
+    return semesterDivs[0].children.length == 0 && semesterDivs[1].children.length == 0 && semesterDivs[2].children.length == 0;
 }
 
 /**
