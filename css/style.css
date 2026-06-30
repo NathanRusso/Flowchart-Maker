@@ -1,6 +1,9 @@
 :root {
     --text-color: black;
     --background-color: white;
+    --card-background: white;
+    --divider-color: gray;
+    --default-border-color: black;
     color-scheme: light dark;
 }
 
@@ -37,7 +40,7 @@ h2, h3, h4 {
     height: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
-    background-color: gray;
+    background-color: var(--divider-color);
 }
 
 .year {
@@ -97,7 +100,7 @@ h2, h3, h4 {
     border: 5px solid;
     border-radius: 5px;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: var(--card-background);
     font-size: 82%;
     font-weight: bold;
     text-align: center;
@@ -153,7 +156,7 @@ h2, h3, h4 {
     border: 5px solid SkyBlue;
     border-radius: 5px;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: var(--card-background);
     font-weight: bold;
     text-align: center;
 }
@@ -182,5 +185,18 @@ h2, h3, h4 {
     :root {
         --text-color: #DBDEE1;
         --background-color: #1E1F22;
+        --card-background: #2B2D31;
+        --divider-color: #3A3B3E;
+        --default-border-color: #6B6F76;
+    }
+
+    .class,
+    .co-op {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    select,
+    input {
+        color-scheme: dark;
     }
 }
