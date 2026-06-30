@@ -380,10 +380,13 @@ function createCourse(courseInfo) {
                         maxlength: 9
                     });
 
+                    // Ensures any letters given are uppercase
+                    optionInput.addEventListener("input", () => optionInput.value = optionInput.value.toUpperCase());
+
                     // Ensures valid characters are entered in the option input.
                     optionInput.addEventListener("keypress", (event) => {
                         const preInputLength = optionInput.value.length;
-                        const key = event.key;
+                        const key = event.key.toUpperCase(); // Converts letters to uppercase for the check only
                         const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);                        // Characters 1-4
                         const condition2 = preInputLength == 4 && key != "-";                               // Character 5
                         const condition3 = preInputLength > 4 && preInputLength < 8 && !/[0-9]/.test(key);  // Characters 6-8
@@ -396,7 +399,7 @@ function createCourse(courseInfo) {
                     optionInput.addEventListener("blur", (event) => {
                         const currentValue = event.target.value;
                         if (currentValue && !classRegex.test(currentValue)) {
-                            alert("Format must be in ABCD-123 or blank");
+                            alert("Format must be in ABCD-123, ABCD-123H, or blank");
                             setTimeout(() => optionInput.focus(), 0); // Prevents alert loop
                         }
                     });
@@ -491,10 +494,13 @@ function createCourse(courseInfo) {
             maxlength: 9
         });
 
+        // Ensures any letters given are uppercase
+        classInput.addEventListener("input", () => classInput.value = classInput.value.toUpperCase());
+
         // Ensures valid characters are entered in the input.
         classInput.addEventListener("keypress", (event) => {
             const preInputLength = classInput.value.length;
-            const key = event.key;
+            const key = event.key.toUpperCase(); // Converts letters to uppercase for the check only
             const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);                        // Characters 1-4
             const condition2 = preInputLength == 4 && key != "-";                               // Character 5
             const condition3 = preInputLength > 4 && preInputLength < 8 && !/[0-9]/.test(key);  // Characters 6-8
@@ -507,7 +513,7 @@ function createCourse(courseInfo) {
         classInput.addEventListener("blur", (event) => {
             const currentValue = event.target.value;
             if (currentValue && !classRegex.test(currentValue)) {
-                alert("Format must be in ABCD-123 or blank");
+                alert("Format must be in ABCD-123, ABCD-123H, or blank");
                 setTimeout(() => classInput.focus(), 0); // Prevents alert loop
             }
         });
