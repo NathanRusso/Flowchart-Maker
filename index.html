@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flowchart Maker</title>
+    <script>(function(){var s=localStorage.getItem('theme')||((window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.classList.add(s);document.documentElement.style.colorScheme=s;document.documentElement.style.background=s==='dark'?'#1E1F22':'#F0F2F5';}());</script>
     <link rel="canonical" href="https://flowchartmaker.cs.house/" />
     <link rel="icon" href="/favicon.ico">  
     <link rel="stylesheet" href="/css/style.css" />
@@ -60,6 +61,7 @@
     <button id="showTransferButton" class="top" type="button" style="background-color: MediumBlue;">Show Transfer +</button>
     <button id="hideTransferButton" class="top" type="button" style="background-color: MediumBlue; display: none;">Hide Transfer -</button>
     <button id="clearFlowchartButton" class="top" type="button" style="background-color: DarkViolet;">Clear Flowchart x</button>
+    <button id="themeToggle" class="top theme-toggle" type="button" aria-label="Toggle theme"><span class="icon-sun">&#9728;</span><span class="icon-moon">&#9790;</span></button>
 
     <div id="flowchartBody">
         <div id="year-0" class="year" style="display: none">

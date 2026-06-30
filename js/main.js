@@ -48,6 +48,8 @@ makeSortable(transferDiv);
 
 const flowchartNotesList = document.getElementById("flowchartNotesList");
 
+const themeToggle = document.getElementById("themeToggle");
+
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
 templateSelect.addEventListener("change", (event) => getTemplateFlowchart(event.target.value));
@@ -59,6 +61,20 @@ popYearButton.addEventListener("click", popYear);
 showTransferButton.addEventListener("click", showTransferSection);
 hideTransferButton.addEventListener("click", hideTransferSection);
 clearFlowchartButton.addEventListener("click", () => clearFlowchart(defaultTitle, true, true));
+
+const THEME_BG = { light: '#F0F2F5', dark: '#1E1F22' };
+
+themeToggle.addEventListener("click", () => {
+    const root = document.documentElement;
+    const isDark = root.classList.contains("dark") ||
+        (!root.classList.contains("light") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const next = isDark ? "light" : "dark";
+    root.classList.remove("light", "dark");
+    root.classList.add(next);
+    root.style.colorScheme = next;
+    root.style.backgroundColor = THEME_BG[next];
+    localStorage.setItem("theme", next);
+});
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 

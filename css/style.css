@@ -1,50 +1,181 @@
+/* ── Variables ───────────────────────────────────────────── */
 :root {
-    --text-color: black;
-    --background-color: white;
-    --card-background: white;
-    --divider-color: gray;
-    --default-border-color: black;
-    color-scheme: light dark;
-}
-
-body {
-    color: var(--text-color);
+    --text-color: #111827;
+    --muted-color: #6B7280;
+    --background-color: #F0F2F5;
+    --surface-color: #FFFFFF;
+    --card-background: #FFFFFF;
+    --border-color: #E5E7EB;
+    --divider-color: #D1D5DB;
+    --default-border-color: #9CA3AF;
+    --radius: 6px;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-header: 0 1px 0 var(--border-color);
+    color-scheme: light;
     background-color: var(--background-color);
 }
 
-h1 {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+:root.dark {
+    color-scheme: dark;
+    --text-color: #DBDEE1;
+    --muted-color: #9CA3AF;
+    --background-color: #1E1F22;
+    --surface-color: #25272B;
+    --card-background: #232527;
+    --border-color: #3A3B3E;
+    --divider-color: #2C2D30;
+    --default-border-color: #6B6F76;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-header: 0 1px 0 var(--border-color);
+}
+
+:root.light {
+    color-scheme: light;
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 h2, h3, h4 {
-    scroll-margin-top: 20px;
+    scroll-margin-top: 80px;
 }
 
-.top {
-    height: 20px;
-    margin-bottom: 5px;
+/* ── Header ──────────────────────────────────────────────── */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--surface-color);
+    box-shadow: var(--shadow-header);
+    padding: 12px 16px;
+}
+
+#pageTitle {
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* ── Toolbar ─────────────────────────────────────────────── */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.toolbar-sep {
+    width: 1px;
+    height: 22px;
+    background-color: var(--divider-color);
+    flex-shrink: 0;
+    margin: 0 4px;
+}
+
+.top,
+.toolbar-btn,
+.toolbar-select {
+    height: 28px;
+    padding: 0 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--radius);
     color: white;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: filter 0.15s, transform 0.1s;
 }
 
+.toolbar-btn:hover {
+    filter: brightness(1.12);
+}
+
+.toolbar-btn:active {
+    transform: scale(0.97);
+}
+
+/* Theme toggle */
+.theme-toggle {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--surface-color) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0 7px !important;
+    filter: none !important;
+    transition: background-color 0.15s !important;
+}
+
+.theme-toggle:hover {
+    background-color: var(--background-color) !important;
+    filter: none !important;
+}
+
+/* In light mode show moon (switch to dark), in dark mode show sun (switch to light) */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: inline-flex; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not(.light) .theme-toggle .icon-sun  { display: inline-flex; }
+    :root:not(.light) .theme-toggle .icon-moon { display: none; }
+}
+
+:root.dark  .theme-toggle .icon-sun  { display: inline-flex; }
+:root.dark  .theme-toggle .icon-moon { display: none; }
+:root.light .theme-toggle .icon-sun  { display: none; }
+:root.light .theme-toggle .icon-moon { display: inline-flex; }
+
+/* ── Main ────────────────────────────────────────────────── */
+main {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 12px 16px 32px;
+}
+
+/* ── Flowchart body ──────────────────────────────────────── */
 #flowchartBody {
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .year-divider {
     width: 100%;
-    height: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    height: 2px;
+    margin: 10px 0;
     background-color: var(--divider-color);
+    border-radius: 1px;
 }
 
 .year {
     display: flex;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 .year-text {
@@ -54,41 +185,38 @@ h2, h3, h4 {
     box-sizing: border-box;
     min-width: 5%;
     padding: 5px;
-    padding: 5px;
-    font-size: 150%;
-    font-weight: bold;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-color);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
 }
 
 .year-block {
-    width: 90%;
+    flex: 1;
+    min-width: 0;
 }
 
 .transfer {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
-    height: 90%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 6px 0;
 }
 
 .semester {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
     min-height: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 4px 0;
 }
 
+/* ── Class cards ─────────────────────────────────────────── */
 .class {
     display: flex;
     flex-direction: column;
@@ -97,19 +225,26 @@ h2, h3, h4 {
     align-items: center;
     width: 100px;
     height: 100px;
-    border: 5px solid;
-    border-radius: 5px;
+    border: 4px solid;
+    border-radius: var(--radius);
     color: var(--text-color);
     background-color: var(--card-background);
-    font-size: 82%;
-    font-weight: bold;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
     text-align: center;
     white-space: pre-wrap;
+    box-shadow: var(--shadow-sm);
+    cursor: grab;
+}
+
+.class:active {
+    cursor: grabbing;
 }
 
 .class label {
     color: inherit;
-    background-color: inherit;
+    background-color: transparent;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -117,25 +252,26 @@ h2, h3, h4 {
 
 .class input {
     width: 80%;
-    margin-top: 10px;
+    margin-top: 8px;
     border: none;
     border-bottom: 1px solid var(--text-color);
     color: inherit;
-    background-color: inherit;
+    background-color: transparent;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     text-align: center;
+    outline: none;
 }
 
 .class select {
     width: 95%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     color: inherit;
-    background-color: inherit;
+    background-color: transparent;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -143,22 +279,23 @@ h2, h3, h4 {
     white-space: normal;
 }
 
+/* ── Co-op ───────────────────────────────────────────────── */
 .co-op {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border: 5px solid SkyBlue;
-    border-radius: 5px;
+    min-height: 28px;
+    padding: 4px 8px;
+    border: 4px solid SkyBlue;
+    border-radius: var(--radius);
     color: var(--text-color);
     background-color: var(--card-background);
-    font-weight: bold;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
     text-align: center;
+    box-shadow: var(--shadow-sm);
 }
 
 .co-op select {
@@ -166,9 +303,9 @@ h2, h3, h4 {
     height: auto;
     padding-right: 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     color: inherit;
-    background-color: inherit;
+    background-color: transparent;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -176,27 +313,153 @@ h2, h3, h4 {
     white-space: normal;
 }
 
-#flowchartNotesTitle {
-    margin-top: 10px;
-    margin-bottom: 10px;
+/* ── Notes section ───────────────────────────────────────── */
+.notes-section {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-color: #DBDEE1;
-        --background-color: #1E1F22;
-        --card-background: #2B2D31;
-        --divider-color: #3A3B3E;
-        --default-border-color: #6B6F76;
-    }
+.notes-section h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 20px 0 6px;
+}
 
-    .class,
-    .co-op {
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    }
+.notes-section h2:first-child {
+    margin-top: 0;
+}
 
-    select,
-    input {
-        color-scheme: dark;
-    }
+.notes-section ul,
+.notes-section ol {
+    margin: 0 0 4px;
+    padding-left: 20px;
+    color: var(--muted-color);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.notes-section strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.notes-section a {
+    color: #3B82F6;
+    text-decoration: none;
+}
+
+.notes-section a:hover {
+    text-decoration: underline;
+}
+
+/* ── About page ──────────────────────────────────────────── */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.site-header a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted-color);
+    text-decoration: none;
+}
+
+.site-header a:hover {
+    color: var(--text-color);
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 28px 16px 48px;
+}
+
+.page-content h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 28px 0 8px;
+}
+
+.page-content h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 18px 0 6px;
+}
+
+.page-content h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--muted-color);
+    margin: 14px 0 4px;
+}
+
+.page-content p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted-color);
+    margin: 0 0 12px;
+}
+
+.page-content ul,
+.page-content ol {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted-color);
+    margin: 0 0 12px;
+    padding-left: 22px;
+}
+
+.page-content li {
+    margin-bottom: 3px;
+}
+
+.page-content strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.page-content a {
+    color: #3B82F6;
+    text-decoration: none;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
+}
+
+.page-content hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 24px 0;
+}
+
+/* ── Dark mode (filter) ──────────────────────────────────── */
+:root.dark .class,
+:root.dark .co-op {
+    filter: saturate(0.7);
+}
+
+:root.dark select,
+:root.dark input {
+    color-scheme: dark;
 }
