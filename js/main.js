@@ -126,6 +126,15 @@ async function processUploadedFile(file) {
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
 
+function fitTextToBox(courseDiv) {
+    const minSize = 7;
+    let size = parseFloat(getComputedStyle(courseDiv).fontSize);
+    while (size > minSize && (courseDiv.scrollHeight > courseDiv.clientHeight || courseDiv.scrollWidth > courseDiv.clientWidth)) {
+        size -= 0.5;
+        courseDiv.style.fontSize = size + 'px';
+    }
+}
+
 /**
  * This updates and populates the body given the json template flowchart.
  * This adds a Transfer section for transfer classes.
@@ -159,6 +168,8 @@ function processFlowchart(template, resetChoose, resetUpload) {
     for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
         updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
     }
+
+    document.querySelectorAll('.class').forEach(fitTextToBox);
 }
 
 /**
