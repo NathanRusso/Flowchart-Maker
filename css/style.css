@@ -119,16 +119,18 @@ header {
     transform: scale(0.97);
 }
 
+/* Template select */
+#templateSelect {
+    color: var(--background-color);
+    background-color: var(--muted-color);
+    border: none;
+}
+
 /* Theme toggle */
 .theme-toggle {
-    margin-left: auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     background-color: var(--surface-color) !important;
     color: var(--text-color) !important;
-    border: 1px solid var(--border-color) !important;
-    padding: 0 7px !important;
+    box-shadow: inset 0 0 0 1px var(--border-color);
     filter: none !important;
     transition: background-color 0.15s !important;
 }
@@ -140,17 +142,18 @@ header {
 
 /* In light mode show moon (switch to dark), in dark mode show sun (switch to light) */
 .theme-toggle .icon-sun  { display: none; }
-.theme-toggle .icon-moon { display: inline-flex; }
+.theme-toggle .icon-moon { display: inline; }
+.theme-toggle svg { width: 16px; height: 16px; vertical-align: middle; }
 
 @media (prefers-color-scheme: dark) {
-    :root:not(.light) .theme-toggle .icon-sun  { display: inline-flex; }
+    :root:not(.light) .theme-toggle .icon-sun  { display: inline; }
     :root:not(.light) .theme-toggle .icon-moon { display: none; }
 }
 
-:root.dark  .theme-toggle .icon-sun  { display: inline-flex; }
+:root.dark  .theme-toggle .icon-sun  { display: inline; }
 :root.dark  .theme-toggle .icon-moon { display: none; }
 :root.light .theme-toggle .icon-sun  { display: none; }
-:root.light .theme-toggle .icon-moon { display: inline-flex; }
+:root.light .theme-toggle .icon-moon { display: inline; }
 
 /* ── Main ────────────────────────────────────────────────── */
 main {
