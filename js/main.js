@@ -953,7 +953,7 @@ function getDisciplineColor(discipline) {
 
         // Other
         default:
-            return "Black";
+            return "var(--text-color)";
     }
 }
 
@@ -985,6 +985,6 @@ function getAttributeColor(attribute) {
     } else if ( attribute.includes("DHSS") ) {
         return "HotPink";
     } else {
-        return "Black"
+        return "var(--text-color)"
     }
 }

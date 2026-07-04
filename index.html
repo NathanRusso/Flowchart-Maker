@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowchart Maker</title>
-    <link rel="canonical" href="https://flowchartmaker.cs.house/" />
-    <link rel="icon" href="/favicon.ico">  
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="canonical" href="https://flowchartmaker.cs.house/">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://rsms.me">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <h1 id="pageTitle">GCCIS 2025-2026 Flowchart</h1>
-    <select id="templateSelect" class="top" style="background-color: DarkRed;">
+    <select id="templateSelect" class="toolbar" style="background-color: DarkRed;">
         <option value="">Choose Template</option>
         <optgroup label="Artificial Intelligence">
             <option value="ai_bs_2526_template.json">AI BS</option>
@@ -52,20 +54,20 @@
             <option value="secsec_bsms_2526_template.json">SE/CSEC BS/MS</option>
         </optgroup>
     </select>
-    <input id="fileInput" type="file" accept=".json, application/json" style="display: none;" />
-    <button id="uploadTemplateButton" class="top" type="button" style="background-color: Crimson;">Upload Flowchart &uarr;</button>
-    <button id="downloadTemplateButton" class="top" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
-    <button id="pushYearButton" class="top" type="button" style="background-color: Gold;">Add Year +</button>
-    <button id="popYearButton" class="top" type="button" style="background-color: Green;">Remove Year -</button>
-    <button id="showTransferButton" class="top" type="button" style="background-color: MediumBlue;">Show Transfer +</button>
-    <button id="hideTransferButton" class="top" type="button" style="background-color: MediumBlue; display: none;">Hide Transfer -</button>
-    <button id="clearFlowchartButton" class="top" type="button" style="background-color: DarkViolet;">Clear Flowchart x</button>
+    <input id="fileInput" type="file" accept=".json, application/json" style="display: none;">
+    <button id="uploadTemplateButton" class="toolbar" type="button" style="background-color: Crimson;">Upload Flowchart &uarr;</button>
+    <button id="downloadTemplateButton" class="toolbar" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
+    <button id="pushYearButton" class="toolbar" type="button" style="background-color: Gold;">Add Year +</button>
+    <button id="popYearButton" class="toolbar" type="button" style="background-color: Green;">Remove Year -</button>
+    <button id="showTransferButton" class="toolbar" type="button" style="background-color: MediumBlue;">Show Transfer +</button>
+    <button id="hideTransferButton" class="toolbar" type="button" style="background-color: MediumBlue; display: none;">Hide Transfer -</button>
+    <button id="clearFlowchartButton" class="toolbar" type="button" style="background-color: DarkViolet;">Clear Flowchart x</button>
 
     <div id="flowchartBody">
         <div id="year-0" class="year" style="display: none">
             <div id="year-text-0" class="year-text"> Transfer </div>
             <div id="year-block-0" class="year-block">
-                <div id="transfer" class="transfer"> </div>
+                <div id="transfer" class="semester"> </div>
             </div>
         </div>
         <div id="year-divider-0" class="year-divider" style="display: none;"></div>
@@ -81,7 +83,7 @@
                  </div>
                 <div id="c2" class="class" style="border-color: blue;"> <span> Class 2</span>  </div>
                 <div id="c3" class="class" style="border-color: green;">
-                    <input id="fileInput" type="file" accept=".json, application/json" style="display: none;" />
+                    <input id="fileInput" type="file" accept=".json, application/json" style="display: none;">
                     <select>
                         <option value="cs_bs_2526_template.json">CSCI-101</option>
                         <option value="csec_bs_2526_template.json">CSEC-101</option>
