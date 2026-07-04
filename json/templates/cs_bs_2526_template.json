@@ -528,9 +528,8 @@
         ]
     ],
     "notes": [
-        "<s><b>Prerequisites:</b> Shown in parenthesis under course name</s>",
-        "<b>Writing Intensive Courses:</b> 3 are required: 1st year = UWRT 150/ISTE 110 + 1 Gen Ed course + program specific (CSCI 472 Historical & Current Perspectives in Computer Science)",
-        "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics; please see the CS handbook",
-        "<b>Perspectives:</b> Lab Science 1 fulfills the required Natural Science Inquiry Perspective; the Calculus sequence fulfills the required Mathematical"
+        "<b>Writing Intensive Courses:</b> Students must take 3 courses: 1 First Year (UWRT-150 or ISTE-110), 1 Gen Ed, & 1 program specific (CSCI-472)",
+        "<b>Lab Sciences:</b> Only specific sequences are allowed in Biology, Chemistry or Physics. Please see the CS BS course page.",
+        "<b>CS Electives:</b> Only specific courses are allowed. Please see the CS handbook or talk to an academic advisor."
     ]
 }

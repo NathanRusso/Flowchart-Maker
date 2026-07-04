@@ -302,7 +302,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "DHSS Project Elective"
+                    "attribute": "DHSS Professional Elective"
                 },
                 {
                     "courseType": "input",
@@ -310,7 +310,7 @@
                     "offeredSpring": true,
                     "discipline": "",
                     "number": null,
-                    "attribute": "DHSS Project Elective"
+                    "attribute": "DHSS Professional Elective"
                 },
                 {
                     "courseType": "input",
@@ -420,5 +420,8 @@
             []
         ]
     ],
-    "notes": []
+    "notes": [
+        "<b>DHSS Project Courses:</b> Only specific courses are allowed. Please see the HCD course page.",
+        "<b>DHSS Professional Electives:</b> Only specific courses are allowed. Please see the HCD course page."
+    ]
 }
