@@ -6,48 +6,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 140,
                     "name": "Introduction to Cybersecurity"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "GCIS",
                     "number": 123,
                     "name": "Software Development and Problem Solving I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 181,
                     "name": "Calculus I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -56,48 +44,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "GCIS",
                     "number": 124,
                     "name": "Software Development and Problem Solving II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NSSA",
                     "number": 241,
                     "name": "Introduction to Routing and Switching"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 182,
                     "name": "Calculus II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 190,
                     "name": "Discrete Mathematics for Computing"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Writing Intensive: First Year"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -109,32 +85,24 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 201,
                     "name": "Programming for Information Security"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NSSA",
                     "number": 221,
                     "name": "Systems Administration I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 251,
                     "name": "Probability and Statistics"
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lecture 1",
                     "selectedIndex": 0,
                     "options": [
@@ -162,8 +130,6 @@
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lab 1",
                     "selectedIndex": 0,
                     "options": [
@@ -191,16 +157,12 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 99,
                     "name": "Cooperative Education Seminar"
@@ -209,24 +171,18 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 202,
                     "name": "Reverse Engineering Fundamentals"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NSSA",
                     "number": 245,
                     "name": "Network Services"
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -243,8 +199,6 @@
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lecture 2",
                     "selectedIndex": 0,
                     "options": [
@@ -272,8 +226,6 @@
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lab 2",
                     "selectedIndex": 0,
                     "options": [
@@ -301,16 +253,12 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -319,8 +267,6 @@
             [
                 {
                     "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "discipline": "CSEC",
                     "number": 499,
                     "name": "Cooperative Education in CSEC"
@@ -331,40 +277,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 462,
                     "name": "Introduction to Cryptography"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 310,
                     "name": "Endpoint Security Engineering"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 230,
                     "name": "Introduction to Database and Data Modeling"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PUBL",
                     "number": 363,
                     "name": "Cybersecurity Policy and Law"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -373,40 +309,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 472,
                     "name": "Authentication and Security Models"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 380,
                     "name": "Principles of Web Application Security"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -415,8 +341,6 @@
             [
                 {
                     "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "discipline": "CSEC",
                     "number": 499,
                     "name": "Cooperative Education in CSEC"
@@ -427,32 +351,24 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PUBL",
                     "number": 701,
                     "name": "Graduate Policy Analysis"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Elective"
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -474,8 +390,6 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
@@ -484,40 +398,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PUBL",
                     "number": 702,
                     "name": "Graduate Decision Analysis"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 490,
                     "name": "Capstone in Cybersecurity"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
@@ -529,32 +433,24 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PUBL",
                     "number": 703,
                     "name": "Evaluation and Research Design"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PUBL",
                     "number": 700,
                     "name": "Readings in Public Policy"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Graduate Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Graduate Elective"
@@ -563,8 +459,6 @@
             [
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -581,8 +475,6 @@
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -608,16 +500,12 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Graduate Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Graduate Elective",
@@ -626,8 +514,6 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Graduate Elective",

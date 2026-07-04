@@ -6,48 +6,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "GCIS",
                     "number": 123,
                     "name": "Software Development and Problem Solving I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NSSA",
                     "number": 102,
                     "name": "Computer Systems Concepts"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 131,
                     "name": "Discrete Mathematics"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: First Year Writing"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -56,48 +44,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "GCIS",
                     "number": 124,
                     "name": "Software Development and Problem Solving II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 140,
                     "name": "Introduction to Cybersecurity"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 161,
                     "name": "Applied Calculus"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "COMM",
                     "number": 142,
                     "name": "Introduction to Technical Communication"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -109,48 +85,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 140,
                     "name": "Web & Mobile I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NSSA",
                     "number": 220,
                     "name": "Task Automation Using Interpretive Languages"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NSSA",
                     "number": 241,
                     "name": "Introduction to Routing and Switching"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "STAT",
                     "number": 145,
                     "name": "Introduction to Statistics I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -159,48 +123,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 230,
                     "name": "Introduction to Database and Data Modeling"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 240,
                     "name": "Web & Mobile II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NSSA",
                     "number": 221,
                     "name": "Systems Administration I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Natural Science Inquiry Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 99,
                     "name": "Second Year Seminar"
@@ -209,8 +161,6 @@
             [
                 {
                     "courseType": "co-op option",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -231,40 +181,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 260,
                     "name": "Designing the User Experience"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -273,40 +213,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 430,
                     "name": "Information Requirements Modeling"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -315,8 +245,6 @@
             [
                 {
                     "courseType": "co-op option",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -337,40 +265,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 500,
                     "name": "Senior Development Project I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -379,40 +297,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 501,
                     "name": "Senior Development Project II"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CIT Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"

@@ -6,48 +6,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 105,
                     "name": "Game Development & Algorithmic Problem Solving"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 110,
                     "name": "Introduction to Interactive Media"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 131,
                     "name": "Discrete Mathematic"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Writing Intensive: First Year"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -56,40 +44,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 106,
                     "name": "Data Structures and Algorithms for Games"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 119,
                     "name": "2D Animation & Asset Production"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 185,
                     "name": "Mathematics of Graphical Simulation I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PHYS",
                     "number": 111,
                     "name": "College Physics I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -101,32 +79,24 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 202,
                     "name": "Interactive Media Development"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 219,
                     "name": "3D Animation & Asset Production"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 235,
                     "name": "Web Technology for Game Developers"
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -143,16 +113,12 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 99,
                     "name": "Co-op Preparation Workshop"
@@ -161,48 +127,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 209,
                     "name": "Development for Real-Time Simulations and Games I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 220,
                     "name": "Game Design & Development I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 236,
                     "name": "Experience Design for Games & Media"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Science Principle Principles"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -211,8 +165,6 @@
             [
                 {
                     "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "discipline": "IGME",
                     "number": 499,
                     "name": "Undergraduate Co-op"
@@ -223,40 +175,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 309,
                     "name": "Development for Real-Time Simulations and Games II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "IGME",
                     "number": 320,
                     "name": "Game Design & Development II"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
@@ -265,8 +207,6 @@
             [
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -283,32 +223,24 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "IGM/GDD Advanced Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -317,8 +249,6 @@
             [
                 {
                     "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "discipline": "IGME",
                     "number": 499,
                     "name": "Undergraduate Co-op"
@@ -329,40 +259,30 @@
             [
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "IGM/GDD Advanced Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "IGM/GDD Advanced Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -371,40 +291,30 @@
             [
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "IGM/GDD Advanced Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"

@@ -6,48 +6,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 110,
                     "name": "Ethics in Computing"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 140,
                     "name": "Web & Mobile I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "STAT",
                     "number": 145,
                     "name": "Introduction to Statistics I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PSYC",
                     "number": 101,
                     "name": "Introduction to Psychology"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -56,48 +44,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 262,
                     "name": "Foundations of Human-Centered Computing"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NMDE",
                     "number": 111,
                     "name": "New Media Design Survey I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "STAT",
                     "number": 146,
                     "name": "Introduction to Statistics II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PSYC",
                     "number": 223,
                     "name": "Cognitive Psychology"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -109,40 +85,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 264,
                     "name": "Prototyping and Usability Testing"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "NMDE",
                     "number": 112,
                     "name": "New Media Design Survey II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "GCIS",
                     "number": 123,
                     "name": "Software Development and Problem Solving I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PSYC",
                     "number": 250,
                     "name": "Research Methods I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Natural Science Inquiry"
@@ -151,56 +117,42 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 240,
                     "name": "Web & Mobile II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 266,
                     "name": "Design for Accessibility"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "GCIS",
                     "number": 124,
                     "name": "Software Development and Problem Solving II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "PSYC",
                     "number": 251,
                     "name": "Research Methods II"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 99,
                     "name": "School of Information Second Year Seminar"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -209,8 +161,6 @@
             [
                 {
                     "courseType": "co-op option",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -231,40 +181,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 252,
                     "name": "Foundations of Mobile Design"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -273,40 +213,30 @@
             [
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -315,8 +245,6 @@
             [
                 {
                     "courseType": "co-op option",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -337,40 +265,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 500,
                     "name": "Senior Development Project I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -379,32 +297,24 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "ISTE",
                     "number": 501,
                     "name": "Senior Development Project II"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "HCC Concentration Course"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"

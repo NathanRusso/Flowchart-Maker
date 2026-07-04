@@ -236,8 +236,6 @@ function createCourse(courseInfo) {
 
     // Get all possible data
     let courseType = courseInfo.courseType;
-    let courseOfferedFall = courseInfo.offeredFall;
-    let courseOfferedSpring = courseInfo.offeredSpring;
     let courseDiscipline = courseInfo?.discipline;
     let courseNumber = courseInfo?.number;                      // May be a string if Honors class. Ex: 999H
     let courseName = courseInfo?.name;
@@ -246,6 +244,8 @@ function createCourse(courseInfo) {
     let courseOptions = courseInfo?.options;                    // Excluded from below
     let courseHyperParentId = courseInfo?.hyperParentId;
     let courseHyperChildId = courseInfo?.hyperChildId;
+    let courseOfferedFall = courseInfo?.offeredFall;
+    let courseOfferedSpring = courseInfo?.offeredSpring;
 
     // Save all possible data
     if (typeof courseType === "string" && courseType.trim()) {
@@ -644,8 +644,6 @@ function processCourse(courseDiv) {
     // Get all possible data
     const courseType = courseDiv.dataset.courseType; // "co-op", "required", "option", "input"
     const courseContent = courseDiv.textContent;
-    const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
-    const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
     const courseDiscipline = courseDiv.dataset?.courseDiscipline;
     let courseNumber = courseDiv.dataset?.courseNumber;
     if (courseNumber.at(-1) !== "H") courseNumber = Number(courseNumber); // Accounts for Honors courses
@@ -653,12 +651,12 @@ function processCourse(courseDiv) {
     const courseAttribute = courseDiv.dataset?.courseAttribute;
     const courseHyperParentId = Number(courseDiv.dataset?.courseHyperParentId);
     const courseHyperChildId = Number(courseDiv.dataset?.courseHyperChildId);
+    const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
+    const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
 
     if (courseType == "co-op") {
         course = {
             "courseType": "co-op",
-            "offeredFall": null,
-            "offeredSpring": null,
             "discipline": courseDiscipline,
             "number": courseNumber,
             "name": courseName
@@ -679,16 +677,12 @@ function processCourse(courseDiv) {
 
         course = {
             "courseType": "co-op option",
-            "offeredFall": null,
-            "offeredSpring": null,
             "selectedIndex": select.selectedIndex,
             "options": createdOptions
         };
     } else if (courseType == "required") {
         course = {
             "courseType": "required",
-            "offeredFall": !(courseOfferedOnlySpring),
-            "offeredSpring": !(courseOfferedOnlyFall),
             "discipline": courseDiscipline,
             "number": courseNumber,
             "name": courseName
@@ -714,8 +708,6 @@ function processCourse(courseDiv) {
 
             course = {
                 "courseType": "option",
-                "offeredFall": !(courseOfferedOnlySpring),
-                "offeredSpring": !(courseOfferedOnlyFall),
                 "attribute": courseAttribute,
                 "selectedIndex": select.selectedIndex,
                 "options": createdOptions
@@ -742,7 +734,7 @@ function processCourse(courseDiv) {
                     const inputs = courseDiv.children[inputIndex++].value.split(/[\-]+/);  // Input
                     optionObject = {
                         "discipline": inputs[0],
-                        "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
+                        "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
                         "attribute": optionAttribute,
                     }
                 }
@@ -752,8 +744,6 @@ function processCourse(courseDiv) {
 
             course = {
                 "courseType": "option",
-                "offeredFall": !(courseOfferedOnlySpring),
-                "offeredSpring": !(courseOfferedOnlyFall),
                 "selectedIndex": select.selectedIndex,
                 "options": createdOptions
             };
@@ -762,8 +752,6 @@ function processCourse(courseDiv) {
         const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
         course = {
             "courseType": "input",
-            "offeredFall": !(courseOfferedOnlySpring),
-            "offeredSpring": !(courseOfferedOnlyFall),
             "discipline": inputs[0],
             "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
             "attribute": courseAttribute
@@ -774,6 +762,10 @@ function processCourse(courseDiv) {
 
     if (courseHyperParentId || courseHyperParentId === 0) course["hyperParentId"] = courseHyperParentId;
     if (courseHyperChildId || courseHyperChildId === 0) course["hyperChildId"] = courseHyperChildId;
+    if (courseOfferedOnlyFall || courseOfferedOnlySpring) {
+        course["offeredFall"] = courseOfferedOnlyFall;
+        course["offeredSpring"] = courseOfferedOnlySpring;
+    }
 
     return course;
 }

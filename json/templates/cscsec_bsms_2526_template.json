@@ -6,48 +6,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 141,
                     "name": "Computer Science I"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 181,
                     "name": "Calculus I"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Writing Intensive: First Year"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -56,48 +44,36 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 142,
                     "name": "Computer Science II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 182,
                     "name": "Calculus II"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 190,
                     "name": "Discrete Mathematics for Computing"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -109,8 +85,6 @@
             [
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -127,24 +101,18 @@
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 243,
                     "name": "Mechanics of Programming"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 251,
                     "name": "Probability and Statistics"
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lecture 1",
                     "selectedIndex": 0,
                     "options": [
@@ -167,8 +135,6 @@
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lab 1",
                     "selectedIndex": 0,
                     "options": [
@@ -191,16 +157,12 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 99,
                     "name": "Undergraduate Cooperative Education Seminar"
@@ -209,8 +171,6 @@
             [
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -227,24 +187,18 @@
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "SWEN",
                     "number": 261,
                     "name": "Intro to Software Engineering"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "MATH",
                     "number": 241,
                     "name": "Linear Algebra"
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lecture 2",
                     "selectedIndex": 0,
                     "options": [
@@ -267,8 +221,6 @@
                 },
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "attribute": "Lab Science: Lab 2",
                     "selectedIndex": 0,
                     "options": [
@@ -291,16 +243,12 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -309,8 +257,6 @@
             [
                 {
                     "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "discipline": "CSCI",
                     "number": 488,
                     "name": "CS Undergraduate Summer Co-op"
@@ -321,40 +267,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 331,
                     "name": "Intro to Artificial Intelligence"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 320,
                     "name": "Principles of Data Management"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 250,
                     "name": "Concept of Computer Systems"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
@@ -363,8 +299,6 @@
             [
                 {
                     "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "discipline": "CSCI",
                     "number": 499,
                     "name": "CS Undergraduate Semester Co-op"
@@ -376,40 +310,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": false,
                     "discipline": "CSEC",
                     "number": 600,
                     "name": "Introduction to Computing Security"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 344,
                     "name": "Programming Language Concepts"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 251,
                     "name": "Concepts of Parallel and Distributed Systems"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
@@ -418,40 +342,30 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSCI",
                     "number": 472,
                     "name": "Historical & Current Perspectives in CS"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "* CS Cluster Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "* CS Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -463,8 +377,6 @@
             [
                 {
                     "courseType": "co-op",
-                    "offeredFall": null,
-                    "offeredSpring": null,
                     "discipline": "CSCI",
                     "number": 499,
                     "name": "CS Undergraduate Semester Co-op"
@@ -473,40 +385,30 @@
             [
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "* CS Cluster Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Elective"
@@ -518,32 +420,24 @@
             [
                 {
                     "courseType": "required",
-                    "offeredFall": false,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 742,
                     "name": "Computer System Security"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": false,
                     "discipline": "CSEC",
                     "number": 604,
                     "name": "Cryptography and Authentication"
                 },
                 {
                     "courseType": "required",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "CSEC",
                     "number": 603,
                     "name": "Enterprise Security"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Research Elective"
@@ -552,8 +446,6 @@
             [
                 {
                     "courseType": "option",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -573,16 +465,12 @@
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Research Elective"
                 },
                 {
                     "courseType": "input",
-                    "offeredFall": true,
-                    "offeredSpring": true,
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Elective",
