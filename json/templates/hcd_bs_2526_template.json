@@ -5,19 +5,19 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 101,
                     "name": "Computation and Culture"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 200,
                     "name": "DHSS Seminar"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -33,19 +33,19 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Writing Intensive: First Year"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -53,37 +53,37 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 102,
                     "name": "Industrial Origins of the Digital Age"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 140,
                     "name": "Web & Mobile I"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -94,37 +94,37 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ITDL",
                     "number": 102,
                     "name": "Career Prep for Liberal Arts Majors"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 240,
                     "name": "Web & Mobile II"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "NMDE",
                     "number": 111,
                     "name": "New Media Design Digital Survey I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "STAT",
                     "number": 145,
                     "name": "Introduction to Statistics I"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Natural Science Inquiry Perspective"
@@ -132,37 +132,37 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 103,
                     "name": "Ethics in the Digital Era"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 230,
                     "name": "Introduction to Database and Data Modeling"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "NMDE",
                     "number": 112,
                     "name": "New Media Design Digital Survey II"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Mathematical Perspective B"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -173,19 +173,19 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 200,
                     "name": "DHSS Seminar (HCD Prosem Leadership)"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "DHSS Project Course"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -201,19 +201,19 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
@@ -221,31 +221,31 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 377,
                     "name": "Media Narrative"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "DHSS Project Course"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "DHSS Professional Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "DHSS Professional Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
@@ -253,7 +253,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "DHSS",
                     "number": 499,
                     "name": "DHSS Co-op"
@@ -263,31 +263,31 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 489,
                     "name": "DHSS Capstone I"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Electives"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Electives"
@@ -295,31 +295,31 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "DHSS",
                     "number": 489,
                     "name": "DHSS Capstone II"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Electives"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Electives"

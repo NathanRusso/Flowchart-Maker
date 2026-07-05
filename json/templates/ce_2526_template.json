@@ -5,37 +5,37 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CINT",
                     "number": 101,
                     "name": "Computing Exploration Seminar"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 123,
                     "name": "Software Development and Problem Solving I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 140,
                     "name": "Web & Mobile I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 181,
                     "name": "Calculus I"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Writing Intensive: First Year"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -43,7 +43,7 @@
             ],
             [
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -69,25 +69,25 @@
                     ]
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 124,
                     "name": "Software Development and Problem Solving II"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 190,
                     "name": "Discrete Mathematics for Computing"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 182,
                     "name": "Calculus II"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Elective"

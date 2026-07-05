@@ -5,13 +5,13 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 101,
                     "name": "AI Explorations"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -27,25 +27,25 @@
                     ]
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 181,
                     "name": "Calculus I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "UWRT",
                     "number": 150,
                     "name": "FYW: Writing Seminar"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -53,13 +53,13 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 110,
                     "name": "AI Tools and Techniques"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -75,13 +75,13 @@
                     ]
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 182,
                     "name": "Calculus II"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -97,13 +97,13 @@
                     ]
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "PSYC",
                     "number": 101,
                     "name": "Introduction to Psychology"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -114,37 +114,37 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 202,
                     "name": "Problem Solving in Artificial Intelligence"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 261,
                     "name": "Introduction to Software Engineering"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 251,
                     "name": "Probability and Statistics"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "PSYC",
                     "number": 223,
                     "name": "Cognitive Psychology"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Natural Science Inquiry Perspective"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 99,
                     "name": "Co-Op Preparation Seminar"
@@ -152,31 +152,31 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 262,
                     "name": "Foundations of Human Centered Computing"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 350,
                     "name": "Artificial Intelligence and Law"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 331,
                     "name": "Introduction to Artificial Intelligence"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 241,
                     "name": "Linear Algebra"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -192,13 +192,13 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -206,7 +206,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "IDAI",
                     "number": 499,
                     "name": "Cooperative Education in Artificial Intelligence"
@@ -216,31 +216,31 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 360,
                     "name": "Optimization Algorithms"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 476,
                     "name": "Visual Analytics"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 335,
                     "name": "Machine Learning"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -248,13 +248,13 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 444,
                     "name": "Interactive Machine and Reinforcement Learning"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -270,7 +270,7 @@
                     ]
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -286,13 +286,13 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -300,7 +300,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "IDAI",
                     "number": 499,
                     "name": "Cooperative Education in Artificial Intelligence"
@@ -310,31 +310,31 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 521,
                     "name": "Security of AI"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "AI Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "AI Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -342,31 +342,31 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 490,
                     "name": "AI Team Capstone"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "IDAI",
                     "number": 485,
                     "name": "Concurrent and Distributed Artificial Intelligence"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"

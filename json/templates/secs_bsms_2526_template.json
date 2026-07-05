@@ -5,37 +5,37 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 101,
                     "name": "Software Engineering Freshman Seminar"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 123,
                     "name": "Software Development and Problem Solving I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 181,
                     "name": "Calculus I"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -43,37 +43,37 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 250,
                     "name": "Personal Software Engineering"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 124,
                     "name": "Software Development and Problem Solving II"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 182,
                     "name": "Calculus II"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 190,
                     "name": "Discrete Mathematics for Computing"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ENGL",
                     "number": 150,
                     "name": "FYW: Future of Writing"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -84,37 +84,37 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 344,
                     "name": "Engineering of Web Based Software Systems"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 261,
                     "name": "Introduction to Software Engineering"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "PHYS",
                     "number": 211,
                     "name": "University Physics I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "COMM",
                     "number": 253,
                     "name": "Communication"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 99,
                     "name": "Undergraduate Cooperative Education Seminar"
@@ -122,19 +122,19 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 262,
                     "name": "Engineering of Software Subsystems"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 256,
                     "name": "Software Process and Project Management"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -150,19 +150,19 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Scientific Principles Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -170,7 +170,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "SWEN",
                     "number": 488,
                     "name": "Software Engineering Summer Co-op"
@@ -180,7 +180,7 @@
         [
             [
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -196,25 +196,25 @@
                     ]
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 340,
                     "name": "Software Design for Computing Systems"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 262,
                     "name": "Introduction to Computer Science Theory"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 241,
                     "name": "Linear Algebra"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
@@ -222,7 +222,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "SWEN",
                     "number": 499,
                     "name": "Software Engineering Co-op"
@@ -233,19 +233,19 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 440,
                     "name": "Software System Requirements and Architecture"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 331,
                     "name": "Engineering Secure Software"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -261,13 +261,13 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Math/Science Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
@@ -275,7 +275,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "SWEN",
                     "number": 499,
                     "name": "Software Engineering Co-op"
@@ -286,31 +286,31 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 561,
                     "name": "Software Engineering Project I"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "SWEN Design Elective"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 664,
                     "name": "Computational Complexity"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -318,37 +318,37 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 562,
                     "name": "Software Engineering Project II"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "SWEN Process Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Math/Science Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Professional Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -359,25 +359,25 @@
         [
             [
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Graduate Cluster Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CS Graduate Cluster Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Grad CSCI MS Course"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Grad CSCI MS Course"
@@ -385,25 +385,25 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 788,
                     "name": "Computer Science MS Project"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Grad CSCI MS Course"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Grad CSCI MS Course"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Grad CSCI MS Course"
