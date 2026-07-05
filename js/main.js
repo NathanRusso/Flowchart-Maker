@@ -389,10 +389,9 @@ function createCourse(courseInfo) {
 
             // Sets an event listener update color and text
             select.addEventListener("change", (event) => {
-                const target = event.target;
-                const text = target.value;
-                const index = target.selectedIndex;
-                const option = target.selectedOptions[0];
+                const text = select.value;
+                const index = select.selectedIndex;
+                const option = select.selectedOptions[0];
                 if (text) { // Option is required
                     label.style.display = "inline";
                     label.textContent = text;
@@ -417,8 +416,8 @@ function createCourse(courseInfo) {
 
             // Updates visible hyper classes based on selected options
             if (validHyperParentId && !validHyperChildId) {
-                select.addEventListener("change", (event) =>
-                    updateHyperCourseDivs(courseHyperParentId, Number(select.options[select.selectedIndex].dataset.optionHyperChildId))
+                select.addEventListener("change", () =>
+                    updateHyperCourseDivs(courseHyperParentId, Number(select.selectedOptions[0].dataset.optionHyperChildId))
                 );
             }
 
@@ -452,10 +451,16 @@ function createCourse(courseInfo) {
                 });
                 option.dataset.optionDiscipline = optionInfo.discipline;
                 option.dataset.optionNumber = optionInfo.number;
+                const optionAttribute = optionInfo?.attribute;
+                if (optionAttribute) option.dataset.optionAttribute = optionAttribute;
 
                 select.append(option); // Must come before
                 if (courseSelectedIndex == index) {
                     select.selectedIndex = index;
+
+                    // Updates the color and label if there is a sub attribute
+                    if (optionAttribute) label.textContent = optionAttribute;
+                    courseDiv.style.borderColor = getAttributeColor(optionAttribute ?? courseAttribute);
                 }
             });
 
@@ -469,17 +474,16 @@ function createCourse(courseInfo) {
                 }
 
                 // Updates the options inside the related exotic courseDivs or hides if the selected index is to high.
-                select.addEventListener("change", (event) => 
-                    updateExoticCourseDivs(courseExoticId, select.selectedIndex)
-                );
+                select.addEventListener("change", () => {
+                    updateExoticCourseDivs(courseExoticId, select.selectedIndex);
+                });
 
                 // This handles saving all course divs that are linked to a exotic option.
                 exoticDictionary[courseExoticId] ??= [];
                 exoticDictionary[courseExoticId].push(courseDiv);
             }
 
-            // Sets the border color and adds the label and input to the course div
-            courseDiv.style.borderColor = getAttributeColor(courseAttribute);
+            // Adds the label and input to the course div
             courseDiv.append(label);
             courseDiv.append(select);
             break;
@@ -584,9 +588,14 @@ function updateExoticCourseDivs(exoticId, selectedIndex) {
     if (Number.isInteger(exoticId) && Number.isInteger(selectedIndex)) {
         const exoticDivs = exoticDictionary[exoticId];
         exoticDivs.forEach(courseDiv => {
+            const courseAttribute = courseDiv.dataset.courseAttribute;
+            const label = courseDiv.children[0];
             const select = courseDiv.children[1];
             if (selectedIndex < select.options.length) {
                 select.selectedIndex = selectedIndex;
+                const attribute = select.selectedOptions[0].dataset?.optionAttribute ?? courseAttribute;
+                label.textContent = attribute;
+                courseDiv.style.borderColor = getAttributeColor(attribute);
                 courseDiv.style.display = "flex";
             } else {
                 courseDiv.style.display = "none";
@@ -777,6 +786,8 @@ function processCourse(courseDiv) {
                     "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
                     "name": option.value,
                 }
+                const optionAttribute = option.dataset?.optionAttribute;
+                if (optionAttribute) optionObject["attribute"] = optionAttribute;
                 createdOptions.push(optionObject);
             });
 
