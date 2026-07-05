@@ -126,7 +126,8 @@
                             "number": 211,
                             "name": "University Physics I"
                         }
-                    ]
+                    ],
+                    "exoticId": 1
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -147,13 +148,9 @@
                             "discipline": "CHMG",
                             "number": 145,
                             "name": "General & Analytical Chemistry I Lab"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 211,
-                            "name": "University Physics I"
                         }
-                    ]
+                    ],
+                    "exoticId": 1
                 },
                 {
                     "courseType": "class-input",
@@ -222,7 +219,8 @@
                             "number": 212,
                             "name": "University Physics II"
                         }
-                    ]
+                    ],
+                    "exoticId": 1
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -243,13 +241,9 @@
                             "discipline": "CHMG",
                             "number": 146,
                             "name": "General & Analytical Chemistry II Lab"
-                        },
-                        {
-                            "discipline": "PHYS",
-                            "number": 212,
-                            "name": "University Physics II"
                         }
-                    ]
+                    ],
+                    "exoticId": 1
                 },
                 {
                     "courseType": "class-input",
