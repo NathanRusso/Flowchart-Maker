@@ -40,14 +40,14 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 ### Course Types
 
 #### Classes
-- **Required** - A defined course that must be taken
-- **Option** - A group of defined courses for which you must pick one from
-    - **Attribute Option** - All courses fall under the same label attribute whereby their individual names are not shown, only their codes
-    - **Hyper Option** - Each option has associated courses that are only required when said option is selected
-- **Input** - An undefined course slot for which you must pick one course to fill that typically falls into some category
+- **Class Required** - A defined course that must be taken
+- **Class Input** - An undefined course slot for which you must pick one course to fill that typically falls into some category
+- **Class Option Mix** - A group of defined courses for which you must pick one from
+- **Class Option Attribute** - A group of defined courses for which you must pick one from which all fall under the same label
+- **(*) Hyper Option** - Both option types may have associated courses that are only required when said option is selected
 
 #### Co-ops
-- **Co-op** - A cooperative education/internship block that encompasses an entire semester
+- **Co-op Required** - A cooperative education/internship block that encompasses an entire semester
 - **Co-op Option** - A group of courses that qualify as possible co-ops, including co-ops themselves and other pathway specified options
 
 ## Current Templates Available

@@ -5,37 +5,37 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 140,
                     "name": "Introduction to Cybersecurity"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 123,
                     "name": "Software Development and Problem Solving I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 181,
                     "name": "Calculus I"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Global Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Ethical Perspective"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
                     "name": "RIT 365: RIT Connections"
@@ -43,37 +43,37 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 124,
                     "name": "Software Development and Problem Solving II"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "NSSA",
                     "number": 241,
                     "name": "Introduction to Routing and Switching"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 182,
                     "name": "Calculus II"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 190,
                     "name": "Discrete Mathematics for Computing"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Writing Intensive: First Year"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -84,25 +84,25 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 201,
                     "name": "Programming for Information Security"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "NSSA",
                     "number": 221,
                     "name": "Systems Administration I"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 251,
                     "name": "Probability and Statistics"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lecture 1",
                     "selectedIndex": 0,
                     "options": [
@@ -129,7 +129,7 @@
                     ]
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lab 1",
                     "selectedIndex": 0,
                     "options": [
@@ -156,13 +156,13 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Social Perspective"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 99,
                     "name": "Cooperative Education Seminar"
@@ -170,19 +170,19 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 202,
                     "name": "Reverse Engineering Fundamentals"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "NSSA",
                     "number": 245,
                     "name": "Network Services"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -198,7 +198,7 @@
                     ]
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lecture 2",
                     "selectedIndex": 0,
                     "options": [
@@ -225,7 +225,7 @@
                     ]
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lab 2",
                     "selectedIndex": 0,
                     "options": [
@@ -252,13 +252,13 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Artistic Perspective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Wellness Course"
@@ -266,7 +266,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "CSEC",
                     "number": 499,
                     "name": "Cooperative Education in CSEC"
@@ -276,31 +276,31 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 462,
                     "name": "Introduction to Cryptography"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 310,
                     "name": "Endpoint Security Engineering"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 230,
                     "name": "Introduction to Database and Data Modeling"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "PUBL",
                     "number": 363,
                     "name": "Cybersecurity Policy and Law"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -308,31 +308,31 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 472,
                     "name": "Authentication and Security Models"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 380,
                     "name": "Principles of Web Application Security"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -340,7 +340,7 @@
             ],
             [
                 {
-                    "courseType": "co-op",
+                    "courseType": "co-op-required",
                     "discipline": "CSEC",
                     "number": 499,
                     "name": "Cooperative Education in CSEC"
@@ -350,19 +350,19 @@
         [
             [
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Undergraduate Elective"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -383,13 +383,13 @@
                     ]
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -397,31 +397,31 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 490,
                     "name": "Capstone in Cybersecurity"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Research Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Undergraduate Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Immersion"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "Open Elective"
@@ -432,25 +432,25 @@
         [
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 604,
                     "name": "Cryptography and Authentication"
                 },
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 603,
                     "name": "Enterprise Security"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Graduate Elective"
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Research Elective"
@@ -458,13 +458,13 @@
             ],
             [
                 {
-                    "courseType": "required",
+                    "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 742,
                     "name": "Computer System Security"
                 },
                 {
-                    "courseType": "option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -483,7 +483,7 @@
                     "hyperParentId": 1
                 },
                 {
-                    "courseType": "input",
+                    "courseType": "class-input",
                     "discipline": "",
                     "number": null,
                     "attribute": "CSEC Research Elective",

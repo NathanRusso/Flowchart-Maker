@@ -27,7 +27,7 @@ let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds 
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
 
 const body = document.body;
-const classRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
+const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
 
 const pageTitle = document.getElementById("pageTitle");
 const fileInput = document.getElementById("fileInput");
@@ -262,195 +262,137 @@ function createCourse(courseInfo) {
         courseAttribute = courseAttribute.trim();
         courseDiv.dataset.courseAttribute = courseAttribute;
     }
-    const validHyperParentId = Number.isInteger(courseHyperParentId) && courseHyperParentId >= 0;
-    const validHyperChildId = Number.isInteger(courseHyperChildId) && courseHyperChildId >= 0;
+    const validHyperParentId = Number.isInteger(courseHyperParentId) && courseHyperParentId >= 1;
+    const validHyperChildId = Number.isInteger(courseHyperChildId) && courseHyperChildId >= 1;
     if (validHyperParentId) courseDiv.dataset.courseHyperParentId = courseHyperParentId;
     if (validHyperChildId) courseDiv.dataset.courseHyperChildId = courseHyperChildId;
 
     // Add everything to the course divs
-    if (courseType == "co-op") {
-        courseDiv.className = "co-op";
-        courseDiv.textContent = `${courseName} (${courseDiscipline}-${courseNumber})`;
-    } else if (courseType == "co-op option") {    
-        courseDiv.className = "co-op";
-  
-        // Creates the class selector
-        const classSelect = document.createElement("select");
-
-        // Sets the dropdown options
-        courseOptions.forEach((optionInfo, index) => {
-            const classOption = document.createElement("option");
-            classOption.textContent = `${optionInfo.name} (${optionInfo.discipline}-${optionInfo.number})`;
-            classOption.value = optionInfo.name;
-            classOption.dataset.optionDiscipline = optionInfo.discipline;
-            classOption.dataset.optionNumber = optionInfo.number;
-
-            classSelect.append(classOption); // Must come before
-
-            if (courseSelectedIndex == index) classSelect.selectedIndex = index;
-        });
-        
-        // Adds the select to the course div
-        courseDiv.append(classSelect);
-    } else if (courseType == "required") {
-        courseDiv.className = "class";
-        courseDiv.textContent = `${courseDiscipline}-${courseNumber}\n\n${courseName}`
-
-        // Set border color
-        courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
-    } else if (courseType == "option") {
-        courseDiv.className = "class";
-
-        // Creates the class selector and adds options
-        const classSelect = document.createElement("select");
-
-        if (courseAttribute) {
-            // Updates styles
-            classSelect.style.marginTop= "10px";
-            classSelect.style.marginBottom = "0px";
-            classSelect.style.borderBottom = "1px Solid var(--text-color)";
-            classSelect.style.borderRadius = "0px";
-
-            // Sets the upper attribute label
-            const classAttributeLabel = document.createElement("label");
-            classAttributeLabel.textContent = courseAttribute;
-
-            // Sets the dropdown options
+    switch (courseType) {
+        case "co-op-required": {
+            courseDiv.className = "co-op";
+            courseDiv.textContent = `${courseName} (${courseDiscipline}-${courseNumber})`;
+            break;
+        }
+        case "co-op-option": {
+            courseDiv.className = "co-op";
+    
+            // Creates the select and sets the dropdown options
+            const select = document.createElement("select");
             courseOptions.forEach((optionInfo, index) => {
-                const classOption = document.createElement("option");
-                const classTextContent = `${optionInfo.discipline}-${optionInfo.number}`;
-                classOption.textContent = classTextContent;
-                classOption.value = optionInfo.name;
+                const option = Object.assign(document.createElement("option"), {
+                    textContent: `${optionInfo.name} (${optionInfo.discipline}-${optionInfo.number})`,
+                    value: optionInfo.name,
+                });
+                option.dataset.optionDiscipline = optionInfo.discipline;
+                option.dataset.optionNumber = optionInfo.number;
 
-                const optionHyperChildId = optionInfo?.hyperChildId;
-                let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
-                if (validOptionHyperChildId) classOption.dataset.optionHyperChildId = optionHyperChildId;
-
-                classSelect.append(classOption); // Must come before
-
-                if (courseSelectedIndex == index) {
-                    classSelect.selectedIndex = index;
-                    if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
-                }
+                select.append(option); // Must come before the following line
+                if (courseSelectedIndex == index) select.selectedIndex = index;
             });
+            
+            // Adds the select to the course div
+            courseDiv.append(select);
+            break;
+        }
+        case "class-required": {
+            courseDiv.className = "class";
+            courseDiv.textContent = `${courseDiscipline}-${courseNumber}\n\n${courseName}`
+            courseDiv.style.borderColor = getDisciplineColor(courseDiscipline);
+            break;
+        }
+        case "class-input": {
+            courseDiv.className = "class";
 
-            // Sets the border color
+            // Creates the label to go above the input
+            const label = document.createElement("label");
+            label.textContent = courseAttribute;
+
+            // Creates and sets up the class input
+            const savedCourse = `${courseDiscipline}-${courseNumber}`;
+            const input = createCourseInput(savedCourse);
+
+            // Sets the border color and adds the label and input to the course div
             courseDiv.style.borderColor = getAttributeColor(courseAttribute);
+            courseDiv.append(label);
+            courseDiv.append(input);
+            break;
+        }
+        case "class-option-mix": {
+            courseDiv.className = "class";
 
-            // Adds the select and label to the course div
-            courseDiv.append(classAttributeLabel);
-            courseDiv.append(classSelect);
-        } else {
+            // Creates the select to go above the label
+            const select = document.createElement("select");
+
             // Creates a label to change based on the selector
-            const classLabel = document.createElement("label");
-            classLabel.textContent = courseOptions[0].name;
+            const label = document.createElement("label");
+            label.textContent = courseOptions[0].name; // Backup in case the selected index is not valid
 
             // Creates a dictionary of indexes to input objects if needed
             const inputObjects = {};
 
             // Sets the dropdown options
             courseOptions.forEach((optionInfo, index) => {
+                const option = document.createElement("option");
                 const optionDiscipline = optionInfo.discipline;
                 const optionNumber = optionInfo.number;
                 const optionName = optionInfo?.name;
                 const optionAttribute = optionInfo?.attribute;
                 const optionHyperChildId = optionInfo?.hyperChildId;
+                const savedCourse = `${optionDiscipline}-${optionNumber}`;
 
-                // Creates the option object to go inside the select object
-                const classOption = document.createElement("option");
+                // Sets up the option inputs with general fields
+                option.textContent = optionName ? savedCourse : optionAttribute;
+                option.value = optionName ?? "";
+                option.dataset.optionDiscipline = optionInfo.discipline;
+                option.dataset.optionNumber = optionInfo.number;
 
-                // Creates the option input object which is only used is the option is an input (not often)
-                const optionInput = document.createElement("input");
-                optionInput.style.marginTop = "0px";
-
-                if (optionName) {                   // Required option
-                    classOption.textContent = `${optionDiscipline}-${optionNumber}`;
-                    classOption.value = optionName;
-                } else if (optionAttribute) {       // Input option
-                    classOption.textContent = optionAttribute;
-                    classOption.value = "";
-                    classOption.dataset.optionAttribute = optionAttribute;
-
-                    // Applies restrictions to the option input
-                    Object.assign(optionInput, {
-                        type: "text",
-                        placeholder: "ABCD-123",
-                        pattern: "[A-Z]{4}-[0-9]{1,3}H?",
-                        minlength: 6,
-                        maxlength: 9
-                    });
-
-                    // Ensures any letters given are uppercase
-                    optionInput.addEventListener("input", () => optionInput.value = optionInput.value.toUpperCase());
-
-                    // Ensures valid characters are entered in the option input.
-                    optionInput.addEventListener("keypress", (event) => {
-                        const preInputLength = optionInput.value.length;
-                        const key = event.key.toUpperCase(); // Converts letters to uppercase for the check only
-                        const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);                        // Characters 1-4
-                        const condition2 = preInputLength == 4 && key != "-";                               // Character 5
-                        const condition3 = preInputLength > 4 && preInputLength < 8 && !/[0-9]/.test(key);  // Characters 6-8
-                        const condition4 = preInputLength == 8 && key != "H";                               // Character 9 (Optional)
-                        const condition5 = preInputLength == 9;                                             // Extra
-                        if (condition1 || condition2 || condition3 || condition4 || condition5) event.preventDefault();
-                    });
-                    
-                    // Ensures a valid string is saved in the option input
-                    optionInput.addEventListener("blur", (event) => {
-                        const currentValue = event.target.value;
-                        if (currentValue && !classRegex.test(currentValue)) {
-                            alert("Format must be in ABCD-123, ABCD-123H, or blank");
-                            setTimeout(() => optionInput.focus(), 0); // Prevents alert loop
-                        }
-                    });
-
-                    // Checks current class
-                    const savedCourse = `${optionDiscipline}-${optionNumber}`;
-                    if (classRegex.test(savedCourse)) optionInput.value = savedCourse;
+                // Creates and sets up the option input which is only used if the option is an "input class", not a "required class"
+                if (optionAttribute) {
+                    option.dataset.optionAttribute = optionAttribute;
+                    var optionInput = createCourseInput(savedCourse);
+                    optionInput.style.marginTop = "0px";
                     inputObjects[index] = optionInput;
                 }
 
-                let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
-                if (validOptionHyperChildId) classOption.dataset.optionHyperChildId = optionHyperChildId;
+                let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
+                if (validOptionHyperChildId) option.dataset.optionHyperChildId = optionHyperChildId;
 
-                classSelect.append(classOption); // Must come before
-
+                select.append(option); // Must come before
                 if (courseSelectedIndex == index) {
-                    classLabel.textContent = optionInfo.name;
-                    classSelect.selectedIndex = index;
+                    label.textContent = optionInfo.name;
+                    select.selectedIndex = index;
                     if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
-                    optionInput.style.display = "inline-block";
+
+                    // Sets style the border color
+                    if (optionAttribute) {
+                        optionInput.style.display = "inline-block";
+                        select.style.height = "50px"; // Extends the hight of the select
+                        courseDiv.style.borderColor = getAttributeColor(optionAttribute);
+                    } else {
+                        courseDiv.style.borderColor = getDisciplineColor(optionDiscipline);
+                    }
                 } else {
-                    optionInput.style.display = "none";
+                    if (optionAttribute) optionInput.style.display = "none";
                 }
             });
 
-            // Sets the border color
-            const discipline = classSelect.options[classSelect.selectedIndex].textContent.split(/[\-]+/)[0];
-            const attribute = classSelect.options[classSelect.selectedIndex].dataset.optionAttribute;
-            if (attribute) {
-                courseDiv.style.borderColor = getAttributeColor(attribute);
-                classSelect.style.height = "50px"; // Extends the hight of the select
-            } else if (discipline) {
-                courseDiv.style.borderColor = getDisciplineColor(discipline);
-            }
-
-            // Updates color and text
-            classSelect.addEventListener("change", (event) => {
-                const text = event.target.value;
-                const index = classSelect.selectedIndex;
-                if (text) {
-                    classLabel.style.display = "inline";
-                    classLabel.textContent = text;
-                    classSelect.style.height = "auto";
-                    const discipline = classSelect.options[index].textContent.split(/[\-]+/)[0];
-                    courseDiv.style.borderColor = getDisciplineColor(discipline);
-                } else {
-                    classLabel.style.display = "none";
-                    classLabel.textContent = "";
-                    classSelect.style.height = "50px";
-                    const attribute = classSelect.options[index].dataset.optionAttribute;
-                    courseDiv.style.borderColor = getAttributeColor(attribute);
+            // Sets an event listener update color and text
+            select.addEventListener("change", (event) => {
+                const target = event.target;
+                const text = target.value;
+                const index = target.selectedIndex;
+                const option = target.selectedOptions[0];
+                if (text) { // Option is required
+                    label.style.display = "inline";
+                    label.textContent = text;
+                    select.style.height = "auto";
+                    courseDiv.style.borderColor = getDisciplineColor(option.dataset.optionDiscipline);
+                } else { // Option is input
+                    label.style.display = "none";
+                    label.textContent = "";
+                    select.style.height = "50px";
+                    courseDiv.style.borderColor = getAttributeColor(option.dataset.optionAttribute);
                 }
                 
                 for (const [inputIndex, inputObject] of Object.entries(inputObjects)) {
@@ -463,73 +405,72 @@ function createCourse(courseInfo) {
                 }
             });
 
-            // Adds the select, label, and any existing input to the course div
-            courseDiv.append(classSelect);
-            courseDiv.append(classLabel);
-            Object.values(inputObjects).forEach(input => courseDiv.append(input));
-        }
-
-        // Updates visible hyper classes based on selected options
-        if (validHyperParentId && !validHyperChildId) {
-            classSelect.addEventListener("change", (event) =>{
-                updateHyperCourseDivs(courseHyperParentId, Number(classSelect.options[classSelect.selectedIndex].dataset.optionHyperChildId))
-            });
-        }
-    } else if (courseType == "input") {
-        courseDiv.className = "class";
-
-        // Creates the label for the input
-        const classLabel = document.createElement("label");
-        classLabel.textContent = courseAttribute;
-
-        // Creates the class input
-        const classInput = document.createElement("input");
-
-        // Applies restrictions to the input
-        Object.assign(classInput, {
-            type: "text",
-            placeholder: "ABCD-123",
-            pattern: "[A-Z]{4}-[0-9]{1,3}H?",
-            minlength: 6,
-            maxlength: 9
-        });
-
-        // Ensures any letters given are uppercase
-        classInput.addEventListener("input", () => classInput.value = classInput.value.toUpperCase());
-
-        // Ensures valid characters are entered in the input.
-        classInput.addEventListener("keypress", (event) => {
-            const preInputLength = classInput.value.length;
-            const key = event.key.toUpperCase(); // Converts letters to uppercase for the check only
-            const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);                        // Characters 1-4
-            const condition2 = preInputLength == 4 && key != "-";                               // Character 5
-            const condition3 = preInputLength > 4 && preInputLength < 8 && !/[0-9]/.test(key);  // Characters 6-8
-            const condition4 = preInputLength == 8 && key != "H";                               // Character 9 (Optional)
-            const condition5 = preInputLength == 9;                                             // Extra
-            if (condition1 || condition2 || condition3 || condition4 || condition5) event.preventDefault();
-        });
-        
-        // Ensures a valid string is saved
-        classInput.addEventListener("blur", (event) => {
-            const currentValue = event.target.value;
-            if (currentValue && !classRegex.test(currentValue)) {
-                alert("Format must be in ABCD-123, ABCD-123H, or blank");
-                setTimeout(() => classInput.focus(), 0); // Prevents alert loop
+            // Updates visible hyper classes based on selected options
+            if (validHyperParentId && !validHyperChildId) {
+                select.addEventListener("change", (event) =>
+                    updateHyperCourseDivs(courseHyperParentId, Number(select.options[select.selectedIndex].dataset.optionHyperChildId))
+                );
             }
-        });
 
-        // Checks current class
-        const savedCourse = `${courseDiscipline}-${courseNumber}`;
-        if (classRegex.test(savedCourse)) classInput.value = savedCourse;
+            // Adds the select, label, and any existing input to the course div
+            courseDiv.append(select);
+            courseDiv.append(label);
+            Object.values(inputObjects).forEach(input => courseDiv.append(input));
+            break;
+        }
+        case "class-option-attribute": {
+            courseDiv.className = "class";
 
-        // Sets the border color
-        courseDiv.style.borderColor = getAttributeColor(courseAttribute);
+            // Creates the label to go above the select
+            const label = document.createElement("label");
+            label.textContent = courseAttribute;
 
-        // Adds the label and input to the course div
-        courseDiv.append(classLabel);
-        courseDiv.append(classInput);
-    } else {
-        console.log("A course was found with an unknown type.");
+            // Creates the select and updates its style
+            const select = document.createElement("select");
+            Object.assign(select.style, {
+                marginTop: "10px",
+                marginBottom: "0px",
+                borderBottom: "1px solid var(--text-color)",
+                borderRadius: "0px"
+            });
+
+            // Sets the dropdown options
+            courseOptions.forEach((optionInfo, index) => {
+                const option = Object.assign(document.createElement("option"), {
+                    textContent: `${optionInfo.discipline}-${optionInfo.number}`,
+                    value: optionInfo.name
+                });
+                option.dataset.optionDiscipline = optionInfo.discipline;
+                option.dataset.optionNumber = optionInfo.number;
+
+                // Sets the hyperChildId if it is linked to another class-option
+                const optionHyperChildId = optionInfo?.hyperChildId;
+                let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
+                if (validOptionHyperChildId) option.dataset.optionHyperChildId = optionHyperChildId;
+
+                select.append(option); // Must come before
+                if (courseSelectedIndex == index) {
+                    select.selectedIndex = index;
+                    if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
+                }
+            });
+
+            // Updates visible hyper classes based on selected options
+            if (validHyperParentId && !validHyperChildId) {
+                select.addEventListener("change", (event) =>
+                    updateHyperCourseDivs(courseHyperParentId, Number(select.options[select.selectedIndex].dataset.optionHyperChildId))
+                );
+            }
+
+            // Sets the border color and adds the label and input to the course div
+            courseDiv.style.borderColor = getAttributeColor(courseAttribute);
+            courseDiv.append(label);
+            courseDiv.append(select);
+            break;
+        }
+        default:
+            console.log(`A course was found with an unknown type: ${courseType}.`);
+            return;
     }
 
     // This handles adding all course divs that are linked to a hyper-option to a global dictionary.
@@ -551,6 +492,51 @@ function createCourse(courseInfo) {
     }
     
     return courseDiv;
+}
+
+/**
+ * This creates a input element that can be used in classes.
+ * 
+ * @param {string} savedCourse - the possible current class previously chosen for the input.
+ * @returns the input object
+ */
+function createCourseInput(savedCourse) {
+    // Creates the class input
+    const input = Object.assign(document.createElement("input"), {
+        type: "text",
+        placeholder: "ABCD-123",
+        pattern: "[A-Z]{4}-[0-9]{1,3}H?",
+        minLength: 6,
+        maxLength: 9
+    });
+
+    // Ensures any letters given are uppercase
+    input.addEventListener("input", () => input.value = input.value.toUpperCase());
+
+    // Ensures valid characters are entered in the input.
+    input.addEventListener("keypress", (event) => {
+        const preInputLength = input.value.length;
+        const key = event.key.toUpperCase(); // Converts letters to uppercase for the check only
+        const condition1 = preInputLength < 4 && !/[A-Z]/.test(key);                        // Characters 1-4
+        const condition2 = preInputLength == 4 && key != "-";                               // Character 5
+        const condition3 = preInputLength > 4 && preInputLength < 8 && !/[0-9]/.test(key);  // Characters 6-8
+        const condition4 = preInputLength == 8 && key != "H";                               // Character 9 (Optional)
+        const condition5 = preInputLength == 9;                                             // Extra
+        if (condition1 || condition2 || condition3 || condition4 || condition5) event.preventDefault();
+    });
+    
+    // Ensures a valid string is saved
+    input.addEventListener("blur", (event) => {
+        const currentValue = event.target.value;
+        if (currentValue && !courseRegex.test(currentValue)) {
+            alert("Format must be in ABCD-123, ABCD-123H, or blank");
+            setTimeout(() => input.focus(), 0); // Prevents alert loop
+        }
+    });
+
+    // Sets the current class if possible
+    if (courseRegex.test(savedCourse)) input.value = savedCourse;
+    return input;
 }
 
 /**
@@ -654,65 +640,57 @@ function processCourse(courseDiv) {
     const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
     const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
 
-    if (courseType == "co-op") {
-        course = {
-            "courseType": "co-op",
-            "discipline": courseDiscipline,
-            "number": courseNumber,
-            "name": courseName
-        };
-    } else if (courseType == "co-op option") {
-        const select = courseDiv.children[0];                       // Select
-        const options = select.options;                             // Options
-        const createdOptions = [];
-        Array.from(options).forEach(option => {
-            const optionNumber = option.dataset.optionNumber;
-            const optionObject = {
-                "discipline": option.dataset.optionDiscipline,
-                "number": optionNumber.at(-1) === "H" ? optionNumber : Number(optionNumber),
-                "name": option.value,
-            }
-            createdOptions.push(optionObject);
-        });
-
-        course = {
-            "courseType": "co-op option",
-            "selectedIndex": select.selectedIndex,
-            "options": createdOptions
-        };
-    } else if (courseType == "required") {
-        course = {
-            "courseType": "required",
-            "discipline": courseDiscipline,
-            "number": courseNumber,
-            "name": courseName
-        };
-    } else if (courseType == "option") {
-        if (courseAttribute) {
-            const select = courseDiv.children[1];                       // Select
+    switch (courseType) {
+        case "co-op-required": {
+            course = {
+                "courseType": courseType,
+                "discipline": courseDiscipline,
+                "number": courseNumber,
+                "name": courseName
+            };
+            break;
+        }
+        case "co-op-option": {
+            const select = courseDiv.children[0];                       // Select
             const options = select.options;                             // Options
-
             const createdOptions = [];
             Array.from(options).forEach(option => {
-                const optionInfo = option.textContent.split(/[\-]+/);
-                const optionHyperChildId = Number(option.dataset.optionHyperChildId);
-                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
-                let optionObject = {
-                    "discipline": optionInfo[0],
-                    "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
+                const optionNumber = option.dataset.optionNumber;
+                const optionObject = {
+                    "discipline": option.dataset.optionDiscipline,
+                    "number": optionNumber.at(-1) === "H" ? optionNumber : Number(optionNumber),
                     "name": option.value,
                 }
-                if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
                 createdOptions.push(optionObject);
             });
 
             course = {
-                "courseType": "option",
-                "attribute": courseAttribute,
+                "courseType": courseType,
                 "selectedIndex": select.selectedIndex,
                 "options": createdOptions
             };
-        } else {
+            break;
+        }
+        case "class-required": {
+            course = {
+                "courseType": courseType,
+                "discipline": courseDiscipline,
+                "number": courseNumber,
+                "name": courseName
+            };
+            break;
+        }
+        case "class-input": {
+            const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
+            course = {
+                "courseType": courseType,
+                "discipline": inputs[0],
+                "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
+                "attribute": courseAttribute
+            };
+            break;
+        }
+        case "class-option-mix": {
             const select = courseDiv.children[0];                       // Select
             const options = select.options;                             // Options
 
@@ -722,7 +700,7 @@ function processCourse(courseDiv) {
                 const optionInfo = option.textContent.split(/[\-]+/);
                 const optionAttribute = option.dataset.optionAttribute;
                 const optionHyperChildId = Number(option.dataset.optionHyperChildId);
-                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 0;
+                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
                 let optionObject = {}
                 if (!optionAttribute) {
                     optionObject = {
@@ -743,21 +721,38 @@ function processCourse(courseDiv) {
             });
 
             course = {
-                "courseType": "option",
+                "courseType": courseType,
                 "selectedIndex": select.selectedIndex,
                 "options": createdOptions
             };
+            break;
         }
-    } else if (courseType == "input") {
-        const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
-        course = {
-            "courseType": "input",
-            "discipline": inputs[0],
-            "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
-            "attribute": courseAttribute
-        };
-    } else {
-        console.log("A course was found with an unknown type.");
+        case "class-option-attribute": {
+            const select = courseDiv.children[1];                       // Select
+            const options = select.options;                             // Options
+
+            const createdOptions = [];
+            Array.from(options).forEach(option => {
+                const optionInfo = option.textContent.split(/[\-]+/);
+                const optionHyperChildId = Number(option.dataset.optionHyperChildId);
+                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
+                let optionObject = {
+                    "discipline": optionInfo[0],
+                    "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
+                    "name": option.value,
+                }
+                if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
+                createdOptions.push(optionObject);
+            });
+
+            course = {
+                "courseType": courseType,
+                "attribute": courseAttribute,
+                "selectedIndex": select.selectedIndex,
+                "options": createdOptions
+            };
+            break;
+        }
     }
 
     if (courseHyperParentId || courseHyperParentId === 0) course["hyperParentId"] = courseHyperParentId;
