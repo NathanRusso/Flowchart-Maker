@@ -43,8 +43,9 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 - **Class Required** - A defined course that must be taken
 - **Class Input** - An undefined course slot for which you must pick one course to fill that typically falls into some category
 - **Class Option Mix** - A group of defined courses for which you must pick one from
+    - **Hyper Option** - Each option may have associated courses that are only visible/required when said option is selected.
 - **Class Option Attribute** - A group of defined courses for which you must pick one from which all fall under the same label
-- **(*) Hyper Option** - Both option types may have associated courses that are only required when said option is selected
+    - **Exotic Option** - Each option may be linked to other options with the same exotic id, where changing the selected option in one adjust the other or hides it if selected index is out of bounds.
 
 #### Co-ops
 - **Co-op Required** - A cooperative education/internship block that encompasses an entire semester

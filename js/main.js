@@ -25,6 +25,8 @@ let transferSection = false;    // Whether or not the transfer section is visibl
 let uploadedFilename = null;    // The filename of the uploaded file.
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
+let exoticDictionary = {}       // A mapping of exoticIds to lists if related courseDivs
+let initialExoticIndexes = {}   // A mapping of exoticIds to the initial selected index
 
 const body = document.body;
 const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
@@ -143,6 +145,11 @@ function processFlowchart(template, resetChoose, resetUpload) {
     for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
         updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
     }
+
+    // This makes sure exotic option classes are set properly
+    for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
+        updateExoticCourseDivs(Number(exoticId), Number(selectedIndex));
+    }
 }
 
 /**
@@ -244,6 +251,7 @@ function createCourse(courseInfo) {
     let courseOptions = courseInfo?.options;                    // Excluded from below
     let courseHyperParentId = courseInfo?.hyperParentId;
     let courseHyperChildId = courseInfo?.hyperChildId;
+    let courseExoticId = courseInfo?.exoticId;
     let courseOfferedFall = courseInfo?.offeredFall;
     let courseOfferedSpring = courseInfo?.offeredSpring;
 
@@ -264,8 +272,10 @@ function createCourse(courseInfo) {
     }
     const validHyperParentId = Number.isInteger(courseHyperParentId) && courseHyperParentId >= 1;
     const validHyperChildId = Number.isInteger(courseHyperChildId) && courseHyperChildId >= 1;
+    const validExoticId = Number.isInteger(courseExoticId) && courseExoticId >= 1;
     if (validHyperParentId) courseDiv.dataset.courseHyperParentId = courseHyperParentId;
     if (validHyperChildId) courseDiv.dataset.courseHyperChildId = courseHyperChildId;
+    if (validExoticId) courseDiv.dataset.courseExoticId = courseExoticId;
 
     // Add everything to the course divs
     switch (courseType) {
@@ -379,10 +389,9 @@ function createCourse(courseInfo) {
 
             // Sets an event listener update color and text
             select.addEventListener("change", (event) => {
-                const target = event.target;
-                const text = target.value;
-                const index = target.selectedIndex;
-                const option = target.selectedOptions[0];
+                const text = select.value;
+                const index = select.selectedIndex;
+                const option = select.selectedOptions[0];
                 if (text) { // Option is required
                     label.style.display = "inline";
                     label.textContent = text;
@@ -407,8 +416,8 @@ function createCourse(courseInfo) {
 
             // Updates visible hyper classes based on selected options
             if (validHyperParentId && !validHyperChildId) {
-                select.addEventListener("change", (event) =>
-                    updateHyperCourseDivs(courseHyperParentId, Number(select.options[select.selectedIndex].dataset.optionHyperChildId))
+                select.addEventListener("change", () =>
+                    updateHyperCourseDivs(courseHyperParentId, Number(select.selectedOptions[0].dataset.optionHyperChildId))
                 );
             }
 
@@ -442,28 +451,39 @@ function createCourse(courseInfo) {
                 });
                 option.dataset.optionDiscipline = optionInfo.discipline;
                 option.dataset.optionNumber = optionInfo.number;
-
-                // Sets the hyperChildId if it is linked to another class-option
-                const optionHyperChildId = optionInfo?.hyperChildId;
-                let validOptionHyperChildId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
-                if (validOptionHyperChildId) option.dataset.optionHyperChildId = optionHyperChildId;
+                const optionAttribute = optionInfo?.attribute;
+                if (optionAttribute) option.dataset.optionAttribute = optionAttribute;
 
                 select.append(option); // Must come before
                 if (courseSelectedIndex == index) {
                     select.selectedIndex = index;
-                    if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
+
+                    // Updates the color and label if there is a sub attribute
+                    if (optionAttribute) label.textContent = optionAttribute;
+                    courseDiv.style.borderColor = getAttributeColor(optionAttribute ?? courseAttribute);
                 }
             });
 
-            // Updates visible hyper classes based on selected options
-            if (validHyperParentId && !validHyperChildId) {
-                select.addEventListener("change", (event) =>
-                    updateHyperCourseDivs(courseHyperParentId, Number(select.options[select.selectedIndex].dataset.optionHyperChildId))
-                );
+            // Configures exotic ids and their course divs
+            if (validExoticId) {
+                if (courseExoticId in initialExoticIndexes) {
+                    savedInitialExoticId = initialExoticIndexes[courseExoticId];
+                    if (courseExoticId > savedInitialExoticId) initialExoticIndexes[courseExoticId] = courseSelectedIndex;
+                } else {
+                    initialExoticIndexes[courseExoticId] = courseSelectedIndex;
+                }
+
+                // Updates the options inside the related exotic courseDivs or hides if the selected index is to high.
+                select.addEventListener("change", () => {
+                    updateExoticCourseDivs(courseExoticId, select.selectedIndex);
+                });
+
+                // This handles saving all course divs that are linked to a exotic option.
+                exoticDictionary[courseExoticId] ??= [];
+                exoticDictionary[courseExoticId].push(courseDiv);
             }
 
-            // Sets the border color and adds the label and input to the course div
-            courseDiv.style.borderColor = getAttributeColor(courseAttribute);
+            // Adds the label and input to the course div
             courseDiv.append(label);
             courseDiv.append(select);
             break;
@@ -473,7 +493,7 @@ function createCourse(courseInfo) {
             return;
     }
 
-    // This handles adding all course divs that are linked to a hyper-option to a global dictionary.
+    // This handles saving all course divs that are linked to a hyper option.
     if (validHyperParentId && validHyperChildId) {
         hyperDictionary[courseHyperParentId] ??= {};
         const hyperChildDictionary = hyperDictionary[courseHyperParentId];
@@ -559,6 +579,32 @@ function updateHyperCourseDivs(hyperParentId, hyperChildId) {
 }
 
 /**
+ * This updates all related exotic dropdowns to the same index or hides them if they don't exists.
+ * 
+ * @param {int} exoticId - the id of the parent option div
+ * @param {int} selectedIndex - the current selected index
+ */
+function updateExoticCourseDivs(exoticId, selectedIndex) {
+    if (Number.isInteger(exoticId) && Number.isInteger(selectedIndex)) {
+        const exoticDivs = exoticDictionary[exoticId];
+        exoticDivs.forEach(courseDiv => {
+            const courseAttribute = courseDiv.dataset.courseAttribute;
+            const label = courseDiv.children[0];
+            const select = courseDiv.children[1];
+            if (selectedIndex < select.options.length) {
+                select.selectedIndex = selectedIndex;
+                const attribute = select.selectedOptions[0].dataset?.optionAttribute ?? courseAttribute;
+                label.textContent = attribute;
+                courseDiv.style.borderColor = getAttributeColor(attribute);
+                courseDiv.style.display = "flex";
+            } else {
+                courseDiv.style.display = "none";
+            }
+        });
+    }
+}
+
+/**
  * This converts the current flowchart into JSON and downloads it onto your computer.
  */
 function downloadTemplate() {
@@ -620,7 +666,7 @@ function downloadTemplate() {
 }
 
 /**
- * This turns the given course div back into an object.
+ * This turns the given course div back into an object for flowchart downloading.
  * 
  * @param {*} courseDiv - the given course Div
  */
@@ -637,6 +683,7 @@ function processCourse(courseDiv) {
     const courseAttribute = courseDiv.dataset?.courseAttribute;
     const courseHyperParentId = Number(courseDiv.dataset?.courseHyperParentId);
     const courseHyperChildId = Number(courseDiv.dataset?.courseHyperChildId);
+    const courseExoticId = Number(courseDiv.dataset?.courseExoticId);
     const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
     const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
 
@@ -734,14 +781,13 @@ function processCourse(courseDiv) {
             const createdOptions = [];
             Array.from(options).forEach(option => {
                 const optionInfo = option.textContent.split(/[\-]+/);
-                const optionHyperChildId = Number(option.dataset.optionHyperChildId);
-                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
                 let optionObject = {
                     "discipline": optionInfo[0],
                     "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
                     "name": option.value,
                 }
-                if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
+                const optionAttribute = option.dataset?.optionAttribute;
+                if (optionAttribute) optionObject["attribute"] = optionAttribute;
                 createdOptions.push(optionObject);
             });
 
@@ -751,12 +797,19 @@ function processCourse(courseDiv) {
                 "selectedIndex": select.selectedIndex,
                 "options": createdOptions
             };
+
+            // Assign exotic id if it exists
+            if (courseExoticId) course["exoticId"] = courseExoticId;        // 0 is false
             break;
         }
+        default:
+            console.log(`A course was found with an unknown type: ${courseType}.`);
+            break;
     }
 
-    if (courseHyperParentId || courseHyperParentId === 0) course["hyperParentId"] = courseHyperParentId;
-    if (courseHyperChildId || courseHyperChildId === 0) course["hyperChildId"] = courseHyperChildId;
+    // Assign extra fields if they exists
+    if (courseHyperParentId) course["hyperParentId"] = courseHyperParentId; // 0 is false
+    if (courseHyperChildId) course["hyperChildId"] = courseHyperChildId;    // 0 is false
     if (courseOfferedOnlyFall || courseOfferedOnlySpring) {
         course["offeredFall"] = courseOfferedOnlyFall;
         course["offeredSpring"] = courseOfferedOnlySpring;
