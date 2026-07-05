@@ -147,7 +147,6 @@ function processFlowchart(template, resetChoose, resetUpload) {
     }
 
     // This makes sure exotic option classes are set properly
-    console.log(initialExoticIndexes);
     for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
         updateExoticCourseDivs(Number(exoticId), Number(selectedIndex));
     }
