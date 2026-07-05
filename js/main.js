@@ -363,17 +363,17 @@ function createCourse(courseInfo) {
                     label.textContent = optionInfo.name;
                     select.selectedIndex = index;
                     if (validHyperParentId && validOptionHyperChildId) initialHyperChildIds[courseHyperParentId] = optionHyperChildId;
-                    optionInput.style.display = "inline-block";
 
-                    // Sets the border color
+                    // Sets style the border color
                     if (optionAttribute) {
+                        optionInput.style.display = "inline-block";
                         select.style.height = "50px"; // Extends the hight of the select
                         courseDiv.style.borderColor = getAttributeColor(optionAttribute);
                     } else {
                         courseDiv.style.borderColor = getDisciplineColor(optionDiscipline);
                     }
                 } else {
-                    optionInput.style.display = "none";
+                    if (optionAttribute) optionInput.style.display = "none";
                 }
             });
 
