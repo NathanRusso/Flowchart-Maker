@@ -11,7 +11,7 @@
                     "name": "AI Explorations"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -59,7 +59,7 @@
                     "name": "AI Tools and Techniques"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -81,7 +81,7 @@
                     "name": "Calculus II"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -176,7 +176,7 @@
                     "name": "Linear Algebra"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -254,7 +254,7 @@
                     "name": "Interactive Machine and Reinforcement Learning"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -270,7 +270,7 @@
                     ]
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {

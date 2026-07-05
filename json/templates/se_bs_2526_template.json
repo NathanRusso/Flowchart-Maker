@@ -134,7 +134,7 @@
                     "name": "Software Process and Project Management"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -180,7 +180,7 @@
         [
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -245,7 +245,7 @@
                     "name": "Engineering Secure Software"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {

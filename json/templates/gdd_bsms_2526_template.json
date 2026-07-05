@@ -96,7 +96,7 @@
                     "name": "Web Technology for Game Developers"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -206,7 +206,7 @@
             ],
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {

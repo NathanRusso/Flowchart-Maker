@@ -78,7 +78,7 @@
         [
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -100,7 +100,7 @@
                     "name": "NMID and Algorithmic Problem Solving III"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -141,7 +141,7 @@
             ],
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -237,7 +237,7 @@
                     "name": "Current Topics in Interactive Development"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {

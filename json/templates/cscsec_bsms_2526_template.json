@@ -84,7 +84,7 @@
         [
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -112,7 +112,7 @@
                     "name": "Probability and Statistics"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lecture 1",
                     "selectedIndex": 0,
                     "options": [
@@ -134,7 +134,7 @@
                     ]
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lab 1",
                     "selectedIndex": 0,
                     "options": [
@@ -170,7 +170,7 @@
             ],
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -198,7 +198,7 @@
                     "name": "Linear Algebra"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lecture 2",
                     "selectedIndex": 0,
                     "options": [
@@ -220,7 +220,7 @@
                     ]
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-attribute",
                     "attribute": "Lab Science: Lab 2",
                     "selectedIndex": 0,
                     "options": [
@@ -445,7 +445,7 @@
             ],
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {

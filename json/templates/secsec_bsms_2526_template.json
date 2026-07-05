@@ -134,7 +134,7 @@
                     "name": "Engineering of Software Subsystems"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -180,7 +180,7 @@
         [
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -202,7 +202,7 @@
                     "attribute": "BS: SWEN Process Elective"
                 },
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
@@ -385,7 +385,7 @@
             ],
             [
                 {
-                    "courseType": "class-option",
+                    "courseType": "class-option-mix",
                     "selectedIndex": 0,
                     "options": [
                         {
