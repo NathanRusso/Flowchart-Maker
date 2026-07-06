@@ -150,7 +150,8 @@
                             "number": 145,
                             "name": "General & Analytical Chemistry I Lab"
                         }
-                    ]
+                    ],
+                    "exoticId": 1
                 },
                 {
                     "courseType": "class-input",
