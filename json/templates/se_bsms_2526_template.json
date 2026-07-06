@@ -97,15 +97,15 @@
                 },
                 {
                     "courseType": "class-required",
-                    "discipline": "PHYS",
-                    "number": 211,
-                    "name": "University Physics I"
-                },
-                {
-                    "courseType": "class-required",
                     "discipline": "COMM",
                     "number": 253,
                     "name": "Communication"
+                },
+                {
+                    "courseType": "class-required",
+                    "discipline": "PHYS",
+                    "number": 211,
+                    "name": "University Physics I"
                 },
                 {
                     "courseType": "class-input",
@@ -124,14 +124,14 @@
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
-                    "number": 262,
-                    "name": "Engineering of Software Subsystems"
+                    "number": 256,
+                    "name": "Software Process and Project Management"
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
-                    "number": 256,
-                    "name": "Software Process and Project Management"
+                    "number": 262,
+                    "name": "Engineering of Software Subsystems"
                 },
                 {
                     "courseType": "class-option-mix",
@@ -150,10 +150,96 @@
                     ]
                 },
                 {
-                    "courseType": "class-input",
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Gen Ed: Scientific Principles Perspective"
+                    "courseType": "class-option-attribute",
+                    "attribute": "Lab Science: Lecture",
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "BIOG",
+                            "number": 101,
+                            "name": "Explorations in Cellular Biology and Evolution"
+                        },
+                        {
+                            "discipline": "BIOG",
+                            "number": 102,
+                            "name": "Explorations in Animal and Plant Anatomy and Physiology"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 101,
+                            "name": "General Biology I"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 102,
+                            "name": "General Biology II"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 131,
+                            "name": "General Chemistry for Engineers"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 141,
+                            "name": "General & Analytical Chemistry I"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 208,
+                            "name": "Unknown PHYS-208"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 212,
+                            "name": "University Physics II",
+                            "attribute": "Lab Science"
+                        }
+                    ],
+                    "exoticId": 1
+                },
+                {
+                    "courseType": "class-option-attribute",
+                    "attribute": "Lab Science: Lab",
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "BIOG",
+                            "number": 103,
+                            "name": "Explorations in Cell Biology & Evolution Lab"
+                        },
+                        {
+                            "discipline": "BIOG",
+                            "number": 104,
+                            "name": "Explorations in Animal and Plant Anatomy and Physiology Lab"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 103,
+                            "name": "General Biology I Lab"
+                        },
+                        {
+                            "discipline": "BIOL",
+                            "number": 104,
+                            "name": "General Biology II Lab"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 145,
+                            "name": "General & Analytical Chemistry I Lab"
+                        },
+                        {
+                            "discipline": "CHMG",
+                            "number": 145,
+                            "name": "General & Analytical Chemistry I Lab"
+                        },
+                        {
+                            "discipline": "PHYS",
+                            "number": 209,
+                            "name": "University Physics II: AP-C Optics"
+                        }
+                    ],
+                    "exoticId": 1
                 },
                 {
                     "courseType": "class-input",
@@ -414,6 +500,6 @@
     ],
     "notes": [
         "<b>Specialized Electives:</b> Only specific courses are allowed. Please see the SE course page. This includes the Deign, Process, Engineering, Professional, and Math/Science Electives.",
-        "<b>Scientific Principles Perspectives:</b> Only specific sequences are allowed. Please see the SE BS/MS course page."
+        "<b>Lab Science:</b> This fulfills the Scientific Principles Perspectives requirement. Only specific sequences are allowed. Please see the SE BS course page."
     ]
 }
