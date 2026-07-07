@@ -112,6 +112,12 @@
                     "discipline": "",
                     "number": null,
                     "attribute": "Gen Ed: Natural Science Inquiry"
+                },
+                {
+                    "courseType": "class-input",
+                    "discipline": "",
+                    "number": null,
+                    "attribute": "Wellness Course"
                 }
             ],
             [
@@ -150,12 +156,6 @@
                     "discipline": "ISTE",
                     "number": 99,
                     "name": "School of Information Second Year Seminar"
-                },
-                {
-                    "courseType": "class-input",
-                    "discipline": "",
-                    "number": null,
-                    "attribute": "Wellness Course"
                 }
             ],
             [
