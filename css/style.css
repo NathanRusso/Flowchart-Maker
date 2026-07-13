@@ -140,6 +140,10 @@ h2, h3, h4 {
     margin: 10px 0px;
 }
 
+#flowchartNotesList:hover {
+    outline: auto;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --text-color: #DBDEE1;

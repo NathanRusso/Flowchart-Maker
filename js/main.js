@@ -171,11 +171,17 @@ function fillTransferYear(transferInfo) {
  * @param {*} notesInfo - the flowchart notes array
  */
 function fillFlowchartNotes(notesInfo) {
-    notesInfo.forEach(note => {
-        const noteDiv = document.createElement("li");
-        noteDiv.innerHTML = note;
-        flowchartNotesList.append(noteDiv);
-    });
+    if (notesInfo.length == 0) {
+        const noteItem = document.createElement("li");
+        noteItem.innerHTML = "This flowchart has no saved notes. Edit this note and add more.";
+        flowchartNotesList.append(noteItem);
+    } else {
+        notesInfo.forEach(note => {
+            const noteItem = document.createElement("li");
+            noteItem.innerHTML = note;
+            flowchartNotesList.append(noteItem);
+        });
+    }
 }
 
 /**
