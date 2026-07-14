@@ -258,6 +258,7 @@ function createCourse(courseInfo) {
     let courseHyperParentId = courseInfo?.hyperParentId;
     let courseHyperChildId = courseInfo?.hyperChildId;
     let courseExoticId = courseInfo?.exoticId;
+    let courseCompleted = courseInfo?.completed;
     let courseOfferedFall = courseInfo?.offeredFall;
     let courseOfferedSpring = courseInfo?.offeredSpring;
 
@@ -516,7 +517,13 @@ function createCourse(courseInfo) {
     } else if (courseOfferedFall === false) {   // Offered in Spring
         courseDiv.style.borderStyle = "dashed";
     }
-    
+
+    // This adds a checkbox to mark if a class has been taken yet.
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox"
+    checkbox.checked = courseCompleted;
+    courseDiv.append(checkbox); // Must come after text content assignment
+
     return courseDiv;
 }
 
