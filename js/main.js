@@ -40,12 +40,15 @@ const pushYearButton = document.getElementById("pushYearButton");
 const popYearButton = document.getElementById("popYearButton");
 const showTransferButton = document.getElementById("showTransferButton");
 const hideTransferButton = document.getElementById("hideTransferButton");
+const showCheckboxesButton = document.getElementById("showCheckboxesButton");
+const hideCheckboxesButton = document.getElementById("hideCheckboxesButton");
 const clearFlowchartButton = document.getElementById("clearFlowchartButton");
 
 const flowchartBody = document.getElementById("flowchartBody");
 const transferYearDiv = document.getElementById("year-0");
 const transferDiv = document.getElementById("transfer");
 const transferDividerDiv = document.getElementById("year-divider-0");
+const allCheckboxes = document.getElementsByName("courseCheckbox");
 makeSortable(transferDiv);
 
 const flowchartNotesList = document.getElementById("flowchartNotesList");
@@ -60,6 +63,8 @@ pushYearButton.addEventListener("click", pushYear);
 popYearButton.addEventListener("click", popYear);
 showTransferButton.addEventListener("click", showTransferSection);
 hideTransferButton.addEventListener("click", hideTransferSection);
+showCheckboxesButton.addEventListener("click", showCheckboxes);
+hideCheckboxesButton.addEventListener("click", hideCheckboxes);
 clearFlowchartButton.addEventListener("click", () => clearFlowchart(defaultTitle, true, true));
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
@@ -140,6 +145,7 @@ function processFlowchart(template, resetChoose, resetUpload) {
     fillTransferYear(transferCourses);                                      // This handles all transfer classes
     years.forEach(yearInfo => createYear(yearInfo, ++academicYearCount));   // This handles all other semesters and their classes
     fillFlowchartNotes(notes);                                              // This handles the flowchart notes
+    hideCheckboxesButton.style.display == "none" ? hideCheckboxes() : showCheckboxes();
 
     // This makes sure only the hyper classes linked to a selected option are shown
     for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
@@ -258,9 +264,9 @@ function createCourse(courseInfo) {
     let courseHyperParentId = courseInfo?.hyperParentId;
     let courseHyperChildId = courseInfo?.hyperChildId;
     let courseExoticId = courseInfo?.exoticId;
-    let courseCompleted = courseInfo?.completed;
     let courseOfferedFall = courseInfo?.offeredFall;
     let courseOfferedSpring = courseInfo?.offeredSpring;
+    let courseCompleted = courseInfo?.completed;
 
     // Save all possible data
     if (typeof courseType === "string" && courseType.trim()) {
@@ -519,9 +525,11 @@ function createCourse(courseInfo) {
     }
 
     // This adds a checkbox to mark if a class has been taken yet.
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox"
-    checkbox.checked = courseCompleted;
+    const checkbox = Object.assign(document.createElement("input"), {
+        type: "checkbox",
+        name: "courseCheckbox",
+        checked: courseCompleted
+    });
     courseDiv.append(checkbox); // Must come after text content assignment
 
     return courseDiv;
@@ -687,7 +695,7 @@ function processCourse(courseDiv) {
     let course = {};
 
     // Get all possible data
-    const courseType = courseDiv.dataset.courseType; // "co-op", "required", "option", "input"
+    const courseType = courseDiv.dataset.courseType;
     const courseContent = courseDiv.textContent;
     const courseDiscipline = courseDiv.dataset?.courseDiscipline;
     let courseNumber = courseDiv.dataset?.courseNumber;
@@ -827,6 +835,7 @@ function processCourse(courseDiv) {
         course["offeredFall"] = courseOfferedOnlyFall;
         course["offeredSpring"] = courseOfferedOnlySpring;
     }
+    course["completed"] = courseDiv.children.courseCheckbox.checked;
 
     return course;
 }
@@ -916,6 +925,24 @@ function hideTransferSection() {
     transferSection = false;
     showTransferButton.style.display = "inline-block";
     hideTransferButton.style.display = "none";
+}
+
+/**
+ * This shows the checkboxes in the corner of courses.
+ */
+function showCheckboxes() {
+    allCheckboxes.forEach(checkbox => checkbox.style.display = "inline-block");
+    showCheckboxesButton.style.display = "none";
+    hideCheckboxesButton.style.display = "inline-block";
+}
+
+/**
+ * This hides the checkboxes in the corner of courses.
+ */
+function hideCheckboxes() {
+    allCheckboxes.forEach(checkbox => checkbox.style.display = "none");
+    showCheckboxesButton.style.display = "inline-block";
+    hideCheckboxesButton.style.display = "none";
 }
 
 /**

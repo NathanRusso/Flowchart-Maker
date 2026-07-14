@@ -35,7 +35,9 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 5. **Remove Year** - A button that removes the lowest year section, deleting all data inside of it
 6. **Show Transfer** - A button that shows the transfer section
 7. **Hide Transfer** - A button that hides the transfer section, saving all data inside of it
-8. **Clear Flowchart** - A button that deletes the current flowchart and reverts the website to its default state
+8. **Show Checkboxes** - A button that shows the course checkboxes
+9. **Hide Checkboxes** - A button that hides the course checkboxes
+10. **Clear Flowchart** - A button that deletes the current flowchart and reverts the website to its default state
 
 ### Course Types
 
