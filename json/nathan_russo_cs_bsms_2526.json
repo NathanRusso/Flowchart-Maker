@@ -416,8 +416,28 @@
                         },
                         {
                             "discipline": "CSCI",
+                            "number": 667,
+                            "name": "* Randomized Algorithms"
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 712,
+                            "name": "* Computer Animation: Algorithms & Techniques"
+                        },
+                        {
+                            "discipline": "CSCI",
                             "number": 716,
                             "name": "* Computational Geometry"
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 761,
+                            "name": "* Topics in Advanced Algorithms"
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 769,
+                            "name": "* Topics in Theory"
                         }
                     ]
                 },
