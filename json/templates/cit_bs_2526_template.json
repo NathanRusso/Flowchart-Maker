@@ -8,37 +8,43 @@
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 123,
-                    "name": "Software Development and Problem Solving I"
+                    "name": "Software Development and Problem Solving I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NSSA",
                     "number": 102,
-                    "name": "Computer Systems Concepts"
+                    "name": "Computer Systems Concepts",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 131,
-                    "name": "Discrete Mathematics"
+                    "name": "Discrete Mathematics",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: First Year Writing"
+                    "attribute": "Gen Ed: First Year Writing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Ethical Perspective"
+                    "attribute": "Gen Ed: Ethical Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
-                    "name": "RIT 365: RIT Connections"
+                    "name": "RIT 365: RIT Connections",
+                    "completed": false
                 }
             ],
             [
@@ -46,37 +52,43 @@
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 124,
-                    "name": "Software Development and Problem Solving II"
+                    "name": "Software Development and Problem Solving II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "CSEC",
                     "number": 140,
-                    "name": "Introduction to Cybersecurity"
+                    "name": "Introduction to Cybersecurity",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 161,
-                    "name": "Applied Calculus"
+                    "name": "Applied Calculus",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "COMM",
                     "number": 142,
-                    "name": "Introduction to Technical Communication"
+                    "name": "Introduction to Technical Communication",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Global Perspective"
+                    "attribute": "Gen Ed: Global Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             []
@@ -87,37 +99,43 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 140,
-                    "name": "Web & Mobile I"
+                    "name": "Web & Mobile I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NSSA",
                     "number": 220,
-                    "name": "Task Automation Using Interpretive Languages"
+                    "name": "Task Automation Using Interpretive Languages",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NSSA",
                     "number": 241,
-                    "name": "Introduction to Routing and Switching"
+                    "name": "Introduction to Routing and Switching",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "STAT",
                     "number": 145,
-                    "name": "Introduction to Statistics I"
+                    "name": "Introduction to Statistics I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Artistic Perspective"
+                    "attribute": "Gen Ed: Artistic Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             [
@@ -125,37 +143,43 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 230,
-                    "name": "Introduction to Database and Data Modeling"
+                    "name": "Introduction to Database and Data Modeling",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 240,
-                    "name": "Web & Mobile II"
+                    "name": "Web & Mobile II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NSSA",
                     "number": 221,
-                    "name": "Systems Administration I"
+                    "name": "Systems Administration I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Natural Science Inquiry Perspective"
+                    "attribute": "Gen Ed: Natural Science Inquiry Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 99,
-                    "name": "Second Year Seminar"
+                    "name": "Second Year Seminar",
+                    "completed": false
                 }
             ],
             [
@@ -173,7 +197,8 @@
                             "number": 498,
                             "name": "Undergraduate Creative, Innovative or Research Experience"
                         }
-                    ]
+                    ],
+                    "completed": false
                 }
             ]
         ],
@@ -183,31 +208,36 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 260,
-                    "name": "Designing the User Experience"
+                    "name": "Designing the User Experience",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CIT Concentration Course"
+                    "attribute": "CIT Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Scientific Principles Perspective"
+                    "attribute": "Gen Ed: Scientific Principles Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Social Perspective"
+                    "attribute": "Gen Ed: Social Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -215,31 +245,36 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 430,
-                    "name": "Information Requirements Modeling"
+                    "name": "Information Requirements Modeling",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CIT Concentration Course"
+                    "attribute": "CIT Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CIT Concentration Course"
+                    "attribute": "CIT Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -257,7 +292,8 @@
                             "number": 498,
                             "name": "Undergraduate Creative, Innovative or Research Experience"
                         }
-                    ]
+                    ],
+                    "completed": false
                 }
             ]
         ],
@@ -267,31 +303,36 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 500,
-                    "name": "Senior Development Project I"
+                    "name": "Senior Development Project I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CIT Concentration Course"
+                    "attribute": "CIT Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CIT Concentration Course"
+                    "attribute": "CIT Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -299,31 +340,36 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 501,
-                    "name": "Senior Development Project II"
+                    "name": "Senior Development Project II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CIT Concentration Course"
+                    "attribute": "CIT Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 }
             ],
             []

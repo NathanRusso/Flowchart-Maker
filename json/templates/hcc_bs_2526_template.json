@@ -8,37 +8,43 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 110,
-                    "name": "Ethics in Computing"
+                    "name": "Ethics in Computing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 140,
-                    "name": "Web & Mobile I"
+                    "name": "Web & Mobile I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "STAT",
                     "number": 145,
-                    "name": "Introduction to Statistics I"
+                    "name": "Introduction to Statistics I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "PSYC",
                     "number": 101,
-                    "name": "Introduction to Psychology"
+                    "name": "Introduction to Psychology",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
-                    "name": "RIT 365: RIT Connections"
+                    "name": "RIT 365: RIT Connections",
+                    "completed": false
                 }
             ],
             [
@@ -46,37 +52,43 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 262,
-                    "name": "Foundations of Human-Centered Computing"
+                    "name": "Foundations of Human-Centered Computing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NMDE",
                     "number": 111,
-                    "name": "New Media Design Survey I"
+                    "name": "New Media Design Survey I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "STAT",
                     "number": 146,
-                    "name": "Introduction to Statistics II"
+                    "name": "Introduction to Statistics II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "PSYC",
                     "number": 223,
-                    "name": "Cognitive Psychology"
+                    "name": "Cognitive Psychology",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             []
@@ -87,37 +99,43 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 264,
-                    "name": "Prototyping and Usability Testing"
+                    "name": "Prototyping and Usability Testing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NMDE",
                     "number": 112,
-                    "name": "New Media Design Survey II"
+                    "name": "New Media Design Survey II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 123,
-                    "name": "Software Development and Problem Solving I"
+                    "name": "Software Development and Problem Solving I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "PSYC",
                     "number": 250,
-                    "name": "Research Methods I"
+                    "name": "Research Methods I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Natural Science Inquiry"
+                    "attribute": "Gen Ed: Natural Science Inquiry",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             [
@@ -125,37 +143,43 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 240,
-                    "name": "Web & Mobile II"
+                    "name": "Web & Mobile II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 266,
-                    "name": "Design for Accessibility"
+                    "name": "Design for Accessibility",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 124,
-                    "name": "Software Development and Problem Solving II"
+                    "name": "Software Development and Problem Solving II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "PSYC",
                     "number": 251,
-                    "name": "Research Methods II"
+                    "name": "Research Methods II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Social Perspective"
+                    "attribute": "Gen Ed: Social Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 99,
-                    "name": "School of Information Second Year Seminar"
+                    "name": "School of Information Second Year Seminar",
+                    "completed": false
                 }
             ],
             [
@@ -173,7 +197,8 @@
                             "number": 498,
                             "name": "Undergraduate Creative, Innovative or Research Experience"
                         }
-                    ]
+                    ],
+                    "completed": false
                 }
             ]
         ],
@@ -183,31 +208,36 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 252,
-                    "name": "Foundations of Mobile Design"
+                    "name": "Foundations of Mobile Design",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "HCC Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "HCC Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Artistic Perspective"
+                    "attribute": "Gen Ed: Artistic Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -215,31 +245,36 @@
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "HCC Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "HCC Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Global Perspective"
+                    "attribute": "Gen Ed: Global Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -257,7 +292,8 @@
                             "number": 498,
                             "name": "Undergraduate Creative, Innovative or Research Experience"
                         }
-                    ]
+                    ],
+                    "completed": false
                 }
             ]
         ],
@@ -267,31 +303,36 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 500,
-                    "name": "Senior Development Project I"
+                    "name": "Senior Development Project I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "HCC Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Ethical Perspective"
+                    "attribute": "Gen Ed: Ethical Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -299,25 +340,29 @@
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 501,
-                    "name": "Senior Development Project II"
+                    "name": "Senior Development Project II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "HCC Concentration Course"
+                    "attribute": "HCC Concentration Course",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 }
             ],
             []

@@ -8,37 +8,43 @@
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 101,
-                    "name": "NMID and Algorithmic Problem Solving I"
+                    "name": "NMID and Algorithmic Problem Solving I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 110,
-                    "name": "Introduction to Interactive Media"
+                    "name": "Introduction to Interactive Media",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NMDE",
                     "number": 111,
-                    "name": "New Media Design Survey I"
+                    "name": "New Media Design Survey I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 131,
-                    "name": "Discrete Mathematics"
+                    "name": "Discrete Mathematics",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: First Year Writing"
+                    "attribute": "Gen Ed: First Year Writing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
-                    "name": "RIT 365: RIT Connections"
+                    "name": "RIT 365: RIT Connections",
+                    "completed": false
                 }
             ],
             [
@@ -46,31 +52,36 @@
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 102,
-                    "name": "NMID and Algorithmic Problem Solving II"
+                    "name": "NMID and Algorithmic Problem Solving II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "NMDE",
                     "number": 112,
-                    "name": "New Media Design Survey II"
+                    "name": "New Media Design Survey II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 185,
-                    "name": "Mathematics of Graphical Simulation I"
+                    "name": "Mathematics of Graphical Simulation I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Artistic Perspective"
+                    "attribute": "Gen Ed: Artistic Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             []
@@ -91,13 +102,15 @@
                             "number": 235,
                             "name": "Introduction to Web Technology for Game Developers"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 201,
-                    "name": "NMID and Algorithmic Problem Solving III"
+                    "name": "NMID and Algorithmic Problem Solving III",
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-mix",
@@ -118,25 +131,29 @@
                             "number": 145,
                             "name": "Introduction to Statistics I"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Ethical Perspective"
+                    "attribute": "Gen Ed: Ethical Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Global Perspective"
+                    "attribute": "Gen Ed: Global Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 99,
-                    "name": "Co-op Preparation Workshop"
+                    "name": "Co-op Preparation Workshop",
+                    "completed": false
                 }
             ],
             [
@@ -154,37 +171,43 @@
                             "number": "330H",
                             "name": "Honors Rich Media Web Application Development I"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 236,
-                    "name": "Experience Design for Game and Media"
+                    "name": "Experience Design for Game and Media",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 202,
-                    "name": "Interactive Media Development"
+                    "name": "Interactive Media Development",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Social Perspective"
+                    "attribute": "Gen Ed: Social Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Scientific Principles Perspective"
+                    "attribute": "Gen Ed: Scientific Principles Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             [
@@ -192,7 +215,8 @@
                     "courseType": "co-op-required",
                     "discipline": "IGME",
                     "number": 499,
-                    "name": "Undergraduate Co-op"
+                    "name": "Undergraduate Co-op",
+                    "completed": false
                 }
             ]
         ],
@@ -202,31 +226,36 @@
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 470,
-                    "name": "Physical Computing & Alternative Interfaces"
+                    "name": "Physical Computing & Alternative Interfaces",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 430,
-                    "name": "Rich Media Web Applications Development II"
+                    "name": "Rich Media Web Applications Development II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 230,
-                    "name": "Introduction to Database and Data Modeling"
+                    "name": "Introduction to Database and Data Modeling",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -234,7 +263,8 @@
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 480,
-                    "name": "Current Topics in Interactive Development"
+                    "name": "Current Topics in Interactive Development",
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-mix",
@@ -255,25 +285,29 @@
                             "number": 456,
                             "name": "Mobile Application Development II"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Natural Science Inquiry Perspective"
+                    "attribute": "Gen Ed: Natural Science Inquiry Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -281,7 +315,8 @@
                     "courseType": "co-op-required",
                     "discipline": "IGME",
                     "number": 499,
-                    "name": "Undergraduate Co-op"
+                    "name": "Undergraduate Co-op",
+                    "completed": false
                 }
             ]
         ],
@@ -291,31 +326,36 @@
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 587,
-                    "name": "New Media Interactive Development Capstone I"
+                    "name": "New Media Interactive Development Capstone I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "NMID Advanced Elective"
+                    "attribute": "NMID Advanced Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -323,31 +363,36 @@
                     "courseType": "class-required",
                     "discipline": "IGME",
                     "number": 588,
-                    "name": "New Media Interactive Development Capstone II"
+                    "name": "New Media Interactive Development Capstone II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "NMID Advanced Elective"
+                    "attribute": "NMID Advanced Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             []

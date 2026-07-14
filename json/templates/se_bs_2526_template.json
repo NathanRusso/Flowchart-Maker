@@ -8,37 +8,43 @@
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 101,
-                    "name": "Software Engineering Freshman Seminar"
+                    "name": "Software Engineering Freshman Seminar",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 123,
-                    "name": "Software Development and Problem Solving I"
+                    "name": "Software Development and Problem Solving I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 181,
-                    "name": "Calculus I"
+                    "name": "Calculus I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Artistic Perspective"
+                    "attribute": "Gen Ed: Artistic Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Ethical Perspective"
+                    "attribute": "Gen Ed: Ethical Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
-                    "name": "RIT 365: RIT Connections"
+                    "name": "RIT 365: RIT Connections",
+                    "completed": false
                 }
             ],
             [
@@ -46,37 +52,43 @@
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 250,
-                    "name": "Personal Software Engineering"
+                    "name": "Personal Software Engineering",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 124,
-                    "name": "Software Development and Problem Solving II"
+                    "name": "Software Development and Problem Solving II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 182,
-                    "name": "Calculus II"
+                    "name": "Calculus II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 190,
-                    "name": "Discrete Mathematics for Computing"
+                    "name": "Discrete Mathematics for Computing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ENGL",
                     "number": 150,
-                    "name": "FYW: Future of Writing"
+                    "name": "FYW: Future of Writing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             []
@@ -87,37 +99,43 @@
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 344,
-                    "name": "Engineering of Web Based Software Systems"
+                    "name": "Engineering of Web Based Software Systems",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 261,
-                    "name": "Introduction to Software Engineering"
+                    "name": "Introduction to Software Engineering",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "COMM",
                     "number": 253,
-                    "name": "Communication"
+                    "name": "Communication",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "PHYS",
                     "number": 211,
-                    "name": "University Physics I"
+                    "name": "University Physics I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Global Perspective"
+                    "attribute": "Gen Ed: Global Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 99,
-                    "name": "Undergraduate Cooperative Education Seminar"
+                    "name": "Undergraduate Cooperative Education Seminar",
+                    "completed": false
                 }
             ],
             [
@@ -125,13 +143,15 @@
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 256,
-                    "name": "Software Process and Project Management"
+                    "name": "Software Process and Project Management",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 262,
-                    "name": "Engineering of Software Subsystems"
+                    "name": "Engineering of Software Subsystems",
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-mix",
@@ -147,7 +167,8 @@
                             "number": 205,
                             "name": "Applied Statistics"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -196,7 +217,8 @@
                             "attribute": "Lab Science"
                         }
                     ],
-                    "exoticId": 1
+                    "exoticId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -239,19 +261,22 @@
                             "name": "University Physics II: AP-C Optics"
                         }
                     ],
-                    "exoticId": 1
+                    "exoticId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Social Perspective"
+                    "attribute": "Gen Ed: Social Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             [
@@ -259,7 +284,8 @@
                     "courseType": "co-op-required",
                     "discipline": "SWEN",
                     "number": 488,
-                    "name": "Software Engineering Summer Co-op"
+                    "name": "Software Engineering Summer Co-op",
+                    "completed": false
                 }
             ]
         ],
@@ -279,31 +305,36 @@
                             "number": 445,
                             "name": "Honors Human-Centered Requirements and Design"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 340,
-                    "name": "Software Design for Computing Systems"
+                    "name": "Software Design for Computing Systems",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "SWEN Process Elective"
+                    "attribute": "SWEN Process Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 241,
-                    "name": "Linear Algebra"
+                    "name": "Linear Algebra",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 }
             ],
             [
@@ -311,7 +342,8 @@
                     "courseType": "co-op-required",
                     "discipline": "SWEN",
                     "number": 499,
-                    "name": "Software Engineering Co-op"
+                    "name": "Software Engineering Co-op",
+                    "completed": false
                 }
             ],
             []
@@ -322,13 +354,15 @@
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 440,
-                    "name": "Software System Requirements and Architecture"
+                    "name": "Software System Requirements and Architecture",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 331,
-                    "name": "Engineering Secure Software"
+                    "name": "Engineering Secure Software",
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-mix",
@@ -344,19 +378,22 @@
                             "number": 264,
                             "name": "Honors Analysis of Algorithms"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Math/Science Elective"
+                    "attribute": "Math/Science Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 }
             ],
             [
@@ -364,7 +401,8 @@
                     "courseType": "co-op-required",
                     "discipline": "SWEN",
                     "number": 499,
-                    "name": "Software Engineering Co-op"
+                    "name": "Software Engineering Co-op",
+                    "completed": false
                 }
             ],
             []
@@ -375,37 +413,43 @@
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 561,
-                    "name": "Software Engineering Project I"
+                    "name": "Software Engineering Project I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "SWEN Design Elective"
+                    "attribute": "SWEN Design Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Engineering Elective"
+                    "attribute": "Engineering Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             [
@@ -413,31 +457,36 @@
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 562,
-                    "name": "Software Engineering Project II"
+                    "name": "Software Engineering Project II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Math/Science Elective"
+                    "attribute": "Math/Science Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Professional Elective"
+                    "attribute": "Professional Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             []

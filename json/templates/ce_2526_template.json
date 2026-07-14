@@ -8,37 +8,43 @@
                     "courseType": "class-required",
                     "discipline": "CINT",
                     "number": 101,
-                    "name": "Computing Exploration Seminar"
+                    "name": "Computing Exploration Seminar",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 123,
-                    "name": "Software Development and Problem Solving I"
+                    "name": "Software Development and Problem Solving I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "ISTE",
                     "number": 140,
-                    "name": "Web & Mobile I"
+                    "name": "Web & Mobile I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 181,
-                    "name": "Calculus I"
+                    "name": "Calculus I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Writing Intensive: First Year"
+                    "attribute": "Writing Intensive: First Year",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
-                    "name": "RIT 365: RIT Connections"
+                    "name": "RIT 365: RIT Connections",
+                    "completed": false
                 }
             ],
             [
@@ -66,31 +72,36 @@
                             "number": 261,
                             "name": "Introduction to Software Engineering"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "GCIS",
                     "number": 124,
-                    "name": "Software Development and Problem Solving II"
+                    "name": "Software Development and Problem Solving II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 190,
-                    "name": "Discrete Mathematics for Computing"
+                    "name": "Discrete Mathematics for Computing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 182,
-                    "name": "Calculus II"
+                    "name": "Calculus II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 }
             ],
             []

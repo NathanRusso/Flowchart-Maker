@@ -8,37 +8,43 @@
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 141,
-                    "name": "Computer Science I"
+                    "name": "Computer Science I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 181,
-                    "name": "Calculus I"
+                    "name": "Calculus I",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Writing Intensive: First Year"
+                    "attribute": "Writing Intensive: First Year",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Artistic Perspective"
+                    "attribute": "Gen Ed: Artistic Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Global Perspective"
+                    "attribute": "Gen Ed: Global Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "YOPS",
                     "number": 10,
-                    "name": "RIT 365: RIT Connections"
+                    "name": "RIT 365: RIT Connections",
+                    "completed": false
                 }
             ],
             [
@@ -46,37 +52,43 @@
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 142,
-                    "name": "Computer Science II"
+                    "name": "Computer Science II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 182,
-                    "name": "Calculus II"
+                    "name": "Calculus II",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 190,
-                    "name": "Discrete Mathematics for Computing"
+                    "name": "Discrete Mathematics for Computing",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Ethical Perspective"
+                    "attribute": "Gen Ed: Ethical Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Social Perspective"
+                    "attribute": "Gen Ed: Social Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             []
@@ -97,19 +109,22 @@
                             "number": 263,
                             "name": "Honors Introduction to Computer Science Theory"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 243,
-                    "name": "Mechanics of Programming"
+                    "name": "Mechanics of Programming",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 251,
-                    "name": "Probability and Statistics"
+                    "name": "Probability and Statistics",
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -133,7 +148,8 @@
                             "attribute": "Lab Science 1"
                         }
                     ],
-                    "exoticId": 1
+                    "exoticId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -151,19 +167,22 @@
                             "name": "General & Analytical Chemistry I Lab"
                         }
                     ],
-                    "exoticId": 1
+                    "exoticId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 99,
-                    "name": "Undergraduate Cooperative Education Seminar"
+                    "name": "Undergraduate Cooperative Education Seminar",
+                    "completed": false
                 }
             ],
             [
@@ -181,19 +200,22 @@
                             "number": 264,
                             "name": "Honors Analysis of Algorithms"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "SWEN",
                     "number": 261,
-                    "name": "Intro to Software Engineering"
+                    "name": "Intro to Software Engineering",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "MATH",
                     "number": 241,
-                    "name": "Linear Algebra"
+                    "name": "Linear Algebra",
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -217,7 +239,8 @@
                             "attribute": "Lab Science 2"
                         }
                     ],
-                    "exoticId": 1
+                    "exoticId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-option-attribute",
@@ -235,19 +258,22 @@
                             "name": "General & Analytical Chemistry II Lab"
                         }
                     ],
-                    "exoticId": 1
+                    "exoticId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Scientific Principles Perspective"
+                    "attribute": "Gen Ed: Scientific Principles Perspective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Wellness Course"
+                    "attribute": "Wellness Course",
+                    "completed": false
                 }
             ],
             [
@@ -255,7 +281,8 @@
                     "courseType": "co-op-required",
                     "discipline": "CSCI",
                     "number": 488,
-                    "name": "CS Undergraduate Summer Co-op"
+                    "name": "CS Undergraduate Summer Co-op",
+                    "completed": false
                 }
             ]
         ],
@@ -265,31 +292,36 @@
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 331,
-                    "name": "Intro to Artificial Intelligence"
+                    "name": "Intro to Artificial Intelligence",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 320,
-                    "name": "Principles of Data Management"
+                    "name": "Principles of Data Management",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 250,
-                    "name": "Concept of Computer Systems"
+                    "name": "Concept of Computer Systems",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 }
             ],
             [
@@ -297,7 +329,8 @@
                     "courseType": "co-op-required",
                     "discipline": "CSCI",
                     "number": 499,
-                    "name": "CS Undergraduate Semester Co-op"
+                    "name": "CS Undergraduate Semester Co-op",
+                    "completed": false
                 }
             ],
             []
@@ -308,31 +341,36 @@
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 344,
-                    "name": "Programming Language Concepts"
+                    "name": "Programming Language Concepts",
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 251,
-                    "name": "Concepts of Parallel and Distributed Systems"
+                    "name": "Concepts of Parallel and Distributed Systems",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Undergraduate Elective"
+                    "attribute": "CS Undergraduate Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 }
             ],
             [
@@ -370,31 +408,36 @@
                             "number": 769,
                             "name": "* Topics in Theory"
                         }
-                    ]
+                    ],
+                    "completed": false
                 },
                 {
                     "courseType": "class-required",
                     "discipline": "CSCI",
                     "number": 472,
-                    "name": "Historical & Current Perspectives in CS"
+                    "name": "Historical & Current Perspectives in CS",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "* CS Graduate Cluster Elective"
+                    "attribute": "* CS Graduate Cluster Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             []
@@ -405,7 +448,8 @@
                     "courseType": "co-op-required",
                     "discipline": "CSCI",
                     "number": 499,
-                    "name": "CS Undergraduate Semester Co-op"
+                    "name": "CS Undergraduate Semester Co-op",
+                    "completed": false
                 }
             ],
             [
@@ -413,31 +457,36 @@
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "* CS Graduate Cluster Elective"
+                    "attribute": "* CS Graduate Cluster Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Immersion"
+                    "attribute": "Gen Ed: Immersion",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Gen Ed: Elective"
+                    "attribute": "Gen Ed: Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "Open Elective"
+                    "attribute": "Open Elective",
+                    "completed": false
                 }
             ],
             []
@@ -448,25 +497,29 @@
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Graduate Cluster Elective"
+                    "attribute": "CS Graduate Cluster Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Graduate Elective"
+                    "attribute": "CS Graduate Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Graduate Elective"
+                    "attribute": "CS Graduate Elective",
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Graduate Elective"
+                    "attribute": "CS Graduate Elective",
+                    "completed": false
                 }
             ],
             [
@@ -487,7 +540,8 @@
                             "hyperChildId": 2
                         }
                     ],
-                    "hyperParentId": 1
+                    "hyperParentId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
@@ -495,13 +549,15 @@
                     "number": null,
                     "attribute": "CS Graduate Elective",
                     "hyperParentId": 1,
-                    "hyperChildId": 1
+                    "hyperChildId": 1,
+                    "completed": false
                 },
                 {
                     "courseType": "class-input",
                     "discipline": "",
                     "number": null,
-                    "attribute": "CS Graduate Elective"
+                    "attribute": "CS Graduate Elective",
+                    "completed": false
                 }
             ],
             []
