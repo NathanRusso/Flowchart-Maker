@@ -1,0 +1,181 @@
+#coursePopup {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;    /* Centers horizontally */
+    align-items: stretch;
+    top: 25%;
+    left: 25%;
+    width: 50vw;
+    border: 5px solid var(--text-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-size: 1rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    position: fixed;
+    z-index: 3;
+}
+
+.coursePopupInformation {
+    display: flex;
+    justify-content: center;    /* Centers horizontally */
+    align-items: center;        /* Centers vertically */
+    padding: 0 5px;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+}
+
+#coursePopupTitle {
+
+}
+
+#coursePopupDescription {
+
+}
+
+#coursePopupPrerequisites {
+
+}
+
+.toolbar {
+    height: 22px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+    color: var(--button-color);
+    font-family: inherit;
+}
+
+.year {
+    display: flex;
+}
+
+.year-text {
+    display: flex;
+    justify-content: center;    /* Centers horizontally */
+    align-items: center;        /* Centers vertically */
+    box-sizing: border-box;
+    min-width: 5%;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.year-block {
+    width: 90%;
+}
+
+.year-divider {
+    height: 15px;
+    margin: 5px 0px;
+    background-color: var(--divider-color);
+}
+
+.semester {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    min-height: 5px;
+    margin: 5px auto;
+}
+
+.class {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;    /* Centers horizontally */
+    align-items: center;        /* Centers vertically */
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--text-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    position: relative;
+    z-index: 1;
+}
+
+.class input {
+    width: 80%;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    text-align: center;
+}
+
+.class select {
+    width: 95%;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    white-space: normal;
+}
+
+.co-op {
+    display: flex;
+    justify-content: center;    /* Centers horizontally */
+    align-items: center;        /* Centers vertically */
+    width: 100%;
+    min-height: 20px;
+    padding: 3px 5px;
+    border: 5px solid var(--co-op-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    position: relative;
+    z-index: 1;
+}
+
+.co-op select {
+    width: auto;
+    padding-right: 5px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    white-space: normal;
+}
+
+.class input, .class label, .class select, .co-op select {
+    color: inherit;
+    background-color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit
+}
+
+input[type="checkbox"] {
+    top: 2px;
+    right: 2px;
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+    padding: 0px;
+    accent-color: var(--text-color);
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+
+#flowchartNotesTitle {
+    margin: 10px 0px;
+}
+
+#flowchartNotesList:hover {
+    outline: auto;
+}

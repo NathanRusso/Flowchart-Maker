@@ -44,6 +44,11 @@ const showCheckboxesButton = document.getElementById("showCheckboxesButton");
 const hideCheckboxesButton = document.getElementById("hideCheckboxesButton");
 const clearFlowchartButton = document.getElementById("clearFlowchartButton");
 
+const coursePopup = document.getElementById("coursePopup");
+const coursePopupTitle = document.getElementById("coursePopupTitle");
+const coursePopupDescription = document.getElementById("coursePopupDescription");
+const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites");
+
 const flowchartBody = document.getElementById("flowchartBody");
 const transferYearDiv = document.getElementById("year-0");
 const transferDiv = document.getElementById("transfer");
@@ -554,10 +559,37 @@ function displayCoursePopup(target) {
     const courseType = courseDataset.courseType;
     console.log(courseType);
     console.log(courseChildren);
-    if (courseType.includes("option")) {
 
-    } else {
+    switch (courseType) {
+        case "co-op-required": {
+            coursePopup.style.borderColor = "var(--co-op-color)";
 
+            break;
+        }
+        case "co-op-option": {
+            coursePopup.style.borderColor = "var(--co-op-color)";
+
+            break;
+        }
+        case "class-required": {
+            coursePopup.style.borderColor = getDisciplineColor(courseDataset.courseDiscipline);
+            break;
+        }
+        case "class-input": {
+            coursePopup.style.borderColor = getAttributeColor(courseDataset.courseAttribute);
+
+            break;
+        }
+        case "class-option-mix": {
+            // coursePopup.style.borderColor = getDisciplineColor(courseDataset.courseAttribute);
+
+            break;
+        }
+        case "class-option-attribute": {
+            coursePopup.style.borderColor = getAttributeColor(courseDataset.courseAttribute);
+
+            break;
+        }
     }
 }
 
