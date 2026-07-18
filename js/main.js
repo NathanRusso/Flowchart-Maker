@@ -106,7 +106,7 @@ function processFlowchart(template, resetChoose, resetUpload) {
     const notes = template.notes;
 
     clearFlowchart(title, resetChoose, resetUpload);                            // This removes the previous flowchart
-    load.fillTransferYear(transferCourses);                                     // This handles all transfer classes
+    fillTransferYear(transferCourses);                                          // This handles all transfer classes
     years.forEach(yearInfo => load.createYear(yearInfo, ++academicYearCount));  // This handles all other semesters and their classes
     fillFlowchartNotes(notes);                                                  // This handles the flowchart notes
     hideCheckboxesButton.style.display == "none" ? hideCheckboxes() : showCheckboxes();
@@ -116,6 +116,19 @@ function processFlowchart(template, resetChoose, resetUpload) {
 
     // This makes sure exotic option classes are set properly
     load.initializeExotic()
+}
+
+/**
+ * This adds courses divs to the transfer div.
+ * 
+ * @param {*} transferInfo - The object containing the transfer course objects
+ */
+function fillTransferYear(transferInfo) {
+    transferInfo.forEach(courseInfo => {
+        const courseDiv = load.createCourse(courseInfo);
+        transferDiv.append(courseDiv);
+    });
+    if (transferInfo.length > 0) showTransferSection();
 }
 
 /**

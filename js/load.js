@@ -50,19 +50,6 @@ export function makeSortable(element) {
 }
 
 /**
- * This adds courses divs to the transfer div.
- * 
- * @param {*} transferInfo - The object containing the transfer course objects
- */
-function fillTransferYear(transferInfo) {
-    transferInfo.forEach(courseInfo => {
-        const courseDiv = createCourse(courseInfo);
-        transferDiv.append(courseDiv);
-    });
-    if (transferInfo.length > 0) showTransferSection();
-}
-
-/**
  * This creates a new year div and adds it to the body based on the template flowchart.
  * 
  * @param {*} yearInfo - The object containing the semester objects
