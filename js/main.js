@@ -390,6 +390,7 @@ function pushYear() {
         const semesterDiv = document.createElement("div");
         semesterDiv.id = `${term}-${academicYearCount}`;
         semesterDiv.className = "semester";
+        load.makeSortable(semesterDiv);
         yearBlockDiv.append(semesterDiv);
     });
     flowchartBody.append(yearDiv);

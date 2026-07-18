@@ -73,8 +73,6 @@ export function createYear(yearInfo, academicYearCount) {
 
     semesters.forEach((term, index) => {
         const semesterDiv = createSemester(yearInfo[index], term);
-        semesterDiv.id = `${term}-${academicYearCount}`;
-        semesterDiv.className = "semester";
         yearBlockDiv.append(semesterDiv);
     });
     flowchartBody.append(yearDiv);
