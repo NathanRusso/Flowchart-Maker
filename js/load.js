@@ -93,7 +93,7 @@ export function createYear(yearInfo, academicYearCount) {
  * @param {int} academicYearCount - The current number of academic years
  * @returns the semester div
  */
-export function createSemester(semesterInfo, term, academicYearCount) {
+function createSemester(semesterInfo, term, academicYearCount) {
     const semesterDiv = document.createElement("div");
     semesterDiv.id = `${term}-${academicYearCount}`;
     semesterDiv.className = "semester";
@@ -406,7 +406,7 @@ export function createCourse(courseInfo) {
  * 
  * @param {*} target - the courseDiv event target
  */
-export function displayCoursePopup(target) {
+function displayCoursePopup(target) {
     const tagName = target.tagName;
     if (tagName == "INPUT" || tagName == "OPTION" || tagName == "SELECT") return;
 
@@ -457,7 +457,7 @@ export function displayCoursePopup(target) {
  * @param {string} savedCourse - the possible current class previously chosen for the input.
  * @returns the input object
  */
-export function createCourseInput(savedCourse) {
+function createCourseInput(savedCourse) {
     // Creates the class input
     const input = Object.assign(document.createElement("input"), {
         type: "text",
@@ -502,7 +502,7 @@ export function createCourseInput(savedCourse) {
  * @param {int} hyperParentId - the id of the parent option div
  * @param {int} hyperChildId - the id that matches an option of the parent option div
  */
-export function updateHyperCourseDivs(hyperParentId, hyperChildId) {
+function updateHyperCourseDivs(hyperParentId, hyperChildId) {
     if (Number.isInteger(hyperParentId) && Number.isInteger(hyperChildId)) {
         const hyperChildDictionary = hyperDictionary[hyperParentId];
         for (const [hyperChildIdKey, courseDivs] of Object.entries(hyperChildDictionary)) {
@@ -530,7 +530,7 @@ export function initializeHyper() {
  * @param {int} exoticId - the id of the parent option div
  * @param {int} selectedIndex - the current selected index
  */
-export function updateExoticCourseDivs(exoticId, selectedIndex) {
+function updateExoticCourseDivs(exoticId, selectedIndex) {
     if (Number.isInteger(exoticId) && Number.isInteger(selectedIndex)) {
         const exoticDivs = exoticDictionary[exoticId];
         exoticDivs.forEach(courseDiv => {
