@@ -1,4 +1,4 @@
-//------------------------------ FUNCTIONS ------------------------------//
+//------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
  * Gets the class border color based on its discipline.

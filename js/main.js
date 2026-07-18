@@ -1,4 +1,4 @@
-//------------------------------ IMPORTS ------------------------------//
+//------------------------------ IMPORTS BELOW ------------------------------//
 import * as load from "/js/load.js";
 import * as color from "/js/color.js";
 

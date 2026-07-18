@@ -1,4 +1,4 @@
-//------------------------------ IMPORTS ------------------------------//
+//------------------------------ IMPORT BELOW ------------------------------//
 import * as color from "/js/color.js";
 
 //------------------------------ DATA BELOW ------------------------------//
@@ -23,7 +23,7 @@ let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hy
 let exoticDictionary = {}       // A mapping of exoticIds to lists if related courseDivs
 let initialExoticIndexes = {}   // A mapping of exoticIds to the initial selected index
 
-//------------------------------ FUNCTIONS ------------------------------//
+//------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
  * This makes the given div element sortable.
