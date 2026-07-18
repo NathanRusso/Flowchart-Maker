@@ -532,7 +532,33 @@ function createCourse(courseInfo) {
     });
     courseDiv.append(checkbox); // Must come after text content assignment
 
+    // This adds an event listener to display the class information pop-up
+    courseDiv.addEventListener("click", (event) => displayCoursePopup(event.target));
+
     return courseDiv;
+}
+
+/**
+ * This will query the database for course information and display its popup.
+ * 
+ * @param {*} target - the courseDiv event target
+ */
+function displayCoursePopup(target) {
+    const tagName = target.tagName;
+    if (tagName == "INPUT" || tagName == "OPTION" || tagName == "SELECT") return;
+
+    const courseDataset = tagName == "LABEL" ? target.parentElement.dataset : target.dataset;
+    const courseChildren = tagName == "LABEL" ? target.parentElement.children : target.children;
+    console.log(courseDataset);
+
+    const courseType = courseDataset.courseType;
+    console.log(courseType);
+    console.log(courseChildren);
+    if (courseType.includes("option")) {
+
+    } else {
+
+    }
 }
 
 /**
