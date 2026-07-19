@@ -8,12 +8,13 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="preconnect" href="https://rsms.me">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <h1 id="pageTitle">GCCIS 2025-2026 Flowchart</h1>
-    <select id="templateSelect" class="toolbar" style="background-color: DarkRed;">
+    <select id="templateSelect" class="toolbar">
         <option value="">Choose Template</option>
         <optgroup label="Artificial Intelligence">
             <option value="ai_bs_2526_template.json">AI BS</option>
@@ -56,15 +57,15 @@
         </optgroup>
     </select>
     <input id="fileInput" type="file" accept=".json, application/json" style="display: none;">
-    <button id="uploadTemplateButton" class="toolbar" type="button" style="background-color: Crimson;">Upload Flowchart &uarr;</button>
-    <button id="downloadTemplateButton" class="toolbar" type="button" style="background-color: DarkOrange;">Save Template &darr;</button>
-    <button id="pushYearButton" class="toolbar" type="button" style="background-color: Gold;">Add Year &#x2795;&#xFE0E;</button>
-    <button id="popYearButton" class="toolbar" type="button" style="background-color: Green;">Remove Year &#10006;</button>
-    <button id="showTransferButton" class="toolbar" type="button" style="background-color: MediumBlue;">Show Transfer &#x2795;&#xFE0E;</button>
-    <button id="hideTransferButton" class="toolbar" type="button" style="background-color: MediumBlue; display: none;">Hide Transfer &#x2796;&#xFE0E;</button>
-    <button id="showCheckboxesButton" class="toolbar" type="button" style="background-color: DarkViolet; display: none;">Show Checkboxes &#x2795;&#xFE0E;</button>
-    <button id="hideCheckboxesButton" class="toolbar" type="button" style="background-color: DarkViolet;">Hide Checkboxes &#x2796;&#xFE0E;</button>
-    <button id="clearFlowchartButton" class="toolbar" type="button" style="background-color: DeepPink;">Clear Flowchart &#10006;</button>
+    <button id="uploadTemplateButton" class="toolbar" type="button">Upload Flowchart <i class="fa-solid fa-arrow-up"></i></button>
+    <button id="downloadTemplateButton" class="toolbar" type="button">Save Template <i class="fa-solid fa-arrow-down"></i></button>
+    <button id="pushYearButton" class="toolbar" type="button">Add Year <i class="fa-solid fa-plus"></i></button>
+    <button id="popYearButton" class="toolbar" type="button">Remove Year <i class="fa-solid fa-xmark"></i></button>
+    <button id="showTransferButton" class="toolbar" type="button">Show Transfer <i class="fa-solid fa-plus"></i></button>
+    <button id="hideTransferButton" class="toolbar" type="button">Hide Transfer <i class="fa-solid fa-minus"></i></button>
+    <button id="showCheckboxesButton" class="toolbar" type="button">Show Checkboxes <i class="fa-solid fa-plus"></i></button>
+    <button id="hideCheckboxesButton" class="toolbar" type="button">Hide Checkboxes <i class="fa-solid fa-minus"></i></button>
+    <button id="clearFlowchartButton" class="toolbar" type="button">Clear Flowchart <i class="fa-solid fa-xmark"></i></button>
 
     <div id="coursePopup">
         <button id="coursePopupButton">&#10006;</button>

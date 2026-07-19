@@ -1,3 +1,55 @@
+.toolbar {
+    line-height: 1;
+    height: 22px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+    color: var(--button-text-color);
+    font-family: inherit;
+}
+
+#templateSelect {
+    background-color: DarkRed;
+}
+
+#uploadTemplateButton {
+    background-color: Crimson;
+}
+
+#downloadTemplateButton {
+    background-color: DarkOrange;
+}
+
+#pushYearButton {
+    background-color: Gold;
+}
+
+#popYearButton {
+    background-color: Green;
+}
+
+#showTransferButton {
+    background-color: MediumBlue;
+}
+
+#hideTransferButton {
+    background-color: MediumBlue;
+    display: none;
+}
+
+#showCheckboxesButton {
+    background-color: DarkViolet;
+    display: none;
+}
+
+#hideCheckboxesButton {
+    background-color: DarkViolet;
+}
+
+#clearFlowchartButton {
+    background-color: DeepPink;
+}
+
 #coursePopup {
     opacity: 0;
     display: none;
@@ -74,16 +126,6 @@
 
 #coursePopupPrerequisites {
 
-}
-
-.toolbar {
-    line-height: 1;
-    height: 22px;
-    margin-bottom: 5px;
-    border: none;
-    border-radius: 5px;
-    color: var(--button-text-color);
-    font-family: inherit;
 }
 
 .year {
