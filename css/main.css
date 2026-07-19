@@ -1,4 +1,5 @@
 #coursePopup {
+    opacity: 0;
     display: none;
     flex-wrap: wrap;
     flex-direction: column;
@@ -17,6 +18,16 @@
     word-break: break-word;
     position: fixed;
     z-index: 3;
+}
+
+#coursePopup.reveal {
+    display: flex;
+    animation: fadeInEffect 0.2s ease-out forwards;
+}
+
+#coursePopup.hide {
+    display: flex;
+    animation: fadeOutEffect 0.2s ease-out forwards;
 }
 
 #coursePopup button {

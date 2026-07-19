@@ -32,7 +32,7 @@ let initialExoticIndexes = {}   // A mapping of exoticIds to the initial selecte
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
-coursePopupButton.addEventListener("click", () => coursePopup.style.display = "none");
+coursePopupButton.addEventListener("click", hideCoursePopup);
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
@@ -411,87 +411,6 @@ export function createCourse(courseInfo) {
 }
 
 /**
- * This will query the database for course information and display its popup.
- * 
- * @param {*} target - the courseDiv event target
- */
-function displayCoursePopup(target) {
-    // Hide the course information popup
-    coursePopup.style.display = "none";
-
-    const tagName = target.tagName;
-    if (tagName == "INPUT" || tagName == "OPTION" || tagName == "SELECT") return;
-
-    const courseDataset = tagName == "LABEL" ? target.parentElement.dataset : target.dataset;
-    const courseChildren = tagName == "LABEL" ? target.parentElement.children : target.children;
-    const courseType = courseDataset.courseType;
-
-    switch (courseType) {
-        case "co-op-required": {
-            coursePopup.style.borderColor = "var(--co-op-border-color)";
-            coursePopupTitle.textContent = target.textContent;
-            break;
-        }
-        case "co-op-option": {
-            coursePopup.style.borderColor = "var(--co-op-border-color)";
-            const courseSelect = courseChildren[0];
-            const selectedCourse = courseSelect.selectedOptions[0];
-            const d = selectedCourse.dataset;
-            coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
-            break;
-        }
-        case "class-required": {
-            coursePopup.style.borderColor = color.getDisciplineColor(courseDataset.courseDiscipline);
-            coursePopupTitle.textContent = target.textContent;
-            break;
-        }
-        case "class-input": {
-            coursePopup.style.borderColor = color.getAttributeColor(courseDataset.courseAttribute);
-            const courseInput = courseChildren[1];
-            const currentValue = courseInput.value;
-            if (!currentValue || !courseRegex.test(currentValue)) {
-                alert("Cannot find class information. Format must be in ABCD-123, ABCD-123H, or blank");
-                return;
-            }
-            coursePopupTitle.textContent = currentValue;
-            break;
-        }
-        case "class-option-mix": {
-            const courseSelect = courseChildren[0];
-            const selectedCourse = courseSelect.selectedOptions[0];
-            const currentValue = selectedCourse.value;
-            const d = selectedCourse.dataset;
-            if (currentValue) {
-                coursePopup.style.borderColor = color.getDisciplineColor(d.optionDiscipline);
-                coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
-            } else {
-                coursePopup.style.borderColor = color.getDisciplineColor(d.optionAttribute);
-                const courseInput = courseChildren[2];
-                const currentValue = courseInput.value;
-                console.log(courseInput.value);
-                if (!currentValue || !courseRegex.test(currentValue)) {
-                    alert("Cannot find class information. Format must be in ABCD-123, ABCD-123H, or blank");
-                    return;
-                }
-                coursePopupTitle.textContent = currentValue;
-            }
-            break;
-        }
-        case "class-option-attribute": {
-            coursePopup.style.borderColor = color.getAttributeColor(courseDataset.courseAttribute);
-            const courseSelect = courseChildren[1];
-            const selectedCourse = courseSelect.selectedOptions[0];
-            const d = selectedCourse.dataset;
-            coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
-            break;
-        }
-    }
-
-    // Show the course information popup
-    coursePopup.style.display = "flex";
-}
-
-/**
  * This creates a input element that can be used in classes.
  * 
  * @param {string} savedCourse - the possible current class previously chosen for the input.
@@ -597,4 +516,104 @@ export function initializeExotic() {
     for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
         updateExoticCourseDivs(Number(exoticId), Number(selectedIndex));
     }
+}
+
+/**
+ * This will hide the course information popup
+ */
+function hideCoursePopup() {
+    coursePopup.classList.remove("reveal");
+    coursePopup.classList.add("hide");
+
+    // Hides the element from the DOM view without blocking animation
+    // "once: true" deletes the event listener
+    coursePopup.addEventListener("animationend", () => { 
+        coursePopup.style.display = "none";
+        coursePopup.classList.remove("hide");
+    }, { once: true });
+}
+
+/**
+ * This will reveal the course information popup
+ */
+function revealCoursePopup() {
+    coursePopup.style.display = "flex";
+    coursePopup.classList.remove("hide");
+    coursePopup.classList.add("reveal");
+}
+
+/**
+ * This will query the database for course information and display its popup.
+ * 
+ * @param {*} target - the courseDiv event target
+ */
+function displayCoursePopup(target) {
+    const tagName = target.tagName;
+    if (tagName == "INPUT" || tagName == "OPTION" || tagName == "SELECT") return;
+
+    const courseDataset = tagName == "LABEL" ? target.parentElement.dataset : target.dataset;
+    const courseChildren = tagName == "LABEL" ? target.parentElement.children : target.children;
+    const courseType = courseDataset.courseType;
+
+    switch (courseType) {
+        case "co-op-required": {
+            coursePopup.style.borderColor = "var(--co-op-border-color)";
+            coursePopupTitle.textContent = target.textContent;
+            break;
+        }
+        case "co-op-option": {
+            coursePopup.style.borderColor = "var(--co-op-border-color)";
+            const courseSelect = courseChildren[0];
+            const selectedCourse = courseSelect.selectedOptions[0];
+            const d = selectedCourse.dataset;
+            coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
+            break;
+        }
+        case "class-required": {
+            coursePopup.style.borderColor = color.getDisciplineColor(courseDataset.courseDiscipline);
+            coursePopupTitle.textContent = target.textContent;
+            break;
+        }
+        case "class-input": {
+            const courseInput = courseChildren[1];
+            const currentValue = courseInput.value;
+            if (!currentValue || !courseRegex.test(currentValue)) {
+                alert("Cannot find class information. Format must be in ABCD-123, ABCD-123H, or blank");
+                return;
+            }
+            coursePopup.style.borderColor = color.getAttributeColor(courseDataset.courseAttribute);
+            coursePopupTitle.textContent = currentValue;
+            break;
+        }
+        case "class-option-mix": {
+            const courseSelect = courseChildren[0];
+            const selectedCourse = courseSelect.selectedOptions[0];
+            const currentValue = selectedCourse.value;
+            const d = selectedCourse.dataset;
+            if (currentValue) {
+                coursePopup.style.borderColor = color.getDisciplineColor(d.optionDiscipline);
+                coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
+            } else {
+                const courseInput = courseChildren[2];
+                const currentValue = courseInput.value;
+                if (!currentValue || !courseRegex.test(currentValue)) {
+                    alert("Cannot find class information. Format must be in ABCD-123, ABCD-123H, or blank");
+                    return;
+                }
+                coursePopup.style.borderColor = color.getDisciplineColor(d.optionAttribute);
+                coursePopupTitle.textContent = currentValue;
+            }
+            break;
+        }
+        case "class-option-attribute": {
+            coursePopup.style.borderColor = color.getAttributeColor(courseDataset.courseAttribute);
+            const courseSelect = courseChildren[1];
+            const selectedCourse = courseSelect.selectedOptions[0];
+            const d = selectedCourse.dataset;
+            coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
+            break;
+        }
+    }
+
+    revealCoursePopup();
 }
