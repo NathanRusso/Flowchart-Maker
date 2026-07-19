@@ -2,9 +2,10 @@
     --text-color: Black;
     --divider-color: Grey;
     --background-color: White;
-    --button-color: White;
-    --co-op-color: SkyBlue;
-    --x-color: Red;
+    --button-text-color: White;
+    --co-op-border-color: SkyBlue;
+    --x-color: Crimson;
+    --shadow-color: rgba(0, 0, 0, 0.4);
     color-scheme: light dark;
     font-family: "Inter", system-ui, sans-serif;
 }

@@ -23,6 +23,7 @@ const coursePopupButton = document.getElementById("coursePopupButton");
 const coursePopupTitle = document.getElementById("coursePopupTitle");
 const coursePopupDescription = document.getElementById("coursePopupDescription");
 const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites");
+const coursePopupOffered = document.getElementById("coursePopupOffered");
 
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
@@ -427,12 +428,12 @@ function displayCoursePopup(target) {
 
     switch (courseType) {
         case "co-op-required": {
-            coursePopup.style.borderColor = "var(--co-op-color)";
+            coursePopup.style.borderColor = "var(--co-op-border-color)";
             coursePopupTitle.textContent = target.textContent;
             break;
         }
         case "co-op-option": {
-            coursePopup.style.borderColor = "var(--co-op-color)";
+            coursePopup.style.borderColor = "var(--co-op-border-color)";
             const courseSelect = courseChildren[0];
             const selectedCourse = courseSelect.selectedOptions[0];
             const d = selectedCourse.dataset;
