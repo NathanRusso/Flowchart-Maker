@@ -30,6 +30,48 @@ h2, h3, h4 {
     font-family: inherit;
 }
 
+#templateSelect {
+    background-color: DarkRed;
+}
+
+#uploadTemplateButton {
+    background-color: Crimson;
+}
+
+#downloadTemplateButton {
+    background-color: DarkOrange;
+}
+
+#pushYearButton {
+    background-color: Gold;
+}
+
+#popYearButton {
+    background-color: Green;
+}
+
+#showTransferButton {
+    background-color: MediumBlue;
+}
+
+#hideTransferButton {
+    background-color: MediumBlue;
+    display: none;
+}
+
+#showCheckboxesButton {
+    background-color: DarkViolet;
+    display: none;
+}
+
+#hideCheckboxesButton {
+    background-color: DarkViolet;
+}
+
+#clearFlowchartButton {
+    background-color: DeepPink;
+}
+
 .year {
     display: flex;
 }
