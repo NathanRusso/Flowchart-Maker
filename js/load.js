@@ -19,6 +19,7 @@ export const semesters = ["Fall", "Spring", "Summer"];
 const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
 
 const coursePopup = document.getElementById("coursePopup");
+const coursePopupButton = document.getElementById("coursePopupButton");
 const coursePopupTitle = document.getElementById("coursePopupTitle");
 const coursePopupDescription = document.getElementById("coursePopupDescription");
 const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites");
@@ -27,6 +28,10 @@ let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds 
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
 let exoticDictionary = {}       // A mapping of exoticIds to lists if related courseDivs
 let initialExoticIndexes = {}   // A mapping of exoticIds to the initial selected index
+
+//------------------------------ EVENT LISTENERS BELOW ------------------------------//
+
+coursePopupButton.addEventListener("click", () => coursePopup.style.display = "none");
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
