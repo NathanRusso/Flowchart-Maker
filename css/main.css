@@ -31,19 +31,28 @@
 }
 
 #coursePopup button {
+    display: inline-flex;
+    justify-content: center;    /* Centers horizontally */
+    align-items: center;        /* Centers vertically */
     top: 2px;
     right: 2px;
     width: 15px;
     height: 15px;
     margin: 0px;
-    padding: 0px;
+    padding: 0;
+    padding-bottom: 2px; /* X Icon is vertically lower, so this counteracts that. */
     border: 0;
-    background-color: var(--x-color);
     border-radius: 3px;
-    color: var(--button-text-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
     cursor: pointer;
     position: absolute;
     z-index: 4;
+}
+
+#coursePopup button:hover {
+    background-color: var(--x-color);
+    color: var(--button-text-color);
 }
 
 .coursePopupInformation {
