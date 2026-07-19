@@ -1,4 +1,4 @@
-//------------------------------ IMPORT BELOW ------------------------------//
+//------------------------------ IMPORTS BELOW ------------------------------//
 import * as color from "/js/color.js";
 
 //------------------------------ DATA BELOW ------------------------------//
@@ -17,6 +17,11 @@ export const years = [
 ];
 export const semesters = ["Fall", "Spring", "Summer"];
 const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
+
+const coursePopup = document.getElementById("coursePopup");
+const coursePopupTitle = document.getElementById("coursePopupTitle");
+const coursePopupDescription = document.getElementById("coursePopupDescription");
+const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites");
 
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
@@ -405,48 +410,79 @@ export function createCourse(courseInfo) {
  * @param {*} target - the courseDiv event target
  */
 function displayCoursePopup(target) {
+    // Hide the course information popup
+    coursePopup.style.display = "none";
+
     const tagName = target.tagName;
     if (tagName == "INPUT" || tagName == "OPTION" || tagName == "SELECT") return;
 
     const courseDataset = tagName == "LABEL" ? target.parentElement.dataset : target.dataset;
     const courseChildren = tagName == "LABEL" ? target.parentElement.children : target.children;
-    console.log(courseDataset);
-
     const courseType = courseDataset.courseType;
-    console.log(courseType);
-    console.log(courseChildren);
 
     switch (courseType) {
         case "co-op-required": {
             coursePopup.style.borderColor = "var(--co-op-color)";
-
+            coursePopupTitle.textContent = target.textContent;
             break;
         }
         case "co-op-option": {
             coursePopup.style.borderColor = "var(--co-op-color)";
-
+            const courseSelect = courseChildren[0];
+            const selectedCourse = courseSelect.selectedOptions[0];
+            const d = selectedCourse.dataset;
+            coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
             break;
         }
         case "class-required": {
             coursePopup.style.borderColor = color.getDisciplineColor(courseDataset.courseDiscipline);
+            coursePopupTitle.textContent = target.textContent;
             break;
         }
         case "class-input": {
             coursePopup.style.borderColor = color.getAttributeColor(courseDataset.courseAttribute);
-
+            const courseInput = courseChildren[1];
+            const currentValue = courseInput.value;
+            if (!currentValue || !courseRegex.test(currentValue)) {
+                alert("Cannot find class information. Format must be in ABCD-123, ABCD-123H, or blank");
+                return;
+            }
+            coursePopupTitle.textContent = currentValue;
             break;
         }
         case "class-option-mix": {
-            // coursePopup.style.borderColor = color.getDisciplineColor(courseDataset.courseAttribute);
-
+            const courseSelect = courseChildren[0];
+            const selectedCourse = courseSelect.selectedOptions[0];
+            const currentValue = selectedCourse.value;
+            const d = selectedCourse.dataset;
+            if (currentValue) {
+                coursePopup.style.borderColor = color.getDisciplineColor(d.optionDiscipline);
+                coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
+            } else {
+                coursePopup.style.borderColor = color.getDisciplineColor(d.optionAttribute);
+                const courseInput = courseChildren[2];
+                const currentValue = courseInput.value;
+                console.log(courseInput.value);
+                if (!currentValue || !courseRegex.test(currentValue)) {
+                    alert("Cannot find class information. Format must be in ABCD-123, ABCD-123H, or blank");
+                    return;
+                }
+                coursePopupTitle.textContent = currentValue;
+            }
             break;
         }
         case "class-option-attribute": {
             coursePopup.style.borderColor = color.getAttributeColor(courseDataset.courseAttribute);
-
+            const courseSelect = courseChildren[1];
+            const selectedCourse = courseSelect.selectedOptions[0];
+            const d = selectedCourse.dataset;
+            coursePopupTitle.textContent = `${d.optionDiscipline}-${d.optionNumber} ${selectedCourse.value}`;
             break;
         }
     }
+
+    // Show the course information popup
+    coursePopup.style.display = "flex";
 }
 
 /**

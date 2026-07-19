@@ -1,11 +1,8 @@
 //------------------------------ IMPORTS BELOW ------------------------------//
-import * as load from "/js/load.js";
 import * as color from "/js/color.js";
+import * as load from "/js/load.js";
 
 //------------------------------ DATA BELOW ------------------------------//
-
-// The 4 course types are "co-op", "required", "option", and "input"
-// I added the "General Education: Immersion", "Lab Science: Lab", "Lab Science: Lecture", "Open Elective", etc. attributes
 
 const defaultTitle = "GCCIS 2025-2026 Flowchart";
 
@@ -26,11 +23,6 @@ const hideTransferButton = document.getElementById("hideTransferButton");
 const showCheckboxesButton = document.getElementById("showCheckboxesButton");
 const hideCheckboxesButton = document.getElementById("hideCheckboxesButton");
 const clearFlowchartButton = document.getElementById("clearFlowchartButton");
-
-const coursePopup = document.getElementById("coursePopup");
-const coursePopupTitle = document.getElementById("coursePopupTitle");
-const coursePopupDescription = document.getElementById("coursePopupDescription");
-const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites");
 
 const flowchartBody = document.getElementById("flowchartBody");
 const transferYearDiv = document.getElementById("year-0");
