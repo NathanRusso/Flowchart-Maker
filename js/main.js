@@ -246,7 +246,7 @@ function downloadTemplate() {
     // Gets and sets the flowchart filename
     const jsonFilename = getCurrentTemplateFilename()
 
-    // Saves the current flowchart into local storage.
+    // Saves the current flowchart to local storage.
     setLocalFlowchart(jsonFilename, json);
 
     // Saves the flowchart onto your computer
@@ -508,6 +508,9 @@ function pushYear() {
     yearDividerDiv.id = `year-divider-${academicYearCount}`
     yearDividerDiv.className = "year-divider";
     flowchartBody.append(yearDividerDiv);
+
+    // Saves the current flowchart to local storage.
+    setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
 }
 
 /**
@@ -521,6 +524,9 @@ function popYear() {
         yearDiv.remove();
         yearDividerDiv.remove();
         academicYearCount--;
+
+        // Saves the current flowchart to local storage.
+        setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
     } else {
         alert("The lowest year is not empty. Remove all courses before deleting it!");
     }
