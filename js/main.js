@@ -79,7 +79,7 @@ function getLocalFlowchart() {
 }
 
 /**
- * Saves the flowchart and its filename to local storage.
+ * Saves the input flowchart and its filename to local storage.
  * 
  * @param {string} filename - The flowchart filename
  * @param {*} flowchart - The flowchart json object
@@ -87,6 +87,13 @@ function getLocalFlowchart() {
 function setLocalFlowchart(filename, flowchart) {
     localStorage.setItem("filename", filename);
     localStorage.setItem("flowchart", JSON.stringify(flowchart))
+}
+
+/**
+ * Saves the current flowchart and its filename to local storage.
+ */
+function setLocalFlowchartDefault() {
+    setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
 }
 
 /**
@@ -510,7 +517,7 @@ function pushYear() {
     flowchartBody.append(yearDividerDiv);
 
     // Saves the current flowchart to local storage.
-    setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
+    setLocalFlowchartDefault();
 }
 
 /**
@@ -526,7 +533,7 @@ function popYear() {
         academicYearCount--;
 
         // Saves the current flowchart to local storage.
-        setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
+        setLocalFlowchartDefault();
     } else {
         alert("The lowest year is not empty. Remove all courses before deleting it!");
     }
