@@ -74,7 +74,7 @@ function getLocalFlowchart() {
     if (filename && flowchartString) {
         uploadedFilename = filename;
         const flowchart = JSON.parse(flowchartString);
-        processFlowchart(flowchart, true, false);
+        generateFlowchartFromTemplate(flowchart, true, false);
     }
 }
 
@@ -147,7 +147,7 @@ async function getTemplateFlowchart(filename) {
     const year = yearSelect.value;
     const template  = (await import(`/json/templates/${year}/${filename}`, { with: { type: "json" } })).default;
     setLocalFlowchart(filename, template);
-    processFlowchart(template, false, true);
+    generateFlowchartFromTemplate(template, false, true);
 }
 
 /**
@@ -160,7 +160,7 @@ async function processUploadedFile(file) {
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
     setLocalFlowchart(file.name, fileData);
-    processFlowchart(fileData, true, false);
+    generateFlowchartFromTemplate(fileData, true, false);
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
 
@@ -173,7 +173,7 @@ async function processUploadedFile(file) {
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function processFlowchart(template, resetChoose, resetUpload) {
+function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
     // Check JSON file formatting
     if (!template || typeof template != "object" || Array.isArray(template)
         || typeof template.title !== "string" ||  !Array.isArray(template.transfer) 
@@ -234,9 +234,35 @@ function fillFlowchartNotes(notesInfo) {
 }
 
 /**
- * This converts the current flowchart into JSON and downloads it onto your computer.
+ * This converts the current flowchart into a JSON file and downloads it onto your computer.
  */
 function downloadTemplate() {
+    // Creates the JSON template and converts it into the necessary format.
+    json = generateTemplateFromFlowchart()
+    const jsonString = JSON.stringify(json);
+    const jsonBlob = new Blob([jsonString], { type: "application/json" });
+    const jsonObjectUrl = URL.createObjectURL(jsonBlob);
+
+    // Gets and sets the flowchart filename
+    const jsonFilename = getCurrentTemplateFilename()
+
+    // Saves the current flowchart into local storage.
+    setLocalFlowchart(jsonFilename, json);
+
+    // Saves the flowchart onto your computer
+    const anchor = document.createElement("a");
+    anchor.href = jsonObjectUrl;
+    anchor.download = jsonFilename;
+    anchor.click();
+    URL.revokeObjectURL(jsonObjectUrl);
+}
+
+/**
+ * This returns a JSON object of the current displayed flowchart.
+ * 
+ * @returns the JSON template object
+ */
+function generateTemplateFromFlowchart() {
     const transfer = [];
     const college = [];
     const notes = [];
@@ -268,31 +294,30 @@ function downloadTemplate() {
         notes.push(note);
     });
 
-    // Creates and downloads the JSON file
-    const json = {
+    // Creates the JSON template object
+    const template = {
         "title": pageTitle.textContent,
         "transfer": transfer,
         "college": college,
         "notes": notes
     };
-    const jsonString = JSON.stringify(json);
-    const jsonBlob = new Blob([jsonString], { type: "application/json" });
-    const jsonObjectUrl = URL.createObjectURL(jsonBlob);
-    const selectValue = templateSelect.value;
-    let jsonFilename;
-    if (selectValue) {
-        jsonFilename = templateSelect.value;
+    return template;
+}
+
+/**
+ * This returns the current flowchart filename, including default.
+ * 
+ * @returns the filename string
+ */
+function getCurrentTemplateFilename() {
+    const templateSelectValue = templateSelect.value;
+    if (templateSelectValue) {
+        return templateSelectValue;
     } else if (uploadedFilename) {
-        jsonFilename = uploadedFilename;
+        return uploadedFilename;
     } else {
-        jsonFilename = "template.json";
+        return "template.json";
     }
-    setLocalFlowchart(jsonFilename, json);
-    const anchor = document.createElement("a");
-    anchor.href = jsonObjectUrl;
-    anchor.download = jsonFilename;
-    anchor.click();
-    URL.revokeObjectURL(jsonObjectUrl);
 }
 
 /**
