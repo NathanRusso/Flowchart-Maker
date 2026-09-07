@@ -273,7 +273,6 @@ function processCourse(courseDiv) {
 
     // Get all possible data
     const courseType = courseDiv.dataset.courseType;
-    const courseContent = courseDiv.textContent;
     const courseDiscipline = courseDiv.dataset?.courseDiscipline;
     let courseNumber = courseDiv.dataset?.courseNumber;
     if (courseNumber.at(-1) !== "H") courseNumber = Number(courseNumber); // Accounts for Honors courses
