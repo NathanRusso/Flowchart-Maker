@@ -60,7 +60,34 @@ load.makeSortable(transferDiv);
 // Fill the template dropdown with flowcharts from the current year
 updateTemplateFlowcharts(yearSelect.value);
 
+// Loads a pre-saved flowchart if it exists
+getLocalFlowchart()
+
 //------------------------------ FUNCTIONS BELOW ------------------------------//
+
+/**
+ * Gets the flowchart and its filename from local storage and displays the flowchart if it exists.
+ */
+function getLocalFlowchart() {
+    const filename = localStorage.getItem("filename")
+    const flowchartString = localStorage.getItem("flowchart")
+    if (filename && flowchartString) {
+        uploadedFilename = filename;
+        const flowchart = JSON.parse(flowchartString);
+        processFlowchart(flowchart, true, false);
+    }
+}
+
+/**
+ * Saves the flowchart and its filename to local storage.
+ * 
+ * @param {string} filename - The flowchart filename
+ * @param {*} flowchart - The flowchart json object
+ */
+function setLocalFlowchart(filename, flowchart) {
+    localStorage.setItem("filename", filename);
+    localStorage.setItem("flowchart", JSON.stringify(flowchart))
+}
 
 /**
  * This updates the "Choose Template" dropdown with the templates from the selected year.
@@ -119,6 +146,7 @@ async function getTemplateFlowchart(filename) {
     if (!filename) { pageTitle.textContent = defaultTitle; return; };
     const year = yearSelect.value;
     const template  = (await import(`/json/templates/${year}/${filename}`, { with: { type: "json" } })).default;
+    setLocalFlowchart(filename, template);
     processFlowchart(template, false, true);
 }
 
@@ -131,6 +159,7 @@ async function processUploadedFile(file) {
     uploadedFilename = file.name;
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
+    setLocalFlowchart(file.name, fileData);
     processFlowchart(fileData, true, false);
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
@@ -258,6 +287,7 @@ function downloadTemplate() {
     } else {
         jsonFilename = "template.json";
     }
+    setLocalFlowchart(jsonFilename, json);
     const anchor = document.createElement("a");
     anchor.href = jsonObjectUrl;
     anchor.download = jsonFilename;
