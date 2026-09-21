@@ -8,6 +8,7 @@ Table of Contents:
 * [Current Templates Available](#current-templates-available)
 * [Abbreviations](#abbreviations)
 * [Technologies Used](#technologies-used)
+* [Possible Improvements](#possible-improvements)
 
 ## Features
 - Interactive drag-and-drop course planning
@@ -149,3 +150,18 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 
 ### Database
 - [MariaDB](https://mariadb.org/) - Relational database used to store course information. Hosted by [CSH](https://csh.rit.edu/)
+
+## Possible Improvements
+
+### New Features
+
+- [ ] Automatic template creation through RIT website parsing
+- [ ] Save and load flowcharts automatically through local storage
+- [ ] Have the ability to export a flowchart into a PDF
+- [ ] Add the ability to create custom course blocks
+
+### Things to Improve
+
+- [ ] A better disclaimer and credits at the bottom of the pages
+- [ ] A dark mode toggle in the top right of the screen
+- [ ] A more comprehensive text editor for flowchart notes
