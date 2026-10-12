@@ -48,10 +48,23 @@
         [
             [
                 {
-                    "courseType": "class-required",
-                    "discipline": "CSCI",
-                    "number": 141,
-                    "name": "Computer Science I",
+                    "courseType": "class-option-mix",
+                    "selectedIndex": 0,
+                    "options": [
+                        {
+                            "discipline": "CSCI",
+                            "number": 141,
+                            "name": "Computer Science I",
+                            "hyperChildId": 1
+                        },
+                        {
+                            "discipline": "CSCI",
+                            "number": 140,
+                            "name": "Computer Science for AP Students",
+                            "hyperChildId": 2
+                        }
+                    ],
+                    "hyperParentId": 1,
                     "completed": true
                 },
                 {
@@ -96,6 +109,8 @@
                     "discipline": "CSCI",
                     "number": 142,
                     "name": "Computer Science II",
+                    "hyperParentId": 1,
+                    "hyperChildId": 1,
                     "completed": true
                 },
                 {
