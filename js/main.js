@@ -60,7 +60,41 @@ load.makeSortable(transferDiv);
 // Fill the template dropdown with flowcharts from the current year
 updateTemplateFlowcharts(yearSelect.value);
 
+// Loads a pre-saved flowchart if it exists
+getLocalFlowchart()
+
 //------------------------------ FUNCTIONS BELOW ------------------------------//
+
+/**
+ * Gets the flowchart and its filename from local storage and displays the flowchart if it exists.
+ */
+function getLocalFlowchart() {
+    const filename = localStorage.getItem("filename")
+    const flowchartString = localStorage.getItem("flowchart")
+    if (filename && flowchartString) {
+        uploadedFilename = filename;
+        const flowchart = JSON.parse(flowchartString);
+        generateFlowchartFromTemplate(flowchart, true, false);
+    }
+}
+
+/**
+ * Saves the input flowchart and its filename to local storage.
+ * 
+ * @param {string} filename - The flowchart filename
+ * @param {*} flowchart - The flowchart json object
+ */
+function setLocalFlowchart(filename, flowchart) {
+    localStorage.setItem("filename", filename);
+    localStorage.setItem("flowchart", JSON.stringify(flowchart))
+}
+
+/**
+ * Saves the current flowchart and its filename to local storage.
+ */
+function setLocalFlowchartDefault() {
+    setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
+}
 
 /**
  * This updates the "Choose Template" dropdown with the templates from the selected year.
@@ -119,7 +153,8 @@ async function getTemplateFlowchart(filename) {
     if (!filename) { pageTitle.textContent = defaultTitle; return; };
     const year = yearSelect.value;
     const template  = (await import(`/json/templates/${year}/${filename}`, { with: { type: "json" } })).default;
-    processFlowchart(template, false, true);
+    setLocalFlowchart(filename, template);
+    generateFlowchartFromTemplate(template, false, true);
 }
 
 /**
@@ -131,7 +166,8 @@ async function processUploadedFile(file) {
     uploadedFilename = file.name;
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
-    processFlowchart(fileData, true, false);
+    setLocalFlowchart(file.name, fileData);
+    generateFlowchartFromTemplate(fileData, true, false);
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
 
@@ -144,7 +180,7 @@ async function processUploadedFile(file) {
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function processFlowchart(template, resetChoose, resetUpload) {
+function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
     // Check JSON file formatting
     if (!template || typeof template != "object" || Array.isArray(template)
         || typeof template.title !== "string" ||  !Array.isArray(template.transfer) 
@@ -205,9 +241,35 @@ function fillFlowchartNotes(notesInfo) {
 }
 
 /**
- * This converts the current flowchart into JSON and downloads it onto your computer.
+ * This converts the current flowchart into a JSON file and downloads it onto your computer.
  */
 function downloadTemplate() {
+    // Creates the JSON template and converts it into the necessary format.
+    json = generateTemplateFromFlowchart()
+    const jsonString = JSON.stringify(json);
+    const jsonBlob = new Blob([jsonString], { type: "application/json" });
+    const jsonObjectUrl = URL.createObjectURL(jsonBlob);
+
+    // Gets and sets the flowchart filename
+    const jsonFilename = getCurrentTemplateFilename()
+
+    // Saves the current flowchart to local storage.
+    setLocalFlowchart(jsonFilename, json);
+
+    // Saves the flowchart onto your computer
+    const anchor = document.createElement("a");
+    anchor.href = jsonObjectUrl;
+    anchor.download = jsonFilename;
+    anchor.click();
+    URL.revokeObjectURL(jsonObjectUrl);
+}
+
+/**
+ * This returns a JSON object of the current displayed flowchart.
+ * 
+ * @returns the JSON template object
+ */
+function generateTemplateFromFlowchart() {
     const transfer = [];
     const college = [];
     const notes = [];
@@ -239,30 +301,30 @@ function downloadTemplate() {
         notes.push(note);
     });
 
-    // Creates and downloads the JSON file
-    const json = {
+    // Creates the JSON template object
+    const template = {
         "title": pageTitle.textContent,
         "transfer": transfer,
         "college": college,
         "notes": notes
     };
-    const jsonString = JSON.stringify(json);
-    const jsonBlob = new Blob([jsonString], { type: "application/json" });
-    const jsonObjectUrl = URL.createObjectURL(jsonBlob);
-    const selectValue = templateSelect.value;
-    let jsonFilename;
-    if (selectValue) {
-        jsonFilename = templateSelect.value;
+    return template;
+}
+
+/**
+ * This returns the current flowchart filename, including default.
+ * 
+ * @returns the filename string
+ */
+function getCurrentTemplateFilename() {
+    const templateSelectValue = templateSelect.value;
+    if (templateSelectValue) {
+        return templateSelectValue;
     } else if (uploadedFilename) {
-        jsonFilename = uploadedFilename;
+        return uploadedFilename;
     } else {
-        jsonFilename = "template.json";
+        return "template.json";
     }
-    const anchor = document.createElement("a");
-    anchor.href = jsonObjectUrl;
-    anchor.download = jsonFilename;
-    anchor.click();
-    URL.revokeObjectURL(jsonObjectUrl);
 }
 
 /**
@@ -453,6 +515,9 @@ function pushYear() {
     yearDividerDiv.id = `year-divider-${academicYearCount}`
     yearDividerDiv.className = "year-divider";
     flowchartBody.append(yearDividerDiv);
+
+    // Saves the current flowchart to local storage.
+    setLocalFlowchartDefault();
 }
 
 /**
@@ -466,6 +531,9 @@ function popYear() {
         yearDiv.remove();
         yearDividerDiv.remove();
         academicYearCount--;
+
+        // Saves the current flowchart to local storage.
+        setLocalFlowchartDefault();
     } else {
         alert("The lowest year is not empty. Remove all courses before deleting it!");
     }
