@@ -3,6 +3,7 @@
  */
 
 //------------------------------ IMPORTS BELOW ------------------------------//
+
 import * as match from "/js/match.js";
 
 //------------------------------ DATA BELOW ------------------------------//
@@ -26,8 +27,9 @@ const coursePopup = document.getElementById("coursePopup");
 const coursePopupButton = document.getElementById("coursePopupButton");
 const coursePopupTitle = document.getElementById("coursePopupTitle");
 const coursePopupDescription = document.getElementById("coursePopupDescription");
-// const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites"); // Database didn't contain this information
-// const coursePopupOffered = document.getElementById("coursePopupOffered"); // Database didn't contain this information
+const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisitesContent");
+const coursePopupOffered = document.getElementById("coursePopupOfferedContent");
+const coursePopupContact = document.getElementById("coursePopupContactContent");
 
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
@@ -630,6 +632,9 @@ function displayCoursePopup(target) {
         coursePopup.style.borderColor = popupInformation.borderColor;
         coursePopupTitle.textContent = popupInformation.title;
         coursePopupDescription.textContent = popupInformation.description;
+        coursePopupPrerequisites.textContent = popupInformation.prerequisites;
+        coursePopupOffered.textContent = popupInformation.offered;
+        coursePopupContact.textContent = popupInformation.contact;
         revealCoursePopup();
         return;
     }
@@ -647,7 +652,10 @@ function displayCoursePopup(target) {
         courseInformationCache[courseKey] = {
             borderColor: courseColor,
             title: coursePopupTitle.textContent,
-            description: coursePopupDescription.textContent
+            description: coursePopupDescription.textContent,
+            prerequisites: courseDBInfo.prerequisites ?? "",
+            offered: courseDBInfo.offered ?? "",
+            contact: courseDBInfo.contact ?? ""
         }
         revealCoursePopup();
     });
