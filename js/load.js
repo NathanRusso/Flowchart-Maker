@@ -27,7 +27,7 @@ const coursePopup = document.getElementById("coursePopup");
 const coursePopupButton = document.getElementById("coursePopupButton");
 const coursePopupTitle = document.getElementById("coursePopupTitle");
 const coursePopupDescription = document.getElementById("coursePopupDescription");
-const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisitesContent");
+const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites");
 const coursePopupOffered = document.getElementById("coursePopupOfferedContent");
 const coursePopupContact = document.getElementById("coursePopupContactContent");
 
@@ -633,8 +633,8 @@ function displayCoursePopup(target) {
         coursePopupTitle.textContent = popupInformation.title;
         coursePopupDescription.textContent = popupInformation.description;
         coursePopupPrerequisites.textContent = popupInformation.prerequisites;
-        coursePopupOffered.textContent = popupInformation.offered;
-        coursePopupContact.textContent = popupInformation.contact;
+        coursePopupOffered.textContent = popupInformation.typically_offered;
+        coursePopupContact.textContent = popupInformation.contact_hours;
         revealCoursePopup();
         return;
     }
@@ -648,14 +648,17 @@ function displayCoursePopup(target) {
         coursePopup.style.borderColor = courseColor;
         const courseCreditString = courseDBInfo.credits == 1 ? "Credit" : "Credits";
         coursePopupTitle.textContent = `${courseDBInfo.code}-${courseDBInfo.course} ${courseDBInfo.title} (${courseDBInfo.credits} ${courseCreditString})`;
-        coursePopupDescription.textContent = courseDBInfo.description.replace(/\u001A/g, "'");  // Handles character issue in database dump.
+        coursePopupDescription.textContent = courseDBInfo.description.replace(/\u001A/g, "'");              // Handles character issue in database dump.
+        coursePopupPrerequisites.textContent = courseDBInfo.prerequisites.replace(/\u001A/g, "'") ?? "";    // Handles character issue in database dump.
+        coursePopupOffered.textContent = courseDBInfo.typically_offered ?? "";
+        coursePopupContact.textContent = courseDBInfo.contact_hours ?? "";
         courseInformationCache[courseKey] = {
             borderColor: courseColor,
             title: coursePopupTitle.textContent,
             description: coursePopupDescription.textContent,
-            prerequisites: courseDBInfo.prerequisites ?? "",
-            offered: courseDBInfo.offered ?? "",
-            contact: courseDBInfo.contact ?? ""
+            prerequisites: coursePopupPrerequisites.textContent,
+            typically_offered: coursePopupOffered.textContent,
+            contact_hours: coursePopupContact.textContent
         }
         revealCoursePopup();
     });

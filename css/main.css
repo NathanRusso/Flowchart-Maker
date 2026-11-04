@@ -65,7 +65,8 @@
     top: 50%;
     left: 25%;
     width: 50vw;
-    max-height: 80vw;
+    min-height: 0;
+    max-height: 80vh;
     transform: translateY(-50%);    /* Moves popup back up 50% of its height */
     border: 5px solid var(--text-color);
     border-radius: 5px;
@@ -74,7 +75,6 @@
     background-color: var(--background-color);
     font-size: 0.9rem;
     overflow-wrap: break-word;
-    word-break: break-word;
     position: fixed;
     z-index: 3;
 }
@@ -115,7 +115,7 @@
 }
 
 .coursePopupInformation {
-    display: flex;
+    display: block;
     justify-content: left;      /* left horizontally */
     align-items: center;        /* Centers vertically */
     margin-bottom: 5px;
