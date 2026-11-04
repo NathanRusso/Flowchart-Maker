@@ -57,11 +57,12 @@
 #coursePopup {
     opacity: 0;
     display: none;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: center;    /* Centers horizontally */
+    justify-content: flex-start;
     align-items: stretch;
     overflow-y: auto;
+    overscroll-behavior: contain;
     top: 50%;
     left: 25%;
     width: 50vw;
