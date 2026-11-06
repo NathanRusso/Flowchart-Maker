@@ -41,10 +41,6 @@ pip install --ignore-installed -r requirements.txt
 ## Running Backend
 
 ```bash
-cd py/
-```
-
-```bash
 gunicorn app:app
 ```
 

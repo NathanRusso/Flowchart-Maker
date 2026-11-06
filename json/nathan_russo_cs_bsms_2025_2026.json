@@ -471,7 +471,7 @@
             [
                 {
                     "courseType": "class-option-mix",
-                    "selectedIndex": 0,
+                    "selectedIndex": 3,
                     "options": [
                         {
                             "discipline": "CSCI",
@@ -508,22 +508,22 @@
                 },
                 {
                     "courseType": "class-input",
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "CSCI",
+                    "number": 636,
                     "attribute": "CS Graduate Cluster Elective",
                     "completed": false
                 },
                 {
                     "courseType": "class-input",
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "CSCI",
+                    "number": 637,
                     "attribute": "CS Graduate Elective",
                     "completed": false
                 },
                 {
                     "courseType": "class-input",
-                    "discipline": "",
-                    "number": null,
+                    "discipline": "CSCI",
+                    "number": 736,
                     "attribute": "CS Graduate Elective",
                     "completed": false
                 }

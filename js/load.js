@@ -3,6 +3,7 @@
  */
 
 //------------------------------ IMPORTS BELOW ------------------------------//
+
 import * as match from "/js/match.js";
 
 //------------------------------ DATA BELOW ------------------------------//
@@ -26,8 +27,9 @@ const coursePopup = document.getElementById("coursePopup");
 const coursePopupButton = document.getElementById("coursePopupButton");
 const coursePopupTitle = document.getElementById("coursePopupTitle");
 const coursePopupDescription = document.getElementById("coursePopupDescription");
-// const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites"); // Database didn't contain this information
-// const coursePopupOffered = document.getElementById("coursePopupOffered"); // Database didn't contain this information
+const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisites");
+const coursePopupOffered = document.getElementById("coursePopupOfferedContent");
+const coursePopupContact = document.getElementById("coursePopupContactContent");
 
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
@@ -630,6 +632,9 @@ function displayCoursePopup(target) {
         coursePopup.style.borderColor = popupInformation.borderColor;
         coursePopupTitle.textContent = popupInformation.title;
         coursePopupDescription.textContent = popupInformation.description;
+        coursePopupPrerequisites.textContent = popupInformation.prerequisites;
+        coursePopupOffered.textContent = popupInformation.typically_offered;
+        coursePopupContact.textContent = popupInformation.contact_hours;
         revealCoursePopup();
         return;
     }
@@ -643,11 +648,17 @@ function displayCoursePopup(target) {
         coursePopup.style.borderColor = courseColor;
         const courseCreditString = courseDBInfo.credits == 1 ? "Credit" : "Credits";
         coursePopupTitle.textContent = `${courseDBInfo.code}-${courseDBInfo.course} ${courseDBInfo.title} (${courseDBInfo.credits} ${courseCreditString})`;
-        coursePopupDescription.textContent = courseDBInfo.description.replace(/\u001A/g, "'");  // Handles character issue in database dump.
+        coursePopupDescription.textContent = courseDBInfo.description.replace(/\u001A/g, "'");              // Handles character issue in database dump.
+        coursePopupPrerequisites.textContent = courseDBInfo.prerequisites.replace(/\u001A/g, "'") ?? "";    // Handles character issue in database dump.
+        coursePopupOffered.textContent = courseDBInfo.typically_offered ?? "";
+        coursePopupContact.textContent = courseDBInfo.contact_hours ?? "";
         courseInformationCache[courseKey] = {
             borderColor: courseColor,
             title: coursePopupTitle.textContent,
-            description: coursePopupDescription.textContent
+            description: coursePopupDescription.textContent,
+            prerequisites: coursePopupPrerequisites.textContent,
+            typically_offered: coursePopupOffered.textContent,
+            contact_hours: coursePopupContact.textContent
         }
         revealCoursePopup();
     });
