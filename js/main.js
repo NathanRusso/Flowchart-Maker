@@ -71,7 +71,7 @@ export function displayLocalFlowchart() {
 }
 
 /**
- * This updates the "Choose Template" dropdown with the templates from the selected year.
+ * Updates the "Choose Template" dropdown with the templates from the selected year.
  * 
  * @param {string} year - the selected year to view templates form
  */
@@ -116,7 +116,7 @@ async function updateTemplateFlowcharts(year) {
 }
 
 /**
- * This uploads a flowchart using a preset template.
+ * Uploads a flowchart using a preset template.
  * 
  * @param {string} filename - the template flowchart filename
  */
@@ -128,7 +128,7 @@ async function getTemplateFlowchart(filename) {
 }
 
 /**
- * This processes the uploaded flowchart file.
+ * Processes the uploaded flowchart file.
  * 
  * @param {*} file - the given flowchart file object
  */
@@ -141,9 +141,9 @@ async function processUploadedFile(file) {
 }
 
 /**
- * This updates and populates the body given the json template flowchart.
- * This adds a Transfer section for transfer classes.
- * It then adds years, each of which has 3 semesters that may or many not contain courses.
+ * Updates and populates the body given the json template flowchart.
+ * Adds a Transfer section for transfer classes.
+ * Adds years, each of which have 3 semesters that may or many not contain courses.
  * 
  * @param {string} - the flowchart filename
  * @param {*} template - the flowchart with transfer, year, semester, and course information
@@ -168,21 +168,21 @@ function generateFlowchartFromTemplate(filename, template, resetChoose, resetUpl
     const years = template.college;
     const notes = template.notes;
 
-    clearFlowchart(title, resetChoose, resetUpload);                        // This removes the previous flowchart
-    fillFlowchartTransferYear(transferCourses);                             // This handles all transfer classes
-    load.fillFlowchartYears(years);  // This handles all other semesters and their classes
-    fillFlowchartNotes(notes);                                              // This handles the flowchart notes
+    clearFlowchart(title, resetChoose, resetUpload);    // Removes the previous flowchart
+    fillFlowchartTransferYear(transferCourses);         // Handles all transfer classes
+    load.fillFlowchartYears(years);                     // Handles all other semesters and their classes
+    fillFlowchartNotes(notes);                          // Handles the flowchart notes
     hideCheckboxesButton.style.display == "none" ? hideCheckboxes() : showCheckboxes();
 
-    // This makes sure only the hyper classes linked to a selected option are shown
+    // Makes sure only the hyper classes linked to a selected option are shown
     load.initializeHyper()
 
-    // This makes sure exotic option classes are set properly
+    // Makes sure exotic option classes are set properly
     load.initializeExotic()
 }
 
 /**
- * This adds courses divs to the transfer div.
+ * Adds courses divs to the transfer div.
  * 
  * @param {*} transferInfo - The object containing the transfer course objects
  */
@@ -195,14 +195,14 @@ function fillFlowchartTransferYear(transferInfo) {
 }
 
 /**
- * This adds the notes to the flowchart notes section.
+ * Adds the notes to the flowchart notes section.
  * 
  * @param {*} notesInfo - the flowchart notes array
  */
 function fillFlowchartNotes(notesInfo) {
     if (notesInfo.length == 0) {
         const noteItem = document.createElement("li");
-        noteItem.innerHTML = "This flowchart has no saved notes. Edit this note and add more.";
+        noteItem.innerHTML = "This flowchart has no saved notes. Edit this note to add your own.";
         load.flowchartNotesList.append(noteItem);
     } else {
         notesInfo.forEach(note => {
@@ -214,7 +214,7 @@ function fillFlowchartNotes(notesInfo) {
 }
 
 /**
- * This converts the current flowchart into a JSON file and downloads it onto your computer.
+ * Converts the current flowchart into a JSON file and downloads it onto your computer.
  */
 function downloadTemplate() {
     // Creates the JSON template and converts it into the necessary format.
@@ -238,7 +238,7 @@ function downloadTemplate() {
 }
 
 /**
- * This adds a new year div to the end of the body.
+ * Adds a new year div to the end of the body.
  */
 function pushYear() {
     load.setAcademicYearCount(load.academicYearCount + 1);
@@ -278,7 +278,7 @@ function pushYear() {
 }
 
 /**
- * This removes the year div at the end of the body.
+ * Removes the year div at the end of the body.
  */
 function popYear() {
     const yearCount = load.academicYearCount;
@@ -298,7 +298,7 @@ function popYear() {
 }
 
 /**
- * This checks if the given year div has any courses inside of it.
+ * Checks if the given year div has any courses inside of it.
  * 
  * @param {*} yearDiv - the given year div
  * @returns True if there are no courses in any of the year semesters, False otherwise.
@@ -309,7 +309,7 @@ function yearIsEmpty(yearDiv) {
 }
 
 /**
- * This shows the Transfer Class section and shows the remove transfer button.
+ * Shows the Transfer class section and shows the remove transfer button.
  */
 function showTransferSection() {
     if (transferSection) return;
@@ -321,7 +321,7 @@ function showTransferSection() {
 }
 
 /**
- * This hides the Transfer Class section and shows the add transfer button.
+ * Hides the Transfer class section and shows the add transfer button.
  */
 function hideTransferSection() {
     if (!transferSection) return;
@@ -333,7 +333,7 @@ function hideTransferSection() {
 }
 
 /**
- * This shows the checkboxes in the corner of courses.
+ * Shows the checkboxes in the corner of courses.
  */
 function showCheckboxes() {
     allCheckboxes.forEach(checkbox => checkbox.style.display = "inline-block");
@@ -342,7 +342,7 @@ function showCheckboxes() {
 }
 
 /**
- * This hides the checkboxes in the corner of courses.
+ * Hides the checkboxes in the corner of courses.
  */
 function hideCheckboxes() {
     allCheckboxes.forEach(checkbox => checkbox.style.display = "none");
@@ -351,7 +351,7 @@ function hideCheckboxes() {
 }
 
 /**
- * This removed all courses and sections.
+ * Removes all courses and sections.
  * 
  * @param {string} title - the title to display at the top of the flowchart
  * @param {boolean} resetChoose - whether to reset the "Choose Template"

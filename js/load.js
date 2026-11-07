@@ -1,5 +1,5 @@
 /**
- * This file handles creating and loading the actual flowchart.
+ * This file handles creating and loading the actual flowchart. Along with saving it to local storage.
  */
 
 //------------------------------ IMPORTS BELOW ------------------------------//
@@ -28,13 +28,13 @@ export const templateSelect = document.getElementById("templateSelect");
 export const transferDiv = document.getElementById("transfer");
 export const flowchartNotesList = document.getElementById("flowchartNotesList");
 
-export let academicYearCount = 0;      // The numbers of years of school currently being listed
-export let uploadedFilename = null;    // The filename of the uploaded file
+export let academicYearCount = 0;       // The numbers of years of school currently being listed
+export let uploadedFilename = null;     // The filename of the uploaded file
 
-let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
-let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
-let exoticDictionary = {}       // A mapping of exoticIds to lists if related courseDivs
-let initialExoticIndexes = {}   // A mapping of exoticIds to the initial selected index
+let hyperDictionary = {}                // A mapping of hyperParentIds to hyperChildIds to their courseDivs
+let initialHyperChildIds = {}           // A mapping of hyperParentIds to the initial hyperChildIds
+let exoticDictionary = {}               // A mapping of exoticIds to lists if related courseDivs
+let initialExoticIndexes = {}           // A mapping of exoticIds to the initial selected index
 
 //------------------------------ FUNCTIONS BELOW (PART 1) ------------------------------//
 
@@ -50,14 +50,14 @@ export function setAcademicYearCount(count) {
 /**
  * Sets the uploaded filename to the given filename.
  * 
- * @param {string} filename - the string filename that
+ * @param {string} filename - the string filename
  */
 export function setUploadedFilename(filename) {
     uploadedFilename = filename;
 }
 
 /**
- * This makes the given div element sortable.
+ *  Makes the given div element sortable.
  * 
  * @param {*} element - the given semester div
  */
@@ -78,7 +78,7 @@ export function makeSortable(element) {
             }
         },
         onEnd: function (event) {
-            // Saves the current flowchart to local storage.
+            // Saves the current flowchart to local storage
             setLocalFlowchartDefault();
         }
     });
@@ -122,7 +122,7 @@ export function setLocalFlowchartDefault() {
 //------------------------------ FUNCTIONS BELOW (PART 3) ------------------------------//
 
 /**
- * This returns the current flowchart filename, including default.
+ * Gets the current flowchart filename, including default.
  * 
  * @returns the filename string
  */
@@ -138,7 +138,7 @@ export function getCurrentTemplateFilename() {
 }
 
 /**
- * This returns a JSON object of the current displayed flowchart.
+ *  Gets a JSON object of the current displayed flowchart.
  * 
  * @returns the JSON template object
  */
@@ -185,7 +185,7 @@ export function generateTemplateFromFlowchart() {
 }
 
 /**
- * This turns the given course div back into an object for flowchart downloading.
+ * Turns the given course div back into an object for flowchart downloading.
  * 
  * @param {*} courseDiv - the given course Div
  */
@@ -334,7 +334,7 @@ function processCourse(courseDiv) {
 //------------------------------ FUNCTIONS BELOW (PART 3) ------------------------------//
 
 /**
- * This populates the flowchart body with the given year information.
+ * Populates the flowchart body with the given year information.
  * It also updates the academic year count.
  * 
  * @param {*} years - A list containing all course information for all academic years
@@ -348,7 +348,7 @@ export function fillFlowchartYears(years) {
 }
 
 /**
- * This creates a new year div based on the year information from template flowchart.
+ * Creates a new year div based on the year information from template flowchart.
  * 
  * @param {*} yearInfo - The object containing the semester objects
  * @param {int} yearCount - The current number of academic years
@@ -382,7 +382,7 @@ function createYear(yearInfo, yearCount) {
 }
 
 /**
- * This creates a new semester div based on the semester information from the template flowchart.
+ * Creates a new semester div based on the semester information from the template flowchart.
  * 
  * @param {*} semesterInfo - The object containing the course objects
  * @param {*} term - The "Fall", "Spring", or "Summer" semester term
@@ -403,7 +403,7 @@ function createSemester(semesterInfo, term, yearCount) {
 }
 
 /**
- * This creates a new course div based on the course information from the template flowchart.
+ * Creates a new course div based on the course information from the template flowchart.
  * 
  * @param {*} courseInfo - The object containing the course information
  * @returns the course div
@@ -591,7 +591,7 @@ export function createCourse(courseInfo) {
                 );
             }
 
-            // Saves the current flowchart to local storage on change.
+            // Saves the current flowchart to local storage on change
             select.addEventListener("change", () => setLocalFlowchartDefault());
 
             // Adds the select, label, and any existing input to the course div
@@ -651,12 +651,12 @@ export function createCourse(courseInfo) {
                     updateExoticCourseDivs(courseExoticId, select.selectedIndex);
                 });
 
-                // This handles saving all course divs that are linked to a exotic option.
+                // Handles saving all course divs that are linked to a exotic option.
                 exoticDictionary[courseExoticId] ??= [];
                 exoticDictionary[courseExoticId].push(courseDiv);
             }
 
-            // Saves the current flowchart to local storage on change.
+            // Saves the current flowchart to local storage on change
             select.addEventListener("change", () => setLocalFlowchartDefault());
 
             // Adds the label and input to the course div
@@ -669,7 +669,7 @@ export function createCourse(courseInfo) {
             return;
     }
 
-    // This handles saving all course divs that are linked to a hyper option.
+    //  Handles saving all course divs that are linked to a hyper option.
     if (validHyperParentId && validHyperChildId) {
         hyperDictionary[courseHyperParentId] ??= {};
         const hyperChildDictionary = hyperDictionary[courseHyperParentId];
@@ -680,7 +680,7 @@ export function createCourse(courseInfo) {
         hyperChildCourseDivs.push(courseDiv);
     }
 
-    // This adds a checkbox to mark if a class has been taken yet.
+    //  Adds a checkbox to mark if a class has been taken yet.
     const checkbox = Object.assign(document.createElement("input"), {
         type: "checkbox",
         name: "courseCheckbox",
@@ -688,17 +688,17 @@ export function createCourse(courseInfo) {
     });
     courseDiv.append(checkbox); // Must come after text content assignment
 
-    // Saves the current flowchart to local storage on change.
+    // Saves the current flowchart to local storage on change
     checkbox.addEventListener("change", () => setLocalFlowchartDefault());
 
-    // This adds an event listener to display the class information pop-up
+    // Adds an event listener to display the class information pop-up
     courseDiv.addEventListener("click", (event) => popup.displayCoursePopup(event.target));
 
     return courseDiv;
 }
 
 /**
- * This creates a input element that can be used in classes.
+ * Creates an input element that can be used in courses.
  * 
  * @param {string} savedCourse - the possible current class previously chosen for the input.
  * @returns the input object
@@ -746,7 +746,7 @@ function createCourseInput(savedCourse) {
 }
 
 /**
- * This makes sure only the hyper classes linked to a selected option are shown
+ * Makes sure only the hyper classes linked to a selected option are shown.
  */
 export function initializeHyper() {
     for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
@@ -755,7 +755,7 @@ export function initializeHyper() {
 }
 
 /**
- * This makes sure exotic option classes are set properly
+ * Makes sure exotic option classes are set properly.
  */
 export function initializeExotic() {
     for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
@@ -764,7 +764,7 @@ export function initializeExotic() {
 }
 
 /**
- * This reveals and hides specific course divs if they are linked the hyper ids.
+ * Reveals and hides specific course divs if they are linked the hyper ids.
  * 
  * @param {int} hyperParentId - the id of the parent option div
  * @param {int} hyperChildId - the id that matches an option of the parent option div
@@ -783,7 +783,7 @@ function updateHyperCourseDivs(hyperParentId, hyperChildId) {
 }
 
 /**
- * This updates all related exotic dropdowns to the same index or hides them if they don't exists.
+ * Updates all related exotic dropdowns to the same index or hides them if they don't exists.
  * 
  * @param {int} exoticId - the id of the parent option div
  * @param {int} selectedIndex - the current selected index

@@ -22,7 +22,7 @@ coursePopupButton.addEventListener("click", hideCoursePopup);
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
- * This will hide the course information popup.
+ * Hides the course information popup.
  */
 function hideCoursePopup() {
     coursePopup.classList.remove("reveal");
@@ -39,7 +39,7 @@ function hideCoursePopup() {
 }
 
 /**
- * This will hide the course information popup with no animation..
+ * Hides the course information popup, with no animation.
  */
 export function hideCoursePopupQuick() {
     coursePopup.classList.remove("reveal");
@@ -49,7 +49,7 @@ export function hideCoursePopupQuick() {
 }
 
 /**
- * This will reveal the course information popup.W
+ * Reveals the course information popup.W
  */
 function revealCoursePopup() {
     coursePopup.style.display = "flex";
@@ -58,7 +58,7 @@ function revealCoursePopup() {
 }
 
 /**
- * This will query the database for course information and display its popup.
+ * Queries the database for course information and displays its popup.
  * 
  * @param {*} target - the courseDiv event target
  */
@@ -171,7 +171,7 @@ export function displayCoursePopup(target) {
 }
 
 /**
- * This gets the most recent course information for the selected course.
+ * Gets the most recent course information for the selected course.
  * 
  * @param {string} discipline - the course discipline. Ex: ABCD.
  * @param {string} number - the course number. Ex: 999.
