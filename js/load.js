@@ -1,5 +1,5 @@
 /**
- * This file handles creating and loading the actual flowchart.
+ * This file handles creating and loading the actual flowchart. Along with saving it to local storage.
  */
 
 //------------------------------ IMPORTS BELOW ------------------------------//
@@ -22,17 +22,42 @@ export const years = [
   "Ninety-First", "Ninety-Second", "Ninety-Third", "Ninety-Fourth", "Ninety-Fifth", "Ninety-Sixth", "Ninety-Seventh", "Ninety-Eighth", "Ninety-Ninth", "One Hundredth"
 ];
 export const semesters = ["Fall", "Spring", "Summer"];
-const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
 
-let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
-let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
-let exoticDictionary = {}       // A mapping of exoticIds to lists if related courseDivs
-let initialExoticIndexes = {}   // A mapping of exoticIds to the initial selected index
+export const flowchartBody = document.getElementById("flowchartBody");
+export const templateSelect = document.getElementById("templateSelect");
+export const transferDiv = document.getElementById("transfer");
+export const flowchartNotesList = document.getElementById("flowchartNotesList");
 
-//------------------------------ FUNCTIONS BELOW ------------------------------//
+export let academicYearCount = 0;       // The numbers of years of school currently being listed
+export let uploadedFilename = null;     // The filename of the uploaded file
+
+let hyperDictionary = {}                // A mapping of hyperParentIds to hyperChildIds to their courseDivs
+let initialHyperChildIds = {}           // A mapping of hyperParentIds to the initial hyperChildIds
+let exoticDictionary = {}               // A mapping of exoticIds to lists if related courseDivs
+let initialExoticIndexes = {}           // A mapping of exoticIds to the initial selected index
+
+//------------------------------ FUNCTIONS BELOW (PART 1) ------------------------------//
 
 /**
- * This makes the given div element sortable.
+ * Sets the academic year count to the given count.
+ * 
+ * @param {number} count - the number of academic years
+ */
+export function setAcademicYearCount(count) {
+    academicYearCount = count;
+}
+
+/**
+ * Sets the uploaded filename to the given filename.
+ * 
+ * @param {string} filename - the string filename
+ */
+export function setUploadedFilename(filename) {
+    uploadedFilename = filename;
+}
+
+/**
+ *  Makes the given div element sortable.
  * 
  * @param {*} element - the given semester div
  */
@@ -51,71 +76,322 @@ export function makeSortable(element) {
                 let targetClass = targetChildren[0].className.slice(0, 5);
                 return movingClass == targetClass;
             }
+        },
+        onEnd: function (event) {
+            // Saves the current flowchart to local storage
+            setLocalFlowchartDefault();
         }
     });
 }
 
+//------------------------------ FUNCTIONS BELOW (PART 2) ------------------------------//
+
 /**
- * This populates the flowchart body with the given year information.
+ * Gets the flowchart and its filename from local storage and if they exists.
+ * 
+ * @returns a list containing the flowchart JSON object and its filename
+ */
+export function getLocalFlowchart() {
+    const filename = localStorage.getItem("filename")
+    const flowchartString = localStorage.getItem("flowchart")
+    if (filename && flowchartString) {
+        const flowchart = JSON.parse(flowchartString);
+        return [flowchart, filename];
+    }
+    return [null, null];
+}
+
+/**
+ * Saves the input flowchart and its filename to local storage.
+ * 
+ * @param {string} filename - The flowchart filename
+ * @param {*} flowchart - The flowchart json object
+ */
+export function setLocalFlowchart(filename, flowchart) {
+    localStorage.setItem("filename", filename);
+    localStorage.setItem("flowchart", JSON.stringify(flowchart))
+}
+
+/**
+ * Saves the current flowchart and its filename to local storage.
+ */
+export function setLocalFlowchartDefault() {
+    setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
+}
+
+//------------------------------ FUNCTIONS BELOW (PART 3) ------------------------------//
+
+/**
+ * Gets the current flowchart filename, including default.
+ * 
+ * @returns the filename string
+ */
+export function getCurrentTemplateFilename() {
+    const templateSelectValue = templateSelect.value;
+    if (templateSelectValue) {
+        return templateSelectValue;
+    } else if (uploadedFilename) {
+        return uploadedFilename;
+    } else {
+        return "template.json";
+    }
+}
+
+/**
+ *  Gets a JSON object of the current displayed flowchart.
+ * 
+ * @returns the JSON template object
+ */
+export function generateTemplateFromFlowchart() {
+    const transfer = [];
+    const college = [];
+    const notes = [];
+
+    // Process transfer classes
+    Array.from(transferDiv.children).forEach(courseDiv => {
+        const course = processCourse(courseDiv);
+        transfer.push(course);
+    });
+
+    // Process remaining classes
+    for (let i = 1; i <= academicYearCount; i++) {
+        const year = [];
+        const yearDiv = document.getElementById(`year-block-${i}`);
+        Array.from(yearDiv.children).forEach(semesterDiv => {
+            const semester = [];
+            Array.from(semesterDiv.children).forEach(courseDiv => {
+                const course = processCourse(courseDiv);
+                semester.push(course);
+            });
+            year.push(semester);
+        });
+        college.push(year);
+    }
+
+    // Process notes
+    Array.from(flowchartNotesList.children).forEach(listItem => {
+        const note = listItem.innerHTML.replace("&amp;", "&");
+        notes.push(note);
+    });
+
+    // Creates the JSON template object
+    const template = {
+        "title": pageTitle.textContent,
+        "transfer": transfer,
+        "college": college,
+        "notes": notes
+    };
+    return template;
+}
+
+/**
+ * Turns the given course div back into an object for flowchart downloading.
+ * 
+ * @param {*} courseDiv - the given course Div
+ */
+function processCourse(courseDiv) {
+    let course = {};
+
+    // Get all possible data
+    const courseType = courseDiv.dataset.courseType;
+    const courseDiscipline = courseDiv.dataset?.courseDiscipline;
+    let courseNumber = courseDiv.dataset?.courseNumber;
+    if (courseNumber.at(-1) !== "H") courseNumber = Number(courseNumber); // Accounts for Honors courses
+    const courseName = courseDiv.dataset?.courseName;
+    const courseAttribute = courseDiv.dataset?.courseAttribute;
+    const courseHyperParentId = Number(courseDiv.dataset?.courseHyperParentId);
+    const courseHyperChildId = Number(courseDiv.dataset?.courseHyperChildId);
+    const courseExoticId = Number(courseDiv.dataset?.courseExoticId);
+
+    switch (courseType) {
+        case "co-op-required": {
+            course = {
+                "courseType": courseType,
+                "discipline": courseDiscipline,
+                "number": courseNumber,
+                "name": courseName
+            };
+            break;
+        }
+        case "co-op-option": {
+            const select = courseDiv.children[0];                       // Select
+            const options = select.options;                             // Options
+            const createdOptions = [];
+            Array.from(options).forEach(option => {
+                const optionNumber = option.dataset.optionNumber;
+                const optionObject = {
+                    "discipline": option.dataset.optionDiscipline,
+                    "number": optionNumber.at(-1) === "H" ? optionNumber : Number(optionNumber),
+                    "name": option.value,
+                }
+                createdOptions.push(optionObject);
+            });
+
+            course = {
+                "courseType": courseType,
+                "selectedIndex": select.selectedIndex,
+                "options": createdOptions
+            };
+            break;
+        }
+        case "class-required": {
+            course = {
+                "courseType": courseType,
+                "discipline": courseDiscipline,
+                "number": courseNumber,
+                "name": courseName
+            };
+            break;
+        }
+        case "class-input": {
+            const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
+            course = {
+                "courseType": courseType,
+                "discipline": inputs[0],
+                "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
+                "attribute": courseAttribute
+            };
+            break;
+        }
+        case "class-option-mix": {
+            const select = courseDiv.children[0];                       // Select
+            const options = select.options;                             // Options
+
+            const createdOptions = [];
+            let inputIndex = 2
+            Array.from(options).forEach((option, index) => {
+                const optionInfo = option.textContent.split(/[\-]+/);
+                const optionAttribute = option.dataset.optionAttribute;
+                const optionHyperChildId = Number(option.dataset.optionHyperChildId);
+                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
+                let optionObject = {}
+                if (!optionAttribute) {
+                    optionObject = {
+                        "discipline": optionInfo[0],
+                        "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
+                        "name": option.value,
+                    }
+                } else {
+                    const inputs = courseDiv.children[inputIndex++].value.split(/[\-]+/);  // Input
+                    optionObject = {
+                        "discipline": inputs[0],
+                        "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
+                        "attribute": optionAttribute,
+                    }
+                }
+                if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
+                createdOptions.push(optionObject);
+            });
+
+            course = {
+                "courseType": courseType,
+                "selectedIndex": select.selectedIndex,
+                "options": createdOptions
+            };
+            break;
+        }
+        case "class-option-attribute": {
+            const select = courseDiv.children[1];                       // Select
+            const options = select.options;                             // Options
+
+            const createdOptions = [];
+            Array.from(options).forEach(option => {
+                const optionInfo = option.textContent.split(/[\-]+/);
+                let optionObject = {
+                    "discipline": optionInfo[0],
+                    "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
+                    "name": option.value,
+                }
+                const optionAttribute = option.dataset?.optionAttribute;
+                if (optionAttribute) optionObject["attribute"] = optionAttribute;
+                createdOptions.push(optionObject);
+            });
+
+            course = {
+                "courseType": courseType,
+                "attribute": courseAttribute,
+                "selectedIndex": select.selectedIndex,
+                "options": createdOptions
+            };
+
+            // Assign exotic id if it exists
+            if (courseExoticId) course["exoticId"] = courseExoticId;        // 0 is false
+            break;
+        }
+        default:
+            console.log(`A course was found with an unknown type: ${courseType}.`);
+            break;
+    }
+
+    // Assign extra fields if they exists
+    if (courseHyperParentId) course["hyperParentId"] = courseHyperParentId; // 0 is false
+    if (courseHyperChildId) course["hyperChildId"] = courseHyperChildId;    // 0 is false
+    course["completed"] = courseDiv.children.courseCheckbox.checked;
+
+    return course;
+}
+
+//------------------------------ FUNCTIONS BELOW (PART 4) ------------------------------//
+
+/**
+ * Populates the flowchart body with the given year information.
+ * It also updates the academic year count.
  * 
  * @param {*} years - A list containing all course information for all academic years
- * @param {*} academicYearCount - The current academic year count before the years are added
- * @returns the updated academic year count
  */
-export function fillFlowchartYears(years, academicYearCount) {
+export function fillFlowchartYears(years) {
     years.forEach(yearInfo => {
         const [yearDiv, yearDividerDiv] = createYear(yearInfo, ++academicYearCount);
         flowchartBody.append(yearDiv);
         flowchartBody.append(yearDividerDiv);
-    });  // This handles all other semesters and their classes
-    return academicYearCount
+    });
 }
 
 /**
- * This creates a new year div based on the year information from template flowchart.
+ * Creates a new year div based on the year information from template flowchart.
  * 
  * @param {*} yearInfo - The object containing the semester objects
- * @param {int} academicYearCount - The current number of academic years
+ * @param {int} yearCount - The current number of academic years
  * @returns a list containing the year div and year divider div
  */
-export function createYear(yearInfo, academicYearCount) {
+function createYear(yearInfo, yearCount) {
     const yearDiv = document.createElement("div");
-    yearDiv.id = `year-${academicYearCount}`;
+    yearDiv.id = `year-${yearCount}`;
     yearDiv.className = "year";
 
     const yearTextDiv = document.createElement("div");
-    yearTextDiv.id = `year-text-${academicYearCount}`
+    yearTextDiv.id = `year-text-${yearCount}`
     yearTextDiv.className = "year-text";
-    yearTextDiv.textContent = academicYearCount <= 100 ? `${years[academicYearCount - 1]} Year` : `#${academicYearCount} Year`;
+    yearTextDiv.textContent = yearCount <= 100 ? `${years[yearCount - 1]} Year` : `#${yearCount} Year`;
     yearDiv.append(yearTextDiv);
 
     const yearBlockDiv = document.createElement("div");
-    yearBlockDiv.id = `year-block-${academicYearCount}`
+    yearBlockDiv.id = `year-block-${yearCount}`
     yearBlockDiv.className = "year-block";
     yearDiv.append(yearBlockDiv);
 
     semesters.forEach((term, index) => {
-        const semesterDiv = createSemester(yearInfo[index], term, academicYearCount);
+        const semesterDiv = createSemester(yearInfo[index], term, yearCount);
         yearBlockDiv.append(semesterDiv);
     });
 
     const yearDividerDiv = document.createElement("div");
-    yearDividerDiv.id = `year-divider-${academicYearCount}`
+    yearDividerDiv.id = `year-divider-${yearCount}`
     yearDividerDiv.className = "year-divider";
     return [yearDiv, yearDividerDiv]
 }
 
 /**
- * This creates a new semester div based on the semester information from the template flowchart.
+ * Creates a new semester div based on the semester information from the template flowchart.
  * 
  * @param {*} semesterInfo - The object containing the course objects
  * @param {*} term - The "Fall", "Spring", or "Summer" semester term
- * @param {int} academicYearCount - The current number of academic years
+ * @param {int} yearCount - The current number of academic years
  * @returns the semester div
  */
-function createSemester(semesterInfo, term, academicYearCount) {
+function createSemester(semesterInfo, term, yearCount) {
     const semesterDiv = document.createElement("div");
-    semesterDiv.id = `${term}-${academicYearCount}`;
+    semesterDiv.id = `${term}-${yearCount}`;
     semesterDiv.className = "semester";
     makeSortable(semesterDiv);
 
@@ -127,7 +403,7 @@ function createSemester(semesterInfo, term, academicYearCount) {
 }
 
 /**
- * This creates a new course div based on the course information from the template flowchart.
+ * Creates a new course div based on the course information from the template flowchart.
  * 
  * @param {*} courseInfo - The object containing the course information
  * @returns the course div
@@ -147,8 +423,6 @@ export function createCourse(courseInfo) {
     let courseHyperParentId = courseInfo?.hyperParentId;
     let courseHyperChildId = courseInfo?.hyperChildId;
     let courseExoticId = courseInfo?.exoticId;
-    let courseOfferedFall = courseInfo?.offeredFall;
-    let courseOfferedSpring = courseInfo?.offeredSpring;
     let courseCompleted = courseInfo?.completed;
 
     // Save all possible data
@@ -317,6 +591,9 @@ export function createCourse(courseInfo) {
                 );
             }
 
+            // Saves the current flowchart to local storage on change
+            select.addEventListener("change", () => setLocalFlowchartDefault());
+
             // Adds the select, label, and any existing input to the course div
             courseDiv.append(select);
             courseDiv.append(label);
@@ -374,10 +651,13 @@ export function createCourse(courseInfo) {
                     updateExoticCourseDivs(courseExoticId, select.selectedIndex);
                 });
 
-                // This handles saving all course divs that are linked to a exotic option.
+                // Handles saving all course divs that are linked to a exotic option.
                 exoticDictionary[courseExoticId] ??= [];
                 exoticDictionary[courseExoticId].push(courseDiv);
             }
+
+            // Saves the current flowchart to local storage on change
+            select.addEventListener("change", () => setLocalFlowchartDefault());
 
             // Adds the label and input to the course div
             courseDiv.append(label);
@@ -389,7 +669,7 @@ export function createCourse(courseInfo) {
             return;
     }
 
-    // This handles saving all course divs that are linked to a hyper option.
+    // Handles saving all course divs that are linked to a hyper option
     if (validHyperParentId && validHyperChildId) {
         hyperDictionary[courseHyperParentId] ??= {};
         const hyperChildDictionary = hyperDictionary[courseHyperParentId];
@@ -400,14 +680,7 @@ export function createCourse(courseInfo) {
         hyperChildCourseDivs.push(courseDiv);
     }
 
-    // Checks availability
-    if (courseOfferedSpring === false) {        // Offered in Fall
-        courseDiv.style.borderStyle = "dotted";
-    } else if (courseOfferedFall === false) {   // Offered in Spring
-        courseDiv.style.borderStyle = "dashed";
-    }
-
-    // This adds a checkbox to mark if a class has been taken yet.
+    // Adds a checkbox to mark if a class has been taken yet
     const checkbox = Object.assign(document.createElement("input"), {
         type: "checkbox",
         name: "courseCheckbox",
@@ -415,14 +688,17 @@ export function createCourse(courseInfo) {
     });
     courseDiv.append(checkbox); // Must come after text content assignment
 
-    // This adds an event listener to display the class information pop-up
+    // Saves the current flowchart to local storage on change
+    checkbox.addEventListener("change", () => setLocalFlowchartDefault());
+
+    // Adds an event listener to display the class information pop-up
     courseDiv.addEventListener("click", (event) => popup.displayCoursePopup(event.target));
 
     return courseDiv;
 }
 
 /**
- * This creates a input element that can be used in classes.
+ * Creates an input element that can be used in courses.
  * 
  * @param {string} savedCourse - the possible current class previously chosen for the input.
  * @returns the input object
@@ -440,7 +716,7 @@ function createCourseInput(savedCourse) {
     // Ensures any letters given are uppercase
     input.addEventListener("input", () => input.value = input.value.toUpperCase());
 
-    // Ensures valid characters are entered in the input.
+    // Ensures valid characters are entered in the input
     input.addEventListener("keypress", (event) => {
         const preInputLength = input.value.length;
         const key = event.key.toUpperCase(); // Converts letters to uppercase for the check only
@@ -455,19 +731,40 @@ function createCourseInput(savedCourse) {
     // Ensures a valid string is saved
     input.addEventListener("blur", (event) => {
         const currentValue = event.target.value;
-        if (currentValue && !courseRegex.test(currentValue)) {
+        if (currentValue && !popup.courseRegex.test(currentValue)) {
             alert("Format must be in ABCD-123, ABCD-123H, or blank!");
             setTimeout(() => input.focus(), 0); // Prevents alert loop
+        } else {
+            // Saves the current flowchart to local storage
+            setLocalFlowchartDefault();
         }
     });
 
     // Sets the current class if possible
-    if (courseRegex.test(savedCourse)) input.value = savedCourse;
+    if (popup.courseRegex.test(savedCourse)) input.value = savedCourse;
     return input;
 }
 
 /**
- * This reveals and hides specific course divs if they are linked the hyper ids.
+ * Makes sure only the hyper classes linked to a selected option are shown.
+ */
+export function initializeHyper() {
+    for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
+        updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
+    }
+}
+
+/**
+ * Makes sure exotic option classes are set properly.
+ */
+export function initializeExotic() {
+    for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
+        updateExoticCourseDivs(Number(exoticId), Number(selectedIndex));
+    }
+}
+
+/**
+ * Reveals and hides specific course divs if they are linked the hyper ids.
  * 
  * @param {int} hyperParentId - the id of the parent option div
  * @param {int} hyperChildId - the id that matches an option of the parent option div
@@ -486,16 +783,7 @@ function updateHyperCourseDivs(hyperParentId, hyperChildId) {
 }
 
 /**
- * This makes sure only the hyper classes linked to a selected option are shown
- */
-export function initializeHyper() {
-    for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
-        updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
-    }
-}
-
-/**
- * This updates all related exotic dropdowns to the same index or hides them if they don't exists.
+ * Updates all related exotic dropdowns to the same index or hides them if they don't exists.
  * 
  * @param {int} exoticId - the id of the parent option div
  * @param {int} selectedIndex - the current selected index
@@ -517,14 +805,5 @@ function updateExoticCourseDivs(exoticId, selectedIndex) {
                 courseDiv.style.display = "none";
             }
         });
-    }
-}
-
-/**
- * This makes sure exotic option classes are set properly
- */
-export function initializeExotic() {
-    for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
-        updateExoticCourseDivs(Number(exoticId), Number(selectedIndex));
     }
 }

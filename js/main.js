@@ -1,23 +1,21 @@
 /**
- * This file handles all base logic that can be triggered by the toolbar button.s
+ * This file handles all base logic that can be triggered by the toolbar buttons and dropdowns.
  */
 
 //------------------------------ IMPORTS BELOW ------------------------------//
 
 import * as match from "/js/match.js";
 import * as load from "/js/load.js";
+import * as popup from "/js/popup.js";
 
 //------------------------------ DATA BELOW ------------------------------//
 
 const defaultTitle = "GCCIS Flowcharts";
 
-let academicYearCount = 0;      // The numbers of years of school currently being listed.
-let transferSection = false;    // Whether or not the transfer section is visible.
-let uploadedFilename = null;    // The filename of the uploaded file.
+let transferSection = false;    // Whether or not the transfer section is visible
 
 const pageTitle = document.getElementById("pageTitle");
 const yearSelect = document.getElementById("yearSelect");
-const templateSelect = document.getElementById("templateSelect");
 const fileInput = document.getElementById("fileInput");
 const uploadTemplateButton = document.getElementById("uploadTemplateButton");
 const downloadTemplateButton = document.getElementById("downloadTemplateButton");
@@ -29,19 +27,16 @@ const showCheckboxesButton = document.getElementById("showCheckboxesButton");
 const hideCheckboxesButton = document.getElementById("hideCheckboxesButton");
 const clearFlowchartButton = document.getElementById("clearFlowchartButton");
 
-const flowchartBody = document.getElementById("flowchartBody");
 const transferYearDiv = document.getElementById("year-0");
-const transferDiv = document.getElementById("transfer");
 const transferDividerDiv = document.getElementById("year-divider-0");
 const allCheckboxes = document.getElementsByName("courseCheckbox");
 
 const flowchartNotesTitle = document.getElementById("flowchartNotesTitle");
-const flowchartNotesList = document.getElementById("flowchartNotesList");
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
 yearSelect.addEventListener("change", (event) => updateTemplateFlowcharts(event.target.value));
-templateSelect.addEventListener("change", (event) => getTemplateFlowchart(event.target.value));
+load.templateSelect.addEventListener("change", (event) => getTemplateFlowchart(event.target.value));
 fileInput.addEventListener("change", (event) => processUploadedFile(event.target.files[0]));
 uploadTemplateButton.addEventListener("click", () => fileInput.click());
 downloadTemplateButton.addEventListener("click", downloadTemplate);
@@ -55,7 +50,7 @@ clearFlowchartButton.addEventListener("click", () => clearFlowchart(defaultTitle
 
 //------------------------------ INITIALIZATION BELOW ------------------------------//
 
-load.makeSortable(transferDiv);
+load.makeSortable(load.transferDiv);
 
 // Fill the template dropdown with flowcharts from the current year
 updateTemplateFlowcharts(yearSelect.value);
@@ -68,75 +63,39 @@ displayLocalFlowchart()
 /**
  * Displays the local flowchart and its filename if they exists.
  */
-function displayLocalFlowchart() {
-    const [flowchart, filename] = getLocalFlowchart();
-    if (flowchart != null && filename != null) {
-        uploadedFilename = filename;
-        generateFlowchartFromTemplate(flowchart, true, false);
+export function displayLocalFlowchart() {
+    const [flowchart, filename] = load.getLocalFlowchart();
+    if (flowchart && filename) {
+        generateFlowchartFromTemplate(filename, flowchart, true, false);
     }
 }
 
 /**
- * Gets the flowchart and its filename from local storage and if they exists.
- * 
- * @returns a list containing the flowchart JSON object and its filename
- */
-function getLocalFlowchart() {
-    const filename = localStorage.getItem("filename")
-    const flowchartString = localStorage.getItem("flowchart")
-    if (filename && flowchartString) {
-        const flowchart = JSON.parse(flowchartString);
-        return [flowchart, filename];
-    }
-    return [null, null];
-}
-
-/**
- * Saves the input flowchart and its filename to local storage.
- * 
- * @param {string} filename - The flowchart filename
- * @param {*} flowchart - The flowchart json object
- */
-function setLocalFlowchart(filename, flowchart) {
-    localStorage.setItem("filename", filename);
-    localStorage.setItem("flowchart", JSON.stringify(flowchart))
-}
-
-/**
- * Saves the current flowchart and its filename to local storage.
- */
-function setLocalFlowchartDefault() {
-    setLocalFlowchart(getCurrentTemplateFilename(), generateTemplateFromFlowchart());
-}
-
-/**
- * This updates the "Choose Template" dropdown with the templates from the selected year.
+ * Updates the "Choose Template" dropdown with the templates from the selected year.
  * 
  * @param {string} year - the selected year to view templates form
  */
 async function updateTemplateFlowcharts(year) {
-    templateSelect.innerHTML = "";              // Clears the dropdown options
+    load.templateSelect.innerHTML = "";     // Clears the dropdown options
 
     // Adds back the empty option
     const emptyOption = Object.assign(document.createElement("option"), {
         textContent: "Choose Template",
         value: "",
     });
-    templateSelect.append(emptyOption);
+    load.templateSelect.append(emptyOption);
 
-    // Get the template file names
+    // Gets the template file names
     const response = await fetch(`/json/templates/${year}/`);
     const result = await response.json();
     const filenames = result.map(file => file.name);
 
-    // Create all outGroups and options
+    // Creates all outGroups and options
     const outGroups = {};
     filenames.forEach(filename => {
         const filenameContent = filename.split("_");    // pathway_degree_...
-        const pathwayAndGroup = match.getDisplayPathwayAndGroup(filenameContent[0]);
-        if (pathwayAndGroup == null) return;
-        const formattedPathway = pathwayAndGroup[0];
-        const formattedGroup = pathwayAndGroup[1];
+        const [formattedPathway, formattedGroup] = match.getDisplayPathwayAndGroup(filenameContent[0]);
+        if (formattedPathway == null || formattedGroup == null) return;
         const formattedDegree = filenameContent[0] === "ce" ? "" : (filenameContent[1] === "bs" ? "BS" : "BS/MS");
 
         const option = Object.assign(document.createElement("option"), {
@@ -152,12 +111,12 @@ async function updateTemplateFlowcharts(year) {
         outGroups[formattedGroup].append(option);
     });
 
-    // Add all outGroups to the dropdown
-    templateSelect.append(...Object.values(outGroups));
+    // Adds all outGroups to the dropdown
+    load.templateSelect.append(...Object.values(outGroups));
 }
 
 /**
- * This uploads a flowchart using a preset template.
+ * Uploads a flowchart using a preset template.
  * 
  * @param {string} filename - the template flowchart filename
  */
@@ -165,34 +124,33 @@ async function getTemplateFlowchart(filename) {
     if (!filename) { pageTitle.textContent = defaultTitle; return; };
     const year = yearSelect.value;
     const template  = (await import(`/json/templates/${year}/${filename}`, { with: { type: "json" } })).default;
-    setLocalFlowchart(filename, template);
-    generateFlowchartFromTemplate(template, false, true);
+    generateFlowchartFromTemplate(filename, template, false, true);
 }
 
 /**
- * This processes the uploaded flowchart file.
+ * Processes the uploaded flowchart file.
  * 
  * @param {*} file - the given flowchart file object
  */
 async function processUploadedFile(file) {
-    uploadedFilename = file.name;
+    load.setUploadedFilename(file.name)
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
-    setLocalFlowchart(uploadedFilename, fileData);
-    generateFlowchartFromTemplate(fileData, true, false);
+    generateFlowchartFromTemplate(file.name, fileData, true, false);
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
 
 /**
- * This updates and populates the body given the json template flowchart.
- * This adds a Transfer section for transfer classes.
- * It then adds years, each of which has 3 semesters that may or many not contain courses.
+ * Updates and populates the body given the json template flowchart.
+ * Adds a Transfer section for transfer classes.
+ * Adds years, each of which have 3 semesters that may or many not contain courses.
  * 
+ * @param {string} - the flowchart filename
  * @param {*} template - the flowchart with transfer, year, semester, and course information
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
+function generateFlowchartFromTemplate(filename, template, resetChoose, resetUpload) {
     // Check JSON file formatting
     if (!template || typeof template != "object" || Array.isArray(template)
         || typeof template.title !== "string" ||  !Array.isArray(template.transfer) 
@@ -202,71 +160,70 @@ function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
         return;
     }
 
-    const title = template.title;
-    const transferCourses = template.transfer;
-    const years = template.college;
-    const notes = template.notes;
+    // Saves the current flowchart to local storage
+    load.setLocalFlowchart(filename, template);
 
-    clearFlowchart(title, resetChoose, resetUpload);                        // This removes the previous flowchart
-    fillFlowchartTransferYear(transferCourses);                             // This handles all transfer classes
-    academicYearCount = load.fillFlowchartYears(years, academicYearCount);  // This handles all other semesters and their classes
-    fillFlowchartNotes(notes);                                              // This handles the flowchart notes
+    // Generates the flowchart
+    clearFlowchart(template.title, resetChoose, resetUpload);   // Removes the previous flowchart
+    fillFlowchartTransferYear(template.transfer);               // Handles all transfer classes
+    load.fillFlowchartYears(template.college);                  // Handles all other semesters and their classes
+    fillFlowchartNotes(template.notes);                         // Handles the flowchart notes
     hideCheckboxesButton.style.display == "none" ? hideCheckboxes() : showCheckboxes();
 
-    // This makes sure only the hyper classes linked to a selected option are shown
+    // Makes sure only the hyper classes linked to a selected option are shown
     load.initializeHyper()
 
-    // This makes sure exotic option classes are set properly
+    // Makes sure exotic option classes are set properly
     load.initializeExotic()
 }
 
 /**
- * This adds courses divs to the transfer div.
+ * Adds courses divs to the transfer div.
  * 
  * @param {*} transferInfo - The object containing the transfer course objects
  */
 function fillFlowchartTransferYear(transferInfo) {
     transferInfo.forEach(courseInfo => {
         const courseDiv = load.createCourse(courseInfo);
-        transferDiv.append(courseDiv);
+        load.transferDiv.append(courseDiv);
     });
     if (transferInfo.length > 0) showTransferSection();
 }
 
 /**
- * This adds the notes to the flowchart notes section.
+ * Adds the notes to the flowchart notes section.
  * 
  * @param {*} notesInfo - the flowchart notes array
  */
 function fillFlowchartNotes(notesInfo) {
     if (notesInfo.length == 0) {
         const noteItem = document.createElement("li");
-        noteItem.innerHTML = "This flowchart has no saved notes. Edit this note and add more.";
-        flowchartNotesList.append(noteItem);
+        noteItem.innerHTML = "This flowchart has no saved notes. Edit this note to add your own.";
+        load.flowchartNotesList.append(noteItem);
     } else {
         notesInfo.forEach(note => {
             const noteItem = document.createElement("li");
             noteItem.innerHTML = note;
-            flowchartNotesList.append(noteItem);
+            load.flowchartNotesList.append(noteItem);
         });
     }
 }
 
 /**
- * This converts the current flowchart into a JSON file and downloads it onto your computer.
+ * Converts the current flowchart into a JSON file and downloads it onto your computer.
  */
 function downloadTemplate() {
-    // Creates the JSON template and converts it into the necessary format.
-    const json = generateTemplateFromFlowchart()
+    // Creates the JSON template, and converts it into the necessary format
+    const json = load.generateTemplateFromFlowchart()
     const jsonString = JSON.stringify(json);
     const jsonBlob = new Blob([jsonString], { type: "application/json" });
     const jsonObjectUrl = URL.createObjectURL(jsonBlob);
 
     // Gets and sets the flowchart filename
-    const jsonFilename = getCurrentTemplateFilename()
+    const jsonFilename = load.getCurrentTemplateFilename()
 
-    // Saves the current flowchart to local storage.
-    setLocalFlowchart(jsonFilename, json);
+    // Saves the current flowchart to local storage
+    load.setLocalFlowchart(jsonFilename, json);
 
     // Saves the flowchart onto your computer
     const anchor = document.createElement("a");
@@ -277,292 +234,80 @@ function downloadTemplate() {
 }
 
 /**
- * This returns a JSON object of the current displayed flowchart.
- * 
- * @returns the JSON template object
- */
-function generateTemplateFromFlowchart() {
-    const transfer = [];
-    const college = [];
-    const notes = [];
-
-    // Process transfer classes
-    Array.from(transferDiv.children).forEach(courseDiv => {
-        const course = processCourse(courseDiv);
-        transfer.push(course);
-    });
-
-    // Process remaining classes
-    for (let i = 1; i <= academicYearCount; i++) {
-        const year = [];
-        const yearDiv = document.getElementById(`year-block-${i}`);
-        Array.from(yearDiv.children).forEach(semesterDiv => {
-            const semester = [];
-            Array.from(semesterDiv.children).forEach(courseDiv => {
-                const course = processCourse(courseDiv);
-                semester.push(course);
-            });
-            year.push(semester);
-        });
-        college.push(year);
-    }
-
-    // Process notes
-    Array.from(flowchartNotesList.children).forEach(listItem => {
-        const note = listItem.innerHTML.replace("&amp;", "&");
-        notes.push(note);
-    });
-
-    // Creates the JSON template object
-    const template = {
-        "title": pageTitle.textContent,
-        "transfer": transfer,
-        "college": college,
-        "notes": notes
-    };
-    return template;
-}
-
-/**
- * This returns the current flowchart filename, including default.
- * 
- * @returns the filename string
- */
-function getCurrentTemplateFilename() {
-    const templateSelectValue = templateSelect.value;
-    if (templateSelectValue) {
-        return templateSelectValue;
-    } else if (uploadedFilename) {
-        return uploadedFilename;
-    } else {
-        return "template.json";
-    }
-}
-
-/**
- * This turns the given course div back into an object for flowchart downloading.
- * 
- * @param {*} courseDiv - the given course Div
- */
-function processCourse(courseDiv) {
-    let course = {};
-
-    // Get all possible data
-    const courseType = courseDiv.dataset.courseType;
-    const courseDiscipline = courseDiv.dataset?.courseDiscipline;
-    let courseNumber = courseDiv.dataset?.courseNumber;
-    if (courseNumber.at(-1) !== "H") courseNumber = Number(courseNumber); // Accounts for Honors courses
-    const courseName = courseDiv.dataset?.courseName;
-    const courseAttribute = courseDiv.dataset?.courseAttribute;
-    const courseHyperParentId = Number(courseDiv.dataset?.courseHyperParentId);
-    const courseHyperChildId = Number(courseDiv.dataset?.courseHyperChildId);
-    const courseExoticId = Number(courseDiv.dataset?.courseExoticId);
-    const courseOfferedOnlyFall = courseDiv.style.borderStyle === "dotted";
-    const courseOfferedOnlySpring = courseDiv.style.borderStyle === "dashed";
-
-    switch (courseType) {
-        case "co-op-required": {
-            course = {
-                "courseType": courseType,
-                "discipline": courseDiscipline,
-                "number": courseNumber,
-                "name": courseName
-            };
-            break;
-        }
-        case "co-op-option": {
-            const select = courseDiv.children[0];                       // Select
-            const options = select.options;                             // Options
-            const createdOptions = [];
-            Array.from(options).forEach(option => {
-                const optionNumber = option.dataset.optionNumber;
-                const optionObject = {
-                    "discipline": option.dataset.optionDiscipline,
-                    "number": optionNumber.at(-1) === "H" ? optionNumber : Number(optionNumber),
-                    "name": option.value,
-                }
-                createdOptions.push(optionObject);
-            });
-
-            course = {
-                "courseType": courseType,
-                "selectedIndex": select.selectedIndex,
-                "options": createdOptions
-            };
-            break;
-        }
-        case "class-required": {
-            course = {
-                "courseType": courseType,
-                "discipline": courseDiscipline,
-                "number": courseNumber,
-                "name": courseName
-            };
-            break;
-        }
-        case "class-input": {
-            const inputs = courseDiv.children[1].value.split(/[\-]+/);  // Input
-            course = {
-                "courseType": courseType,
-                "discipline": inputs[0],
-                "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
-                "attribute": courseAttribute
-            };
-            break;
-        }
-        case "class-option-mix": {
-            const select = courseDiv.children[0];                       // Select
-            const options = select.options;                             // Options
-
-            const createdOptions = [];
-            let inputIndex = 2
-            Array.from(options).forEach((option, index) => {
-                const optionInfo = option.textContent.split(/[\-]+/);
-                const optionAttribute = option.dataset.optionAttribute;
-                const optionHyperChildId = Number(option.dataset.optionHyperChildId);
-                const validOptionHyperParentId = Number.isInteger(optionHyperChildId) && optionHyperChildId >= 1;
-                let optionObject = {}
-                if (!optionAttribute) {
-                    optionObject = {
-                        "discipline": optionInfo[0],
-                        "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
-                        "name": option.value,
-                    }
-                } else {
-                    const inputs = courseDiv.children[inputIndex++].value.split(/[\-]+/);  // Input
-                    optionObject = {
-                        "discipline": inputs[0],
-                        "number": inputs.length == 2 && inputs[1].at(-1) === "H" ? inputs[1] : Number(inputs[1]),
-                        "attribute": optionAttribute,
-                    }
-                }
-                if (validOptionHyperParentId) optionObject["hyperChildId"] = optionHyperChildId;
-                createdOptions.push(optionObject);
-            });
-
-            course = {
-                "courseType": courseType,
-                "selectedIndex": select.selectedIndex,
-                "options": createdOptions
-            };
-            break;
-        }
-        case "class-option-attribute": {
-            const select = courseDiv.children[1];                       // Select
-            const options = select.options;                             // Options
-
-            const createdOptions = [];
-            Array.from(options).forEach(option => {
-                const optionInfo = option.textContent.split(/[\-]+/);
-                let optionObject = {
-                    "discipline": optionInfo[0],
-                    "number": optionInfo[1].at(-1) === "H" ? optionInfo[1] : Number(optionInfo[1]),
-                    "name": option.value,
-                }
-                const optionAttribute = option.dataset?.optionAttribute;
-                if (optionAttribute) optionObject["attribute"] = optionAttribute;
-                createdOptions.push(optionObject);
-            });
-
-            course = {
-                "courseType": courseType,
-                "attribute": courseAttribute,
-                "selectedIndex": select.selectedIndex,
-                "options": createdOptions
-            };
-
-            // Assign exotic id if it exists
-            if (courseExoticId) course["exoticId"] = courseExoticId;        // 0 is false
-            break;
-        }
-        default:
-            console.log(`A course was found with an unknown type: ${courseType}.`);
-            break;
-    }
-
-    // Assign extra fields if they exists
-    if (courseHyperParentId) course["hyperParentId"] = courseHyperParentId; // 0 is false
-    if (courseHyperChildId) course["hyperChildId"] = courseHyperChildId;    // 0 is false
-    if (courseOfferedOnlyFall || courseOfferedOnlySpring) {
-        course["offeredFall"] = courseOfferedOnlyFall;
-        course["offeredSpring"] = courseOfferedOnlySpring;
-    }
-    course["completed"] = courseDiv.children.courseCheckbox.checked;
-
-    return course;
-}
-
-/**
- * This adds a new year div to the end of the body.
+ * Adds a new year div to the end of the body.
  */
 function pushYear() {
-    ++academicYearCount;
+    load.setAcademicYearCount(load.academicYearCount + 1);
+    const yearCount = load.academicYearCount;
 
     const yearDiv = document.createElement("div");
-    yearDiv.id = `year-${academicYearCount}`;
+    yearDiv.id = `year-${yearCount}`;
     yearDiv.className = "year";
 
     const yearTextDiv = document.createElement("div");
-    yearTextDiv.id = `year-text-${academicYearCount}`
+    yearTextDiv.id = `year-text-${yearCount}`
     yearTextDiv.className = "year-text";
-    yearTextDiv.textContent = academicYearCount <= 100 ? `${load.years[academicYearCount - 1]} Year` : `#${academicYearCount} Year`;
+    yearTextDiv.textContent = yearCount <= 100 ? `${load.years[yearCount - 1]} Year` : `#${yearCount} Year`;
     yearDiv.append(yearTextDiv);
 
     const yearBlockDiv = document.createElement("div");
-    yearBlockDiv.id = `year-block-${academicYearCount}`
+    yearBlockDiv.id = `year-block-${yearCount}`
     yearBlockDiv.className = "year-block";
     yearDiv.append(yearBlockDiv);
 
     load.semesters.forEach(term => {
         const semesterDiv = document.createElement("div");
-        semesterDiv.id = `${term}-${academicYearCount}`;
+        semesterDiv.id = `${term}-${yearCount}`;
         semesterDiv.className = "semester";
         load.makeSortable(semesterDiv);
         yearBlockDiv.append(semesterDiv);
     });
-    flowchartBody.append(yearDiv);
+    load.flowchartBody.append(yearDiv);
 
     const yearDividerDiv = document.createElement("div");
-    yearDividerDiv.id = `year-divider-${academicYearCount}`
+    yearDividerDiv.id = `year-divider-${yearCount}`
     yearDividerDiv.className = "year-divider";
-    flowchartBody.append(yearDividerDiv);
+    load.flowchartBody.append(yearDividerDiv);
 
     // Saves the current flowchart to local storage.
-    setLocalFlowchartDefault();
+    load.setLocalFlowchartDefault();
 }
 
 /**
- * This removes the year div at the end of the body.
+ * Removes the year div at the end of the body.
  */
 function popYear() {
-    if (academicYearCount == 0) return;
-    const yearDiv = document.getElementById(`year-${academicYearCount}`);
-    const yearDividerDiv = document.getElementById(`year-divider-${academicYearCount}`);
+    const yearCount = load.academicYearCount;
+    if (yearCount == 0) return;
+    const yearDiv = document.getElementById(`year-${yearCount}`);
+    const yearDividerDiv = document.getElementById(`year-divider-${yearCount}`);
     if (yearIsEmpty(yearDiv)) {
         yearDiv.remove();
         yearDividerDiv.remove();
-        academicYearCount--;
+        load.setAcademicYearCount(load.academicYearCount - 1);
 
         // Saves the current flowchart to local storage.
-        setLocalFlowchartDefault();
+        load.setLocalFlowchartDefault();
     } else {
         alert("The lowest year is not empty. Remove all courses before deleting it!");
     }
 }
 
 /**
- * This checks if the given year div has any courses inside of it.
+ * Checks if the given year div has any courses inside of it.
  * 
  * @param {*} yearDiv - the given year div
  * @returns True if there are no courses in any of the year semesters, False otherwise.
  */
 function yearIsEmpty(yearDiv) {
     const semesterDivs = yearDiv.children[1].children; // yearDiv => yearBlockDiv
-    return semesterDivs[0].children.length == 0 && semesterDivs[1].children.length == 0 && semesterDivs[2].children.length == 0;
+    return (semesterDivs[0].children.length == 0 && 
+        semesterDivs[1].children.length == 0 && 
+        semesterDivs[2].children.length == 0);
 }
 
 /**
- * This shows the Transfer Class section and shows the remove transfer button.
+ * Shows the Transfer class section and shows the remove transfer button.
  */
 function showTransferSection() {
     if (transferSection) return;
@@ -574,7 +319,7 @@ function showTransferSection() {
 }
 
 /**
- * This hides the Transfer Class section and shows the add transfer button.
+ * Hides the Transfer class section and shows the add transfer button.
  */
 function hideTransferSection() {
     if (!transferSection) return;
@@ -586,7 +331,7 @@ function hideTransferSection() {
 }
 
 /**
- * This shows the checkboxes in the corner of courses.
+ * Shows the checkboxes in the corner of courses.
  */
 function showCheckboxes() {
     allCheckboxes.forEach(checkbox => checkbox.style.display = "inline-block");
@@ -595,7 +340,7 @@ function showCheckboxes() {
 }
 
 /**
- * This hides the checkboxes in the corner of courses.
+ * Hides the checkboxes in the corner of courses.
  */
 function hideCheckboxes() {
     allCheckboxes.forEach(checkbox => checkbox.style.display = "none");
@@ -604,29 +349,44 @@ function hideCheckboxes() {
 }
 
 /**
- * This removed all courses and sections.
+ * Removes all courses and resets information back to the website default.
  * 
- * @param {string} title - the title to display at the top of the flowchart
+ * @param {string} title - the title to display at the top of the website
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
 function clearFlowchart(title, resetChoose, resetUpload) {
-    pageTitle.textContent = title;                      // Sets the title
-    flowchartNotesList.textContent = "";                // Gets rid of the flowchart notes
+    // Updates the title at the top of the page
+    pageTitle.textContent = title;
+
+    // Displays or hides the "Flowchart Notes" section and removes its text content
     if (resetChoose && resetUpload) {
         flowchartNotesTitle.style.display = "None";
-        flowchartNotesList.style.display = "None";
+        load.flowchartNotesList.style.display = "None";
     } else {
         flowchartNotesTitle.style.display = "Block";
-        flowchartNotesList.style.display = "Block";
+        load.flowchartNotesList.style.display = "Block";
     }
-    if (resetChoose) templateSelect.selectedIndex = 0;  // Resets the "Choose Template" selector to the 1st option.
-    if (resetUpload) uploadedFilename = null;           // Resets the name of the uploaded file
-    transferDiv.replaceChildren();                      // Removes all transfer courses
+    load.flowchartNotesList.textContent = "";
+
+    // Resets the "Choose Template" selector to the 1st option
+    if (resetChoose) load.templateSelect.selectedIndex = 0;
+
+    // Resets the uploaded filename
+    if (resetUpload) load.setUploadedFilename(null);
+
+    // Hides the course popup
+    popup.hideCoursePopupQuick();
+
+    // Hides the "Transfer" section and removes its courses
     hideTransferSection();
-    for (let i = 1; i <= academicYearCount; i++) {
+    load.transferDiv.replaceChildren();
+
+    // Removes all years, semesters, and courses, and resets the academic year count
+    const yearCount = load.academicYearCount;
+    for (let i = 1; i <= yearCount; i++) {
         document.getElementById(`year-${i}`).remove();
         document.getElementById(`year-divider-${i}`).remove();
     }
-    academicYearCount = 0;                              // Resets the year count
+    load.setAcademicYearCount(0);
 }

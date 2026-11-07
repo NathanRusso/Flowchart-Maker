@@ -12,7 +12,8 @@ const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisit
 const coursePopupOffered = document.getElementById("coursePopupOfferedContent");
 const coursePopupContact = document.getElementById("coursePopupContactContent");
 
-let courseInformationCache = {} // A mapping of courses to their database information
+export const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
+let courseInformationCache = {}     // A mapping of courses to their database information
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
@@ -21,7 +22,7 @@ coursePopupButton.addEventListener("click", hideCoursePopup);
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
- * This will hide the course information popup
+ * Hides the course information popup.
  */
 function hideCoursePopup() {
     coursePopup.classList.remove("reveal");
@@ -38,7 +39,17 @@ function hideCoursePopup() {
 }
 
 /**
- * This will reveal the course information popup
+ * Hides the course information popup, with no animation.
+ */
+export function hideCoursePopupQuick() {
+    coursePopup.classList.remove("reveal");
+    coursePopup.dataset.courseDiscipline = "";
+    coursePopup.dataset.courseNumber = ""; 
+    coursePopup.style.display = "none";
+}
+
+/**
+ * Reveals the course information popup.W
  */
 function revealCoursePopup() {
     coursePopup.style.display = "flex";
@@ -47,7 +58,7 @@ function revealCoursePopup() {
 }
 
 /**
- * This will query the database for course information and display its popup.
+ * Queries the database for course information and displays its popup.
  * 
  * @param {*} target - the courseDiv event target
  */
@@ -160,7 +171,7 @@ export function displayCoursePopup(target) {
 }
 
 /**
- * This gets the most recent course information for the selected course.
+ * Gets the most recent course information for the selected course.
  * 
  * @param {string} discipline - the course discipline. Ex: ABCD.
  * @param {string} number - the course number. Ex: 999.

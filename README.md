@@ -156,7 +156,7 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 ### New Features
 
 - [ ] Automatic template creation through RIT website parsing
-- [ ] Save and load flowcharts automatically through local storage
+- [X] Save and load flowcharts automatically through local storage
 - [ ] Have the ability to export a flowchart into a PDF
 - [ ] Add the ability to create custom course blocks
 
