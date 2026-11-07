@@ -61,21 +61,32 @@ load.makeSortable(transferDiv);
 updateTemplateFlowcharts(yearSelect.value);
 
 // Loads a pre-saved flowchart if it exists
-getLocalFlowchart()
+displayLocalFlowchart()
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
- * Gets the flowchart and its filename from local storage and displays the flowchart if it exists.
+ * Displays the local flowchart and its filename if they exists.
+ */
+function displayLocalFlowchart() {
+    const [flowchart, filename] = getLocalFlowchart();
+    if (flowchart != null && filename != null) {
+        uploadedFilename = filename;
+        generateFlowchartFromTemplate(flowchart, true, false);
+    }
+}
+
+/**
+ * Gets the flowchart and its filename from local storage and if they exists.
  */
 function getLocalFlowchart() {
     const filename = localStorage.getItem("filename")
     const flowchartString = localStorage.getItem("flowchart")
     if (filename && flowchartString) {
-        uploadedFilename = filename;
         const flowchart = JSON.parse(flowchartString);
-        generateFlowchartFromTemplate(flowchart, true, false);
+        return [flowchart, filename];
     }
+    return [null, null];
 }
 
 /**
