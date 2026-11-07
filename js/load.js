@@ -469,6 +469,24 @@ function createCourseInput(savedCourse) {
 }
 
 /**
+ * This makes sure only the hyper classes linked to a selected option are shown
+ */
+export function initializeHyper() {
+    for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
+        updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
+    }
+}
+
+/**
+ * This makes sure exotic option classes are set properly
+ */
+export function initializeExotic() {
+    for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
+        updateExoticCourseDivs(Number(exoticId), Number(selectedIndex));
+    }
+}
+
+/**
  * This reveals and hides specific course divs if they are linked the hyper ids.
  * 
  * @param {int} hyperParentId - the id of the parent option div
@@ -484,15 +502,6 @@ function updateHyperCourseDivs(hyperParentId, hyperChildId) {
                 courseDivs.forEach(div => div.style.display = "none");
             }
         }
-    }
-}
-
-/**
- * This makes sure only the hyper classes linked to a selected option are shown
- */
-export function initializeHyper() {
-    for (const [hyperParentId, hyperChildId] of Object.entries(initialHyperChildIds)) {
-        updateHyperCourseDivs(Number(hyperParentId), Number(hyperChildId));
     }
 }
 
@@ -519,14 +528,5 @@ function updateExoticCourseDivs(exoticId, selectedIndex) {
                 courseDiv.style.display = "none";
             }
         });
-    }
-}
-
-/**
- * This makes sure exotic option classes are set properly
- */
-export function initializeExotic() {
-    for (const [exoticId, selectedIndex] of Object.entries(initialExoticIndexes)) {
-        updateExoticCourseDivs(Number(exoticId), Number(selectedIndex));
     }
 }
