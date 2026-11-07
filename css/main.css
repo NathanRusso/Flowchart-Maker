@@ -57,14 +57,18 @@
 #coursePopup {
     opacity: 0;
     display: none;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: center;    /* Centers horizontally */
+    justify-content: flex-start;
     align-items: stretch;
     overflow-y: auto;
-    top: 25%;
+    overscroll-behavior: contain;
+    top: 50%;
     left: 25%;
     width: 50vw;
+    min-height: 0;
+    max-height: 80vh;
+    transform: translateY(-50%);    /* Moves popup back up 50% of its height */
     border: 5px solid var(--text-color);
     border-radius: 5px;
     box-shadow: 5px 5px 15px var(--shadow-color);
@@ -72,7 +76,6 @@
     background-color: var(--background-color);
     font-size: 0.9rem;
     overflow-wrap: break-word;
-    word-break: break-word;
     position: fixed;
     z-index: 3;
 }
@@ -96,11 +99,12 @@
     width: 15px;
     height: 15px;
     margin: 0px;
-    padding: 0;
-    border: 0;
+    padding: 0px;
+    border: 0px;
     border-radius: 3px;
     background-color: var(--background-color);
     color: var(--text-color);
+    font-size: 1.2rem;
     cursor: pointer;
     position: absolute;
     z-index: 4;
@@ -112,7 +116,7 @@
 }
 
 .coursePopupInformation {
-    display: flex;
+    display: block;
     justify-content: left;      /* left horizontally */
     align-items: center;        /* Centers vertically */
     margin-bottom: 5px;
