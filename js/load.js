@@ -24,6 +24,8 @@ export const years = [
 export const semesters = ["Fall", "Spring", "Summer"];
 const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
 
+export const flowchartBody = document.getElementById("flowchartBody");
+
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds
 let exoticDictionary = {}       // A mapping of exoticIds to lists if related courseDivs
@@ -78,7 +80,7 @@ export function fillFlowchartYears(years, academicYearCount) {
  * @param {int} academicYearCount - The current number of academic years
  * @returns a list containing the year div and year divider div
  */
-export function createYear(yearInfo, academicYearCount) {
+function createYear(yearInfo, academicYearCount) {
     const yearDiv = document.createElement("div");
     yearDiv.id = `year-${academicYearCount}`;
     yearDiv.className = "year";

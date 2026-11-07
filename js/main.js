@@ -29,7 +29,6 @@ const showCheckboxesButton = document.getElementById("showCheckboxesButton");
 const hideCheckboxesButton = document.getElementById("hideCheckboxesButton");
 const clearFlowchartButton = document.getElementById("clearFlowchartButton");
 
-const flowchartBody = document.getElementById("flowchartBody");
 const transferYearDiv = document.getElementById("year-0");
 const transferDiv = document.getElementById("transfer");
 const transferDividerDiv = document.getElementById("year-divider-0");
@@ -520,12 +519,12 @@ function pushYear() {
         load.makeSortable(semesterDiv);
         yearBlockDiv.append(semesterDiv);
     });
-    flowchartBody.append(yearDiv);
+    load.flowchartBody.append(yearDiv);
 
     const yearDividerDiv = document.createElement("div");
     yearDividerDiv.id = `year-divider-${academicYearCount}`
     yearDividerDiv.className = "year-divider";
-    flowchartBody.append(yearDividerDiv);
+    load.flowchartBody.append(yearDividerDiv);
 
     // Saves the current flowchart to local storage.
     setLocalFlowchartDefault();
