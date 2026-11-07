@@ -28,8 +28,8 @@ export const templateSelect = document.getElementById("templateSelect");
 export const transferDiv = document.getElementById("transfer");
 export const flowchartNotesList = document.getElementById("flowchartNotesList");
 
-export let academicYearCount = 0;      // The numbers of years of school currently being listed.
-export let uploadedFilename = null;    // The filename of the uploaded file.
+export let academicYearCount = 0;      // The numbers of years of school currently being listed
+export let uploadedFilename = null;    // The filename of the uploaded file
 
 let hyperDictionary = {}        // A mapping of hyperParentIds to hyperChildIds to their courseDivs
 let initialHyperChildIds = {}   // A mapping of hyperParentIds to the initial hyperChildIds

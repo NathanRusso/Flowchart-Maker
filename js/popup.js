@@ -24,7 +24,7 @@ coursePopupButton.addEventListener("click", hideCoursePopup);
 /**
  * This will hide the course information popup.
  */
-export function hideCoursePopup() {
+function hideCoursePopup() {
     coursePopup.classList.remove("reveal");
     coursePopup.classList.add("hide");
     coursePopup.dataset.courseDiscipline = "";
@@ -51,7 +51,7 @@ export function hideCoursePopupQuick() {
 /**
  * This will reveal the course information popup.W
  */
-export function revealCoursePopup() {
+function revealCoursePopup() {
     coursePopup.style.display = "flex";
     coursePopup.classList.remove("hide");
     coursePopup.classList.add("reveal");

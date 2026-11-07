@@ -114,7 +114,7 @@ export function getAttributeColor(attribute) {
  * Gets a formatted pathway and its group to display in the template dropdown.
  * 
  * @param {string} pathway - the pathway code at the start of templates 
- * @returns the formatted pathway string and group if there is a match; otherwise null
+ * @returns the formatted pathway string and group if there is a match; otherwise [null, null]
  */
 export function getDisplayPathwayAndGroup(pathway) {
 	switch (pathway) {
@@ -153,6 +153,6 @@ export function getDisplayPathwayAndGroup(pathway) {
         case "secsec":
             return ["SE/CSEC", "Software Engineering"];
         default:
-            return null;
+            return [null, null];
 	}
 }

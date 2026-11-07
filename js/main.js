@@ -12,7 +12,7 @@ import * as popup from "/js/popup.js";
 
 const defaultTitle = "GCCIS Flowcharts";
 
-let transferSection = false;    // Whether or not the transfer section is visible.
+let transferSection = false;    // Whether or not the transfer section is visible
 
 const pageTitle = document.getElementById("pageTitle");
 const yearSelect = document.getElementById("yearSelect");
@@ -66,8 +66,7 @@ displayLocalFlowchart()
 export function displayLocalFlowchart() {
     const [flowchart, filename] = load.getLocalFlowchart();
     if (flowchart && filename) {
-        load.setUploadedFilename(filename)
-        generateFlowchartFromTemplate(flowchart, true, false);
+        generateFlowchartFromTemplate(filename, flowchart, true, false);
     }
 }
 
@@ -95,10 +94,8 @@ async function updateTemplateFlowcharts(year) {
     const outGroups = {};
     filenames.forEach(filename => {
         const filenameContent = filename.split("_");    // pathway_degree_...
-        const pathwayAndGroup = match.getDisplayPathwayAndGroup(filenameContent[0]);
-        if (pathwayAndGroup == null) return;
-        const formattedPathway = pathwayAndGroup[0];
-        const formattedGroup = pathwayAndGroup[1];
+        const [formattedPathway, formattedGroup] = match.getDisplayPathwayAndGroup(filenameContent[0]);
+        if (formattedPathway == null || formattedGroup == null) return;
         const formattedDegree = filenameContent[0] === "ce" ? "" : (filenameContent[1] === "bs" ? "BS" : "BS/MS");
 
         const option = Object.assign(document.createElement("option"), {
@@ -127,8 +124,7 @@ async function getTemplateFlowchart(filename) {
     if (!filename) { pageTitle.textContent = defaultTitle; return; };
     const year = yearSelect.value;
     const template  = (await import(`/json/templates/${year}/${filename}`, { with: { type: "json" } })).default;
-    load.setLocalFlowchart(filename, template);
-    generateFlowchartFromTemplate(template, false, true);
+    generateFlowchartFromTemplate(filename, template, false, true);
 }
 
 /**
@@ -137,12 +133,10 @@ async function getTemplateFlowchart(filename) {
  * @param {*} file - the given flowchart file object
  */
 async function processUploadedFile(file) {
-    // load.uploadedFilename = file.name;
     load.setUploadedFilename(file.name)
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
-    load.setLocalFlowchart(load.uploadedFilename, fileData);
-    generateFlowchartFromTemplate(fileData, true, false);
+    generateFlowchartFromTemplate(file.name, fileData, true, false);
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
 
@@ -151,11 +145,12 @@ async function processUploadedFile(file) {
  * This adds a Transfer section for transfer classes.
  * It then adds years, each of which has 3 semesters that may or many not contain courses.
  * 
+ * @param {string} - the flowchart filename
  * @param {*} template - the flowchart with transfer, year, semester, and course information
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
-function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
+function generateFlowchartFromTemplate(filename, template, resetChoose, resetUpload) {
     // Check JSON file formatting
     if (!template || typeof template != "object" || Array.isArray(template)
         || typeof template.title !== "string" ||  !Array.isArray(template.transfer) 
@@ -164,6 +159,9 @@ function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
         pageTitle.textContent = defaultTitle;
         return;
     }
+
+    // Saves the current flowchart to local storage.
+    load.setLocalFlowchart(filename, template);
 
     const title = template.title;
     const transferCourses = template.transfer;
