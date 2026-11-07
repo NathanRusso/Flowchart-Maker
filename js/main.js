@@ -351,15 +351,17 @@ function hideCheckboxes() {
 }
 
 /**
- * Removes all courses and sections.
+ * Removes all courses and resets information back to the website default.
  * 
- * @param {string} title - the title to display at the top of the flowchart
+ * @param {string} title - the title to display at the top of the website
  * @param {boolean} resetChoose - whether to reset the "Choose Template"
  * @param {boolean} resetUpload - whether to reset the uploaded filename
  */
 function clearFlowchart(title, resetChoose, resetUpload) {
-    pageTitle.textContent = title;                      // Sets the title
-    load.flowchartNotesList.textContent = "";                // Gets rid of the flowchart notes
+    // Updates the title at the top of the page
+    pageTitle.textContent = title;
+
+    // Displays or hides the "Flowchart Notes" section and removes its text content
     if (resetChoose && resetUpload) {
         flowchartNotesTitle.style.display = "None";
         load.flowchartNotesList.style.display = "None";
@@ -367,15 +369,26 @@ function clearFlowchart(title, resetChoose, resetUpload) {
         flowchartNotesTitle.style.display = "Block";
         load.flowchartNotesList.style.display = "Block";
     }
-    if (resetChoose) load.templateSelect.selectedIndex = 0;  // Resets the "Choose Template" selector to the 1st option.
-    if (resetUpload) load.setUploadedFilename(null);           // Resets the name of the uploaded file
-    load.transferDiv.replaceChildren();                      // Removes all transfer courses
+    load.flowchartNotesList.textContent = "";
+
+    // Resets the "Choose Template" selector to the 1st option
+    if (resetChoose) load.templateSelect.selectedIndex = 0;
+
+    // Resets the uploaded filename
+    if (resetUpload) load.setUploadedFilename(null);
+
+    // Hides the course popup
     popup.hideCoursePopupQuick();
+
+    // Hides the "Transfer" section and removes its courses
     hideTransferSection();
+    load.transferDiv.replaceChildren();
+
+    // Removes all years, semesters, and courses, and resets the academic year count
     const yearCount = load.academicYearCount;
     for (let i = 1; i <= yearCount; i++) {
         document.getElementById(`year-${i}`).remove();
         document.getElementById(`year-divider-${i}`).remove();
     }
-    load.setAcademicYearCount(0);                           // Resets the year count
+    load.setAcademicYearCount(0);
 }
