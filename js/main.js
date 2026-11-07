@@ -165,7 +165,7 @@ async function processUploadedFile(file) {
     uploadedFilename = file.name;
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
-    setLocalFlowchart(file.name, fileData);
+    setLocalFlowchart(uploadedFilename, fileData);
     generateFlowchartFromTemplate(fileData, true, false);
     fileInput.value = ""; // Makes sure the same file can be uploaded in a row
 }
