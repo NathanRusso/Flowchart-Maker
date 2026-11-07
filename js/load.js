@@ -56,10 +56,27 @@ export function makeSortable(element) {
 }
 
 /**
- * This creates a new year div and adds it to the body based on the template flowchart.
+ * This populates the flowchart body with the given year information.
+ * 
+ * @param {*} years - A list containing all course information for all academic years
+ * @param {*} academicYearCount - The current academic year count before the years are added
+ * @returns the updated academic year count
+ */
+export function fillFlowchartYears(years, academicYearCount) {
+    years.forEach(yearInfo => {
+        const [yearDiv, yearDividerDiv] = createYear(yearInfo, ++academicYearCount);
+        flowchartBody.append(yearDiv);
+        flowchartBody.append(yearDividerDiv);
+    });  // This handles all other semesters and their classes
+    return academicYearCount
+}
+
+/**
+ * This creates a new year div based on the year information from template flowchart.
  * 
  * @param {*} yearInfo - The object containing the semester objects
  * @param {int} academicYearCount - The current number of academic years
+ * @returns a list containing the year div and year divider div
  */
 export function createYear(yearInfo, academicYearCount) {
     const yearDiv = document.createElement("div");
@@ -81,16 +98,15 @@ export function createYear(yearInfo, academicYearCount) {
         const semesterDiv = createSemester(yearInfo[index], term, academicYearCount);
         yearBlockDiv.append(semesterDiv);
     });
-    flowchartBody.append(yearDiv);
 
     const yearDividerDiv = document.createElement("div");
     yearDividerDiv.id = `year-divider-${academicYearCount}`
     yearDividerDiv.className = "year-divider";
-    flowchartBody.append(yearDividerDiv);
+    return [yearDiv, yearDividerDiv]
 }
 
 /**
- * This creates a new semester div and adds it to the current year div based on the template flowchart.
+ * This creates a new semester div based on the semester information from the template flowchart.
  * 
  * @param {*} semesterInfo - The object containing the course objects
  * @param {*} term - The "Fall", "Spring", or "Summer" semester term
@@ -111,7 +127,7 @@ function createSemester(semesterInfo, term, academicYearCount) {
 }
 
 /**
- * This creates a new course div and adds it to the current semester div based on the template flowchart.
+ * This creates a new course div based on the course information from the template flowchart.
  * 
  * @param {*} courseInfo - The object containing the course information
  * @returns the course div

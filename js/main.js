@@ -78,6 +78,8 @@ function displayLocalFlowchart() {
 
 /**
  * Gets the flowchart and its filename from local storage and if they exists.
+ * 
+ * @returns a list containing the flowchart JSON object and its filename
  */
 function getLocalFlowchart() {
     const filename = localStorage.getItem("filename")
@@ -205,10 +207,10 @@ function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
     const years = template.college;
     const notes = template.notes;
 
-    clearFlowchart(title, resetChoose, resetUpload);                            // This removes the previous flowchart
-    fillTransferYear(transferCourses);                                          // This handles all transfer classes
-    years.forEach(yearInfo => load.createYear(yearInfo, ++academicYearCount));  // This handles all other semesters and their classes
-    fillFlowchartNotes(notes);                                                  // This handles the flowchart notes
+    clearFlowchart(title, resetChoose, resetUpload);                        // This removes the previous flowchart
+    fillFlowchartTransferYear(transferCourses);                             // This handles all transfer classes
+    academicYearCount = load.fillFlowchartYears(years, academicYearCount);  // This handles all other semesters and their classes
+    fillFlowchartNotes(notes);                                              // This handles the flowchart notes
     hideCheckboxesButton.style.display == "none" ? hideCheckboxes() : showCheckboxes();
 
     // This makes sure only the hyper classes linked to a selected option are shown
@@ -223,7 +225,7 @@ function generateFlowchartFromTemplate(template, resetChoose, resetUpload) {
  * 
  * @param {*} transferInfo - The object containing the transfer course objects
  */
-function fillTransferYear(transferInfo) {
+function fillFlowchartTransferYear(transferInfo) {
     transferInfo.forEach(courseInfo => {
         const courseDiv = load.createCourse(courseInfo);
         transferDiv.append(courseDiv);
@@ -255,7 +257,7 @@ function fillFlowchartNotes(notesInfo) {
  */
 function downloadTemplate() {
     // Creates the JSON template and converts it into the necessary format.
-    json = generateTemplateFromFlowchart()
+    const json = generateTemplateFromFlowchart()
     const jsonString = JSON.stringify(json);
     const jsonBlob = new Blob([jsonString], { type: "application/json" });
     const jsonObjectUrl = URL.createObjectURL(jsonBlob);
