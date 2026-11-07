@@ -1,5 +1,5 @@
 /**
- * This file handles all base logic that can be triggered by the toolbar button.s
+ * This file handles all base logic that can be triggered by the toolbar buttons and dropdowns.
  */
 
 //------------------------------ IMPORTS BELOW ------------------------------//
@@ -76,7 +76,7 @@ export function displayLocalFlowchart() {
  * @param {string} year - the selected year to view templates form
  */
 async function updateTemplateFlowcharts(year) {
-    load.templateSelect.innerHTML = "";              // Clears the dropdown options
+    load.templateSelect.innerHTML = "";     // Clears the dropdown options
 
     // Adds back the empty option
     const emptyOption = Object.assign(document.createElement("option"), {
@@ -85,12 +85,12 @@ async function updateTemplateFlowcharts(year) {
     });
     load.templateSelect.append(emptyOption);
 
-    // Get the template file names
+    // Gets the template file names
     const response = await fetch(`/json/templates/${year}/`);
     const result = await response.json();
     const filenames = result.map(file => file.name);
 
-    // Create all outGroups and options
+    // Creates all outGroups and options
     const outGroups = {};
     filenames.forEach(filename => {
         const filenameContent = filename.split("_");    // pathway_degree_...
@@ -111,7 +111,7 @@ async function updateTemplateFlowcharts(year) {
         outGroups[formattedGroup].append(option);
     });
 
-    // Add all outGroups to the dropdown
+    // Adds all outGroups to the dropdown
     load.templateSelect.append(...Object.values(outGroups));
 }
 
@@ -160,18 +160,14 @@ function generateFlowchartFromTemplate(filename, template, resetChoose, resetUpl
         return;
     }
 
-    // Saves the current flowchart to local storage.
+    // Saves the current flowchart to local storage
     load.setLocalFlowchart(filename, template);
 
-    const title = template.title;
-    const transferCourses = template.transfer;
-    const years = template.college;
-    const notes = template.notes;
-
-    clearFlowchart(title, resetChoose, resetUpload);    // Removes the previous flowchart
-    fillFlowchartTransferYear(transferCourses);         // Handles all transfer classes
-    load.fillFlowchartYears(years);                     // Handles all other semesters and their classes
-    fillFlowchartNotes(notes);                          // Handles the flowchart notes
+    // Generates the flowchart
+    clearFlowchart(template.title, resetChoose, resetUpload);   // Removes the previous flowchart
+    fillFlowchartTransferYear(template.transfer);               // Handles all transfer classes
+    load.fillFlowchartYears(template.college);                  // Handles all other semesters and their classes
+    fillFlowchartNotes(template.notes);                         // Handles the flowchart notes
     hideCheckboxesButton.style.display == "none" ? hideCheckboxes() : showCheckboxes();
 
     // Makes sure only the hyper classes linked to a selected option are shown
@@ -217,16 +213,16 @@ function fillFlowchartNotes(notesInfo) {
  * Converts the current flowchart into a JSON file and downloads it onto your computer.
  */
 function downloadTemplate() {
-    // Creates the JSON template and converts it into the necessary format.
+    // Creates the JSON template, and converts it into the necessary format
     const json = load.generateTemplateFromFlowchart()
     const jsonString = JSON.stringify(json);
     const jsonBlob = new Blob([jsonString], { type: "application/json" });
     const jsonObjectUrl = URL.createObjectURL(jsonBlob);
 
     // Gets and sets the flowchart filename
-    const jsonFilename =load. getCurrentTemplateFilename()
+    const jsonFilename = load.getCurrentTemplateFilename()
 
-    // Saves the current flowchart to local storage.
+    // Saves the current flowchart to local storage
     load.setLocalFlowchart(jsonFilename, json);
 
     // Saves the flowchart onto your computer
@@ -305,7 +301,9 @@ function popYear() {
  */
 function yearIsEmpty(yearDiv) {
     const semesterDivs = yearDiv.children[1].children; // yearDiv => yearBlockDiv
-    return semesterDivs[0].children.length == 0 && semesterDivs[1].children.length == 0 && semesterDivs[2].children.length == 0;
+    return (semesterDivs[0].children.length == 0 && 
+        semesterDivs[1].children.length == 0 && 
+        semesterDivs[2].children.length == 0);
 }
 
 /**

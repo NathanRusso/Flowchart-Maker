@@ -331,7 +331,7 @@ function processCourse(courseDiv) {
     return course;
 }
 
-//------------------------------ FUNCTIONS BELOW (PART 3) ------------------------------//
+//------------------------------ FUNCTIONS BELOW (PART 4) ------------------------------//
 
 /**
  * Populates the flowchart body with the given year information.
@@ -669,7 +669,7 @@ export function createCourse(courseInfo) {
             return;
     }
 
-    //  Handles saving all course divs that are linked to a hyper option.
+    // Handles saving all course divs that are linked to a hyper option
     if (validHyperParentId && validHyperChildId) {
         hyperDictionary[courseHyperParentId] ??= {};
         const hyperChildDictionary = hyperDictionary[courseHyperParentId];
@@ -680,7 +680,7 @@ export function createCourse(courseInfo) {
         hyperChildCourseDivs.push(courseDiv);
     }
 
-    //  Adds a checkbox to mark if a class has been taken yet.
+    // Adds a checkbox to mark if a class has been taken yet
     const checkbox = Object.assign(document.createElement("input"), {
         type: "checkbox",
         name: "courseCheckbox",
@@ -716,7 +716,7 @@ function createCourseInput(savedCourse) {
     // Ensures any letters given are uppercase
     input.addEventListener("input", () => input.value = input.value.toUpperCase());
 
-    // Ensures valid characters are entered in the input.
+    // Ensures valid characters are entered in the input
     input.addEventListener("keypress", (event) => {
         const preInputLength = input.value.length;
         const key = event.key.toUpperCase(); // Converts letters to uppercase for the check only
@@ -735,7 +735,7 @@ function createCourseInput(savedCourse) {
             alert("Format must be in ABCD-123, ABCD-123H, or blank!");
             setTimeout(() => input.focus(), 0); // Prevents alert loop
         } else {
-            // Saves the current flowchart to local storage.
+            // Saves the current flowchart to local storage
             setLocalFlowchartDefault();
         }
     });

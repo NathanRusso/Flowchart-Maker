@@ -13,7 +13,7 @@ const coursePopupOffered = document.getElementById("coursePopupOfferedContent");
 const coursePopupContact = document.getElementById("coursePopupContactContent");
 
 export const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
-let courseInformationCache = {} // A mapping of courses to their database information
+let courseInformationCache = {}     // A mapping of courses to their database information
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
 
