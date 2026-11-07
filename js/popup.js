@@ -12,6 +12,7 @@ const coursePopupPrerequisites = document.getElementById("coursePopupPrerequisit
 const coursePopupOffered = document.getElementById("coursePopupOfferedContent");
 const coursePopupContact = document.getElementById("coursePopupContactContent");
 
+export const courseRegex = /^[A-Z]{4}-[0-9]{1,3}H?$/;
 let courseInformationCache = {} // A mapping of courses to their database information
 
 //------------------------------ EVENT LISTENERS BELOW ------------------------------//
@@ -21,9 +22,9 @@ coursePopupButton.addEventListener("click", hideCoursePopup);
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
- * This will hide the course information popup
+ * This will hide the course information popup.
  */
-function hideCoursePopup() {
+export function hideCoursePopup() {
     coursePopup.classList.remove("reveal");
     coursePopup.classList.add("hide");
     coursePopup.dataset.courseDiscipline = "";
@@ -38,9 +39,19 @@ function hideCoursePopup() {
 }
 
 /**
- * This will reveal the course information popup
+ * This will hide the course information popup with no animation..
  */
-function revealCoursePopup() {
+export function hideCoursePopupQuick() {
+    coursePopup.classList.remove("reveal");
+    coursePopup.dataset.courseDiscipline = "";
+    coursePopup.dataset.courseNumber = ""; 
+    coursePopup.style.display = "none";
+}
+
+/**
+ * This will reveal the course information popup.W
+ */
+export function revealCoursePopup() {
     coursePopup.style.display = "flex";
     coursePopup.classList.remove("hide");
     coursePopup.classList.add("reveal");
