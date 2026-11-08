@@ -25,7 +25,13 @@ Each flowchart represents a specific GCCIS pathway that one can pursue while at 
 
 Users can choose a template from the [available templates](#current-templates-available) along with the academic year to get the desired version. Once selected, they can move the course squares around to match the semesters in which the classes were taken. Then, they can fill in any of the empty course slots or set any of the dropdown courses with classes they have taken. Once satisfied, the flowchart can be saved into the user's file system. Finally, when wanting to view or edit the flowchart again, the user can upload the template back to the website.
 
-Additionally, users can click on a course to view more information, including its full name, number of credits, and description.
+Additionally, users can click on a course to view more information about it, including its...
+- Full Name
+- Credits
+- Description
+- Prerequisites
+- Typically Offered
+- Contact Hours
 
 ### Flowchart Format
 
