@@ -89,14 +89,14 @@ export function makeSortable(element) {
 /**
  * Gets the flowchart and its filename from local storage and if they exists.
  * 
- * @returns a list containing the flowchart JSON object and its filename
+ * @returns a list containing the flowchart filename and its JSON object
  */
 export function getLocalFlowchart() {
     const filename = localStorage.getItem("filename")
     const flowchartString = localStorage.getItem("flowchart")
     if (filename && flowchartString) {
         const flowchart = JSON.parse(flowchartString);
-        return [flowchart, filename];
+        return [filename, flowchart];
     }
     return [null, null];
 }

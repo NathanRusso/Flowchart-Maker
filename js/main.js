@@ -64,8 +64,9 @@ displayLocalFlowchart()
  * Displays the local flowchart and its filename if they exists.
  */
 export function displayLocalFlowchart() {
-    const [flowchart, filename] = load.getLocalFlowchart();
-    if (flowchart && filename) {
+    const [filename, flowchart] = load.getLocalFlowchart();
+    if (filename && flowchart) {
+        load.setUploadedFilename(filename);
         generateFlowchartFromTemplate(filename, flowchart, true, false);
     }
 }
@@ -133,7 +134,7 @@ async function getTemplateFlowchart(filename) {
  * @param {*} file - the given flowchart file object
  */
 async function processUploadedFile(file) {
-    load.setUploadedFilename(file.name)
+    load.setUploadedFilename(file.name);
     const fileText = await file.text();
     const fileData = JSON.parse(fileText);
     generateFlowchartFromTemplate(file.name, fileData, true, false);
