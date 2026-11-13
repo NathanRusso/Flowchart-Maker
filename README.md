@@ -165,9 +165,11 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 - [X] Save and load flowcharts automatically through local storage
 - [ ] Have the ability to export a flowchart into a PDF
 - [ ] Add the ability to create custom course blocks
+- [ ] Add a dark/light mode toggle to the top right of the screen
+- [ ] Add optional patterns corresponding to colors for people with color blindness
 
 ### Things to Improve
 
 - [ ] A better disclaimer and credits at the bottom of the pages
-- [ ] A dark mode toggle in the top right of the screen
 - [ ] A more comprehensive text editor for flowchart notes
+- [ ] A more verbose coloring system handling more codes, themes, etc.
