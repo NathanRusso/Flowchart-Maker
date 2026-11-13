@@ -260,6 +260,7 @@ function pushYear() {
         const semesterDiv = document.createElement("div");
         semesterDiv.id = `${term}-${yearCount}`;
         semesterDiv.className = "semester";
+        semesterDiv.dataset.term = term;
         load.makeSortable(semesterDiv);
         yearBlockDiv.append(semesterDiv);
     });

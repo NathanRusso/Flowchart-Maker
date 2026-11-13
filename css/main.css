@@ -168,6 +168,11 @@
     margin: 5px auto;
 }
 
+.semester[data-term="Fall"], .semester[data-term="Spring"] {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
 .class {
     display: flex;
     flex-wrap: wrap;

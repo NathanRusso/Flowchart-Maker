@@ -65,18 +65,6 @@ export function makeSortable(element) {
     Sortable.create(element, {
         group: "semester",
         animation: 200,
-        // Makes sure a class and co-op cannot be added to the same semester
-        onMove: function (event, originalEvent) {
-            const movingElement = event.dragged;
-            const targetElement = event.to;
-            const targetChildren = targetElement.children;
-            if (targetChildren.length > 0) {
-                // Note: Works because both "class" and "co-op" are length 5
-                let movingClass = movingElement.className.slice(0, 5);
-                let targetClass = targetChildren[0].className.slice(0, 5);
-                return movingClass == targetClass;
-            }
-        },
         onEnd: function (event) {
             // Saves the current flowchart to local storage
             setLocalFlowchartDefault();
@@ -393,6 +381,7 @@ function createSemester(semesterInfo, term, yearCount) {
     const semesterDiv = document.createElement("div");
     semesterDiv.id = `${term}-${yearCount}`;
     semesterDiv.className = "semester";
+    semesterDiv.dataset.term = term;
     makeSortable(semesterDiv);
 
     semesterInfo.forEach(courseInfo => {
