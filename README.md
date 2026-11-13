@@ -35,7 +35,7 @@ Additionally, users can click on a course to view more information about it, inc
 
 ### Flowchart Format
 
-Each flowchart is divided into sections by year. Each year has 3 blocks inside of it that represent the Fall, Spring, and Summer semesters. Each semester block can hold any number of [classes](#classes) or a single [co-op](#co-ops). Additionally, a hidden transfer section can be revealed, which exists as its own standalone section with a single block inside. This can be used to allocate the classes that were completed upon transferring credits, such as AP classes or classes from other colleges.
+Each flowchart is divided into sections by year. Each year has 3 blocks inside of it that represent the Fall, Spring, and Summer semesters. Each semester block can hold any number of [classes](#classes) and [co-ops](#co-ops). Additionally, a hidden transfer section can be revealed, which exists as its own standalone section with a single block inside. This can be used to allocate the classes that were completed upon transferring credits, such as AP classes or classes from other colleges.
 
 ### Buttons and Dropdowns
 1. **Select Year** - A dropdown to dictate the academic year version for any chosen template flowchart
