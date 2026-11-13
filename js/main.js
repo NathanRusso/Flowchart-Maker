@@ -56,14 +56,14 @@ load.makeSortable(load.transferDiv);
 updateTemplateFlowcharts(yearSelect.value);
 
 // Loads a pre-saved flowchart if it exists
-displayLocalFlowchart()
+displayLocalFlowchart();
 
 //------------------------------ FUNCTIONS BELOW ------------------------------//
 
 /**
  * Displays the local flowchart and its filename if they exists.
  */
-export function displayLocalFlowchart() {
+function displayLocalFlowchart() {
     const [filename, flowchart] = load.getLocalFlowchart();
     if (filename && flowchart) {
         load.setUploadedFilename(filename);
@@ -299,7 +299,7 @@ function popYear() {
  * Checks if the given year div has any courses inside of it.
  * 
  * @param {*} yearDiv - the given year div
- * @returns True if there are no courses in any of the year semesters, False otherwise.
+ * @returns true if there are no courses in any of the year semesters, false otherwise.
  */
 function yearIsEmpty(yearDiv) {
     const semesterDivs = yearDiv.children[1].children; // yearDiv => yearBlockDiv
