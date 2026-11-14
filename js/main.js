@@ -97,7 +97,7 @@ async function updateTemplateFlowcharts(year) {
         const filenameContent = filename.split("_");    // pathway_degree_...
         const [formattedPathway, formattedGroup] = match.getDisplayPathwayAndGroup(filenameContent[0]);
         if (formattedPathway == null || formattedGroup == null) return;
-        const formattedDegree = filenameContent[0] === "ce" ? "" : (filenameContent[1] === "bs" ? "BS" : "BS/MS");
+        const formattedDegree = filenameContent[0] === "compex" ? "" : (filenameContent[1] === "bs" ? "BS" : "BS/MS");
 
         const option = Object.assign(document.createElement("option"), {
             textContent: `${formattedPathway} ${formattedDegree}`.toUpperCase(),

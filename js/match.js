@@ -64,7 +64,7 @@ export function getAttributeColor(attribute) {
 // A map of pathways to their formatted pathway and group
 const PATHWAY_GROUP_MAP = {
     "ai":       ["AI", "Artificial Intelligence"],
-    "ce":       ["CE", "Computing Exploration"],
+    "compex":   ["COMPEX", "Computing Exploration"],
     "cit":      ["CIT", "Computing and Information Technology"],
     "cs":       ["CS", "Computer Science"],
     "cscsec":   ["CS/CSEC", "Computer Science"],

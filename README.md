@@ -69,7 +69,7 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 ### Artificial Intelligence (AI)
 - Artificial Intelligence BS (2026-2027)
 
-### Computing Exploration (CE)
+### Computing Exploration (COMPEX)
 - Computing Exploration (2025-2026, 2026-2027)
 
 ### Computing and Information Technology (CIT)
@@ -111,7 +111,7 @@ Each flowchart is divided into sections by year. Each year has 3 blocks inside o
 ### Pathway Abbreviations
 
 - **AI** – Artificial Intelligence
-- **CE** – Computing Exploration
+- **COMPEX** – Computing Exploration
 - **CIT** – Computing and Information Technology
 - **CS** – Computer Science
 - **CSEC** – Cybersecurity
